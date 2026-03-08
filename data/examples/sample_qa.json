@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "input": "Thủ đô của Việt Nam là gì?",
+      "output": "Thủ đô của Việt Nam là Hà Nội.",
+      "reference": "Hà Nội"
+    },
+    {
+      "id": "2",
+      "input": "1 + 1 bằng mấy?",
+      "output": "1 + 1 = 2",
+      "reference": "2"
+    },
+    {
+      "id": "3",
+      "input": "Ai là người sáng lập Microsoft?",
+      "output": "Bill Gates và Paul Allen đồng sáng lập Microsoft năm 1975.",
+      "reference": "Bill Gates"
+    }
+  ]
+}

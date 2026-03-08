@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "input": "Doanh thu của Apple trong Q3 2024 là bao nhiêu?",
+      "context": "Apple Inc. công bố kết quả kinh doanh quý 3 năm 2024 với doanh thu đạt 89.5 tỷ USD, tăng 5% so với cùng kỳ năm trước. CEO Tim Cook cho biết iPhone và dịch vụ đều tăng trưởng mạnh.",
+      "output": "Doanh thu của Apple trong Q3 2024 là 89.5 tỷ USD, tăng 5% so với năm trước.",
+      "reference": "89.5 tỷ USD"
+    },
+    {
+      "id": "2",
+      "input": "Tesla bán được bao nhiêu xe trong năm 2023?",
+      "context": "Tesla đã giao 1.8 triệu xe điện trong năm 2023, đánh dấu mức tăng trưởng 38% so với năm 2022. Model Y là mẫu xe bán chạy nhất.",
+      "output": "Tesla bán được 1.8 triệu xe trong năm 2023, tăng 38%. CEO Elon Musk rất hài lòng với kết quả này.",
+      "reference": "1.8 triệu xe"
+    }
+  ]
+}

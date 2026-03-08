@@ -1,0 +1,15 @@
+# Core dependencies
+openai>=1.0.0
+numpy>=1.20.0
+
+# Optional: for streaming large files
+ijson>=3.2.0
+
+# Optional: for COMET metric
+# unbabel-comet>=2.0.0
+
+# Optional: for YAML config files
+pyyaml>=6.0
+
+# Optional: for progress bars
+tqdm>=4.60.0
