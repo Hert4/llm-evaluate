@@ -1,0 +1,362 @@
+{
+  "project_name": "Dự án CRM MISA ",
+  "application_code": "crmmisa",
+  "task": "Phân tích kinh doanh (Business Analysis)",
+  "num_samples": 50,
+  "gt_model": "claude-sonnet-4-5",
+  "framework_metrics": {
+    "rouge": {
+      "score": 0.30365570990542357,
+      "score_pct": "30.37%",
+      "details": {
+        "rouge_scores": {
+          "rouge1": 0.4508665768607459,
+          "rouge2": 0.20908458747143407,
+          "rougeL": 0.2510159653840907
+        },
+        "rouge_types": [
+          "rouge1",
+          "rouge2",
+          "rougeL"
+        ],
+        "num_samples": 50
+      },
+      "num_samples": 50
+    },
+    "g_eval": {
+      "score": 0.5,
+      "score_pct": "50.00%",
+      "details": {
+        "criteria_scores": {
+          "coherence": 0.5,
+          "fluency": 0.5,
+          "relevance": 0.5,
+          "consistency": 0.5
+        },
+        "criteria": [
+          "coherence",
+          "fluency",
+          "relevance",
+          "consistency"
+        ],
+        "num_samples": 20
+      },
+      "num_samples": 20
+    },
+    "answer_relevancy": {
+      "score": 0.9439999999999997,
+      "score_pct": "94.40%",
+      "details": {
+        "num_samples": 20
+      },
+      "num_samples": 20
+    }
+  },
+  "performance": {
+    "avg_response_time_ms": 11922.477476000002,
+    "median_response_time_ms": 9306.4154,
+    "p95_response_time_ms": 29109.1091
+  },
+  "sample_details": [
+    {
+      "id": "194342",
+      "has_gt": true,
+      "output_preview": "- Phòng KD sản phẩm CUKCUK 02 - CTH hiện có 11 cơ hội đang thực hiện nhưng chưa ghi nhận doanh số nào trong tháng <br>  \n- Doanh số kỳ vọng đạt 7,04 triệu đồng, tuy nhiên kết quả thực tế vẫn ở mức 0, cho thấy khoảng cách lớn so với mục tiêu <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu",
+      "gt_preview": "- **Tình hình hoạt động còn yếu**: Phòng KD sản phẩm CUKCUK 02 - CTH đang có 11 cơ hội đang thực hiện với doanh số kỳ vọng 7,04 triệu, tuy nhiên doanh số đã thực hiện trong tháng này vẫn là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công và tiến độ đạt mục tiêu đang bị trì hoãn nghiêm trọ"
+    },
+    {
+      "id": "194298",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 11 (tăng từ 0 tháng trước), cho thấy hoạt động tìm kiếm và tiếp cận khách hàng đang diễn ra tích cực nhưng chưa tạo ra kết quả cụ thể <br>  \n- Doanh số đã thực hiện vẫn ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả, cần điều chỉnh chi",
+      "gt_preview": "- **Tình hình hoạt động còn yếu**: Phòng KD sản phẩm CUKCUK 02 - CTH đang có 11 cơ hội đang thực hiện với doanh số kỳ vọng 7,04 triệu, tuy nhiên doanh số đã thực hiện trong tháng này vẫn ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công, tiến độ đạt mục tiêu đang rất chậm so với kế ho"
+    },
+    {
+      "id": "194365",
+      "has_gt": true,
+      "output_preview": "- Nhóm Quản lý 04 đang triển khai 8 cơ hội kinh doanh mới trong tháng, cho thấy nỗ lực mở rộng hoạt động tuy nhiên chưa ghi nhận doanh số thực tế<br>\n- Doanh số đạt được hiện ở mức 0 triệu đồng, chưa đáp ứng kỳ vọng 133,35 triệu đồng, phản ánh khoảng cách lớn giữa mục tiêu và kết quả thực hiện<br>\n-",
+      "gt_preview": "- **Nhóm Quản lý 04 đang có 8 cơ hội đang thực hiện với doanh số kỳ vọng 133,35 triệu, tuy nhiên doanh số đã thực hiện vẫn đang ở mức 0 cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, phản ánh tiến độ chuyển đổi đang chậm so với kế hoạch.**<br>\n\n- **Tỷ lệ chiến thắng cơ hội đang "
+    },
+    {
+      "id": "194540",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 165, chưa có dữ liệu so sánh kỳ trước, cho thấy đơn vị đang duy trì hoạt động tiếp cận khách hàng.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, chiếm khoảng 82% so với mục tiêu kỳ vọng 99,96 triệu đồng, cần đẩy mạnh để hoàn thành chỉ tiêu.<br>  \n- Tỷ lệ ch",
+      "gt_preview": "- **Hiệu suất chuyển đổi còn thấp**: Phòng KD meInvoice dự án đang quản lý 165 cơ hội nhưng tỷ lệ chiến thắng chỉ đạt 19,09%, cho thấy hiệu quả chốt deal chưa cao. Cần rà soát quy trình chăm sóc và xử lý từng giai đoạn của phễu bán hàng để cải thiện tỷ lệ chuyển đổi.<br>\n\n- **Khoảng cách doanh số cầ"
+    },
+    {
+      "id": "194553",
+      "has_gt": true,
+      "output_preview": "- Nhóm KD Bán thêm GP KTDN đang triển khai 11 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực tế (0 triệu đồng), cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa đạt yêu cầu<br>\n- Doanh số kỳ vọng đạt 4,22 triệu đồng/tháng nhưng tỷ lệ hoàn thành mục tiêu hiện ở mức 0%, phản ánh khoảng cá",
+      "gt_preview": "- **Tiến độ doanh số đang ở mức báo động:** Với 11 cơ hội đang thực hiện nhưng doanh số thực tế đạt được là 0 đồng, trong khi doanh số kỳ vọng lên tới 4,22 triệu, cho thấy nhóm chưa chốt được bất kỳ giao dịch nào trong tháng này, tiến độ hoàn toàn chậm so với kế hoạch đề ra.<br>\n\n- **Hiệu quả chuyển"
+    },
+    {
+      "id": "194520",
+      "has_gt": true,
+      "output_preview": "- Đơn vị đã đạt 100% mục tiêu doanh số với 11,51 triệu đồng từ 61 cơ hội đang thực hiện.<br>  \n- Tỷ lệ chuyển đổi cơ hội thành công ở mức 4,2%, cho thấy hiệu quả còn hạn chế và cần tối ưu hóa.<br>  \n- Doanh số kỳ vọng và thực tế bằng nhau, phản ánh sự ổn định trong kế hoạch và triển khai.<br>",
+      "gt_preview": "- Phòng KD Bán mới KTDN 05 đang quản lý 61 cơ hội kinh doanh trong tháng này, tuy nhiên tỷ lệ chiến thắng chỉ đạt 4,2% cho thấy hiệu quả chuyển đổi từ cơ hội thành hợp đồng còn rất thấp, cần cải thiện kỹ năng chốt sales và chất lượng đánh giá cơ hội đầu vào.<br>\n\n- Doanh số đã thực hiện đạt 11,51 tr"
+    },
+    {
+      "id": "194161",
+      "has_gt": true,
+      "output_preview": "- Nhóm KD MISA AMIS Nhân sự 06 hiện có 18 cơ hội đang thực hiện, cho thấy nguồn lực tiếp thị ổn định nhưng cần cải thiện hiệu quả chuyển đổi để đạt doanh số.<br>  \n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, cho thấy nhóm chưa chốt được đơn hàng nào, cần tập trung vào các chiến lược bán hàng để",
+      "gt_preview": "- Nhóm KD MISA AMIS Nhân sự 06 đang quản lý 18 cơ hội bán hàng với tổng doanh số kỳ vọng 117,99 triệu đồng, cho thấy nguồn cơ hội tiềm năng tương đối tốt nhưng giá trị trung bình mỗi deal còn khiêm tốn (khoảng 6,5 triệu/cơ hội).<br>\n\n- Doanh số thực hiện trong tháng này đang ở mức 0 đồng, phản ánh t"
+    },
+    {
+      "id": "194170",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 72, cho thấy khối lượng công việc đang triển khai khá lớn nhưng cần theo dõi sát sao để đảm bảo tiến độ<br>  \n- Doanh số đã thực hiện ở mức 0 triệu, chưa đạt tỷ lệ phần trăm nào so với mục tiêu kỳ vọng 25,56 triệu, phản ánh hiệu suất chuyển đổi cơ hội thành công ",
+      "gt_preview": "- **Tình hình hoạt động còn yếu:** Phòng KD sản phẩm CUKCUK 02 - HCM đang có 72 cơ hội đang thực hiện với doanh số kỳ vọng 25,56 triệu, tuy nhiên doanh số đã thực hiện là 0 đồng, cho thấy chưa có đơn hàng nào chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- **Hiệu qu"
+    },
+    {
+      "id": "194025",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện khá cao (115), nhưng tỷ lệ chuyển đổi thấp (4,67%) cho thấy hiệu suất xử lý chưa tối ưu.<br>  \n- Doanh số đạt được 11,87 triệu, chiếm 72,7% so với mục tiêu kỳ vọng 16,32 triệu, cần cải thiện để đạt mục tiêu.<br>  \n- Tỷ lệ chiến thắng cơ hội 4,67% thấp, cần phân tích ",
+      "gt_preview": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng Bán thêm GP Ký điện tử 02 hiện đạt 11,87 triệu trong tổng doanh số kỳ vọng 16,32 triệu, cho thấy còn thiếu hụt khoảng 4,45 triệu để hoàn thành mục tiêu tháng. Cần đẩy nhanh tốc độ chốt đơn trong thời gian còn lại của tháng.<br>\n\n- **Tỷ lệ chuyển đổi thấ"
+    },
+    {
+      "id": "193932",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 67, cho thấy phòng kinh doanh đang triển khai nhiều hoạt động tiềm năng nhưng chưa có kết quả chuyển đổi cụ thể<br>  \n- Doanh số đã thực hiện ở mức 0 triệu đồng, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng còn yếu, cần cải thiện quy trình chốt sales hoặc ",
+      "gt_preview": "- Phòng KD Bán mới 04 đang quản lý 67 cơ hội bán hàng với tổng doanh số kỳ vọng 523,31 triệu đồng, cho thấy nguồn cơ hội tiềm năng tương đối tốt. Tuy nhiên, doanh số thực hiện trong tháng này đang ở mức 0 đồng, phản ánh tình trạng chưa có giao dịch nào được chốt thành công, tạo ra khoảng cách lớn gi"
+    },
+    {
+      "id": "193725",
+      "has_gt": true,
+      "output_preview": "- Phòng KD Bán mới KTDN 04 hiện đang triển khai 35 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực hiện trong tháng, cho thấy tiến độ chuyển đổi cơ hội thành công còn chậm <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì ở mức 0%, phản ánh thách thức trong việc chốt đơn hàng hoặc xác suất cơ hội chưa p",
+      "gt_preview": "- **Tiến độ doanh số đáng lo ngại**: Phòng KD Bán mới KTDN 04 hiện có 35 cơ hội đang thực hiện với doanh số kỳ vọng 1,23 triệu, nhưng doanh số đã thực hiện vẫn ở mức 0 triệu. Điều này cho thấy chưa có giao dịch nào được chốt thành công trong tháng, tiến độ đạt mục tiêu đang bị chậm trễ nghiêm trọng "
+    },
+    {
+      "id": "193875",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 21, cho thấy đơn vị duy trì hoạt động kinh doanh tích cực nhưng chưa có kết quả cụ thể<br>\n- Doanh số đã thực hiện ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành công còn yếu, chưa đạt mục tiêu doanh thu<br>\n- Tỷ lệ chiến thắng cơ hội dừng ở 0%, đồng nghĩa t",
+      "gt_preview": "- **Tình hình hoạt động còn yếu**: Phòng KD Bán mới KTDN 07 đang có 21 cơ hội đang thực hiện với doanh số kỳ vọng 107,49 triệu, tuy nhiên doanh số đã thực hiện vẫn ở mức 0 triệu, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang rất chậm và cần có hành độn"
+    },
+    {
+      "id": "193706",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 177, cho thấy hoạt động tìm kiếm và duy trì cơ hội kinh doanh của phòng vẫn ở mức ổn định. <br>  \n- Doanh số đã thực hiện chỉ đạt 11,92 triệu trên tổng kỳ vọng 144,88 triệu, tiến độ chậm so với mục tiêu tháng. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,93%, phản á",
+      "gt_preview": "- Phòng KD Bán mới GPKT 03 đang quản lý 177 cơ hội bán hàng với doanh số kỳ vọng lên tới 144,88 triệu, cho thấy tiềm năng thị trường còn rất lớn nhưng hiện mới chỉ thực hiện được 11,92 triệu, đạt khoảng 8,2% so với kỳ vọng - tín hiệu cảnh báo về tốc độ chuyển đổi còn chậm.<br>\n\n- Tỷ lệ chiến thắng c"
+    },
+    {
+      "id": "193502",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện và doanh số kỳ vọng đều đạt 22,88 triệu, cho thấy phòng ban hoàn thành mục tiêu đề ra trong tháng này<br>  \n- Số lượng cơ hội đang thực hiện ở mức 134, phản ánh hoạt động kinh doanh có độ phủ rộng nhưng cần kiểm tra chất lượng cơ hội để tối ưu nguồn lực<br>  \n- Tỷ lệ chiến th",
+      "gt_preview": "- **Tiến độ doanh số**: Phòng bán thêm GP HDDT 01 đạt 22,88 triệu đồng doanh số thực hiện, tương đương 100% mục tiêu kỳ vọng trong tháng này, cho thấy đơn vị đang hoàn thành đúng kế hoạch đề ra và duy trì được sự ổn định trong hoạt động kinh doanh.<br>\n\n- **Hiệu quả chuyển đổi**: Tỷ lệ chiến thắng c"
+    },
+    {
+      "id": "193722",
+      "has_gt": true,
+      "output_preview": "- Phòng KD CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang thực hiện (tăng từ 0 so với kỳ trước), tuy nhiên doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn và cần điều chỉnh kịp thời.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% bất chấp việc gia tăng s",
+      "gt_preview": "- **Tình hình hoạt động còn hạn chế**: Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội đang thực hiện nhưng doanh số đã thực hiện và doanh số kỳ vọng đều ở mức 0, cho thấy các cơ hội chưa được chuyển đổi thành hợp đồng cụ thể trong tháng này.<br>\n\n- **Tỷ lệ chuyển đổi đáng lo ngại**: Tỷ lệ chiến "
+    },
+    {
+      "id": "193764",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 82,35 triệu, tương đương 82.38% so với mục tiêu kỳ vọng 99,96 triệu. Cần theo dõi sát để đảm bảo hoàn thành mục tiêu tháng.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, cho thấy hiệu quả trung bình trong việc chuyển đổi cơ hội thành đơn hàng. Có thể cần tối ưu quy trình",
+      "gt_preview": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice đang quản lý 166 cơ hội với doanh số thực hiện đạt 82,35 triệu, chỉ bằng 82,4% so với doanh số kỳ vọng 99,96 triệu, cho thấy cần nỗ lực đẩy mạnh chốt đơn trong thời gian còn lại của tháng để đạt mục tiêu.<br>\n\n- **Tỷ lệ chuyển đổi thấp "
+    },
+    {
+      "id": "193396",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 166, cho thấy nguồn lực và hoạt động kinh doanh đang được triển khai tích cực, tuy nhiên cần theo dõi sát sao để đảm bảo chuyển đổi hiệu quả.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, tương ứng 82,4% so với doanh số kỳ vọng 99,96 triệu đồng, cho thấy ti",
+      "gt_preview": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice đang quản lý 166 cơ hội với doanh số thực hiện 82,35 triệu, chỉ đạt 82,4% so với doanh số kỳ vọng 99,96 triệu, cho thấy cần đẩy mạnh chốt đơn trong thời gian còn lại của tháng để bù đắp khoảng cách 17,61 triệu.<br>\n\n- **Tỷ lệ chuyển đổi"
+    },
+    {
+      "id": "193651",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 46, cho thấy đơn vị vẫn duy trì hoạt động tìm kiếm khách hàng tiềm năng nhưng chưa có dữ liệu so sánh với kỳ trước để đánh giá xu hướng.<br>  \n- Doanh số đã thực hiện ở mức 0/10 triệu, phản ánh tiến độ hoàn thành mục tiêu bằng 0%, cần điều tra nguyên nhân và cải ",
+      "gt_preview": "- Phòng KD sản phẩm ESHOP 01-DNG đang có 46 cơ hội đang thực hiện với doanh số kỳ vọng 10 triệu, tuy nhiên doanh số thực tế đạt được trong tháng này vẫn còn 0 đồng, cho thấy tiến độ chuyển đổi từ cơ hội sang đơn hàng thành công đang rất chậm và cần được đẩy nhanh ngay lập tức.<br>\n\n- Tỷ lệ chiến thắ"
+    },
+    {
+      "id": "193702",
+      "has_gt": true,
+      "output_preview": "- Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang triển khai, cho thấy nguồn lực đang tập trung vào việc mở rộng cơ hội mới nhưng chưa có kết quả chuyển đổi cụ thể <br>  \n- Doanh số đạt được và doanh số kỳ vọng đều ở mức 0, phản ánh tiến độ không khả quan trong việc chốt đơn hàng ",
+      "gt_preview": "- **Tình hình hoạt động còn hạn chế**: Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội đang thực hiện nhưng doanh số đã thực hiện là 0 đồng, cho thấy chưa có giao dịch nào được chốt thành công trong tháng này. Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh hiệu quả chuyển đổi từ cơ hội sang khá"
+    },
+    {
+      "id": "193713",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0/12,01 triệu đồng mục tiêu, cho thấy tiến độ chuyển đổi cơ hội thành đơn hàng chưa hiệu quả <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức trong việc chốt deal hoặc chất lượng cơ hội chưa đáp ứng kỳ vọn",
+      "gt_preview": "- **Tình hình hoạt động còn yếu:** Phòng KD sản phẩm CUKCUK 03 - HAN đang có 45 cơ hội đang thực hiện với doanh số kỳ vọng 12,01 triệu, tuy nhiên doanh số đã thực hiện là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- **Hi"
+    },
+    {
+      "id": "193401",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 30,47 triệu, chỉ bằng 2,44% so với mục tiêu kỳ vọng 1,25 tỷ, cho thấy tiến độ đạt mục tiêu còn chậm cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (470 cơ hội) nhưng tỷ lệ chiến thắng chỉ 0,31%, phản ánh hiệu quả chuyển đổi cơ hội thành",
+      "gt_preview": "- **Tiến độ doanh số còn rất thấp**: Phòng KD Bán mới KTDN 06 mới chỉ thực hiện được 30,47 triệu đồng so với kỳ vọng 1,25 tỷ đồng, đạt khoảng 2,4% mục tiêu tháng. Đây là mức chênh lệch nghiêm trọng cần có hành động khẩn cấp để đẩy nhanh tốc độ chốt đơn trong thời gian còn lại của tháng.<br>\n\n- **Tỷ "
+    },
+    {
+      "id": "193166",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 82,35 triệu VND, đang trên đà hoàn thành khoảng 82% mục tiêu kỳ vọng 99,96 triệu VND. <br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 19,09%, cho thấy hiệu quả chuyển đổi cơ hội thành công còn thấp, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất lượng cơ hội. <br>  \n",
+      "gt_preview": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice đang quản lý 167 cơ hội với doanh số thực hiện 82,35 triệu, chỉ đạt 82,4% so với doanh số kỳ vọng 99,96 triệu, cho thấy cần nỗ lực đẩy mạnh chốt đơn trong thời gian còn lại của tháng để bù đắp khoảng cách 17,61 triệu còn thiếu.<br>\n\n- *"
+    },
+    {
+      "id": "192916",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 72,26 triệu đồng bằng với mục tiêu kỳ vọng cho thấy đơn vị hoàn thành kế hoạch kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 8,55% cho thấy hiệu suất chuyển đổi cơ hội thành công còn thấp cần cải thiện quy trình chăm sóc khách hàng<br>  \n- Số lượng cơ ",
+      "gt_preview": "- **Tiến độ doanh số**: Phòng bán thêm GP KTDN 02 đã thực hiện được 72,26 triệu đồng, đúng bằng mục tiêu doanh số kỳ vọng trong tháng này, cho thấy đơn vị đã hoàn thành 100% chỉ tiêu được giao, thể hiện sự nỗ lực và hiệu quả trong công tác triển khai.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Với 105 cơ "
+    },
+    {
+      "id": "193283",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 72,26 triệu, bằng 100% so với mục tiêu kỳ vọng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 8,55% thấp, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa cao, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất l",
+      "gt_preview": "- **Tiến độ doanh số**: Phòng bán thêm GP KTDN 02 đã thực hiện được 72,26 triệu đồng, đúng bằng mục tiêu doanh số kỳ vọng trong tháng này, cho thấy đơn vị đã hoàn thành 100% chỉ tiêu được giao, thể hiện sự nỗ lực tích cực của đội ngũ trong việc chốt đơn hàng.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Tỷ "
+    },
+    {
+      "id": "193340",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 29,05 triệu đồng, chiếm 72% so với mục tiêu kỳ vọng 40,27 triệu đồng, cho thấy tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch.<br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (209) nhưng tỷ lệ chiến thắng chỉ 2,4%, phản ánh hiệu quả chuyển đổi cơ hội thành cô",
+      "gt_preview": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng bán thêm GP KTDN 01 hiện đạt 29,05 triệu đồng trên tổng doanh số kỳ vọng 40,27 triệu đồng, tương đương chỉ đạt 72% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 11,22 triệu đồng.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội thấ"
+    },
+    {
+      "id": "193171",
+      "has_gt": true,
+      "output_preview": "- Nhóm KD Giải pháp hóa đơn điện tử - Hồ Chí Minh đang triển khai 144 cơ hội kinh doanh, cho thấy hoạt động tìm kiếm và duy trì pipeline tích cực nhưng cần theo dõi sát sao để đảm bảo nguồn lực đủ đáp ứng<br>\n- Doanh số đạt 9,01 triệu đồng/tháng, chỉ bằng 21% mục tiêu kỳ vọng 42,83 triệu, cho thấy t",
+      "gt_preview": "- **Tiến độ doanh số còn thấp**: Đơn vị mới đạt 9,01 triệu trên tổng doanh số kỳ vọng 42,83 triệu (chỉ đạt 21%), cho thấy cần tăng tốc mạnh mẽ trong thời gian còn lại của tháng để hoàn thành mục tiêu đề ra.<br>\n\n- **Tỷ lệ chuyển đổi thấp đáng lo ngại**: Với 144 cơ hội đang thực hiện nhưng tỷ lệ chiế"
+    },
+    {
+      "id": "193039",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 114, cho thấy đơn vị đang tích cực triển khai nhiều cơ hội kinh doanh mới trong tháng<br>  \n- Doanh số đã thực hiện đạt 11,87 triệu (73% so với mục tiêu kỳ vọng 16,32 triệu), phản ánh tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch<br>  \n- Tỷ lệ chiến ",
+      "gt_preview": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng Bán thêm GP Ký điện tử 02 hiện đạt 11,87 triệu trong tổng doanh số kỳ vọng 16,32 triệu, chỉ hoàn thành khoảng 72,7% mục tiêu tháng này. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 4,45 triệu còn thiếu.<br>\n\n- **Tỷ lệ chuyển đổi c"
+    },
+    {
+      "id": "192818",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 308, tuy nhiên doanh số thực tế vẫn ở mức 0 triệu đồng, cho thấy khoảng cách lớn giữa nguồn lực đầu vào và kết quả đầu ra<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng, cần rà soát lại chất lượng c",
+      "gt_preview": "- **Tình trạng hoạt động chậm:** Phòng KD Bán mới KTDN 04 đang có 308 cơ hội đang thực hiện với doanh số kỳ vọng 577,51 triệu, nhưng doanh số thực hiện trong tháng này vẫn là 0 đồng, cho thấy chưa có giao dịch nào được chốt thành công, phản ánh tiến độ chuyển đổi đang bị trì hoãn nghiêm trọng.<br>\n\n"
+    },
+    {
+      "id": "192799",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 23,84 triệu, chiếm 63,8% so với mục tiêu kỳ vọng 37,35 triệu, cho thấy tiến độ còn chậm và cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện là 72, tuy nhiên tỷ lệ chiến thắng chỉ ở mức 13,45%, phản ánh hiệu suất chuyển đổi cơ hội thành công thấp <b",
+      "gt_preview": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng KD ESHOP 02 - HAN hiện chỉ thực hiện được 23,84 triệu đồng trên tổng doanh số kỳ vọng 37,35 triệu đồng, đạt khoảng 63,8% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 13,51 triệu đồng.<br>\n\n- **Tỷ lệ chuyển đổi thấp"
+    },
+    {
+      "id": "192462",
+      "has_gt": true,
+      "output_preview": "- Phòng KD sản phẩm ESHOP 02 - CTH hiện có 18 cơ hội kinh doanh đang triển khai nhưng doanh số thực tế đạt 0 đồng, cho thấy chưa có giao dịch thành công trong tháng <br>  \n- Mục tiêu doanh số kỳ vọng 2 triệu đồng chưa được đáp ứng, phản ánh rủi ro trong việc chuyển đổi cơ hội thành đơn hàng hoặc thi",
+      "gt_preview": "- Phòng KD sản phẩm ESHOP 02 - CTH đang có 18 cơ hội đang thực hiện với doanh số kỳ vọng 2 triệu, tuy nhiên doanh số đã thực hiện hiện tại vẫn đang ở mức 0, cho thấy tình trạng chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- Tỷ lệ chiến thắ"
+    },
+    {
+      "id": "192749",
+      "has_gt": true,
+      "output_preview": "- Dữ liệu dashboard thiếu thông tin cụ thể (ResultText, Title, Unit) nên chưa thể đánh giá chi tiết tiến độ đạt mục tiêu doanh số của Phòng bán thêm GP KTDN 02 trong tháng này <br>  \n- Không có số liệu về hiệu quả chuyển đổi cơ hội thành công (tỷ lệ chuyển đổi, số lượng cơ hội, kết quả so với kỳ trư",
+      "gt_preview": "Dựa trên dữ liệu dashboard được cung cấp, hiện tại hệ thống chưa có đủ thông tin để đánh giá tình hình hoạt động của Phòng bán thêm GP KTDN 02. Tuy nhiên, dưới đây là khung phân tích cần thiết:\n\n- Chưa có dữ liệu về doanh số thực tế và mục tiêu của tháng này, do đó không thể đánh giá tiến độ hoàn th"
+    },
+    {
+      "id": "192780",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 227, tuy nhiên tỷ lệ chiến thắng 0% cho thấy hiệu quả chuyển đổi chưa tương xứng với nguồn lực đầu tư.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, thấp hơn đáng kể so với mục tiêu kỳ vọng 875 nghìn, phản ánh tiến độ chậm trong việc chốt đơn hàng.<br>  \n- Cần điều",
+      "gt_preview": "- **Tiến độ doanh số đáng lo ngại**: Phòng bán thêm GP HDDT 01 hiện có 227 cơ hội đang thực hiện với doanh số kỳ vọng 875 triệu đồng, nhưng doanh số thực hiện trong tháng này vẫn đang ở mức 0 đồng, cho thấy chưa có giao dịch nào được chốt thành công, tiến độ đạt mục tiêu đang rất chậm so với kế hoạc"
+    },
+    {
+      "id": "192514",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 167 nhưng doanh số thực tế vẫn ở mức 0, cho thấy hiệu suất chuyển đổi cơ hội thành công còn yếu<br>  \n- Doanh số kỳ vọng ở mức 2,77 tỷ nhưng chưa có kết quả cụ thể, phản ánh khoảng cách lớn giữa kế hoạch và thực tế triển khai<br>  \n- Tỷ lệ chiến thắng cơ hội duy ",
+      "gt_preview": "- **Tình hình hoạt động:** Nhóm KD giải pháp DN Vừa đang có 167 cơ hội đang thực hiện với doanh số kỳ vọng 2,77 tỷ đồng, cho thấy nguồn cơ hội tiềm năng khá tích cực. Tuy nhiên, doanh số đã thực hiện trong tháng này vẫn đang ở mức 0 đồng, phản ánh chưa có đơn hàng nào được chốt thành công.<br>\n\n- **"
+    },
+    {
+      "id": "192671",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 13,13 triệu, chiếm khoảng 22,77% so với mục tiêu kỳ vọng 57,64 triệu trong tháng. <br>  \n- Số lượng cơ hội đang thực hiện là 9, cho thấy khối lượng công việc đang được triển khai nhưng cần theo dõi sát để đảm bảo tiến độ. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 4,67%, phả",
+      "gt_preview": "- **Tiến độ doanh số còn thấp:** Phòng KD Bán mới KTDN 02 hiện chỉ thực hiện được 13,13 triệu đồng trên tổng doanh số kỳ vọng 57,64 triệu đồng, đạt khoảng 22,8% mục tiêu tháng. Cần đẩy mạnh chốt đơn ngay trong những ngày còn lại để đảm bảo hoàn thành chỉ tiêu.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp:** V"
+    },
+    {
+      "id": "192835",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 5,1 triệu đồng, bằng 100% so với mục tiêu kỳ vọng trong tháng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh<br>  \n- Số lượng cơ hội đang thực hiện ở mức 159, tuy nhiên tỷ lệ chiến thắng cơ hội chỉ 1,12% cho thấy hiệu quả chuyển đổi còn thấp, cần tối ưu quy trình chốt đơ",
+      "gt_preview": "- **Tiến độ doanh số**: Phòng bán thêm GP HDDT 04 đã thực hiện được 5,1 triệu đồng doanh số trong tháng này, đúng bằng mức kỳ vọng đề ra, cho thấy đơn vị đang hoạt động ổn định và đạt đúng kế hoạch đã đề ra từ đầu kỳ.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Với 159 cơ hội đang thực hiện nhưng tỷ lệ chi"
+    },
+    {
+      "id": "192341",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 55, chưa có dữ liệu so sánh kỳ trước, cần theo dõi sát sao để đảm bảo tiến độ chuyển đổi<br>  \n- Doanh số đã thực hiện 1,98 triệu, chỉ đạt 0,2% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tốc độ đạt doanh số chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,12%, t",
+      "gt_preview": "- **Tiến độ doanh số còn rất thấp**: Nhóm KD giải pháp DN Vừa mới chỉ thực hiện được 1,98 triệu đồng so với kỳ vọng 914,85 triệu đồng, cho thấy tỷ lệ hoàn thành chưa đến 0,22%. Đây là mức độ chậm tiến độ nghiêm trọng cần có hành động khẩn cấp để đẩy nhanh chốt đơn trong thời gian còn lại của tháng.<"
+    },
+    {
+      "id": "192149",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 1,98 triệu, chỉ chiếm 0,22% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tiến độ đạt mục tiêu còn rất thấp<br>\n- Nhóm đang quản lý 55 cơ hội kinh doanh nhưng tỷ lệ chiến thắng chỉ 0,12%, phản ánh hiệu quả chuyển đổi cơ hội thành công kém<br>\n- Khoảng cách lớn giữa doanh",
+      "gt_preview": "- **Tiến độ doanh số còn rất thấp**: Nhóm KD giải pháp DN Vừa mới chỉ thực hiện được 1,98 triệu đồng so với kỳ vọng 914,85 triệu đồng, cho thấy tỷ lệ hoàn thành chưa đến 0,22%. Đây là mức độ chậm tiến độ nghiêm trọng cần có hành động khẩn cấp để đẩy nhanh chốt đơn trong thời gian còn lại của tháng.<"
+    },
+    {
+      "id": "192270",
+      "has_gt": true,
+      "output_preview": "- Đơn vị đang quản lý 15 cơ hội kinh doanh, cho thấy nguồn lực tập trung vào việc phát triển và theo dõi các cơ hội tiềm năng<br>  \n- Doanh số đạt 7,5 triệu đồng, tương ứng 84,7% so với mục tiêu kỳ vọng 8,85 triệu đồng, cần đẩy mạnh chuyển đổi cơ hội để hoàn thành chỉ tiêu<br>  \n- Tỷ lệ chiến thắng ",
+      "gt_preview": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng KD CUKCUK 05 - HAN hiện thực hiện được 7,5 triệu trong khi doanh số kỳ vọng là 8,85 triệu, chỉ đạt 84,7% mục tiêu tháng này, cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 1,35 triệu còn thiếu.<br>\n\n- **Tỷ lệ chuyển đổi ở mức trung "
+    },
+    {
+      "id": "192390",
+      "has_gt": true,
+      "output_preview": "- Dữ liệu dashboard hiện tại không hiển thị số liệu cụ thể (ResultText) hoặc tỷ lệ thay đổi (ChangedRatioText) để đánh giá tiến độ đạt mục tiêu doanh số của Phòng KD GPKT 02 trong tháng này.  \n- Không thể xác định hiệu quả chuyển đổi cơ hội thành công do thiếu thông tin về số lượng cơ hội, tỷ lệ chu",
+      "gt_preview": "Dựa trên dữ liệu dashboard hiện tại, tôi nhận thấy:\n\n- Hệ thống chưa có dữ liệu hoạt động của Phòng KD GPKT 02 trong tháng này, các chỉ số về doanh số, cơ hội và tỷ lệ chuyển đổi đều hiển thị giá trị null, cho thấy có thể chưa được cập nhật hoặc đơn vị chưa bắt đầu ghi nhận số liệu trong kỳ báo cáo."
+    },
+    {
+      "id": "192432",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 307, tuy nhiên doanh số thực hiện vẫn ở mức 0 triệu đồng, cho thấy hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc chưa có giao dịch hoàn tất trong tháng<br>\n",
+      "gt_preview": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n-"
+    },
+    {
+      "id": "192332",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 307, cho thấy khối lượng công việc đang triển khai khá lớn nhưng chưa có kết quả chuyển đổi thành doanh số cụ thể<br>  \n- Doanh số đã thực hiện vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu còn chậm hoặc gặp khó khăn trong việc chốt giao dịch từ các cơ hội<br>  \n- T",
+      "gt_preview": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n-"
+    },
+    {
+      "id": "191960",
+      "has_gt": true,
+      "output_preview": "- Phòng KD Bán mới KTDN 04 đang quản lý **307 cơ hội kinh doanh** trong tháng, cho thấy nguồn lực tập trung vào phát triển khách hàng mới khá dồi dào. <br>  \n- **Doanh số thực hiện** vẫn ở mức **0 triệu**, cho thấy hiệu quả chuyển đổi từ cơ hội sang giao dịch thành công chưa đạt được, cần cải thiện ",
+      "gt_preview": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n-"
+    },
+    {
+      "id": "192238",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0 đồng, cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc xử lý các cơ hội kinh doanh hiện tại<br>  \n- Doanh số",
+      "gt_preview": "- **Tình hình hoạt động còn yếu**: Phòng KD sản phẩm CUKCUK 02 - DNG đang có 45 cơ hội đang thực hiện với doanh số kỳ vọng 5,04 triệu, tuy nhiên doanh số đã thực hiện là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- **Hiệ"
+    },
+    {
+      "id": "192181",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 3 (tăng từ 0 kỳ trước), tuy nhiên mức này vẫn còn thấp, cần mở rộng thêm danh sách cơ hội tiềm năng.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, cho thấy hiệu quả chuyển đổi cơ hội thành công chưa cao, cần rà soát lại quy trình chốt deal.<br>  \n- Tỷ lệ chiến thắn",
+      "gt_preview": "- **Tình hình hoạt động còn hạn chế**: Phòng KD mạng lưới - DN nhỏ - Hồ Chí Minh hiện có 3 cơ hội đang thực hiện với doanh số kỳ vọng 1,23 triệu, tuy nhiên doanh số đã thực hiện vẫn đang ở mức 0, cho thấy các cơ hội chưa được chuyển đổi thành công trong tháng này.<br>\n\n- **Hiệu quả chuyển đổi chưa k"
+    },
+    {
+      "id": "191951",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 3,17 triệu, chỉ bằng 21,8% so với doanh số kỳ vọng 14,57 triệu, cho thấy tiến độ đạt mục tiêu còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,35% thấp hơn đáng kể so với kỳ vọng, phản ánh hiệu suất chuyển đổi cơ hội thành công kém<br>  \n- Số lượng cơ hội đang thực hiện ",
+      "gt_preview": "- **Tiến độ doanh số còn thấp**: Phòng bán thêm GP HDDT 04 hiện chỉ đạt 3,17 triệu trên tổng doanh số kỳ vọng 14,57 triệu (đạt ~21,8%), cho thấy cần tăng tốc mạnh mẽ trong thời gian còn lại của tháng để hoàn thành chỉ tiêu. Với 391 cơ hội đang thực hiện, tiềm năng chuyển đổi vẫn còn rất lớn nếu đẩy "
+    },
+    {
+      "id": "191947",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 20,53 triệu đồng, chỉ bằng khoảng 21% so với mục tiêu kỳ vọng 98,34 triệu đồng, cho thấy tiến độ đạt doanh số còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 3,12% phản ánh hiệu quả chuyển đổi cơ hội thành công rất thấp, cần cải thiện quy trình chốt deal hoặc đánh giá lại",
+      "gt_preview": "- **Tiến độ doanh số còn thấp:** Phòng KD Bán mới GPKT 01 hiện chỉ thực hiện được 20,53 triệu trên tổng doanh số kỳ vọng 98,34 triệu, đạt khoảng 20,9% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để đạt chỉ tiêu đề ra.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp:** Với 92 cơ hội đang thực hi"
+    },
+    {
+      "id": "191808",
+      "has_gt": true,
+      "output_preview": "- Phòng KD sản phẩm ESHOP 01 - BMT hiện có 25 cơ hội đang thực hiện nhưng doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa khả quan, cần điều chỉnh chiến lư",
+      "gt_preview": "- **Tiến độ doanh số đáng lo ngại**: Phòng KD ESHOP 01 - BMT hiện có 25 cơ hội đang thực hiện với kỳ vọng 9,2 triệu, nhưng doanh số thực hiện vẫn ở mức 0 đồng, cho thấy chưa có đơn hàng nào chốt thành công trong tháng này, tạo ra khoảng cách lớn giữa kỳ vọng và thực tế.<br>\n\n- **Hiệu quả chuyển đổi "
+    },
+    {
+      "id": "191546",
+      "has_gt": true,
+      "output_preview": "- Đã đạt 72.7% mục tiêu doanh số với 11,87 triệu đồng, cần tăng tốc để hoàn thành 16,32 triệu đồng đề ra <br>  \n- Quản lý 112 cơ hội đang thực hiện, cho thấy giai đoạn đầu triển khai chưa có sự thay đổi so với kỳ trước <br>  \n- Tỷ lệ chiến thắng 4,77% thấp, cần tối ưu quy trình chốt deal và hỗ trợ đ",
+      "gt_preview": "- Phòng Bán thêm GP Ký điện tử 02 đang có 112 cơ hội đang thực hiện với doanh số đã đạt 11,87 triệu so với kỳ vọng 16,32 triệu, cho thấy tiến độ hoàn thành mới đạt khoảng 72,7% - cần đẩy mạnh chốt đơn trong thời gian còn lại của tháng để đạt mục tiêu.<br>\n\n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 4,77% "
+    },
+    {
+      "id": "191762",
+      "has_gt": true,
+      "output_preview": "- Doanh số đã thực hiện đạt 11 triệu đồng, chỉ bằng 27,9% so với mục tiêu kỳ vọng 39,42 triệu đồng, cho thấy tiến độ chưa khả quan<br>  \n- Số lượng cơ hội đang thực hiện ở mức 448, phản ánh sự tập trung cao vào việc xử lý các cơ hội kinh doanh<br>  \n- Tỷ lệ chiến thắng cơ hội đạt 0,55%, thấp hơn đán",
+      "gt_preview": "- **Tiến độ doanh số còn thấp**: Phòng KD chuyển đổi GPKT hiện đạt 11 triệu doanh số thực tế so với kỳ vọng 39,42 triệu, chỉ hoàn thành 27,9% mục tiêu. Với 448 cơ hội đang thực hiện, cần đẩy nhanh tốc độ chốt đơn trong thời gian còn lại của tháng để đạt chỉ tiêu.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp**"
+    },
+    {
+      "id": "191325",
+      "has_gt": true,
+      "output_preview": "- Số lượng cơ hội đang thực hiện đạt 78, cho thấy đơn vị duy trì hoạt động tìm kiếm khách hàng tích cực, tuy nhiên chưa có dữ liệu so sánh tiến độ từ kỳ trước để đánh giá rõ hơn hiệu quả<br>\n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, chưa đạt mục tiêu kỳ vọng 154,36 triệu, phản ánh khó khăn tr",
+      "gt_preview": "- **Tiến độ doanh số đang ở mức báo động**: Phòng KD Bán mới KTDN 05 hiện có 78 cơ hội đang thực hiện với doanh số kỳ vọng 154,36 triệu, nhưng doanh số đã thực hiện vẫn đang ở mức 0 triệu, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, cần đẩy nhanh tốc độ chuyển đổi ngay lập tứ"
+    }
+  ]
+}

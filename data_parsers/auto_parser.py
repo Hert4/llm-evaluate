@@ -118,7 +118,7 @@ class AutoParser(DataParser):
         parser = self._get_parser(format_type)
         return parser.parse(data_source)
 
-    def parse_with_format(self, data_source: Any) -> tuple[List[EvalSample], str]:
+    def parse_with_format(self, data_source: Any) -> "Tuple[List[EvalSample], str]":
         """Parse and return detected format"""
         format_type = self._detect_format(data_source)
         parser = self._get_parser(format_type)

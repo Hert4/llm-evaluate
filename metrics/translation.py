@@ -32,7 +32,7 @@ class BLEUMetric(BaseMetric):
         candidate_tokens: List[str],
         reference_tokens: List[str],
         n: int
-    ) -> tuple[int, int]:
+    ) -> "Tuple[int, int]":
         """Compute modified precision for n-grams"""
         candidate_ngrams = self._get_ngrams(candidate_tokens, n)
         reference_ngrams = self._get_ngrams(reference_tokens, n)

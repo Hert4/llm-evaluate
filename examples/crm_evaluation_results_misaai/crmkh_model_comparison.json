@@ -1,0 +1,420 @@
+{
+  "project_name": "Dự án AMIS CRM KH",
+  "application_code": "crmkh",
+  "task": "Gợi ý sản phẩm (Product Recommendation)",
+  "num_samples": 50,
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "misa-ai-1.1"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "new_model_generation": {
+    "model": "misa-ai-1.1",
+    "success_count": 50,
+    "total": 50,
+    "time_seconds": 24.9
+  },
+  "gt_generation": {
+    "model": "claude-sonnet-4-5",
+    "success_count": 50,
+    "total": 50,
+    "time_seconds": 27.7
+  },
+  "product_metrics_misa-ai-1.0-plus": {
+    "num_samples": 50,
+    "has_output_rate": 1.0,
+    "json_valid_rate": 1.0,
+    "count_valid_rate": 1.0,
+    "avg_valid_ratio": 0.992,
+    "avg_recommendations": 4.92
+  },
+  "product_metrics_misa-ai-1.1": {
+    "num_samples": 50,
+    "has_output_rate": 1.0,
+    "json_valid_rate": 1.0,
+    "count_valid_rate": 1.0,
+    "avg_valid_ratio": 0.992,
+    "avg_recommendations": 5.0
+  },
+  "framework_metrics_misa-ai-1.0-plus": {
+    "rouge": {
+      "score": 0.4295,
+      "score_pct": "42.95%",
+      "num_samples": 50
+    },
+    "token_f1": {
+      "score": 0.8061,
+      "score_pct": "80.61%",
+      "num_samples": 50
+    }
+  },
+  "framework_metrics_misa-ai-1.1": {
+    "rouge": {
+      "score": 0.3586,
+      "score_pct": "35.86%",
+      "num_samples": 50
+    },
+    "token_f1": {
+      "score": 0.6481,
+      "score_pct": "64.81%",
+      "num_samples": 50
+    }
+  },
+  "performance": {
+    "misa-ai-1.0-plus_avg_ms": 2027.9526940000003,
+    "misa-ai-1.1_total_s": 24.9,
+    "misa-ai-1.1_avg_s": 0.498
+  },
+  "sample_details": [
+    {
+      "id": "194591",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"MVTP85WM1718\"\n  },\n  {\n    \"ProductCode\": \"MVMW400JM3538\"\n  },\n  {\n    \"ProductCode\": \"MVTP85JM1756\"\n  },\n  {\n    \"ProductCode\": \"MVTP85SW1817\"\n  },\n  {\n    \"ProductCode\": \"AMS105\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"MVTP85WM1718\"\n  },\n  {\n    \"ProductCode\": \"MVMW400JM3538\"\n  },\n  {\n    \"ProductCode\": \"MVTP85JM1756\"\n  },\n  {\n    \"ProductCode\": \"AMS105\"\n  },\n  {\n    \"ProductCode\": \"MVTP85SW1817\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"MVTP85WM1718\"\n  },\n  {\n    \"ProductCode\": \"MVMW400JM3538\"\n  },\n  {\n    \"ProductCode\": \"MVTP85JM1756\"\n  },\n  {\n    \"ProductCode\": \"MVTP85SW1817\"\n  },\n  {\n    \"ProductCode\": \"AMS105\"\n  }\n]\n```"
+    },
+    {
+      "id": "194599",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"CZ Dâu tết\"\n  },\n  {\n    \"ProductCode\": \"CZ đào tết\"\n  },\n  {\n    \"ProductCode\": \"Cozytan Ổi\"\n  },\n  {\n    \"ProductCode\": \"Cozy455 đào\"\n  },\n  {\n    \"ProductCode\": \"Cozytan vải\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và chu kỳ đặt hàng của khách hàng (thường mua các sản phẩm theo mùa, đặc biệt là các dòng trà đào, vải, tắc, và các sản phẩm trà túi lọc vào đầu năm), dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **Cozytan Đào 15**: Sản phẩm khách hàng đã mua đầu tiên (09/2023) và có xu hướng quay lại mua các dòng trà đào (Cozytan Đào lon tết, CZ đào tết) vào dịp Tết và đầu năm.\n2.  **Cozytan vải**: Khách hàng đã mua v",
+      "ground_truth": "Dựa trên phân tích lịch sử mua hàng của khách hàng đến ngày 02/03/2026, tôi nhận thấy:\n\n1. **Xu hướng gần đây (tháng 1/2026)**: Khách hàng đặt nhiều sản phẩm Icetea dạng túi (CZ Dâu tết, CZ đào tết, Cozytan Ổi) với số lượng lớn (20 hộp)\n\n2. **Chu kỳ mua hàng**: \n   - Sản phẩm dạng 225ml được mua vào 04/03/2024 (cách đúng 1 năm)\n   - Sản phẩm trà nhúng và Icetea được mua định kỳ hàng tháng\n   - Sản phẩm chai 455ml được mua rải rác\n\n3. **Sản phẩm thường xuyên**: Các dòng Cozytan (Icetea túi), trà "
+    },
+    {
+      "id": "194594",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"CZ Dâu tết\"\n  },\n  {\n    \"ProductCode\": \"CZ đào tết\"\n  },\n  {\n    \"ProductCode\": \"Cozytan Ổi\"\n  },\n  {\n    \"ProductCode\": \"Cozy455 đào\"\n  },\n  {\n    \"ProductCode\": \"Cozytan vải\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng theo mùa (tháng 3 thường là thời điểm tiêu thụ mạnh các loại trà giải nhiệt, trà đào, trà vải sau Tết), và tần suất mua hàng gần đây của khách hàng, dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng ngày 02/03/2026:\n\n1.  **Cozytan Đào 15**: Sản phẩm khách hàng đã mua đầu tiên (09/2023) và có xu hướng quay lại mua các dòng trà đào (Cozytan Đào lon tết, CZ đào tết) vào dịp cuối năm và đầu năm.\n2.  **Cozytan vải**: Khách hàng đã mua vào 01/12/2025,",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"Cozytan Ổi\"\n  },\n  {\n    \"ProductCode\": \"CZ đào tết\"\n  },\n  {\n    \"ProductCode\": \"CZ Dâu tết\"\n  },\n  {\n    \"ProductCode\": \"Cozy455 đào\"\n  },\n  {\n    \"ProductCode\": \"Cozytan vải\"\n  }\n]\n```"
+    },
+    {
+      "id": "194550",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"C170\"\n  },\n  {\n    \"ProductCode\": \"N972\"\n  },\n  {\n    \"ProductCode\": \"C421\"\n  },\n  {\n    \"ProductCode\": \"S520\"\n  },\n  {\n    \"ProductCode\": \"S663\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"C170\"\n  },\n  {\n    \"ProductCode\": \"N972\"\n  },\n  {\n    \"ProductCode\": \"CIDP\"\n  },\n  {\n    \"ProductCode\": \"F356\"\n  },\n  {\n    \"ProductCode\": \"S707\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"C170\"},\n  {\"ProductCode\": \"N972\"},\n  {\"ProductCode\": \"S707\"},\n  {\"ProductCode\": \"X729\"},\n  {\"ProductCode\": \"K023\"}\n]\n```"
+    },
+    {
+      "id": "194510",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"CZ Dâu tết\"\n  },\n  {\n    \"ProductCode\": \"CZ đào tết\"\n  },\n  {\n    \"ProductCode\": \"Cozytan Ổi\"\n  },\n  {\n    \"ProductCode\": \"Cozy455 đào\"\n  },\n  {\n    \"ProductCode\": \"Cozytan vải\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và chu kỳ đặt hàng của khách hàng (thường mua các sản phẩm theo mùa, đặc biệt là các dòng trà đào, vải, tắc, và các sản phẩm trà túi lọc vào đầu năm), dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **Cozytan Đào 15**: Sản phẩm khách hàng đã mua đầu tiên (09/2023) và có xu hướng quay lại mua các dòng trà đào (Cozytan Đào lon tết, CZ đào tết) vào dịp Tết và đầu năm.\n2.  **Cozytan vải**: Khách hàng đã mua v",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"Cozytan Ổi\"\n  },\n  {\n    \"ProductCode\": \"CZ đào tết\"\n  },\n  {\n    \"ProductCode\": \"CZ Dâu tết\"\n  },\n  {\n    \"ProductCode\": \"Cozy455 đào\"\n  },\n  {\n    \"ProductCode\": \"Cozytan vải\"\n  }\n]\n```"
+    },
+    {
+      "id": "194593",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  },\n  {\n    \"ProductCode\": \"SML.5008\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"SMLP.228\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"SML.5008\"},\n  {\"ProductCode\": \"SML.1041\"},\n  {\"ProductCode\": \"SMLP.208\"},\n  {\"ProductCode\": \"BOV.TORELLO.3647\"},\n  {\"ProductCode\": \"BOV.OMEGA.2032\"}\n]\n```"
+    },
+    {
+      "id": "194592",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  },\n  {\n    \"ProductCode\": \"SML.5008\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"SMLP.228\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"SML.5008\"},\n  {\"ProductCode\": \"SML.1041\"},\n  {\"ProductCode\": \"SMLP.208\"},\n  {\"ProductCode\": \"BOV.TORELLO.3647\"},\n  {\"ProductCode\": \"BOV.OMEGA.2032\"}\n]\n```"
+    },
+    {
+      "id": "194466",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"BENGAM4M3\"\n  },\n  {\n    \"ProductCode\": \"N1200F0980\"\n  },\n  {\n    \"ProductCode\": \"N2000F1380\"\n  },\n  {\n    \"ProductCode\": \"N1500F1140\"\n  },\n  {\n    \"ProductCode\": \"Đ1200F0980\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"STN1000\"\n  },\n  {\n    \"ProductCode\": \"Đ1200F0980\"\n  },\n  {\n    \"ProductCode\": \"N1500F1140\"\n  },\n  {\n    \"ProductCode\": \"N2000F1380\"\n  },\n  {\n    \"ProductCode\": \"N1200F0980\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"BENGAM4M3\"\n  },\n  {\n    \"ProductCode\": \"N1200F0980\"\n  },\n  {\n    \"ProductCode\": \"N2000F1380\"\n  },\n  {\n    \"ProductCode\": \"N1500F1140\"\n  },\n  {\n    \"ProductCode\": \"Đ1200F0980\"\n  }\n]\n```"
+    },
+    {
+      "id": "194598",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  },\n  {\n    \"ProductCode\": \"SML.5008\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"SMLP.228\"\n  },\n  {\n    \"ProductCode\": \"BOV.OMEGA.2032\"\n  },\n  {\n    \"ProductCode\": \"BOV.TORELLO.3647\"\n  },\n  {\n    \"ProductCode\": \"SML.1041\"\n  },\n  {\n    \"ProductCode\": \"SMLP.208\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"SML.5008\"},\n  {\"ProductCode\": \"SML.1041\"},\n  {\"ProductCode\": \"SMLP.208\"},\n  {\"ProductCode\": \"BOV.TORELLO.3647\"},\n  {\"ProductCode\": \"BOV.OMEGA.2032\"}\n]\n```"
+    },
+    {
+      "id": "194596",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"N25PBTMN\"\n  },\n  {\n    \"ProductCode\": \"N25HPMN\"\n  },\n  {\n    \"ProductCode\": \"N25CSVCMN\"\n  },\n  {\n    \"ProductCode\": \"Khautru03\"\n  },\n  {\n    \"ProductCode\": \"Sinhnhat\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"N25PBTMN\"\n  },\n  {\n    \"ProductCode\": \"Khautru03\"\n  },\n  {\n    \"ProductCode\": \"N25HPMN\"\n  },\n  {\n    \"ProductCode\": \"N25CSVCMN\"\n  },\n  {\n    \"ProductCode\": \"C01200001\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"N25PBTMN\"\n  },\n  {\n    \"ProductCode\": \"N25HPMN\"\n  },\n  {\n    \"ProductCode\": \"Khautru03\"\n  },\n  {\n    \"ProductCode\": \"N25CSVCMN\"\n  },\n  {\n    \"ProductCode\": \"Sinhnhat\"\n  }\n]\n```"
+    },
+    {
+      "id": "194526",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"NB5S01\"\n  },\n  {\n    \"ProductCode\": \"MSTL202\"\n  },\n  {\n    \"ProductCode\": \"SP000386\"\n  },\n  {\n    \"ProductCode\": \"SP416616\"\n  },\n  {\n    \"ProductCode\": \"NMU01\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"NB5S01\"\n  },\n  {\n    \"ProductCode\": \"NMU01\"\n  },\n  {\n    \"ProductCode\": \"00121\"\n  },\n  {\n    \"ProductCode\": \"MSTL202\"\n  },\n  {\n    \"ProductCode\": \"SP416616\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"NMU01\"\n  },\n  {\n    \"ProductCode\": \"00121\"\n  },\n  {\n    \"ProductCode\": \"NB5S01\"\n  },\n  {\n    \"ProductCode\": \"MSTL202\"\n  },\n  {\n    \"ProductCode\": \"SP000386\"\n  }\n]\n```"
+    },
+    {
+      "id": "194589",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"HH000001\"\n  },\n  {\n    \"ProductCode\": \"HH000004\"\n  },\n  {\n    \"ProductCode\": \"HH000007\"\n  },\n  {\n    \"ProductCode\": \"HH000022\"\n  },\n  {\n    \"ProductCode\": \"HH000028\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"HH000001\"\n  },\n  {\n    \"ProductCode\": \"HH000004\"\n  },\n  {\n    \"ProductCode\": \"HH000007\"\n  },\n  {\n    \"ProductCode\": \"HH000023\"\n  },\n  {\n    \"ProductCode\": \"HH000028\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"HH000001\"},\n  {\"ProductCode\": \"HH000004\"},\n  {\"ProductCode\": \"HH000007\"},\n  {\"ProductCode\": \"HH000022\"},\n  {\"ProductCode\": \"HH000028\"}\n]\n```"
+    },
+    {
+      "id": "194579",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.103T\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.SC011MW\"\n  },\n  {\n    \"ProductCode\": \"KEONHIET-T7681-CAO\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-9-ML2.SC011MW\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.48H\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.101T\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.103T\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.SC011MW\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.48H\"\n  },\n  {\n    \"ProductCode\": \"LMRDW-17-ML2.DENT\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"LMRDW-17-ML2.101M\"},\n  {\"ProductCode\": \"LMRDW-17-ML2.103T\"},\n  {\"ProductCode\": \"LMRDW-17-ML2.48H\"},\n  {\"ProductCode\": \"LMRDW-17-ML2.SC011MW\"},\n  {\"ProductCode\": \"LMRDW-17-ML2.101T\"}\n]\n```"
+    },
+    {
+      "id": "194301",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"JS2056\"\n  },\n  {\n    \"ProductCode\": \"BT.S6K-13mmm/6D14\"\n  },\n  {\n    \"ProductCode\": \"BNC.6D125/PC400-6\"\n  },\n  {\n    \"ProductCode\": \"JS2054\"\n  },\n  {\n    \"ProductCode\": \"MD.DH55/S55 - MDH512\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"JS2056\"\n  },\n  {\n    \"ProductCode\": \"JS2054\"\n  },\n  {\n    \"ProductCode\": \"JS1076C\"\n  },\n  {\n    \"ProductCode\": \"JS1009\"\n  },\n  {\n    \"ProductCode\": \"JS2038\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"JS2056\"\n  },\n  {\n    \"ProductCode\": \"BT.S6K-13mmm/6D14\"\n  },\n  {\n    \"ProductCode\": \"BNC.6D125/PC400-6\"\n  },\n  {\n    \"ProductCode\": \"JS2054\"\n  },\n  {\n    \"ProductCode\": \"CSCM.EX-43\"\n  }\n]\n```"
+    },
+    {
+      "id": "194469",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"ENEOS073\"\n  },\n  {\n    \"ProductCode\": \"VNS007\"\n  },\n  {\n    \"ProductCode\": \"VNS008\"\n  },\n  {\n    \"ProductCode\": \"VNS014\"\n  },\n  {\n    \"ProductCode\": \"VNS013\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"ENEOS073\"\n  },\n  {\n    \"ProductCode\": \"VNS007\"\n  },\n  {\n    \"ProductCode\": \"VNS008\"\n  },\n  {\n    \"ProductCode\": \"ENEOS003\"\n  },\n  {\n    \"ProductCode\": \"VNS012\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"ENEOS073\"},\n  {\"ProductCode\": \"VNS007\"},\n  {\"ProductCode\": \"VNS008\"},\n  {\"ProductCode\": \"ENEOS003\"},\n  {\"ProductCode\": \"VNS012\"}\n]\n```"
+    },
+    {
+      "id": "194344",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"OXZHD\"\n  },\n  {\n    \"ProductCode\": \"EGCX\"\n  },\n  {\n    \"ProductCode\": \"PMINVHT-PCM\"\n  },\n  {\n    \"ProductCode\": \"PVDHD\"\n  },\n  {\n    \"ProductCode\": \"SLPDAN24g\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và chu kỳ đặt hàng của khách hàng, dưới đây là 5 sản phẩm được ưu tiên gợi ý cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **Phân tích xu hướng:**\n    *   **Sản phẩm tiêu dùng nhanh (FMCG) & Kháng sinh:** Khách hàng có xu hướng đặt hàng các nhóm thuốc kháng sinh (như *PNCLTH*, *LCMC500-AGLC*) và dung dịch sát khuẩn (*C70NHOHD*, *C90TODP*) với số lượng lớn vào các tháng trước đó (tháng 8, tháng 11, tháng 1).\n    *   **Sản phẩm chăm sóc sức khỏe ",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"PMINVHT-PCM\"\n  },\n  {\n    \"ProductCode\": \"9%MUIBD\"\n  },\n  {\n    \"ProductCode\": \"EGCX\"\n  },\n  {\n    \"ProductCode\": \"PVDHD\"\n  },\n  {\n    \"ProductCode\": \"OXZHD\"\n  }\n]\n```"
+    },
+    {
+      "id": "194578",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"WKLEGENDVALLEY\"\n  },\n  {\n    \"ProductCode\": \"WDLEGENDVALLEY\"\n  },\n  {\n    \"ProductCode\": \"WKLAKESIDE\"\n  },\n  {\n    \"ProductCode\": \"WKKINGCOURSE\"\n  },\n  {\n    \"ProductCode\": \"WDMOUTAIN\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"WDMOUTAIN\"\n  },\n  {\n    \"ProductCode\": \"WDLEGENDVALLEY\"\n  },\n  {\n    \"ProductCode\": \"WKLAKESIDE\"\n  },\n  {\n    \"ProductCode\": \"WKLEGENDVALLEY\"\n  },\n  {\n    \"ProductCode\": \"WKKINGCOURSE\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"WDLEGENDVALLEY\"},\n  {\"ProductCode\": \"WDMOUTAIN\"},\n  {\"ProductCode\": \"WKLAKESIDE\"},\n  {\"ProductCode\": \"WKLEGENDVALLEY\"},\n  {\"ProductCode\": \"WKKINGCOURSE\"}\n]\n```"
+    },
+    {
+      "id": "194356",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"BCME50X180164\"\n  },\n  {\n    \"ProductCode\": \"BAME68B100930T\"\n  },\n  {\n    \"ProductCode\": \"BADTVIP800\"\n  },\n  {\n    \"ProductCode\": \"MBREXA032\"\n  },\n  {\n    \"ProductCode\": \"BARO2T2NDOB100930\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"BCME50X180164\"\n  },\n  {\n    \"ProductCode\": \"BCME50T180164_CRM1\"\n  },\n  {\n    \"ProductCode\": \"BAME68B100930T\"\n  },\n  {\n    \"ProductCode\": \"BAHI2T2NDOB100930\"\n  },\n  {\n    \"ProductCode\": \"CAVA14B800875\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"BARO2T2NDOB100930\"},\n  {\"ProductCode\": \"MBREXA032\"},\n  {\"ProductCode\": \"BADTVIP800\"},\n  {\"ProductCode\": \"BAME68B100930T\"},\n  {\"ProductCode\": \"BCME50X180164\"}\n]\n```"
+    },
+    {
+      "id": "194300",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"M123-HABIBI\"\n  },\n  {\n    \"ProductCode\": \"DESUONTRAU\"\n  },\n  {\n    \"ProductCode\": \"DOISUN\"\n  },\n  {\n    \"ProductCode\": \"XX GOOD 12 -\"\n  },\n  {\n    \"ProductCode\": \"CHACAVIEN\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"M123-HABIBI\"\n  },\n  {\n    \"ProductCode\": \"M123-ALHILAL\"\n  },\n  {\n    \"ProductCode\": \"M69-ALSAMI\"\n  },\n  {\n    \"ProductCode\": \"M58-ALLANA\"\n  },\n  {\n    \"ProductCode\": \"DESUONTRAU\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"M123-HABIBI\"},\n  {\"ProductCode\": \"DESUONTRAU\"},\n  {\"ProductCode\": \"M58-ALLANA\"},\n  {\"ProductCode\": \"M69-ALSAMI\"},\n  {\"ProductCode\": \"DOISUN\"}\n]\n```"
+    },
+    {
+      "id": "194571",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"D00024/911\"\n  },\n  {\n    \"ProductCode\": \"D00024/910\"\n  },\n  {\n    \"ProductCode\": \"D00023/903\"\n  },\n  {\n    \"ProductCode\": \"D00024/903\"\n  },\n  {\n    \"ProductCode\": \"D00024/915\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"D00024/911\"\n  },\n  {\n    \"ProductCode\": \"D00024/910\"\n  },\n  {\n    \"ProductCode\": \"D00023/903\"\n  },\n  {\n    \"ProductCode\": \"D00024/903\"\n  },\n  {\n    \"ProductCode\": \"T00061/100\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"D00024/911\"},\n  {\"ProductCode\": \"D00024/910\"},\n  {\"ProductCode\": \"D00023/903\"},\n  {\"ProductCode\": \"D00024/903\"},\n  {\"ProductCode\": \"T00061/901\"}\n]\n```"
+    },
+    {
+      "id": "194489",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"4571157256894\"\n  },\n  {\n    \"ProductCode\": \"4571157251707\"\n  },\n  {\n    \"ProductCode\": \"4571157256290\"\n  },\n  {\n    \"ProductCode\": \"4971493105779\"\n  },\n  {\n    \"ProductCode\": \"4971493803842\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"4571157256894\"\n  },\n  {\n    \"ProductCode\": \"4571157251707\"\n  },\n  {\n    \"ProductCode\": \"4571157256290\"\n  },\n  {\n    \"ProductCode\": \"4571157256283\"\n  },\n  {\n    \"ProductCode\": \"4971493804405\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"4571157256894\"},\n  {\"ProductCode\": \"4571157251707\"},\n  {\"ProductCode\": \"4571157256290\"},\n  {\"ProductCode\": \"4976652002784\"},\n  {\"ProductCode\": \"4971493804405\"}\n]\n```"
+    },
+    {
+      "id": "194331",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"NOWLAB 22\"\n  },\n  {\n    \"ProductCode\": \"SMS 36\"\n  },\n  {\n    \"ProductCode\": \"TET19\"\n  },\n  {\n    \"ProductCode\": \"HANMI101\"\n  },\n  {\n    \"ProductCode\": \"Bogo 19\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu dùng và đặc biệt là đơn hàng gần nhất (27/02/2026) cũng như các đơn hàng lặp lại theo chu kỳ (đặc biệt là các sản phẩm NOWLAB và SMS), đây là 5 gợi ý sản phẩm tối ưu cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **NOWLAB 22**: Sản phẩm được mua với số lượng lớn (6 thùng) trong đơn hàng gần nhất (27/02/2026), cho thấy đây là mặt hàng chủ lực và khách hàng có nhu cầu tái mua cao.\n2.  **SMS 36**: Sản phẩm mới được mua trong đơn hàng gần nhất (27/02/20",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"NOWLAB 22\"\n  },\n  {\n    \"ProductCode\": \"SMS 36\"\n  },\n  {\n    \"ProductCode\": \"HANMI101\"\n  },\n  {\n    \"ProductCode\": \"Bogo 19\"\n  },\n  {\n    \"ProductCode\": \"NOWLAB 19\"\n  }\n]\n```"
+    },
+    {
+      "id": "194422",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"BC05\"\n  },\n  {\n    \"ProductCode\": \"100181-GVCN2\"\n  },\n  {\n    \"ProductCode\": \"LT\"\n  },\n  {\n    \"ProductCode\": \"TS 2\"\n  },\n  {\n    \"ProductCode\": \"CTX\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"BC05\"\n  },\n  {\n    \"ProductCode\": \"100181-GVCN2\"\n  },\n  {\n    \"ProductCode\": \"LT\"\n  },\n  {\n    \"ProductCode\": \"GVM\"\n  },\n  {\n    \"ProductCode\": \"CTX\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"BC05\"\n  },\n  {\n    \"ProductCode\": \"100181-GVCN2\"\n  },\n  {\n    \"ProductCode\": \"100181-T\"\n  },\n  {\n    \"ProductCode\": \"CTX\"\n  },\n  {\n    \"ProductCode\": \"GVM\"\n  }\n]\n```"
+    },
+    {
+      "id": "194343",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"TĐCBT 19710 0007\"\n  },\n  {\n    \"ProductCode\": \"TAN28130Đ\"\n  },\n  {\n    \"ProductCode\": \"TAN-28*128Đ\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"TĐCBT 19710 0007\"\n  },\n  {\n    \"ProductCode\": \"TAN28130Đ\"\n  },\n  {\n    \"ProductCode\": \"TAN-28*128Đ\"\n  },\n  {\n    \"ProductCode\": \"TAN28135TKEC\"\n  },\n  {\n    \"ProductCode\": \"TAN28*125T\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"TAN28130Đ\"\n  },\n  {\n    \"ProductCode\": \"TAN-28*128Đ\"\n  },\n  {\n    \"ProductCode\": \"TAN28135\"\n  },\n  {\n    \"ProductCode\": \"TAN28*125T\"\n  },\n  {\n    \"ProductCode\": \"QCSGCMDEP\"\n  }\n]\n```"
+    },
+    {
+      "id": "194504",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"YEN021\"\n  },\n  {\n    \"ProductCode\": \"YEN008\"\n  },\n  {\n    \"ProductCode\": \"R27\"\n  },\n  {\n    \"ProductCode\": \"YEN006\"\n  },\n  {\n    \"ProductCode\": \"YEN007\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"YEN021\"\n  },\n  {\n    \"ProductCode\": \"YEN008\"\n  },\n  {\n    \"ProductCode\": \"YEN006\"\n  },\n  {\n    \"ProductCode\": \"R27\"\n  },\n  {\n    \"ProductCode\": \"R10\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"YEN021\"},\n  {\"ProductCode\": \"YEN008\"},\n  {\"ProductCode\": \"YEN006\"},\n  {\"ProductCode\": \"R27\"},\n  {\"ProductCode\": \"R22\"}\n]\n```"
+    },
+    {
+      "id": "194286",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"TP00066\"\n  },\n  {\n    \"ProductCode\": \"TP00133\"\n  },\n  {\n    \"ProductCode\": \"TP00067\"\n  },\n  {\n    \"ProductCode\": \"TP00172\"\n  },\n  {\n    \"ProductCode\": \"TP00070\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và khoảng thời gian gần nhất (đơn hàng ngày 01/03/2026), dưới đây là 5 sản phẩm được ưu tiên gợi ý cho đơn hàng ngày 02/03/2026.\n\nCác sản phẩm này được chọn dựa trên:\n1.  **Tính thời điểm:** Là các mặt hàng thiết yếu (hộp cơm, khay, ống hút) thường xuyên được mua theo chu kỳ ngắn (hàng tháng/hàng tuần).\n2.  **Tần suất:** Các mã hàng như `TP00067`, `TP00070`, `TP00125` xuất hiện với số lượng lớn trong đơn hàng gần nhất (01/03/2026), cho thấy ",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"TP00066\"\n  },\n  {\n    \"ProductCode\": \"TP00070\"\n  },\n  {\n    \"ProductCode\": \"TP00125\"\n  },\n  {\n    \"ProductCode\": \"TP00067\"\n  },\n  {\n    \"ProductCode\": \"OH12008\"\n  }\n]\n```"
+    },
+    {
+      "id": "194299",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"AS-10CR4RYDDJ02\"\n  },\n  {\n    \"ProductCode\": \"AS-10TR4RYDTU02\"\n  },\n  {\n    \"ProductCode\": \"AS-18TW4RGATU00\"\n  },\n  {\n    \"ProductCode\": \"WFQY8514EVJMT\"\n  },\n  {\n    \"ProductCode\": \"HR08DR\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"AS-10CR4RYDDJ02\"\n  },\n  {\n    \"ProductCode\": \"AS-18CR4RXADBI00\"\n  },\n  {\n    \"ProductCode\": \"AUC-48CR6REKA\"\n  },\n  {\n    \"ProductCode\": \"AS-12CR4RVEDJ01\"\n  },\n  {\n    \"ProductCode\": \"AS-12TR4RYDTU00B\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"AS-10CR4RYDDJ02\"\n  },\n  {\n    \"ProductCode\": \"AS-12CR4RVEDJ01\"\n  },\n  {\n    \"ProductCode\": \"AS-18CR4RXADBI00\"\n  },\n  {\n    \"ProductCode\": \"RT256N4EBN\"\n  },\n  {\n    \"ProductCode\": \"43A4N\"\n  }\n]\n```"
+    },
+    {
+      "id": "194453",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"IN8\"\n  },\n  {\n    \"ProductCode\": \"IN2\"\n  },\n  {\n    \"ProductCode\": \"PP16\"\n  },\n  {\n    \"ProductCode\": \"IN10\"\n  },\n  {\n    \"ProductCode\": \"IN9\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"IN1\"\n  },\n  {\n    \"ProductCode\": \"IN9\"\n  },\n  {\n    \"ProductCode\": \"IN10\"\n  },\n  {\n    \"ProductCode\": \"IN2\"\n  },\n  {\n    \"ProductCode\": \"IN8\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"IN8\"},\n  {\"ProductCode\": \"IN2\"},\n  {\"ProductCode\": \"IN10\"},\n  {\"ProductCode\": \"IN9\"},\n  {\"ProductCode\": \"IN1\"}\n]\n```"
+    },
+    {
+      "id": "194330",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"VN12N500ML\"\n  },\n  {\n    \"ProductCode\": \"VN45C500\"\n  },\n  {\n    \"ProductCode\": \"PAS-01\"\n  },\n  {\n    \"ProductCode\": \"VNHDSTK4.8L\"\n  },\n  {\n    \"ProductCode\": \"VN65C500\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và tần suất đặt hàng gần đây (đặc biệt là các đơn hàng trong tháng 02/2026 và các sản phẩm chủ lực của khách hàng), dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **VN12N500ML**: Sản phẩm chủ lực (Nước mắm cá cơm than 12N) được mua với số lượng lớn (72 đơn vị) trong đơn hàng gần nhất (03/02/2026), cho thấy nhu cầu ổn định và cao.\n2.  **VN45C500**: Sản phẩm cốt nhĩ 45% cũng được mua với số lượng lớn (36 đ",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"VN12N500ML\"},\n  {\"ProductCode\": \"VN45C500\"},\n  {\"ProductCode\": \"VNHDSTK4.8L\"},\n  {\"ProductCode\": \"PAS-01\"},\n  {\"ProductCode\": \"VN-NMCT500ML\"}\n]\n```"
+    },
+    {
+      "id": "194317",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"QUE_CN50V 171151-204\"\n  },\n  {\n    \"ProductCode\": \"QUE_CN50 L 289104\"\n  },\n  {\n    \"ProductCode\": \"QUE_CN25 L 136101-204\"\n  },\n  {\n    \"ProductCode\": \"BOM_0.3ML_U100, 30Gx5/16\"\n  },\n  {\n    \"ProductCode\": \"MDH_CN 171305-104, 171344\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"QUE_CN50 L 289104\"\n  },\n  {\n    \"ProductCode\": \"QUE_CN50V 171151-204\"\n  },\n  {\n    \"ProductCode\": \"BOM_0.3ML_U100, 30Gx5/16\"\n  },\n  {\n    \"ProductCode\": \"MDH_CN 171305-104, 171344\"\n  },\n  {\n    \"ProductCode\": \"BTC - Alcohol Pads\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"QUE_CN50 L 136104-204\"\n  },\n  {\n    \"ProductCode\": \"QUE_CN25 L 136101-204\"\n  },\n  {\n    \"ProductCode\": \"BOM_0.5ML_U100, 31Gx5/16\"\n  },\n  {\n    \"ProductCode\": \"QUE_CN50V 171151-204\"\n  },\n  {\n    \"ProductCode\": \"BOM_0.3ML_U100, 30Gx5/16\"\n  }\n]\n```"
+    },
+    {
+      "id": "194399",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  },\n  {\n    \"ProductCode\": \"8936213651055\"\n  },\n  {\n    \"ProductCode\": \"8936213651062\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  },\n  {\n    \"ProductCode\": \"8936213650171\"\n  },\n  {\n    \"ProductCode\": \"8936213650317\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"8936213651055\"},\n  {\"ProductCode\": \"8936213651062\"},\n  {\"ProductCode\": \"8936213650188\"},\n  {\"ProductCode\": \"8936213650300\"},\n  {\"ProductCode\": \"8936213650898\"}\n]\n```"
+    },
+    {
+      "id": "194355",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"8936213651055\"\n  },\n  {\n    \"ProductCode\": \"8936213651062\"\n  },\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  },\n  {\n    \"ProductCode\": \"8936213650171\"\n  },\n  {\n    \"ProductCode\": \"8936213650317\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"8936213651055\"},\n  {\"ProductCode\": \"8936213651062\"},\n  {\"ProductCode\": \"8936213650188\"},\n  {\"ProductCode\": \"8936213650300\"},\n  {\"ProductCode\": \"8936213650898\"}\n]\n```"
+    },
+    {
+      "id": "194559",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"8936213651055\"\n  },\n  {\n    \"ProductCode\": \"8936213651062\"\n  },\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"8936213650188\"\n  },\n  {\n    \"ProductCode\": \"8936213650300\"\n  },\n  {\n    \"ProductCode\": \"8936213650898\"\n  },\n  {\n    \"ProductCode\": \"8936213650171\"\n  },\n  {\n    \"ProductCode\": \"8936213650317\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"8936213651055\"},\n  {\"ProductCode\": \"8936213651062\"},\n  {\"ProductCode\": \"8936213650188\"},\n  {\"ProductCode\": \"8936213650300\"},\n  {\"ProductCode\": \"8936213650898\"}\n]\n```"
+    },
+    {
+      "id": "194329",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"TUYP_G01_20W_T8\"\n  },\n  {\n    \"ProductCode\": \"G8_XX_620XX\"\n  },\n  {\n    \"ProductCode\": \"TRU_G01_30W_AT\"\n  },\n  {\n    \"ProductCode\": \"TRU_G01_60W_AT\"\n  },\n  {\n    \"ProductCode\": \"AT02_G01_12W_VV_DM\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và tần suất đặt hàng của khách hàng, dưới đây là 5 sản phẩm được ưu tiên gợi ý cho đơn hàng ngày 02/03/2026.\n\n**Phân tích ngắn gọn:**\n1.  **TUYP_G01_20W_T8**: Đây là mặt hàng được đặt hàng ngay trong đơn ngày 02/03/2026 với số lượng lớn (60), cho thấy đây là nhu cầu cốt lõi và cấp thiết của khách hàng vào thời điểm này.\n2.  **TRU_G01_30W_AT**: Khách hàng có xu hướng mua các loại bóng trụ (TRU) với số lượng lớn (48) vào đầu tháng 02/2026. Đây",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"TUYP_G01_20W_T8\"\n  },\n  {\n    \"ProductCode\": \"TRU_G01_30W_AT\"\n  },\n  {\n    \"ProductCode\": \"TRU_G01_60W_AT\"\n  },\n  {\n    \"ProductCode\": \"AT02_G01_09W_VV_AT_NEW\"\n  },\n  {\n    \"ProductCode\": \"CP01_G01_30W_AV\"\n  }\n]\n```"
+    },
+    {
+      "id": "194354",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"3102\"\n  },\n  {\n    \"ProductCode\": \"56937\"\n  },\n  {\n    \"ProductCode\": \"000905\"\n  },\n  {\n    \"ProductCode\": \"609\"\n  },\n  {\n    \"ProductCode\": \"1741\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"3102\"\n  },\n  {\n    \"ProductCode\": \"56937\"\n  },\n  {\n    \"ProductCode\": \"000905\"\n  },\n  {\n    \"ProductCode\": \"609\"\n  },\n  {\n    \"ProductCode\": \"156\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"3102\"},\n  {\"ProductCode\": \"1741\"},\n  {\"ProductCode\": \"56937\"},\n  {\"ProductCode\": \"000905\"},\n  {\"ProductCode\": \"3211\"}\n]\n```"
+    },
+    {
+      "id": "194524",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"FSD-MLC.01IP\"\n  },\n  {\n    \"ProductCode\": \"FSB-ML202U.PD\"\n  },\n  {\n    \"ProductCode\": \"FSD-XD5C\"\n  },\n  {\n    \"ProductCode\": \"FSB-ML18U.M\"\n  },\n  {\n    \"ProductCode\": \"FSB-ML20E.PD\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và tần suất đặt hàng gần nhất (tháng 02/2026), dưới đây là 5 sản phẩm được ưu tiên gợi ý cho đơn hàng ngày 02/03/2026.\n\n**Phân tích ngắn gọn:**\n1.  **Dây sạc MLC-01.C (FSD-MLC.01C):** Đây là mặt hàng \"best-seller\" với số lượng đặt rất lớn (50 đơn vị) trong đơn hàng gần nhất (18/12/2025). Nhu cầu tiêu thụ dây sạc loại này rất cao và liên tục.\n2.  **Bộ sạc ML20E.PD (FSB-ML20E.PD):** Được đặt trong đơn hàng gần nhất (13/01/2026) với số lượng 6,",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"FSD-MLC.01C\"\n  },\n  {\n    \"ProductCode\": \"FSC-ML202.E\"\n  },\n  {\n    \"ProductCode\": \"FSB-MO33.M\"\n  },\n  {\n    \"ProductCode\": \"FSB-ML20U.PD\"\n  },\n  {\n    \"ProductCode\": \"FSD-MLC.01CC\"\n  }\n]\n```"
+    },
+    {
+      "id": "194438",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"HH000004\"\n  },\n  {\n    \"ProductCode\": \"HH000027\"\n  },\n  {\n    \"ProductCode\": \"HH000001\"\n  },\n  {\n    \"ProductCode\": \"HH000003\"\n  },\n  {\n    \"ProductCode\": \"HH000020\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"HH000004\"\n  },\n  {\n    \"ProductCode\": \"HH000007\"\n  },\n  {\n    \"ProductCode\": \"HH000001\"\n  },\n  {\n    \"ProductCode\": \"HH000005\"\n  },\n  {\n    \"ProductCode\": \"HH000006\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"HH000004\"},\n  {\"ProductCode\": \"HH000007\"},\n  {\"ProductCode\": \"HH000001\"},\n  {\"ProductCode\": \"HH000027\"},\n  {\"ProductCode\": \"HH000009\"}\n]\n```"
+    },
+    {
+      "id": "194558",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"MV_GTBT\"\n  },\n  {\n    \"ProductCode\": \"MV_GHTCKXS\"\n  },\n  {\n    \"ProductCode\": \"MV_GHTCKS\"\n  },\n  {\n    \"ProductCode\": \"PAAS_211-0011\"\n  },\n  {\n    \"ProductCode\": \"PA_DM10HK\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng, xu hướng tiêu thụ và tần suất đặt hàng của khách hàng, dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng dự kiến ngày 02/03/2026.\n\n**Phân tích ngắn gọn:**\n1.  **Găng tay y tế (MV_GHTCKS, MV_GHTCKXS):** Đây là mặt hàng tiêu hao nhanh nhất, khách đã đặt số lượng lớn (100 hộp) vào cuối tháng 01/2026. Với chu kỳ 1 tháng, nhu cầu tái cấp vào đầu tháng 03 là rất cao.\n2.  **Gòn thấm (MV_GTBT):** Khách hàng đã đặt chính xác mã này vào ngày 02/03/2026 (trong dữ l",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"MV_GTBT\"},\n  {\"ProductCode\": \"MV_GHTCKXS\"},\n  {\"ProductCode\": \"MV_GHTCKS\"},\n  {\"ProductCode\": \"PAAB_1000010694\"},\n  {\"ProductCode\": \"MV_GKTBT\"}\n]\n```"
+    },
+    {
+      "id": "194389",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"AHOHWA84\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA42\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA78\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA47\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA29\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng của khách hàng, đặc biệt là xu hướng mua hàng gần đây (tháng 12/2025 đến tháng 2/2026) và các sản phẩm thuộc dòng \"Prestige Solution\" (kem dưỡng, serum) được khách hàng quan tâm liên tục, dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng ngày 02/03/2026.\n\nCác sản phẩm được chọn dựa trên:\n1.  **Tính liên tục:** Khách hàng thường xuyên mua các dòng serum (Ampoule) và kem dưỡng (Cream) của thương hiệu Ahohwa.\n2.  **Xu hướng gần đây:** Trong tháng 2/2026, khá",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"AHOHWA84\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA42\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA 3\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA47\"\n  },\n  {\n    \"ProductCode\": \"AHOHWA78\"\n  }\n]\n```"
+    },
+    {
+      "id": "194414",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"JS3020A\"\n  },\n  {\n    \"ProductCode\": \"JS3020B\"\n  },\n  {\n    \"ProductCode\": \"JS2246\"\n  },\n  {\n    \"ProductCode\": \"MP.MT306-3\"\n  },\n  {\n    \"ProductCode\": \"JS3009B\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng của khách hàng, đặc biệt là xu hướng mua hàng gần đây (tháng 12/2025 và tháng 01/2026) và tần suất các dòng sản phẩm lọc gió, lọc dầu, lọc nhiên liệu, dưới đây là 5 gợi ý sản phẩm phù hợp nhất cho đơn hàng dự kiến ngày 02/03/2026:\n\n1.  **JS3020A** & **JS3020B**: Đây là hai mã hàng được mua rất gần đây (10/01/2026) với số lượng lớn (4 cái mỗi loại). Dựa trên chu kỳ bảo dưỡng, đây là nhóm hàng cần được thay thế sớm nhất.\n2.  **JS2246**: Được mua cùng đợt với JS3",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"JS3029B\"},\n  {\"ProductCode\": \"JS3029A\"},\n  {\"ProductCode\": \"JS3020A\"},\n  {\"ProductCode\": \"JS3020B\"},\n  {\"ProductCode\": \"JS2246\"}\n]\n```"
+    },
+    {
+      "id": "194588",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"HH0262\"\n  },\n  {\n    \"ProductCode\": \"HH0263\"\n  },\n  {\n    \"ProductCode\": \"HH0034\"\n  },\n  {\n    \"ProductCode\": \"HH0035\"\n  },\n  {\n    \"ProductCode\": \"HH0233\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"HH0262\"\n  },\n  {\n    \"ProductCode\": \"HH0263\"\n  },\n  {\n    \"ProductCode\": \"HH0035\"\n  },\n  {\n    \"ProductCode\": \"HH0034\"\n  },\n  {\n    \"ProductCode\": \"HH0233\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"HH0262\"},\n  {\"ProductCode\": \"HH0263\"},\n  {\"ProductCode\": \"HH0035\"},\n  {\"ProductCode\": \"HH0233\"},\n  {\"ProductCode\": \"HH0383\"}\n]\n```"
+    },
+    {
+      "id": "194565",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"A001013\"\n  },\n  {\n    \"ProductCode\": \"A001012\"\n  },\n  {\n    \"ProductCode\": \"A016002\"\n  },\n  {\n    \"ProductCode\": \"A016003\"\n  },\n  {\n    \"ProductCode\": \"A003008\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"A001013\"\n  },\n  {\n    \"ProductCode\": \"A001012\"\n  },\n  {\n    \"ProductCode\": \"A001017\"\n  },\n  {\n    \"ProductCode\": \"A009001\"\n  },\n  {\n    \"ProductCode\": \"A001001\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"A016002\"\n  },\n  {\n    \"ProductCode\": \"A001013\"\n  },\n  {\n    \"ProductCode\": \"A001012\"\n  },\n  {\n    \"ProductCode\": \"A003008\"\n  },\n  {\n    \"ProductCode\": \"A016003\"\n  }\n]\n```"
+    },
+    {
+      "id": "194388",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"33041\"\n  },\n  {\n    \"ProductCode\": \"33041-02\"\n  },\n  {\n    \"ProductCode\": \"742-02\"\n  },\n  {\n    \"ProductCode\": \"70170\"\n  },\n  {\n    \"ProductCode\": \"70171\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"33041\"\n  },\n  {\n    \"ProductCode\": \"742\"\n  },\n  {\n    \"ProductCode\": \"33041-02\"\n  },\n  {\n    \"ProductCode\": \"742-02\"\n  },\n  {\n    \"ProductCode\": \"59871\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"33041\"},\n  {\"ProductCode\": \"742\"},\n  {\"ProductCode\": \"33041-02\"},\n  {\"ProductCode\": \"742-02\"},\n  {\"ProductCode\": \"59871\"}\n]\n```"
+    },
+    {
+      "id": "194557",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"4971493201822\"\n  },\n  {\n    \"ProductCode\": \"4571157256597\"\n  },\n  {\n    \"ProductCode\": \"4971493105007\"\n  },\n  {\n    \"ProductCode\": \"4971493105779\"\n  },\n  {\n    \"ProductCode\": \"4971493105861\"\n  }\n]",
+      "output_misa-ai-1.1": "Dựa trên phân tích lịch sử mua hàng của khách hàng, đặc biệt là các đơn hàng gần nhất (tháng 2 và đầu tháng 3 năm 2026) và xu hướng tiêu dùng các sản phẩm chăm sóc sức khỏe tổng hợp, giảm cân, và bổ sung dinh dưỡng, dưới đây là 5 gợi ý sản phẩm phù hợp nhất để nhân viên kinh doanh lên đơn hàng cho ngày 02/03/2026:\n\n1.  **4971493105779** (Viên uống dầu cá omega-3): Khách hàng đã mua sản phẩm này với số lượng lớn (2 đơn vị) ngay trong đơn hàng ngày 02/03/2026, cho thấy nhu cầu duy trì hoặc bổ sung",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"4971493201822\"\n  },\n  {\n    \"ProductCode\": \"4571157256597\"\n  },\n  {\n    \"ProductCode\": \"4971493105007\"\n  },\n  {\n    \"ProductCode\": \"4971493105779\"\n  },\n  {\n    \"ProductCode\": \"4971493105861\"\n  }\n]\n```"
+    },
+    {
+      "id": "194576",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"AAKS1PLX38\"\n  },\n  {\n    \"ProductCode\": \"ORGANIC42\"\n  },\n  {\n    \"ProductCode\": \"YUKON41\"\n  },\n  {\n    \"ProductCode\": \"X60041\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"AAKS1PLX38\"\n  },\n  {\n    \"ProductCode\": \"ORGANIC42\"\n  },\n  {\n    \"ProductCode\": \"YUKON41\"\n  },\n  {\n    \"ProductCode\": \"X60041\"\n  },\n  {\n    \"ProductCode\": \"YUKON42X\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"AAKS1PLX41\"\n  },\n  {\n    \"ProductCode\": \"YUKON42\"\n  },\n  {\n    \"ProductCode\": \"CADORS3LOW42\"\n  },\n  {\n    \"ProductCode\": \"LIGERO2S1PL41D\"\n  },\n  {\n    \"ProductCode\": \"CADORX42\"\n  }\n]\n```"
+    },
+    {
+      "id": "194586",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"102040310501\"\n  },\n  {\n    \"ProductCode\": \"101010310501\"\n  },\n  {\n    \"ProductCode\": \"102051220207\"\n  },\n  {\n    \"ProductCode\": \"SP000194\"\n  },\n  {\n    \"ProductCode\": \"102100120102\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"103401430029\"\n  },\n  {\n    \"ProductCode\": \"104320310501\"\n  },\n  {\n    \"ProductCode\": \"103401460009\"\n  },\n  {\n    \"ProductCode\": \"102040540305\"\n  },\n  {\n    \"ProductCode\": \"102040220202\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"101010310501\"\n  },\n  {\n    \"ProductCode\": \"102040310501\"\n  },\n  {\n    \"ProductCode\": \"104320310501\"\n  },\n  {\n    \"ProductCode\": \"102051220207\"\n  },\n  {\n    \"ProductCode\": \"SP000194\"\n  }\n]\n```"
+    },
+    {
+      "id": "194502",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"270010\"\n  },\n  {\n    \"ProductCode\": \"340304\"\n  },\n  {\n    \"ProductCode\": \"010305\"\n  },\n  {\n    \"ProductCode\": \"010303\"\n  },\n  {\n    \"ProductCode\": \"265901\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"270010\"\n  },\n  {\n    \"ProductCode\": \"340304\"\n  },\n  {\n    \"ProductCode\": \"010305\"\n  },\n  {\n    \"ProductCode\": \"010303\"\n  },\n  {\n    \"ProductCode\": \"109802\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\"ProductCode\": \"270010\"},\n  {\"ProductCode\": \"340304\"},\n  {\"ProductCode\": \"010305\"},\n  {\"ProductCode\": \"010303\"},\n  {\"ProductCode\": \"840182\"}\n]\n```"
+    },
+    {
+      "id": "194285",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"AAKS1PLX38\"\n  },\n  {\n    \"ProductCode\": \"ORGANIC42\"\n  },\n  {\n    \"ProductCode\": \"YUKON41\"\n  },\n  {\n    \"ProductCode\": \"X60041\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"AAKS1PLX38\"\n  },\n  {\n    \"ProductCode\": \"ORGANIC42\"\n  },\n  {\n    \"ProductCode\": \"YUKON41\"\n  },\n  {\n    \"ProductCode\": \"X60041\"\n  },\n  {\n    \"ProductCode\": \"YUKON42X\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"AAKS1PLX41\"\n  },\n  {\n    \"ProductCode\": \"YUKON42\"\n  },\n  {\n    \"ProductCode\": \"CADORS3LOW42\"\n  },\n  {\n    \"ProductCode\": \"LIGERO2S1PL41D\"\n  },\n  {\n    \"ProductCode\": \"CADORX42\"\n  }\n]\n```"
+    },
+    {
+      "id": "194585",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"CAVcmd50\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd32\"\n  },\n  {\n    \"ProductCode\": \"RR1-175G\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd24\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"CAKVVcmd16\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd32\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd24\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmo1.5\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"CAVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd32\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd24\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd16\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd50\"\n  }\n]\n```"
+    },
+    {
+      "id": "194501",
+      "input_preview": "Gợi ý 5 hàng hóa khách hàng sẽ lấy vào ngày 02/03/2026 để gợi ý cho nhân viên kinh doanh lên đơn hàng nhanh chóng cho khách hàng dựa vào lịch sử đặt hàng của khách hàng.\n\nLưu ý:\n- Kết quả CHỈ trả ra d",
+      "output_misa-ai-1.0-plus": "[\n  {\n    \"ProductCode\": \"CAVcmd50\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd32\"\n  },\n  {\n    \"ProductCode\": \"RR1-175G\"\n  },\n  {\n    \"ProductCode\": \"TX300\"\n  }\n]",
+      "output_misa-ai-1.1": "```json\n[\n  {\n    \"ProductCode\": \"CAKVVcmd16\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd32\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmd24\"\n  },\n  {\n    \"ProductCode\": \"CAKVVcmo1.5\"\n  }\n]\n```",
+      "ground_truth": "```json\n[\n  {\n    \"ProductCode\": \"CAVcmd30\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd32\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd24\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd16\"\n  },\n  {\n    \"ProductCode\": \"CAVcmd50\"\n  }\n]\n```"
+    }
+  ]
+}

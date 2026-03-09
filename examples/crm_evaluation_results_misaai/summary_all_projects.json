@@ -1,0 +1,131 @@
+{
+  "data_source": "/home/misa/CUA/crm/raw_data/all_logs.json",
+  "gt_model": "claude-sonnet-4-5",
+  "api_base_url": "http://test-k8s.misa.local/llm-gateway/v1",
+  "max_samples_per_project": 50,
+  "total_time_seconds": 450.6115779876709,
+  "projects": {
+    "Dự án AMIS CRM KH": {
+      "project_name": "Dự án AMIS CRM KH",
+      "application_code": "crmkh",
+      "task": "Gợi ý sản phẩm (Product Recommendation)",
+      "num_samples": 50,
+      "gt_model": "claude-sonnet-4-5",
+      "crm_product_metrics": {
+        "num_samples": 50,
+        "has_output_rate": 1.0,
+        "json_valid_rate": 1.0,
+        "count_valid_rate": 1.0,
+        "avg_valid_ratio": 0.992,
+        "avg_recommendations": 4.92,
+        "num_with_invalid_products": 1,
+        "top_invalid_products": [
+          [
+            "BOM_0.3ML_U100, 30Gx5/16",
+            1
+          ],
+          [
+            "MDH_CN 171305-104, 171344",
+            1
+          ]
+        ]
+      },
+      "framework_metrics": {
+        "rouge": {
+          "score": 0.4471934625429294,
+          "score_pct": "44.72%",
+          "details": {
+            "rouge_scores": {
+              "rouge1": 0.49606791235917086,
+              "rouge2": 0.3955754364934618,
+              "rougeL": 0.4499370387761556
+            },
+            "rouge_types": [
+              "rouge1",
+              "rouge2",
+              "rougeL"
+            ],
+            "num_samples": 50
+          },
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.7843676016110321,
+          "score_pct": "78.44%",
+          "details": {
+            "f1": 0.7843676016110321,
+            "precision": 0.8517715846245254,
+            "recall": 0.7453654731612747,
+            "num_samples": 50
+          },
+          "num_samples": 50
+        }
+      },
+      "performance": {
+        "avg_response_time_ms": 2027.9526940000003,
+        "median_response_time_ms": 1936.4527,
+        "p95_response_time_ms": 3029.5457
+      }
+    },
+    "Dự án CRM MISA ": {
+      "project_name": "Dự án CRM MISA ",
+      "application_code": "crmmisa",
+      "task": "Phân tích kinh doanh (Business Analysis)",
+      "num_samples": 50,
+      "gt_model": "claude-sonnet-4-5",
+      "framework_metrics": {
+        "rouge": {
+          "score": 0.30365570990542357,
+          "score_pct": "30.37%",
+          "details": {
+            "rouge_scores": {
+              "rouge1": 0.4508665768607459,
+              "rouge2": 0.20908458747143407,
+              "rougeL": 0.2510159653840907
+            },
+            "rouge_types": [
+              "rouge1",
+              "rouge2",
+              "rougeL"
+            ],
+            "num_samples": 50
+          },
+          "num_samples": 50
+        },
+        "g_eval": {
+          "score": 0.5,
+          "score_pct": "50.00%",
+          "details": {
+            "criteria_scores": {
+              "coherence": 0.5,
+              "fluency": 0.5,
+              "relevance": 0.5,
+              "consistency": 0.5
+            },
+            "criteria": [
+              "coherence",
+              "fluency",
+              "relevance",
+              "consistency"
+            ],
+            "num_samples": 20
+          },
+          "num_samples": 20
+        },
+        "answer_relevancy": {
+          "score": 0.9439999999999997,
+          "score_pct": "94.40%",
+          "details": {
+            "num_samples": 20
+          },
+          "num_samples": 20
+        }
+      },
+      "performance": {
+        "avg_response_time_ms": 11922.477476000002,
+        "median_response_time_ms": 9306.4154,
+        "p95_response_time_ms": 29109.1091
+      }
+    }
+  }
+}
