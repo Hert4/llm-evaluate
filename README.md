@@ -227,55 +227,31 @@ Compatible providers:
 
 ## Benchmark Results
 
-Ground truth: `claude-sonnet-4-5` | Evaluated: `misa-ai-1.0-plus`, `mercury-2` | Date: 03/2026
+Ground truth: `claude-sonnet-4-5` | Evaluated: `misa-ai-1.0-plus`, `mercury-2`, `misa-ai-1.1` | Date: 03/2026
 
----
-
-### `crmkh` — AMIS CRM KH — Gợi ý sản phẩm (Product Recommendation)
-
-> 50 samples | GT: `claude-sonnet-4-5` | [chi tiết](examples/crm_evaluation_results/crmkh_mercury2_comparison.json)
-
-| Metric | misa-ai-1.0-plus | mercury-2 |
-|--------|:-----------------:|:---------:|
-| ROUGE | **49.22%** | 49.06% |
-| Token F1 | **81.96%** | 78.66% |
-| JSON Valid Rate | **100%** | 98% |
-| Avg Latency | ~2,028 ms | ~2,104 ms |
-
----
-
-### `crmmisa` — CRM MISA — Phân tích kinh doanh (Business Analysis)
-
-> 50 samples (ROUGE) / 20 samples (G-Eval, Answer Relevancy) | GT: `claude-sonnet-4-5` | [chi tiết](examples/crm_evaluation_results/crmmisa_mercury2_comparison.json)
-
-| Metric | misa-ai-1.0-plus | mercury-2 |
-|--------|:-----------------:|:---------:|
-| ROUGE | 30.65% | **31.72%** |
-| G-Eval | 50.00% | 50.00% |
-| Answer Relevancy | **94.55%** | 92.45% |
-| Avg Latency | ~11,922 ms | **~2,947 ms** |
-
----
+> **[Xem chi tiết đầy đủ tại leaderboard/](leaderboard/)**
 
 ### Leaderboard tổng hợp
 
-| App | Task | Metric | misa-ai-1.0-plus | mercury-2 |
-|-----|------|--------|:-----------------:|:---------:|
-| `crmkh` | Product Rec. | ROUGE | **49.22%** | 49.06% |
-| `crmkh` | Product Rec. | Token F1 | **81.96%** | 78.66% |
-| `crmkh` | Product Rec. | JSON Valid | **100%** | 98% |
-| `crmkh` | Product Rec. | Latency | ~2.0s | ~2.1s |
-| `crmmisa` | Business Analysis | ROUGE | 30.65% | **31.72%** |
-| `crmmisa` | Business Analysis | G-Eval | 50.00% | 50.00% |
-| `crmmisa` | Business Analysis | Relevancy | **94.55%** | 92.45% |
-| `crmmisa` | Business Analysis | Latency | ~11.9s | **~2.9s** |
+| App | Task | Metric | misa-ai-1.0-plus | mercury-2 | misa-ai-1.1 |
+|-----|------|--------|:-----------------:|:---------:|:-----------:|
+| `crmkh` | Product Rec. | ROUGE | **42.95%** | 49.06% ¹ | 35.86% |
+| `crmkh` | Product Rec. | Token F1 | **80.61%** | 78.66% ¹ | 64.81% |
+| `crmkh` | Product Rec. | JSON Valid | **100%** | 98% ¹ | **100%** |
+| `crmkh` | Product Rec. | Latency | ~2.0s | ~2.1s ¹ | **~0.5s** |
+| `crmmisa` | Biz Analysis | ROUGE | 30.70% | **31.72%** ¹ | **31.26%** |
+| `crmmisa` | Biz Analysis | G-Eval | 50.00% | 50.00% ¹ | 50.00% |
+| `crmmisa` | Biz Analysis | Relevancy | **94.40%** | 92.45% ¹ | **94.40%** |
+| `crmmisa` | Biz Analysis | Latency | ~11.9s | ~2.9s ¹ | **~0.3s** |
 
-> [Tổng hợp JSON](examples/crm_evaluation_results/mercury2_comparison_summary.json) | Tổng: 100 samples, 652.2s
+> ¹ mercury-2 đánh giá ở Eval Run 1 (GT khác). Chỉ nên so sánh cùng superscript.
+>
+> Chi tiết: [crmkh](leaderboard/crmkh.md) | [crmmisa](leaderboard/crmmisa.md) | [Leaderboard đầy đủ](leaderboard/)
 
-<!-- Thêm dự án mới theo format:
-### `app_code` — Tên dự án — Task
-> N samples | GT: `model` | [chi tiết](link)
-| Metric | model_a | model_b |
+<!-- Thêm dự án mới:
+1. Tạo file leaderboard/<app_code>.md theo template trong leaderboard/README.md
+2. Thêm hàng vào bảng tổng hợp ở đây
+3. Cập nhật leaderboard/README.md
 -->
 
 ---
