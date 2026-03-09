@@ -225,6 +225,61 @@ Compatible providers:
 - MISA AI API
 - And more...
 
+## Benchmark Results
+
+Ground truth: `claude-sonnet-4-5` | Evaluated: `misa-ai-1.0-plus`, `mercury-2` | Date: 03/2026
+
+---
+
+### `crmkh` — AMIS CRM KH — Gợi ý sản phẩm (Product Recommendation)
+
+> 50 samples | GT: `claude-sonnet-4-5` | [chi tiết](examples/crm_evaluation_results/crmkh_mercury2_comparison.json)
+
+| Metric | misa-ai-1.0-plus | mercury-2 |
+|--------|:-----------------:|:---------:|
+| ROUGE | **49.22%** | 49.06% |
+| Token F1 | **81.96%** | 78.66% |
+| JSON Valid Rate | **100%** | 98% |
+| Avg Latency | ~2,028 ms | ~2,104 ms |
+
+---
+
+### `crmmisa` — CRM MISA — Phân tích kinh doanh (Business Analysis)
+
+> 50 samples (ROUGE) / 20 samples (G-Eval, Answer Relevancy) | GT: `claude-sonnet-4-5` | [chi tiết](examples/crm_evaluation_results/crmmisa_mercury2_comparison.json)
+
+| Metric | misa-ai-1.0-plus | mercury-2 |
+|--------|:-----------------:|:---------:|
+| ROUGE | 30.65% | **31.72%** |
+| G-Eval | 50.00% | 50.00% |
+| Answer Relevancy | **94.55%** | 92.45% |
+| Avg Latency | ~11,922 ms | **~2,947 ms** |
+
+---
+
+### Leaderboard tổng hợp
+
+| App | Task | Metric | misa-ai-1.0-plus | mercury-2 |
+|-----|------|--------|:-----------------:|:---------:|
+| `crmkh` | Product Rec. | ROUGE | **49.22%** | 49.06% |
+| `crmkh` | Product Rec. | Token F1 | **81.96%** | 78.66% |
+| `crmkh` | Product Rec. | JSON Valid | **100%** | 98% |
+| `crmkh` | Product Rec. | Latency | ~2.0s | ~2.1s |
+| `crmmisa` | Business Analysis | ROUGE | 30.65% | **31.72%** |
+| `crmmisa` | Business Analysis | G-Eval | 50.00% | 50.00% |
+| `crmmisa` | Business Analysis | Relevancy | **94.55%** | 92.45% |
+| `crmmisa` | Business Analysis | Latency | ~11.9s | **~2.9s** |
+
+> [Tổng hợp JSON](examples/crm_evaluation_results/mercury2_comparison_summary.json) | Tổng: 100 samples, 652.2s
+
+<!-- Thêm dự án mới theo format:
+### `app_code` — Tên dự án — Task
+> N samples | GT: `model` | [chi tiết](link)
+| Metric | model_a | model_b |
+-->
+
+---
+
 ## License
 
 MIT License

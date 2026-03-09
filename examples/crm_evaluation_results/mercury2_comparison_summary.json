@@ -1,0 +1,141 @@
+{
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "mercury-2"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "data_source": "/home/misa/CUA/crm/raw_data/all_logs.json",
+  "max_samples_per_project": 50,
+  "mercury_outputs_dir": "llm-evaluate/examples/mercury_outputs",
+  "total_time_seconds": 652.2,
+  "projects": {
+    "Dự án AMIS CRM KH": {
+      "project_name": "Dự án AMIS CRM KH",
+      "application_code": "crmkh",
+      "task": "Gợi ý sản phẩm (Product Recommendation)",
+      "num_samples": 50,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "mercury-2"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "mercury-2",
+        "source": "llm-evaluate/examples/mercury_outputs/crmkh_outputs.json",
+        "success_count": 50,
+        "total": 50
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 50,
+        "total": 50,
+        "time_seconds": 35.5
+      },
+      "product_metrics_misa-ai-1.0-plus": {
+        "num_samples": 50,
+        "has_output_rate": 1.0,
+        "json_valid_rate": 1.0,
+        "count_valid_rate": 1.0,
+        "avg_valid_ratio": 0.992,
+        "avg_recommendations": 4.92
+      },
+      "product_metrics_mercury-2": {
+        "num_samples": 50,
+        "has_output_rate": 1.0,
+        "json_valid_rate": 0.98,
+        "count_valid_rate": 0.98,
+        "avg_valid_ratio": 0.9877551020408164,
+        "avg_recommendations": 4.9
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.4922,
+          "score_pct": "49.22%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.8196,
+          "score_pct": "81.96%",
+          "num_samples": 50
+        }
+      },
+      "framework_metrics_mercury-2": {
+        "rouge": {
+          "score": 0.4906,
+          "score_pct": "49.06%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.7866,
+          "score_pct": "78.66%",
+          "num_samples": 50
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 2027.9526940000003,
+        "mercury-2_avg_s": 2.1037999999999992
+      }
+    },
+    "Dự án CRM MISA ": {
+      "project_name": "Dự án CRM MISA ",
+      "application_code": "crmmisa",
+      "task": "Phân tích kinh doanh (Business Analysis)",
+      "num_samples": 50,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "mercury-2"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "mercury-2",
+        "source": "llm-evaluate/examples/mercury_outputs/crmmisa_outputs.json",
+        "success_count": 50,
+        "total": 50
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 50,
+        "total": 50,
+        "time_seconds": 113.4
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.3065,
+          "score_pct": "30.65%",
+          "num_samples": 50
+        },
+        "g_eval": {
+          "score": 0.5,
+          "score_pct": "50.00%",
+          "num_samples": 20
+        },
+        "answer_relevancy": {
+          "score": 0.9455,
+          "score_pct": "94.55%",
+          "num_samples": 20
+        }
+      },
+      "framework_metrics_mercury-2": {
+        "rouge": {
+          "score": 0.3172,
+          "score_pct": "31.72%",
+          "num_samples": 50
+        },
+        "g_eval": {
+          "score": 0.5,
+          "score_pct": "50.00%",
+          "num_samples": 20
+        },
+        "answer_relevancy": {
+          "score": 0.9245,
+          "score_pct": "92.45%",
+          "num_samples": 20
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 11922.477476000002,
+        "mercury-2_avg_s": 2.9468000000000005
+      }
+    }
+  }
+}

@@ -2,8 +2,8 @@
 So sánh misa-ai-1.0-plus vs mercury-2 (Inception Labs) trên CRM Dataset
 =========================================================================
 Flow:
-  1. Load logs -> lấy input gốc (system + user messages) + output misa-ai-1.0-plus (có sẵn)
-  2. Replay request gốc tới mercury-2 (Inception Labs API) -> lấy output mới
+  1. Load logs -> lấy input gốc + output misa-ai-1.0-plus (có sẵn)
+  2. Load mercury-2 outputs từ file (đã generate offline bằng mercury_generate.py)
   3. Generate ground truth bằng claude-sonnet-4-5
   4. Đánh giá CẢ 2 model so với GT, dùng metrics phù hợp từng task:
      - crmkh  (gợi ý SP):     Product metrics + ROUGE + Token F1
@@ -17,7 +17,6 @@ import json
 import re
 import time
 import copy
-import asyncio
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from collections import defaultdict
@@ -39,13 +38,16 @@ DATA_PATH = "/home/misa/CUA/crm/raw_data/all_logs.json"
 MAX_SAMPLES_PER_PROJECT = 50
 OUTPUT_DIR = Path(__file__).parent / "crm_evaluation_results"
 
+# Mercury-2 outputs (đã generate offline bằng mercury_generate.py)
+MERCURY_OUTPUTS_DIR = Path(__file__).parent / "mercury_outputs"
+MERCURY_OUTPUT_FILES = {
+    "crmkh": MERCURY_OUTPUTS_DIR / "crmkh_outputs.json",
+    "crmmisa": MERCURY_OUTPUTS_DIR / "crmmisa_outputs.json",
+}
+
 # MISA API Gateway (cho GT generation bằng claude-sonnet-4-5)
 MISA_API_BASE_URL = "http://test-k8s.misa.local/llm-gateway/v1"
 MISA_API_KEY = "misa_avaamis_00t3spja_10G8ejFtZGKz33l6K7zT9q2D_oBVENGtl"
-
-# Inception Labs API (cho mercury-2)
-INCEPTION_API_BASE_URL = "https://api.inceptionlabs.ai/v1"
-INCEPTION_API_KEY = "sk_d494791d6cdeccb8803b6addc0675c65"
 
 # Models
 MODEL_OLD = "misa-ai-1.0-plus"   # output đã có sẵn trong logs
@@ -175,81 +177,26 @@ class CRMLogParser(LogParser):
 
 
 # ============================================================================
-# GENERATE OUTPUT TỪ MODEL MỚI (mercury-2 via Inception Labs API)
+# LOAD MERCURY-2 OUTPUTS TỪ FILE (đã generate offline)
 # ============================================================================
 
-async def _call_model_async(client, model: str, messages: List[Dict], sample_id: str, semaphore) -> Dict[str, Any]:
-    """Gọi 1 request tới model mới"""
-    async with semaphore:
-        try:
-            response = await client.chat.completions.create(
-                model=model,
-                messages=messages,
-                temperature=0.0,
-                max_tokens=2048,
-            )
-            content = response.choices[0].message.content.strip() if response.choices else ""
-            usage = response.usage
-            return {
-                "sample_id": sample_id,
-                "output": content,
-                "success": True,
-                "prompt_tokens": usage.prompt_tokens if usage else 0,
-                "completion_tokens": usage.completion_tokens if usage else 0,
-            }
-        except Exception as e:
-            return {
-                "sample_id": sample_id,
-                "output": "",
-                "success": False,
-                "error": str(e),
-            }
+def load_mercury_outputs(app_code: str) -> Dict[str, str]:
+    """Load mercury-2 outputs từ file đã generate offline."""
+    output_file = MERCURY_OUTPUT_FILES.get(app_code)
+    if not output_file or not output_file.exists():
+        return {}
 
+    with open(output_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-async def generate_outputs_from_new_model_async(
-    samples: List[EvalSample],
-    model: str,
-    api_key: str,
-    base_url: str,
-    max_concurrent: int = 5,
-) -> List[Dict[str, Any]]:
-    """Replay tất cả requests gốc tới model mới (async)"""
-    import httpx
-    from openai import AsyncOpenAI
-    # Bypass SSL verification (Fortinet firewall intercepts HTTPS)
-    http_client = httpx.AsyncClient(verify=False, timeout=120)
-    client = AsyncOpenAI(api_key=api_key, base_url=base_url, timeout=120, max_retries=3, http_client=http_client)
-    semaphore = asyncio.Semaphore(max_concurrent)
-
-    tasks = []
-    for sample in samples:
-        messages = sample.metadata.get("original_messages", [])
-        if not messages:
-            # Fallback: tạo messages từ context + input
-            msgs = []
-            if sample.context:
-                msgs.append({"role": "system", "content": sample.context})
-            msgs.append({"role": "user", "content": sample.input})
-            messages = msgs
-
-        tasks.append(_call_model_async(client, model, messages, sample.id, semaphore))
-
-    results = await asyncio.gather(*tasks)
-    await client.close()
-    return list(results)
-
-
-def generate_outputs_from_new_model(
-    samples: List[EvalSample],
-    model: str,
-    api_key: str,
-    base_url: str,
-    max_concurrent: int = 5,
-) -> List[Dict[str, Any]]:
-    """Sync wrapper"""
-    return asyncio.run(generate_outputs_from_new_model_async(
-        samples, model, api_key, base_url, max_concurrent
-    ))
+    outputs = {}
+    for item in data:
+        sid = str(item["id"])
+        if item.get("new_output_success", False):
+            outputs[sid] = item.get("new_output", "")
+        else:
+            outputs[sid] = ""
+    return outputs
 
 
 # ============================================================================
@@ -445,44 +392,35 @@ def evaluate_project(
         print(f"   [{i+1}] ID {s.id}: {preview}...")
 
     # ================================================================
-    # STEP 2: Generate output mercury-2 (gọi Inception Labs API)
+    # STEP 2: Load output mercury-2 (từ file đã generate offline)
     # ================================================================
     print(f"\n{'─' * 60}")
-    print(f" STEP 2: Generate output {MODEL_NEW} (gọi Inception Labs API)")
+    print(f" STEP 2: Load output {MODEL_NEW} (từ file offline)")
     print(f"{'─' * 60}")
-    print(f"   🔄 Replay {len(samples)} requests gốc tới {MODEL_NEW}...")
-    print(f"   📡 API: {INCEPTION_API_BASE_URL}")
 
-    start_time = time.time()
-    new_model_results = generate_outputs_from_new_model(
-        samples, MODEL_NEW, INCEPTION_API_KEY, INCEPTION_API_BASE_URL, max_concurrent=5
-    )
-    elapsed = time.time() - start_time
+    mercury_file = MERCURY_OUTPUT_FILES.get(app_code)
+    print(f"   📂 File: {mercury_file}")
 
-    new_outputs = {}
-    success_count = 0
-    for r in new_model_results:
-        if r["success"]:
-            new_outputs[r["sample_id"]] = r["output"]
-            success_count += 1
-        else:
-            new_outputs[r["sample_id"]] = ""
-            print(f"   ❌ Sample {r['sample_id']}: {r.get('error', 'Unknown')}")
+    new_outputs = load_mercury_outputs(app_code)
+    # Chỉ giữ outputs cho samples hiện tại
+    success_count = sum(1 for s in samples if new_outputs.get(s.id, "").strip())
+    # Đảm bảo tất cả sample IDs có entry
+    for s in samples:
+        if s.id not in new_outputs:
+            new_outputs[s.id] = ""
 
-    print(f"   ✅ Thành công: {success_count}/{len(samples)}")
-    print(f"   ⏱️  Thời gian: {elapsed:.1f}s")
+    print(f"   ✅ Có output: {success_count}/{len(samples)}")
 
     # Preview
     for i, s in enumerate(samples[:2]):
         preview = (new_outputs.get(s.id, "") or "")[:120].replace('\n', ' ')
         print(f"   [{i+1}] ID {s.id}: {preview}...")
 
-    result_data["new_model_generation"] = {
+    result_data["new_model_source"] = {
         "model": MODEL_NEW,
-        "api_base_url": INCEPTION_API_BASE_URL,
+        "source": str(mercury_file),
         "success_count": success_count,
         "total": len(samples),
-        "time_seconds": round(elapsed, 1),
     }
 
     # ================================================================
@@ -612,23 +550,29 @@ def evaluate_project(
               f"Median: {old_times[len(old_times)//2]/1000:.2f}s | "
               f"P95: {old_times[min(int(len(old_times)*0.95), len(old_times)-1)]/1000:.2f}s")
 
-    # NEW model (từ generation)
-    new_times = [
-        r.get("completion_tokens", 0) for r in new_model_results if r["success"]
-    ]
-    # Estimate: chỉ có total time cho batch
-    if new_model_results:
-        total_new = result_data["new_model_generation"]["time_seconds"]
-        avg_new = total_new / max(success_count, 1)
-        print(f"\n   ⏱️  {MODEL_NEW} (from generation):")
-        print(f"      Total: {total_new:.1f}s | Avg per request: {avg_new:.2f}s")
+    # NEW model (từ mercury output file)
+    mercury_file = MERCURY_OUTPUT_FILES.get(app_code)
+    new_times = []
+    if mercury_file and mercury_file.exists():
+        with open(mercury_file, "r", encoding="utf-8") as f:
+            mercury_data = json.load(f)
+        new_times = [
+            item["new_output_time_seconds"]
+            for item in mercury_data
+            if item.get("new_output_success") and item.get("new_output_time_seconds")
+        ]
+
+    if new_times:
+        new_times.sort()
+        avg_new = sum(new_times) / len(new_times)
+        print(f"\n   ⏱️  {MODEL_NEW} (from offline generation):")
+        print(f"      Avg: {avg_new:.2f}s | "
+              f"Median: {new_times[len(new_times)//2]:.2f}s | "
+              f"P95: {new_times[min(int(len(new_times)*0.95), len(new_times)-1)]:.2f}s")
 
     result_data["performance"] = {
         f"{MODEL_OLD}_avg_ms": sum(old_times) / len(old_times) if old_times else None,
-        f"{MODEL_NEW}_total_s": result_data["new_model_generation"]["time_seconds"],
-        f"{MODEL_NEW}_avg_s": (
-            result_data["new_model_generation"]["time_seconds"] / max(success_count, 1)
-        ),
+        f"{MODEL_NEW}_avg_s": sum(new_times) / len(new_times) if new_times else None,
     }
 
     # Lưu chi tiết per-sample
@@ -658,10 +602,10 @@ def main():
     print(f" Data       : {DATA_PATH}")
     print(f" Limit      : {MAX_SAMPLES_PER_PROJECT} samples/dự án")
     print(f" Model cũ   : {MODEL_OLD} (output có sẵn trong logs)")
-    print(f" Model mới  : {MODEL_NEW} (sẽ gọi Inception Labs API)")
+    print(f" Model mới  : {MODEL_NEW} (output từ file offline)")
     print(f" Ground truth: {GT_MODEL}")
     print(f" MISA Gateway: {MISA_API_BASE_URL}")
-    print(f" Inception API: {INCEPTION_API_BASE_URL}")
+    print(f" Mercury dir : {MERCURY_OUTPUTS_DIR}")
     print("=" * 70)
 
     # 1. Load data
@@ -799,7 +743,7 @@ def main():
         "gt_model": GT_MODEL,
         "data_source": DATA_PATH,
         "max_samples_per_project": MAX_SAMPLES_PER_PROJECT,
-        "new_model_api": INCEPTION_API_BASE_URL,
+        "mercury_outputs_dir": str(MERCURY_OUTPUTS_DIR),
         "total_time_seconds": round(time.time() - total_start, 1),
         "projects": {
             name: {k: v for k, v in result.items() if k != "sample_details"}
