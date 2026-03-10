@@ -58,3 +58,6 @@ Thumbs.db
 # Large data files (keep examples small)
 data/examples/*.json
 !data/examples/sample_*.json
+
+# agent
+.claude

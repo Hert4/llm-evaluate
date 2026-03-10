@@ -1,15 +1,15 @@
 """
-So sánh misa-ai-1.0-plus vs mercury-2 (Inception Labs) trên CRM Dataset
+So sánh misa-ai-1.0-plus vs misa-ai-1.1 trên CRM Dataset
 =========================================================================
 Flow:
   1. Load logs -> lấy input gốc + output misa-ai-1.0-plus (có sẵn)
-  2. Load mercury-2 outputs từ file (đã generate offline bằng mercury_generate.py)
+  2. Load misa-ai-1.1 outputs từ file (đã generate offline bằng misaai11_generate.py)
   3. Generate ground truth bằng claude-sonnet-4-5
   4. Đánh giá CẢ 2 model so với GT, dùng metrics phù hợp từng task:
      - crmkh  (gợi ý SP):     Product metrics + ROUGE + Token F1
      - crmmisa (phân tích KD): ROUGE + G-Eval + Answer Relevancy
 
-Chạy: cd /home/misa/CUA && python3 llm-evaluate/examples/evaluate_crm_mercury.py
+Chạy: python3 evaluate_crm_misaai11.py
 """
 import os
 import sys
@@ -22,7 +22,18 @@ from typing import List, Dict, Any, Optional
 from collections import defaultdict
 
 # Add framework to path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+_framework_dir = Path(__file__).parent.parent.parent    # .../llm-evaluate/
+_parent_dir = _framework_dir.parent                    # .../Develop_2026/
+
+sys.path.insert(0, str(_parent_dir))
+
+# Nếu folder tên llm-evaluate (dash), tạo symlink llm_eval_framework để Python import được
+_expected_pkg = _parent_dir / "llm_eval_framework"
+if not _expected_pkg.exists() and _framework_dir.exists():
+    try:
+        _expected_pkg.symlink_to(_framework_dir)
+    except OSError:
+        pass
 
 from llm_eval_framework import LLMEvaluator, EvalConfig
 from llm_eval_framework.config import OpenAIConfig, MetricType, MetricConfig, TaskType
@@ -34,24 +45,24 @@ from llm_eval_framework.ground_truth import GroundTruthGenerator
 # CONSTANTS
 # ============================================================================
 
-DATA_PATH = "/home/misa/CUA/crm/raw_data/all_logs.json"
+DATA_PATH = "/home/dev/Develop_2026/reports/09032026/data/all_logs.json"
 MAX_SAMPLES_PER_PROJECT = 50
-OUTPUT_DIR = Path(__file__).parent / "crm_evaluation_results"
+OUTPUT_DIR = Path(__file__).parent / "crm_evaluation_results_misaai11"
 
-# Mercury-2 outputs (đã generate offline bằng mercury_generate.py)
-MERCURY_OUTPUTS_DIR = Path(__file__).parent / "mercury_outputs"
-MERCURY_OUTPUT_FILES = {
-    "crmkh": MERCURY_OUTPUTS_DIR / "crmkh_outputs.json",
-    "crmmisa": MERCURY_OUTPUTS_DIR / "crmmisa_outputs.json",
+# misa-ai-1.1 outputs (đã generate offline bằng misaai11_generate.py)
+MISAAI11_OUTPUTS_DIR = Path(__file__).parent / "misaai11_outputs"
+MISAAI11_OUTPUT_FILES = {
+    "crmkh": MISAAI11_OUTPUTS_DIR / "crmkh_outputs.json",
+    "crmmisa": MISAAI11_OUTPUTS_DIR / "crmmisa_outputs.json",
 }
 
 # MISA API Gateway (cho GT generation bằng claude-sonnet-4-5)
-MISA_API_BASE_URL = "http://test-k8s.misa.local/llm-gateway/v1"
+MISA_API_BASE_URL = "https://worldwide-per-residential-half.trycloudflare.com/v1"
 MISA_API_KEY = "misa_avaamis_00t3spja_10G8ejFtZGKz33l6K7zT9q2D_oBVENGtl"
 
 # Models
 MODEL_OLD = "misa-ai-1.0-plus"   # output đã có sẵn trong logs
-MODEL_NEW = "mercury-2"           # Inception Labs - cần gọi API để generate output mới
+MODEL_NEW = "misa-ai-1.1"        # output từ file offline (misaai11_generate.py)
 GT_MODEL  = "claude-sonnet-4-5"  # ground truth
 
 # Metrics configuration theo từng loại dự án
@@ -177,12 +188,12 @@ class CRMLogParser(LogParser):
 
 
 # ============================================================================
-# LOAD MERCURY-2 OUTPUTS TỪ FILE (đã generate offline)
+# LOAD MISA-AI-1.1 OUTPUTS TỪ FILE (đã generate offline)
 # ============================================================================
 
-def load_mercury_outputs(app_code: str) -> Dict[str, str]:
-    """Load mercury-2 outputs từ file đã generate offline."""
-    output_file = MERCURY_OUTPUT_FILES.get(app_code)
+def load_misaai11_outputs(app_code: str) -> Dict[str, str]:
+    """Load misa-ai-1.1 outputs từ file đã generate offline."""
+    output_file = MISAAI11_OUTPUT_FILES.get(app_code)
     if not output_file or not output_file.exists():
         return {}
 
@@ -197,6 +208,22 @@ def load_mercury_outputs(app_code: str) -> Dict[str, str]:
         else:
             outputs[sid] = ""
     return outputs
+
+
+def load_misaai11_times(app_code: str) -> List[float]:
+    """Load response times từ file misa-ai-1.1 outputs."""
+    output_file = MISAAI11_OUTPUT_FILES.get(app_code)
+    if not output_file or not output_file.exists():
+        return []
+
+    with open(output_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    return [
+        item["new_output_time_seconds"]
+        for item in data
+        if item.get("new_output_success") and item.get("new_output_time_seconds")
+    ]
 
 
 # ============================================================================
@@ -252,8 +279,7 @@ def aggregate_product_metrics(results: List[Dict[str, Any]]) -> Dict[str, Any]:
     if n == 0:
         return {"error": "No samples"}
 
-    has_avail = [r for r in results if True]  # all samples
-    valid_ratio_samples = [r for r in results if r.get("num_valid", 0) >= 0 and r.get("num_recommended", 0) > 0]
+    valid_ratio_samples = [r for r in results if r.get("num_recommended", 0) > 0]
 
     return {
         "num_samples": n,
@@ -276,18 +302,18 @@ def load_and_group_by_project(data_path: str, max_per_project: int) -> Dict[str,
     print(f"\n{'=' * 70}")
     print(f" LOADING DATA")
     print(f"{'=' * 70}")
-    print(f"\n📂 File: {data_path}")
+    print(f"\n   File: {data_path}")
 
     parser = CRMLogParser()
     all_samples = parser.parse(data_path)
-    print(f"   Tổng samples parsed: {len(all_samples)}")
+    print(f"   Tong samples parsed: {len(all_samples)}")
 
     projects = defaultdict(list)
     for sample in all_samples:
         project_name = sample.metadata.get("consumer_name", "Unknown")
         projects[project_name].append(sample)
 
-    print(f"\n📋 Dự án:")
+    print(f"\n   Du an:")
     for project, samples in projects.items():
         app_code = samples[0].metadata.get("application_code", "N/A") if samples else "N/A"
         print(f"   - {project} ({app_code}): {len(samples)} samples")
@@ -296,7 +322,7 @@ def load_and_group_by_project(data_path: str, max_per_project: int) -> Dict[str,
     for project, samples in projects.items():
         limited[project] = samples[:max_per_project]
         if len(samples) > max_per_project:
-            print(f"   -> Lấy {max_per_project}/{len(samples)}")
+            print(f"   -> Lay {max_per_project}/{len(samples)}")
 
     return limited
 
@@ -360,7 +386,7 @@ def evaluate_project(
     project_config = get_project_config(samples)
 
     print(f"\n\n{'=' * 70}")
-    print(f" DỰ ÁN: {project_name} ({app_code})")
+    print(f" DU AN: {project_name} ({app_code})")
     print(f" Task: {project_config['task_description']}")
     print(f" Samples: {len(samples)}")
     print(f"{'=' * 70}")
@@ -378,13 +404,13 @@ def evaluate_project(
     # STEP 1: Lấy output misa-ai-1.0-plus (đã có trong logs)
     # ================================================================
     print(f"\n{'─' * 60}")
-    print(f" STEP 1: Output {MODEL_OLD} (có sẵn trong logs)")
+    print(f" STEP 1: Output {MODEL_OLD} (co san trong logs)")
     print(f"{'─' * 60}")
 
     old_outputs = {}
     for s in samples:
         old_outputs[s.id] = s.output  # output từ logs
-    print(f"   ✅ {len(old_outputs)} outputs có sẵn")
+    print(f"   {len(old_outputs)} outputs co san")
 
     # Preview
     for i, s in enumerate(samples[:2]):
@@ -392,16 +418,16 @@ def evaluate_project(
         print(f"   [{i+1}] ID {s.id}: {preview}...")
 
     # ================================================================
-    # STEP 2: Load output mercury-2 (từ file đã generate offline)
+    # STEP 2: Load output misa-ai-1.1 (từ file đã generate offline)
     # ================================================================
     print(f"\n{'─' * 60}")
-    print(f" STEP 2: Load output {MODEL_NEW} (từ file offline)")
+    print(f" STEP 2: Load output {MODEL_NEW} (tu file offline)")
     print(f"{'─' * 60}")
 
-    mercury_file = MERCURY_OUTPUT_FILES.get(app_code)
-    print(f"   📂 File: {mercury_file}")
+    misaai11_file = MISAAI11_OUTPUT_FILES.get(app_code)
+    print(f"   File: {misaai11_file}")
 
-    new_outputs = load_mercury_outputs(app_code)
+    new_outputs = load_misaai11_outputs(app_code)
     # Chỉ giữ outputs cho samples hiện tại
     success_count = sum(1 for s in samples if new_outputs.get(s.id, "").strip())
     # Đảm bảo tất cả sample IDs có entry
@@ -409,7 +435,7 @@ def evaluate_project(
         if s.id not in new_outputs:
             new_outputs[s.id] = ""
 
-    print(f"   ✅ Có output: {success_count}/{len(samples)}")
+    print(f"   Co output: {success_count}/{len(samples)}")
 
     # Preview
     for i, s in enumerate(samples[:2]):
@@ -418,7 +444,7 @@ def evaluate_project(
 
     result_data["new_model_source"] = {
         "model": MODEL_NEW,
-        "source": str(mercury_file),
+        "source": str(misaai11_file),
         "success_count": success_count,
         "total": len(samples),
     }
@@ -429,7 +455,7 @@ def evaluate_project(
     print(f"\n{'─' * 60}")
     print(f" STEP 3: Generate Ground Truth ({GT_MODEL})")
     print(f"{'─' * 60}")
-    print(f"   🤖 Generating GT cho {len(samples)} samples...")
+    print(f"   Generating GT cho {len(samples)} samples...")
 
     generator = GroundTruthGenerator(gt_config)
     start_time = time.time()
@@ -448,20 +474,20 @@ def evaluate_project(
             gt_map[r.sample_id] = r.ground_truth
             gt_success += 1
         else:
-            print(f"   ❌ Sample {r.sample_id}: {r.error}")
+            print(f"   FAIL Sample {r.sample_id}: {r.error}")
 
-    print(f"   ✅ Thành công: {gt_success}/{len(samples)}")
-    print(f"   ⏱️  Thời gian: {elapsed:.1f}s")
+    print(f"   Thanh cong: {gt_success}/{len(samples)}")
+    print(f"   Thoi gian: {elapsed:.1f}s")
 
     # Preview so sánh 3 model outputs
-    print(f"\n   📝 Preview (2 samples):")
+    print(f"\n   Preview (2 samples):")
     for i, s in enumerate(samples[:2]):
         gt = (gt_map.get(s.id, "") or "")[:100].replace('\n', ' ')
         old = (old_outputs.get(s.id, "") or "")[:100].replace('\n', ' ')
         new = (new_outputs.get(s.id, "") or "")[:100].replace('\n', ' ')
         print(f"\n   [{i+1}] ID: {s.id}")
-        print(f"       GT  ({GT_MODEL}):  {gt}...")
-        print(f"       OLD ({MODEL_OLD}): {old}...")
+        print(f"       GT  ({GT_MODEL}):          {gt}...")
+        print(f"       OLD ({MODEL_OLD}):  {old}...")
         print(f"       NEW ({MODEL_NEW}):      {new}...")
 
     result_data["gt_generation"] = {
@@ -472,11 +498,11 @@ def evaluate_project(
     }
 
     if gt_success == 0:
-        print(f"\n   ❌ Không có GT nào -> bỏ qua evaluation")
+        print(f"\n   Khong co GT nao -> bo qua evaluation")
         return result_data
 
     # ================================================================
-    # STEP 4: Product Metrics (chỉ cho crmkh)
+    # STEP 4a: Product Metrics (chỉ cho crmkh)
     # ================================================================
     if app_code == "crmkh":
         print(f"\n{'─' * 60}")
@@ -494,11 +520,11 @@ def evaluate_project(
             agg = aggregate_product_metrics(product_results)
             result_data[f"product_metrics_{model_name}"] = agg
 
-            print(f"\n   📊 {model_name}:")
+            print(f"\n   {model_name}:")
             print(f"      JSON valid: {agg['json_valid_rate']:.2%} | "
                   f"Count valid: {agg['count_valid_rate']:.2%} | "
-                  f"SP hợp lệ: {agg['avg_valid_ratio']:.2%} | "
-                  f"Avg gợi ý: {agg['avg_recommendations']:.1f}")
+                  f"SP hop le: {agg['avg_valid_ratio']:.2%} | "
+                  f"Avg goi y: {agg['avg_recommendations']:.1f}")
 
     # ================================================================
     # STEP 4b: Framework Metrics (so sánh cả 2 model vs GT)
@@ -511,7 +537,7 @@ def evaluate_project(
     print(f"   Metrics: {[m.value for m in metrics_to_run]}")
 
     for model_name, outputs in [(MODEL_OLD, old_outputs), (MODEL_NEW, new_outputs)]:
-        print(f"\n   ── {model_name} ──")
+        print(f"\n   -- {model_name} --")
 
         # Tạo samples với output của model này + GT
         model_samples = []
@@ -523,7 +549,7 @@ def evaluate_project(
                 model_samples.append(ms)
 
         if not model_samples:
-            print(f"      Không có samples để đánh giá")
+            print(f"      Khong co samples de danh gia")
             result_data[f"framework_metrics_{model_name}"] = {"error": "No samples"}
             continue
 
@@ -545,27 +571,18 @@ def evaluate_project(
     ]
     if old_times:
         old_times.sort()
-        print(f"\n   ⏱️  {MODEL_OLD} (from logs):")
+        print(f"\n   {MODEL_OLD} (from logs):")
         print(f"      Avg: {sum(old_times)/len(old_times)/1000:.2f}s | "
               f"Median: {old_times[len(old_times)//2]/1000:.2f}s | "
               f"P95: {old_times[min(int(len(old_times)*0.95), len(old_times)-1)]/1000:.2f}s")
 
-    # NEW model (từ mercury output file)
-    mercury_file = MERCURY_OUTPUT_FILES.get(app_code)
-    new_times = []
-    if mercury_file and mercury_file.exists():
-        with open(mercury_file, "r", encoding="utf-8") as f:
-            mercury_data = json.load(f)
-        new_times = [
-            item["new_output_time_seconds"]
-            for item in mercury_data
-            if item.get("new_output_success") and item.get("new_output_time_seconds")
-        ]
+    # NEW model (từ misaai11 output file)
+    new_times = load_misaai11_times(app_code)
 
     if new_times:
         new_times.sort()
         avg_new = sum(new_times) / len(new_times)
-        print(f"\n   ⏱️  {MODEL_NEW} (from offline generation):")
+        print(f"\n   {MODEL_NEW} (from offline generation):")
         print(f"      Avg: {avg_new:.2f}s | "
               f"Median: {new_times[len(new_times)//2]:.2f}s | "
               f"P95: {new_times[min(int(len(new_times)*0.95), len(new_times)-1)]:.2f}s")
@@ -597,15 +614,15 @@ def main():
     total_start = time.time()
 
     print("=" * 70)
-    print(" SO SÁNH MODEL: misa-ai-1.0-plus vs mercury-2 (Inception Labs)")
+    print(" SO SANH MODEL: misa-ai-1.0-plus vs misa-ai-1.1")
     print("=" * 70)
-    print(f" Data       : {DATA_PATH}")
-    print(f" Limit      : {MAX_SAMPLES_PER_PROJECT} samples/dự án")
-    print(f" Model cũ   : {MODEL_OLD} (output có sẵn trong logs)")
-    print(f" Model mới  : {MODEL_NEW} (output từ file offline)")
+    print(f" Data        : {DATA_PATH}")
+    print(f" Limit       : {MAX_SAMPLES_PER_PROJECT} samples/du an")
+    print(f" Model cu    : {MODEL_OLD} (output co san trong logs)")
+    print(f" Model moi   : {MODEL_NEW} (output tu file offline)")
     print(f" Ground truth: {GT_MODEL}")
     print(f" MISA Gateway: {MISA_API_BASE_URL}")
-    print(f" Mercury dir : {MERCURY_OUTPUTS_DIR}")
+    print(f" MisaAI11 dir: {MISAAI11_OUTPUTS_DIR}")
     print("=" * 70)
 
     # 1. Load data
@@ -647,13 +664,13 @@ def main():
 
     # 4. BẢNG TỔNG HỢP SO SÁNH
     print(f"\n\n{'=' * 70}")
-    print(f" BẢNG TỔNG HỢP: {MODEL_OLD} vs {MODEL_NEW}")
+    print(f" BANG TONG HOP: {MODEL_OLD} vs {MODEL_NEW}")
     print(f" (Ground truth: {GT_MODEL})")
     print(f"{'=' * 70}")
 
     for project_name, result in all_results.items():
         print(f"\n{'─' * 60}")
-        print(f" 📌 {project_name} - {result.get('task', '')}")
+        print(f" {project_name} - {result.get('task', '')}")
         print(f"    Samples: {result['num_samples']}")
         print(f"{'─' * 60}")
 
@@ -668,8 +685,8 @@ def main():
             for metric_key, label in [
                 ("json_valid_rate", "JSON Valid"),
                 ("count_valid_rate", "Count Valid (1-5)"),
-                ("avg_valid_ratio", "SP Hợp Lệ"),
-                ("avg_recommendations", "Avg Gợi Ý"),
+                ("avg_valid_ratio", "SP Hop Le"),
+                ("avg_recommendations", "Avg Goi Y"),
             ]:
                 old_v = old_pm.get(metric_key, 0)
                 new_v = new_pm.get(metric_key, 0)
@@ -683,9 +700,9 @@ def main():
                 # Winner indicator
                 if isinstance(old_v, (int, float)) and isinstance(new_v, (int, float)):
                     if new_v > old_v:
-                        new_str += " ✅"
+                        new_str += " [WIN]"
                     elif old_v > new_v:
-                        old_str += " ✅"
+                        old_str += " [WIN]"
                 print(f"   {label:<30} | {old_str:>20} | {new_str:>20}")
 
         # Framework metrics
@@ -703,9 +720,9 @@ def main():
 
                 if old_score is not None and new_score is not None:
                     if new_score > old_score:
-                        new_str += " ✅"
+                        new_str += " [WIN]"
                     elif old_score > new_score:
-                        old_str += " ✅"
+                        old_str += " [WIN]"
 
                 print(f"   {metric_name:<30} | {old_str:>20} | {new_str:>20}")
 
@@ -717,33 +734,33 @@ def main():
             old_str = f"{old_avg/1000:.2f}s"
             new_str = f"{new_avg_s:.2f}s"
             if new_avg_s < old_avg / 1000:
-                new_str += " ✅"
+                new_str += " [WIN]"
             elif old_avg / 1000 < new_avg_s:
-                old_str += " ✅"
+                old_str += " [WIN]"
             print(f"   {'Avg Response Time':<30} | {old_str:>20} | {new_str:>20}")
 
     # 5. Lưu kết quả
     print(f"\n\n{'=' * 70}")
-    print(f" LƯU KẾT QUẢ")
+    print(f" LUU KET QUA")
     print(f"{'=' * 70}")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     for project_name, result in all_results.items():
         safe_name = result.get("application_code", project_name.replace(" ", "_"))
-        output_file = OUTPUT_DIR / f"{safe_name}_mercury2_comparison.json"
+        output_file = OUTPUT_DIR / f"{safe_name}_misaai11_comparison.json"
 
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=2, ensure_ascii=False, default=str)
-        print(f"   ✅ {project_name} → {output_file}")
+        print(f"   {project_name} -> {output_file}")
 
-    summary_file = OUTPUT_DIR / "mercury2_comparison_summary.json"
+    summary_file = OUTPUT_DIR / "misaai11_comparison_summary.json"
     summary = {
         "models_compared": [MODEL_OLD, MODEL_NEW],
         "gt_model": GT_MODEL,
         "data_source": DATA_PATH,
         "max_samples_per_project": MAX_SAMPLES_PER_PROJECT,
-        "mercury_outputs_dir": str(MERCURY_OUTPUTS_DIR),
+        "misaai11_outputs_dir": str(MISAAI11_OUTPUTS_DIR),
         "total_time_seconds": round(time.time() - total_start, 1),
         "projects": {
             name: {k: v for k, v in result.items() if k != "sample_details"}
@@ -752,11 +769,11 @@ def main():
     }
     with open(summary_file, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False, default=str)
-    print(f"   ✅ Summary → {summary_file}")
+    print(f"   Summary -> {summary_file}")
 
     total_elapsed = time.time() - total_start
     print(f"\n{'=' * 70}")
-    print(f" ✅ HOÀN THÀNH! Tổng thời gian: {total_elapsed:.1f}s")
+    print(f" HOAN THANH! Tong thoi gian: {total_elapsed:.1f}s")
     print(f"{'=' * 70}")
 
 

@@ -1,0 +1,413 @@
+{
+  "project_name": "Dự án CRM MISA ",
+  "application_code": "crmmisa",
+  "task": "Phân tích kinh doanh (Business Analysis)",
+  "num_samples": 50,
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "misa-text2sql"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "new_model_source": {
+    "model": "misa-text2sql",
+    "source": "/home/dev/Develop_2026/llm-evaluate/examples/text2sql_outputs/crmmisa_outputs.json",
+    "success_count": 50,
+    "total": 50
+  },
+  "gt_generation": {
+    "model": "claude-sonnet-4-5",
+    "success_count": 50,
+    "total": 50,
+    "time_seconds": 104.6
+  },
+  "framework_metrics_misa-ai-1.0-plus": {
+    "rouge": {
+      "score": 0.3079,
+      "score_pct": "30.79%",
+      "num_samples": 50
+    },
+    "g_eval": {
+      "score": 0.5,
+      "score_pct": "50.00%",
+      "num_samples": 20
+    },
+    "answer_relevancy": {
+      "score": 0.944,
+      "score_pct": "94.40%",
+      "num_samples": 20
+    }
+  },
+  "framework_metrics_misa-text2sql": {
+    "rouge": {
+      "score": 0.2478,
+      "score_pct": "24.78%",
+      "num_samples": 50
+    },
+    "g_eval": {
+      "score": 0.5,
+      "score_pct": "50.00%",
+      "num_samples": 20
+    },
+    "answer_relevancy": {
+      "score": 0.7925,
+      "score_pct": "79.25%",
+      "num_samples": 20
+    }
+  },
+  "performance": {
+    "misa-ai-1.0-plus_avg_ms": 11922.477476000002,
+    "misa-text2sql_avg_s": 0.6476000000000001
+  },
+  "sample_details": [
+    {
+      "id": "194342",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - CTH trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Phòng KD sản phẩm CUKCUK 02 - CTH hiện có 11 cơ hội đang thực hiện nhưng chưa ghi nhận doanh số nào trong tháng <br>  \n- Doanh số kỳ vọng đạt 7,04 triệu đồng, tuy nhiên kết quả thực tế vẫn ở mức 0, cho thấy khoảng cách lớn so với mục tiêu <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu suất chuyển đổi cơ hội thành công chưa đạt yêu cầu <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+      "ground_truth": "- **Tình hình hoạt động còn yếu:** Phòng KD sản phẩm CUKCUK 02 - CTH đang có 11 cơ hội đang thực hiện với doanh số kỳ vọng 7,04 triệu, tuy nhiên doanh số đã thực hiện trong tháng này vẫn đang ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công và tiến độ đạt mục tiêu đang bị chậm trễ nghiêm trọng.<br>\n\n- **Hiệu quả chuyển đổi thấp:** Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào trong 11 cơ hội đang theo đuổi được chuyển đổi thành hợp đồng thành công, điều"
+    },
+    {
+      "id": "194298",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - CTH trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 11 (tăng từ 0 tháng trước), cho thấy hoạt động tìm kiếm và tiếp cận khách hàng đang diễn ra tích cực nhưng chưa tạo ra kết quả cụ thể <br>  \n- Doanh số đã thực hiện vẫn ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả, cần điều chỉnh chiến lược chốt sales hoặc hỗ trợ từ bộ phận liên quan <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% (giống tháng trước) dù doanh số kỳ vọng ở mức 7,04 triệu, cho thấy khoảng cách lớn giữa kế hoạch và thự",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+      "ground_truth": "- **Tình hình hoạt động còn yếu:** Phòng KD sản phẩm CUKCUK 02 - CTH đang có 11 cơ hội đang thực hiện với doanh số kỳ vọng 7,04 triệu, tuy nhiên doanh số đã thực hiện trong tháng này vẫn đang ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công và tiến độ đạt mục tiêu đang bị chậm trễ nghiêm trọng.<br>\n\n- **Hiệu quả chuyển đổi thấp:** Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào trong 11 cơ hội đang theo đuổi được chuyển đổi thành hợp đồng thành công, cho "
+    },
+    {
+      "id": "194365",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm Quản lý 04 trong Tháng này. \r\n            ",
+      "output_misa-ai-1.0-plus": "- Nhóm Quản lý 04 đang triển khai 8 cơ hội kinh doanh mới trong tháng, cho thấy nỗ lực mở rộng hoạt động tuy nhiên chưa ghi nhận doanh số thực tế<br>\n- Doanh số đạt được hiện ở mức 0 triệu đồng, chưa đáp ứng kỳ vọng 133,35 triệu đồng, phản ánh khoảng cách lớn giữa mục tiêu và kết quả thực hiện<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chiến lược chuyển đổi cơ hội thành đơn hàng thành công để đạt mục tiêu doanh thu<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện là 8 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành doanh số thành công<br>",
+      "ground_truth": "- **Nhóm Quản lý 04 đang có 8 cơ hội đang thực hiện với tổng doanh số kỳ vọng 133,35 triệu đồng, tuy nhiên doanh số đã thực hiện trong tháng này vẫn còn ở mức 0 đồng, cho thấy các cơ hội chưa được chuyển đổi thành công và tiến độ đạt mục tiêu đang bị chậm so với kế hoạch.**<br>\n\n- **Tỷ lệ chiến thắng cơ hội đang ở mức 0% là tín hiệu cảnh báo nghiêm trọng về hiệu quả chuyển đổi, phản ánh việc các cơ hội kinh doanh chưa được chốt đơn thành công hoặc quy trình bán hàng đang gặp khó khăn trong việc "
+    },
+    {
+      "id": "194540",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 165, chưa có dữ liệu so sánh kỳ trước, cho thấy đơn vị đang duy trì hoạt động tiếp cận khách hàng.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, chiếm khoảng 82% so với mục tiêu kỳ vọng 99,96 triệu đồng, cần đẩy mạnh để hoàn thành chỉ tiêu.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, phản ánh hiệu quả chuyển đổi khách hàng tiềm năng thành công còn hạn chế, cần tối ưu quy trình chăm sóc.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 165 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+      "ground_truth": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice hiện có 165 cơ hội đang thực hiện với doanh số đã chốt đạt 82,35 triệu, trong khi doanh số kỳ vọng lên tới 99,96 triệu - cho thấy còn thiếu hụt 17,61 triệu (17,6%) so với tiềm năng thị trường đang nắm giữ.<br>\n\n- **Tỷ lệ chuyển đổi thấp đáng lo ngại**: Với tỷ lệ chiến thắng chỉ 19,09%, có nghĩa cứ 5 cơ hội thì chỉ chốt được gần 1 deal thành công - phản ánh hiệu quả chăm sóc và chốt sales còn yếu, cần cải thiện kỹ năng tư vấn và xử l"
+    },
+    {
+      "id": "194553",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD Bán thêm GP KTDN trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Nhóm KD Bán thêm GP KTDN đang triển khai 11 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực tế (0 triệu đồng), cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa đạt yêu cầu<br>\n- Doanh số kỳ vọng đạt 4,22 triệu đồng/tháng nhưng tỷ lệ hoàn thành mục tiêu hiện ở mức 0%, phản ánh khoảng cách lớn giữa kế hoạch và kết quả thực tế cần được điều chỉnh chiến lược<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0% tương tự tháng trước, cho thấy quy trình chốt deal hoặc năng lực bán hàng cần được rà s",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% chưa có thành công<br>",
+      "ground_truth": "- **Tiến độ doanh số đang ở mức báo động:** Nhóm KD Bán thêm GP KTDN hiện có 11 cơ hội đang thực hiện với doanh số kỳ vọng 4,22 triệu, nhưng doanh số đã thực hiện vẫn đang ở mức 0 triệu, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, cần đẩy nhanh tốc độ chuyển đổi ngay lập tức.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội thấp nghiêm trọng:** Với tỷ lệ chiến thắng cơ hội đang ở mức 0%, điều này phản ánh hiệu quả bán hàng chưa đạt yêu cầu, có thể do chất lượng cơ hội chưa tốt, kỹ năng c"
+    },
+    {
+      "id": "194520",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 05 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Đơn vị đã đạt 100% mục tiêu doanh số với 11,51 triệu đồng từ 61 cơ hội đang thực hiện.<br>  \n- Tỷ lệ chuyển đổi cơ hội thành công ở mức 4,2%, cho thấy hiệu quả còn hạn chế và cần tối ưu hóa.<br>  \n- Doanh số kỳ vọng và thực tế bằng nhau, phản ánh sự ổn định trong kế hoạch và triển khai.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 61 cơ hội<br>\r\n- Doanh số đã thực hiện là 11,51 triệu đồng, tương ứng với mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,2%, cho thấy hiệu quả chuyển đổi còn thấp<br>",
+      "ground_truth": "- Phòng KD Bán mới KTDN 05 đang quản lý 61 cơ hội kinh doanh trong tháng này, tuy nhiên tỷ lệ chiến thắng chỉ đạt 4,2% cho thấy hiệu quả chuyển đổi từ cơ hội thành hợp đồng còn rất thấp, cần cải thiện kỹ năng chốt sales và chất lượng đánh giá cơ hội đầu vào.<br>\n\n- Doanh số đã thực hiện đạt 11,51 triệu đồng tương đương với doanh số kỳ vọng, cho thấy đơn vị đang hoàn thành đúng kế hoạch đề ra nhưng chưa có sự vượt trội, cần nỗ lực thêm để tạo đột phá trong những ngày còn lại của tháng.<br>\n\n- Với"
+    },
+    {
+      "id": "194161",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD MISA AMIS Nhân sự 06 trong Tháng này. \r",
+      "output_misa-ai-1.0-plus": "- Nhóm KD MISA AMIS Nhân sự 06 hiện có 18 cơ hội đang thực hiện, cho thấy nguồn lực tiếp thị ổn định nhưng cần cải thiện hiệu quả chuyển đổi để đạt doanh số.<br>  \n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, cho thấy nhóm chưa chốt được đơn hàng nào, cần tập trung vào các chiến lược bán hàng để thu hẹp khoảng cách với mục tiêu kỳ vọng 117,99 triệu đồng.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì ở 0%, phản ánh thách thức trong việc chuyển đổi cơ hội thành công, đòi hỏi phân tích nguyên nhân v",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 18 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%<br>",
+      "ground_truth": "- **Tình hình hoạt động chưa khả quan**: Nhóm KD MISA AMIS Nhân sự 06 đang có 18 cơ hội đang thực hiện với doanh số kỳ vọng 117,99 triệu, tuy nhiên doanh số đã thực hiện trong tháng này vẫn đang ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công và tiến độ đạt mục tiêu đang bị chậm trễ nghiêm trọng.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chuyển đổi từ cơ hội thành hợp đồng hoàn toàn chưa hiệu quả, cần xem xét lại quy trình bán hàn"
+    },
+    {
+      "id": "194170",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - HCM trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 72, cho thấy khối lượng công việc đang triển khai khá lớn nhưng cần theo dõi sát sao để đảm bảo tiến độ<br>  \n- Doanh số đã thực hiện ở mức 0 triệu, chưa đạt tỷ lệ phần trăm nào so với mục tiêu kỳ vọng 25,56 triệu, phản ánh hiệu suất chuyển đổi cơ hội thành công yếu<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chiến lược chốt deal hoặc đánh giá lại chất lượng cơ hội đầu vào để nâng cao hiệu quả kinh doanh<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 72 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+      "ground_truth": "- **Tình hình hoạt động còn yếu:** Phòng KD sản phẩm CUKCUK 02 - HCM đang có 72 cơ hội đang thực hiện với doanh số kỳ vọng 25,56 triệu, tuy nhiên doanh số đã thực hiện là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- **Hiệu quả chuyển đổi rất thấp:** Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chuyển đổi từ cơ hội thành giao dịch thành công hoàn toàn chưa hiệu quả, cần xem xét lại quy trình bán hàng, kỹ năng"
+    },
+    {
+      "id": "194025",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện khá cao (115), nhưng tỷ lệ chuyển đổi thấp (4,67%) cho thấy hiệu suất xử lý chưa tối ưu.<br>  \n- Doanh số đạt được 11,87 triệu, chiếm 72,7% so với mục tiêu kỳ vọng 16,32 triệu, cần cải thiện để đạt mục tiêu.<br>  \n- Tỷ lệ chiến thắng cơ hội 4,67% thấp, cần phân tích nguyên nhân và điều chỉnh chiến lược chốt đơn.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 115 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,67%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng Bán thêm GP Ký điện tử 02 hiện đạt 11,87 triệu trong tổng doanh số kỳ vọng 16,32 triệu, cho thấy còn thiếu hụt khoảng 4,45 triệu để hoàn thành mục tiêu tháng. Cần đẩy nhanh tốc độ chốt đơn trong thời gian còn lại của tháng.<br>\n\n- **Tỷ lệ chuyển đổi thấp đáng lo ngại**: Với 115 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ đạt 4,67%, hiệu quả chuyển đổi từ cơ hội thành giao dịch thành công rất thấp. Điều này phản ánh chất lượng cơ hội hoặc kỹ nă"
+    },
+    {
+      "id": "193932",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới 04 trong Tháng này. \r\n        ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 67, cho thấy phòng kinh doanh đang triển khai nhiều hoạt động tiềm năng nhưng chưa có kết quả chuyển đổi cụ thể<br>  \n- Doanh số đã thực hiện ở mức 0 triệu đồng, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng còn yếu, cần cải thiện quy trình chốt sales hoặc đánh giá lại chất lượng cơ hội<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, đồng nghĩa với việc toàn bộ cơ hội chưa được chuyển hóa thành doanh thu, dù doanh số kỳ vọng đạt 523,31 triệu đồng từ các cơ",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 67 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có<br>",
+      "ground_truth": "- Phòng KD Bán mới 04 đang quản lý 67 cơ hội bán hàng với tổng doanh số kỳ vọng 523,31 triệu đồng, cho thấy nguồn cơ hội tiềm năng tương đối tốt. Tuy nhiên, doanh số thực hiện trong tháng này đang ở mức 0 đồng, phản ánh tình trạng chưa có giao dịch nào được chốt thành công.<br>\n\n- Tỷ lệ chiến thắng cơ hội đạt 0% là tín hiệu cảnh báo nghiêm trọng về hiệu quả chuyển đổi. Điều này cho thấy đội ngũ kinh doanh đang gặp khó khăn trong việc đóng deal hoặc các cơ hội chưa đủ chất lượng để chuyển đổi thà"
+    },
+    {
+      "id": "193725",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Phòng KD Bán mới KTDN 04 hiện đang triển khai 35 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực hiện trong tháng, cho thấy tiến độ chuyển đổi cơ hội thành công còn chậm <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì ở mức 0%, phản ánh thách thức trong việc chốt đơn hàng hoặc xác suất cơ hội chưa phù hợp với năng lực thực tế <br>  \n- Doanh số kỳ vọng đạt 1,23 triệu nhưng kết quả thực tế là 0, lộ rõ khoảng cách lớn giữa mục tiêu và hiệu suất, cần điều chỉnh chiến lược hoặc hỗ trợ kịp thời để cải",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 35 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội hiện tại là 0% chưa có thành công chuyển đổi<br>",
+      "ground_truth": "- **Tiến độ doanh số đang ở mức báo động:** Với 35 cơ hội đang thực hiện nhưng doanh số thực tế vẫn ở mức 0 đồng, trong khi doanh số kỳ vọng lên tới 1,23 triệu, cho thấy đơn vị chưa chốt được bất kỳ hợp đồng nào trong tháng này, tiến độ hoàn toàn chậm so với kế hoạch.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội cực kỳ thấp:** Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh hiệu quả chốt sales kém hoặc chất lượng cơ hội chưa đủ tốt, cần rà soát lại quy trình chăm sóc khách hàng và kỹ năng thuyết phục của đ"
+    },
+    {
+      "id": "193875",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 07 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 21, cho thấy đơn vị duy trì hoạt động kinh doanh tích cực nhưng chưa có kết quả cụ thể<br>\n- Doanh số đã thực hiện ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành công còn yếu, chưa đạt mục tiêu doanh thu<br>\n- Tỷ lệ chiến thắng cơ hội dừng ở 0%, đồng nghĩa toàn bộ 21 cơ hội hiện tại chưa mang lại doanh thu kỳ vọng 107,49 triệu<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 21 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+      "ground_truth": "- Phòng KD Bán mới KTDN 07 đang quản lý 21 cơ hội kinh doanh với doanh số kỳ vọng đạt 107,49 triệu, cho thấy tiềm năng thị trường tích cực. Tuy nhiên, doanh số thực hiện trong tháng này vẫn đang ở mức 0, phản ánh tình trạng chưa có giao dịch nào được chốt thành công.<br>\n\n- Tỷ lệ chiến thắng cơ hội đang ở mức 0% là tín hiệu cảnh báo nghiêm trọng về hiệu quả chuyển đổi. Mặc dù có nguồn cơ hội đầu vào nhưng đội ngũ kinh doanh chưa thể hoàn tất bất kỳ hợp đồng nào, cho thấy có thể tồn tại vấn đề tr"
+    },
+    {
+      "id": "193706",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới GPKT 03 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 177, cho thấy hoạt động tìm kiếm và duy trì cơ hội kinh doanh của phòng vẫn ở mức ổn định. <br>  \n- Doanh số đã thực hiện chỉ đạt 11,92 triệu trên tổng kỳ vọng 144,88 triệu, tiến độ chậm so với mục tiêu tháng. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,93%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn thấp, cần cải thiện quy trình chốt đơn. <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 177 cơ hội<br>\n- Doanh số đã thực hiện là 11,92 triệu, thấp hơn kỳ vọng 144,88 triệu<br>\n- Tỷ lệ chiến thắng cơ hội đạt 93%, cho thấy hiệu quả chuyển đổi cao<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp:** Phòng KD Bán mới GPKT 03 hiện chỉ thực hiện được 11,92 triệu trên tổng doanh số kỳ vọng 144,88 triệu, đạt khoảng 8,2% mục tiêu tháng. Với 177 cơ hội đang thực hiện, đơn vị cần đẩy nhanh tốc độ chốt đơn trong thời gian còn lại để đạt chỉ tiêu.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp:** Tỷ lệ chiến thắng cơ hội chỉ đạt 0,93%, cho thấy hiệu quả chăm sóc và chốt sale còn yếu. Cần rà soát lại chất lượng nguồn khách hàng, kỹ năng tư vấn của nhân viên và quy trình bán hàng đ"
+    },
+    {
+      "id": "193502",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 01 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện và doanh số kỳ vọng đều đạt 22,88 triệu, cho thấy phòng ban hoàn thành mục tiêu đề ra trong tháng này<br>  \n- Số lượng cơ hội đang thực hiện ở mức 134, phản ánh hoạt động kinh doanh có độ phủ rộng nhưng cần kiểm tra chất lượng cơ hội để tối ưu nguồn lực<br>  \n- Tỷ lệ chiến thắng cơ hội 10,34% cho thấy hiệu quả chuyển đổi chưa cao, cần phân tích nguyên nhân và cải thiện quy trình chốt deal<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 134 cơ hội<br>\n- Doanh số đã thực hiện là 22,88 triệu đồng, tương ứng với mục tiêu kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 10,34%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số**: Phòng bán thêm GP HDDT 01 đang quản lý 134 cơ hội với doanh số đã thực hiện đạt 22,88 triệu đồng, bằng đúng với doanh số kỳ vọng, cho thấy đơn vị đang hoạt động ổn định nhưng chưa có sự vượt trội trong tháng này.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Tỷ lệ chiến thắng cơ hội chỉ đạt 10,34%, tương đương cứ 10 cơ hội chỉ chốt được 1 deal thành công. Con số này phản ánh hiệu suất chuyển đổi còn hạn chế, cần cải thiện kỹ năng bán hàng và chất lượng cơ hội đầu vào.<br>\n\n- **Cản"
+    },
+    {
+      "id": "193722",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 06 - HCM trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Phòng KD CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang thực hiện (tăng từ 0 so với kỳ trước), tuy nhiên doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn và cần điều chỉnh kịp thời.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% bất chấp việc gia tăng số lượng cơ hội, cho thấy hiệu quả chuyển đổi khách hàng tiềm năng thành đơn hàng thành công còn nhiều bất cập, cần rà soát lại quy trình chăm sóc và tư vấn.<br>  \n- Doanh số kỳ vọng cũng ở mức 0, phản",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện là 8 cơ hội chưa chuyển đổi thành doanh số<br>\r\n- Doanh số đã thực hiện và kỳ vọng đều là 0 cho thấy chưa có giao dịch thành công trong tháng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy không có cơ hội nào được chuyển đổi thành đơn hàng<br>",
+      "ground_truth": "- **Tình hình hoạt động còn hạn chế**: Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội đang thực hiện nhưng doanh số đã thực hiện và doanh số kỳ vọng đều ở mức 0, cho thấy chưa có giao dịch nào được chốt thành công trong tháng này, phản ánh hiệu suất chuyển đổi đang gặp khó khăn.<br>\n\n- **Tỷ lệ chuyển đổi đáng lo ngại**: Tỷ lệ chiến thắng cơ hội đạt 0% là tín hiệu cảnh báo nghiêm trọng, cho thấy toàn bộ 8 cơ hội đang thực hiện chưa được chuyển đổi thành hợp đồng, cần rà soát lại quy trình bán"
+    },
+    {
+      "id": "193764",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 82,35 triệu, tương đương 82.38% so với mục tiêu kỳ vọng 99,96 triệu. Cần theo dõi sát để đảm bảo hoàn thành mục tiêu tháng.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, cho thấy hiệu quả trung bình trong việc chuyển đổi cơ hội thành đơn hàng. Có thể cần tối ưu quy trình chăm sóc khách hàng.<br>  \n- Với 166 cơ hội đang thực hiện, đơn vị có tiềm năng tăng trưởng đáng kể trong thời gian tới nếu đẩy mạnh chuyển đổi hiệu quả.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 166 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+      "ground_truth": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice đang quản lý 166 cơ hội với doanh số thực hiện 82,35 triệu, chỉ đạt 82,4% so với doanh số kỳ vọng 99,96 triệu, cho thấy cần đẩy mạnh chốt đơn trong thời gian còn lại của tháng để bù đắp khoảng cách 17,61 triệu.<br>\n\n- **Tỷ lệ chuyển đổi thấp cần cải thiện**: Tỷ lệ chiến thắng cơ hội chỉ đạt 19,09%, phản ánh hiệu quả chăm sóc và chốt sale còn hạn chế, cần rà soát lại quy trình bán hàng, chất lượng lead đầu vào và kỹ năng thuyết phục "
+    },
+    {
+      "id": "193396",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 166, cho thấy nguồn lực và hoạt động kinh doanh đang được triển khai tích cực, tuy nhiên cần theo dõi sát sao để đảm bảo chuyển đổi hiệu quả.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, tương ứng 82,4% so với doanh số kỳ vọng 99,96 triệu đồng, cho thấy tiến độ khả quan nhưng vẫn cần nỗ lực để hoàn thành mục tiêu tháng.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, phản ánh hiệu quả trung bình trong việc chuyển đổi cơ hội thành đơn hàng, cần phân tích",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 166 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+      "ground_truth": "- **Hiệu suất kinh doanh chưa đạt kỳ vọng**: Phòng KD meInvoice đang quản lý 166 cơ hội với doanh số thực hiện 82,35 triệu, chỉ đạt 82,4% so với doanh số kỳ vọng 99,96 triệu, cho thấy cần đẩy mạnh chốt đơn trong thời gian còn lại của tháng để bù đắp khoảng cách 17,61 triệu.<br>\n\n- **Tỷ lệ chuyển đổi thấp cần cải thiện**: Tỷ lệ chiến thắng cơ hội chỉ đạt 19,09%, phản ánh hiệu quả chăm sóc và thuyết phục khách hàng còn hạn chế, cần rà soát lại quy trình bán hàng và chất lượng cơ hội đầu vào để tối"
+    },
+    {
+      "id": "193651",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 01- DNG trong Tháng này",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 46, cho thấy đơn vị vẫn duy trì hoạt động tìm kiếm khách hàng tiềm năng nhưng chưa có dữ liệu so sánh với kỳ trước để đánh giá xu hướng.<br>  \n- Doanh số đã thực hiện ở mức 0/10 triệu, phản ánh tiến độ hoàn thành mục tiêu bằng 0%, cần điều tra nguyên nhân và cải thiện chiến lược chốt đơn.<br>  \n- Tỷ lệ chiến thắng cơ hội dừng ở 0%, cho thấy hiệu quả chuyển đổi cơ hội thành công rất thấp, cần tối ưu quy trình chăm sóc khách hàng và đào tạo kỹ năng bán hàng.<br",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 46 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+      "ground_truth": "- **Tiến độ doanh số đáng lo ngại**: Phòng KD sản phẩm ESHOP 01-DNG có mục tiêu doanh số kỳ vọng 10 triệu nhưng doanh số thực hiện hiện tại là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, cần có hành động khẩn cấp để đẩy nhanh tiến độ chuyển đổi từ cơ hội sang giao dịch thực tế.<br>\n\n- **Hiệu suất chuyển đổi kém**: Với 46 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng là 0%, điều này phản ánh quy trình chăm sóc và chốt sale chưa hiệu quả, cần rà soát lại chất lượng "
+    },
+    {
+      "id": "193702",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 06 - HCM trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang triển khai, cho thấy nguồn lực đang tập trung vào việc mở rộng cơ hội mới nhưng chưa có kết quả chuyển đổi cụ thể <br>  \n- Doanh số đạt được và doanh số kỳ vọng đều ở mức 0, phản ánh tiến độ không khả quan trong việc chốt đơn hàng hoặc chưa đạt mục tiêu đề ra <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy hiệu quả chuyển đổi cơ hội thành công rất thấp, cần đánh giá lại chiến lược tiếp cận khách hàng hoặc quy trình bán h",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện là 8 cơ hội chưa chuyển đổi thành doanh số<br>\r\n- Doanh số đã thực hiện và kỳ vọng đều là 0 cho thấy chưa có giao dịch thành công trong tháng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy không có cơ hội nào được chuyển đổi thành đơn hàng<br>",
+      "ground_truth": "- **Tình hình hoạt động còn hạn chế**: Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội đang thực hiện nhưng doanh số đã thực hiện và doanh số kỳ vọng đều ở mức 0, cho thấy các cơ hội chưa được chuyển đổi thành hợp đồng cụ thể trong tháng này.<br>\n\n- **Hiệu quả chuyển đổi chưa đạt yêu cầu**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có giao dịch nào được chốt thành công từ 8 cơ hội hiện tại, cần đánh giá lại chất lượng cơ hội và quy trình chăm sóc khách hàng.<br>\n\n- **Cần hành"
+    },
+    {
+      "id": "193713",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 03 - HAN trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0/12,01 triệu đồng mục tiêu, cho thấy tiến độ chuyển đổi cơ hội thành đơn hàng chưa hiệu quả <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức trong việc chốt deal hoặc chất lượng cơ hội chưa đáp ứng kỳ vọng <br>  \n- Cần tập trung tối ưu quy trình chăm sóc khách hàng và đánh giá lại chiến lược tiếp cận để cải thiện tỷ lệ chuyển đổi, đảm bảo đạt mục tiêu doanh số tháng <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 45 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+      "ground_truth": "- **Tình hình hoạt động còn yếu:** Phòng KD CUKCUK 03 - HAN đang quản lý 45 cơ hội nhưng doanh số thực hiện là 0 đồng, cho thấy chưa có giao dịch nào chốt thành công trong tháng này. Doanh số kỳ vọng 12,01 triệu từ các cơ hội hiện tại nhưng tỷ lệ chuyển đổi đang ở mức 0%, phản ánh hiệu quả bán hàng chưa đạt yêu cầu.<br>\n\n- **Tiến độ mục tiêu chậm trễ nghiêm trọng:** Với 0 doanh số trong khi đã có 45 cơ hội đang thực hiện, đơn vị đang tụt hậu hoàn toàn so với kế hoạch tháng. Tỷ lệ chiến thắng 0% "
+    },
+    {
+      "id": "193401",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 06 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 30,47 triệu, chỉ bằng 2,44% so với mục tiêu kỳ vọng 1,25 tỷ, cho thấy tiến độ đạt mục tiêu còn chậm cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (470 cơ hội) nhưng tỷ lệ chiến thắng chỉ 0,31%, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa tương xứng với nguồn lực đầu tư <br>  \n- Cần tối ưu quy trình chăm sóc khách hàng và chiến lược bán hàng để nâng tỷ lệ chuyển đổi, đồng thời tăng cường khai thác các cơ hội tiềm năng đang t",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 470 cơ hội<br>\n- Doanh số đã thực hiện là 30,47 triệu đồng, thấp hơn kỳ vọng 1,25 tỷ đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 0,31%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+      "ground_truth": "- **Tiến độ doanh số còn rất thấp**: Phòng KD Bán mới KTDN 06 hiện chỉ thực hiện được 30,47 triệu so với doanh số kỳ vọng 1,25 tỷ, đạt khoảng 2,4% mục tiêu tháng, cho thấy cần đẩy mạnh chốt đơn ngay lập tức để đảm bảo hoàn thành KPI.<br>\n\n- **Tỷ lệ chuyển đổi cực kỳ thấp**: Với 470 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 0,31%, điều này phản ánh chất lượng cơ hội kém hoặc kỹ năng chốt sales yếu, cần rà soát lại quy trình chăm sóc và đánh giá lại tiêu chí lọc khách hàng tiềm năng.<br>\n\n"
+    },
+    {
+      "id": "193166",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 82,35 triệu VND, đang trên đà hoàn thành khoảng 82% mục tiêu kỳ vọng 99,96 triệu VND. <br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 19,09%, cho thấy hiệu quả chuyển đổi cơ hội thành công còn thấp, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất lượng cơ hội. <br>  \n- Số lượng cơ hội đang thực hiện (167) tương đối lớn, nếu tối ưu tỷ lệ chuyển đổi có thể bù đắp doanh số còn thiếu để đạt mục tiêu tháng. <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 167 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+      "ground_truth": "- **Hiệu suất chuyển đổi còn thấp**: Với 167 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ đạt 19,09%, cho thấy năng lực chốt deal của đội ngũ kinh doanh cần được cải thiện đáng kể. Cần rà soát quy trình bán hàng và nâng cao kỹ năng thuyết phục khách hàng.<br>\n\n- **Khoảng cách doanh số đáng lo ngại**: Doanh số thực hiện 82,35 triệu chỉ đạt 82,4% so với doanh số kỳ vọng 99,96 triệu, tạo ra khoảng cách gần 17,61 triệu. Điều này phản ánh việc định giá hoặc đàm phán chưa tối ưu, nhiều deal có gi"
+    },
+    {
+      "id": "192916",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 72,26 triệu đồng bằng với mục tiêu kỳ vọng cho thấy đơn vị hoàn thành kế hoạch kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 8,55% cho thấy hiệu suất chuyển đổi cơ hội thành công còn thấp cần cải thiện quy trình chăm sóc khách hàng<br>  \n- Số lượng cơ hội đang thực hiện (105) cao hơn đáng kể so với doanh số đạt được phản ánh sự mất cân đối giữa nguồn lực đầu vào và kết quả đầu ra<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 105 cơ hội<br>\n- Doanh số đã thực hiện là 72,26 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 8,55%, chưa cao so với mục tiêu<br>",
+      "ground_truth": "- **Tiến độ doanh số:** Phòng bán thêm GP KTDN 02 đã thực hiện được 72,26 triệu đồng doanh số trong tháng này, đúng bằng mức doanh số kỳ vọng đề ra, cho thấy đơn vị đang hoàn thành đúng kế hoạch đã đặt ra nhưng chưa có sự vượt trội.<br>\n\n- **Hiệu quả chuyển đổi thấp:** Với 105 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ đạt 8,55%, hiệu suất chuyển đổi từ cơ hội thành giao dịch thành công còn rất hạn chế, phản ánh chất lượng cơ hội hoặc kỹ năng chốt sales cần được cải thiện đáng kể.<br>\n\n- "
+    },
+    {
+      "id": "193283",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 72,26 triệu, bằng 100% so với mục tiêu kỳ vọng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 8,55% thấp, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa cao, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất lượng cơ hội đầu vào<br>  \n- Số lượng cơ hội đang thực hiện là 105, tuy nhiên tỷ lệ chuyển đổi thấp cho thấy có thể tồn tại rào cản trong việc xử lý cơ hội hoặc cần đào tạo nâng cao năng lực đội ngũ bá",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 105 cơ hội<br>\n- Doanh số đã thực hiện là 72,26 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 8,55%, chưa cao so với mục tiêu<br>",
+      "ground_truth": "- **Tiến độ doanh số**: Phòng bán thêm GP KTDN 02 đã thực hiện được 72,26 triệu đồng, đúng bằng mục tiêu doanh số kỳ vọng trong tháng này, cho thấy đơn vị đang hoàn thành đúng kế hoạch đề ra và duy trì được sự ổn định trong việc đạt chỉ tiêu kinh doanh.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Tỷ lệ chiến thắng cơ hội chỉ đạt 8,55% là một con số đáng lo ngại, phản ánh hiệu suất chốt sales còn yếu. Với 105 cơ hội đang thực hiện nhưng tỷ lệ chuyển đổi thấp cho thấy cần cải thiện kỹ năng tư vấn, chăm s"
+    },
+    {
+      "id": "193340",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 01 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 29,05 triệu đồng, chiếm 72% so với mục tiêu kỳ vọng 40,27 triệu đồng, cho thấy tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch.<br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (209) nhưng tỷ lệ chiến thắng chỉ 2,4%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn hạn chế.<br>  \n- Tỷ lệ chiến thắng thấp cho thấy cần tối ưu quy trình chăm sóc khách hàng hoặc điều chỉnh chiến lược tiếp cận để nâng cao năng lực cạnh tranh.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 209 cơ hội<br>\n- Doanh số đã thực hiện là 29,05 triệu đồng, thấp hơn kỳ vọng 40,27 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 2,4%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng bán thêm GP KTDN 01 hiện đạt 29,05 triệu đồng trên tổng doanh số kỳ vọng 40,27 triệu đồng, tương đương chỉ đạt 72% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 11,22 triệu đồng.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội thấp đáng báo động**: Với 209 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 2,4%, hiệu quả chốt sale rất kém. Điều này cho thấy chất lượng cơ hội chưa tốt hoặc kỹ năng chăm sóc - thuyết phục khách hà"
+    },
+    {
+      "id": "193171",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD Giải pháp hóa đơn điện tử - Hồ Chí Minh",
+      "output_misa-ai-1.0-plus": "- Nhóm KD Giải pháp hóa đơn điện tử - Hồ Chí Minh đang triển khai 144 cơ hội kinh doanh, cho thấy hoạt động tìm kiếm và duy trì pipeline tích cực nhưng cần theo dõi sát sao để đảm bảo nguồn lực đủ đáp ứng<br>\n- Doanh số đạt 9,01 triệu đồng/tháng, chỉ bằng 21% mục tiêu kỳ vọng 42,83 triệu, cho thấy tiến độ thực hiện còn chậm và cần điều chỉnh chiến lược xúc tiến<br>\n- Tỷ lệ chiến thắng cơ hội ở mức 6,6% thấp hơn đáng kể so với mức trung bình ngành (thường 20-30%), phản ánh thách thức trong khâu c",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 144 cơ hội<br>\n- Doanh số đã thực hiện là 9,01 triệu đồng, thấp hơn kỳ vọng 42,83 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 6,6%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp**: Đơn vị mới đạt 9,01 triệu trên tổng doanh số kỳ vọng 42,83 triệu (chỉ đạt 21%), cho thấy cần tăng tốc mạnh mẽ trong thời gian còn lại của tháng để hoàn thành mục tiêu đề ra.<br>\n\n- **Hiệu quả chuyển đổi yếu**: Tỷ lệ chiến thắng cơ hội chỉ ở mức 6,6% là rất thấp so với chuẩn ngành, phản ánh chất lượng cơ hội hoặc kỹ năng chốt sales cần cải thiện đáng kể để tối ưu nguồn lực.<br>\n\n- **Khối lượng cơ hội chưa tương xứng**: Với 144 cơ hội đang thực hiện nhưng chỉ chuyể"
+    },
+    {
+      "id": "193039",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 114, cho thấy đơn vị đang tích cực triển khai nhiều cơ hội kinh doanh mới trong tháng<br>  \n- Doanh số đã thực hiện đạt 11,87 triệu (73% so với mục tiêu kỳ vọng 16,32 triệu), phản ánh tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 4,7% (tăng từ 0% kỳ trước), ghi nhận sự cải thiện ban đầu nhưng vẫn thấp, cần tối ưu quy trình chốt deal và chăm sóc khách hàng<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 114 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,7%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng Bán thêm GP Ký điện tử 02 hiện đạt 11,87 triệu trên tổng doanh số kỳ vọng 16,32 triệu, tương đương chỉ đạt 72,7% mục tiêu tháng này, cho thấy cần nỗ lực đẩy mạnh trong thời gian còn lại để hoàn thành chỉ tiêu đề ra.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội thấp đáng lo ngại**: Với 114 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ ở mức 4,7%, hiệu quả chốt deal rất hạn chế, phản ánh vấn đề trong quy trình bán hàng hoặc chất lượng cơ hội chưa được sàng lọ"
+    },
+    {
+      "id": "192818",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 308, tuy nhiên doanh số thực tế vẫn ở mức 0 triệu đồng, cho thấy khoảng cách lớn giữa nguồn lực đầu vào và kết quả đầu ra<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng, cần rà soát lại chất lượng cơ hội hoặc phương pháp tiếp cận khách hàng<br>\n- Doanh số kỳ vọng ở mức 577,51 triệu đồng nhưng chưa ghi nhận kết quả thực hiện, tiến độ đạt mục tiêu doanh số hiện rất đáng lo ngại, đòi hỏi can thiệp ",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 308 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+      "ground_truth": "- Phòng KD Bán mới KTDN 04 đang quản lý 308 cơ hội kinh doanh với doanh số kỳ vọng đạt 577,51 triệu đồng, cho thấy nguồn cơ hội tiềm năng khá dồi dào. Tuy nhiên, doanh số thực hiện trong tháng này vẫn đang ở mức 0 đồng, phản ánh tình trạng chưa có giao dịch nào được chốt thành công.<br>\n\n- Tỷ lệ chiến thắng cơ hội hiện tại là 0%, cho thấy hiệu quả chuyển đổi từ cơ hội thành hợp đồng đang gặp khó khăn nghiêm trọng. Điều này cảnh báo về năng lực chốt sales hoặc chất lượng cơ hội đầu vào chưa được "
+    },
+    {
+      "id": "192799",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 02 - HAN trong Tháng nà",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 23,84 triệu, chiếm 63,8% so với mục tiêu kỳ vọng 37,35 triệu, cho thấy tiến độ còn chậm và cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện là 72, tuy nhiên tỷ lệ chiến thắng chỉ ở mức 13,45%, phản ánh hiệu suất chuyển đổi cơ hội thành công thấp <br>  \n- Cần tập trung cải thiện năng lực chốt đơn và tối ưu quy trình chăm sóc khách hàng để nâng tỷ lệ chuyển đổi, đồng thời khai thác thêm cơ hội tiềm năng <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 72 cơ hội<br>\n- Doanh số đã thực hiện là 23,84 triệu đồng, thấp hơn kỳ vọng 37,35 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 13,45%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng KD ESHOP 02 - HAN hiện chỉ thực hiện được 23,84 triệu đồng trên tổng doanh số kỳ vọng 37,35 triệu đồng, đạt khoảng 63,8% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 13,51 triệu đồng.<br>\n\n- **Tỷ lệ chuyển đổi thấp đáng lo ngại**: Với 72 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 13,45% cho thấy hiệu quả chốt sale còn yếu. Cần rà soát lại chất lượng cơ hội đầu vào, kỹ năng tư vấn và quy trình chăm sóc kh"
+    },
+    {
+      "id": "192462",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 02 - CTH trong Tháng nà",
+      "output_misa-ai-1.0-plus": "- Phòng KD sản phẩm ESHOP 02 - CTH hiện có 18 cơ hội kinh doanh đang triển khai nhưng doanh số thực tế đạt 0 đồng, cho thấy chưa có giao dịch thành công trong tháng <br>  \n- Mục tiêu doanh số kỳ vọng 2 triệu đồng chưa được đáp ứng, phản ánh rủi ro trong việc chuyển đổi cơ hội thành đơn hàng hoặc thiếu kế hoạch hành động cụ thể <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% (không thay đổi so với kỳ trước), nhấn mạnh nhu cầu cấp thiết cải thiện năng lực chốt sales hoặc đánh giá lại chất lượng cơ hộ",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện là 18 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+      "ground_truth": "- Phòng KD sản phẩm ESHOP 02 - CTH đang có 18 cơ hội đang thực hiện với doanh số kỳ vọng 2 triệu, tuy nhiên doanh số đã thực hiện hiện tại vẫn đang ở mức 0, cho thấy tình trạng chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- Tỷ lệ chiến thắng cơ hội đang ở mức 0% phản ánh hiệu quả chuyển đổi từ cơ hội thành giao dịch thành công rất thấp, cho thấy có vấn đề nghiêm trọng trong quy trình chăm sóc khách hàng, đàm phán hoặc chốt sale của đội"
+    },
+    {
+      "id": "192749",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Dữ liệu dashboard thiếu thông tin cụ thể (ResultText, Title, Unit) nên chưa thể đánh giá chi tiết tiến độ đạt mục tiêu doanh số của Phòng bán thêm GP KTDN 02 trong tháng này <br>  \n- Không có số liệu về hiệu quả chuyển đổi cơ hội thành công (tỷ lệ chuyển đổi, số lượng cơ hội, kết quả so với kỳ trước) nên không thể phân tích xu hướng hoặc điểm cần cải thiện <br>  \n- Đề nghị kiểm tra lại dữ liệu đầu vào để đảm bảo tính đầy đủ và chính xác của các chỉ số kinh doanh trước khi thực hiện phân tích c",
+      "output_misa-text2sql": "- Tiến độ đạt mục tiêu doanh số chưa rõ ràng do dữ liệu chưa cung cấp cụ thể về chỉ số mục tiêu và kết quả thực tế<br>\r\n- Hiệu quả chuyển đổi cơ hội thành đơn hàng còn thấp, tỷ lệ chuyển đổi chưa đạt ngưỡng mong đợi<br>\r\n- Tình hình hoạt động của phòng bán thêm đang gặp khó khăn trong việc theo dõi và đánh giá các chỉ số kinh doanh chính<br>",
+      "ground_truth": "Dựa trên dữ liệu dashboard được cung cấp, hiện tại hệ thống chưa có dữ liệu khả dụng để phân tích tình hình hoạt động của Phòng bán thêm GP KTDN 02 trong tháng này. Tuy nhiên, dưới đây là khung phân tích chuẩn khi có đầy đủ dữ liệu:\n\n- Tiến độ doanh số tháng này chưa được cập nhật trong hệ thống, cần kiểm tra và đồng bộ dữ liệu từ các kênh bán hàng để có cái nhìn chính xác về mức độ hoàn thành KPI so với mục tiêu đề ra, từ đó điều chỉnh chiến lược kinh doanh phù hợp cho thời gian còn lại của thá"
+    },
+    {
+      "id": "192780",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 01 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 227, tuy nhiên tỷ lệ chiến thắng 0% cho thấy hiệu quả chuyển đổi chưa tương xứng với nguồn lực đầu tư.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, thấp hơn đáng kể so với mục tiêu kỳ vọng 875 nghìn, phản ánh tiến độ chậm trong việc chốt đơn hàng.<br>  \n- Cần điều chỉnh chiến lược tiếp cận khách hàng và hỗ trợ đội ngũ bán hàng để tối ưu hóa tỷ lệ chuyển đổi cơ hội thành công trong thời gian tới.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 227 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội hiện tại là 0% chưa có thành công chuyển đổi<br>",
+      "ground_truth": "- **Tiến độ doanh số đáng lo ngại**: Phòng bán thêm GP HDDT 01 hiện có 227 cơ hội đang thực hiện với doanh số kỳ vọng 875 triệu đồng, nhưng doanh số đã thực hiện vẫn ở mức 0 đồng, cho thấy chưa có đơn hàng nào chốt thành công trong tháng này, tiến độ đạt mục tiêu đang rất chậm so với kế hoạch.<br>\n\n- **Hiệu quả chuyển đổi kém**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào trong 227 cơ hội được chuyển đổi thành giao dịch thành công, cho thấy có vấn đề nghiêm trọng tro"
+    },
+    {
+      "id": "192514",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 167 nhưng doanh số thực tế vẫn ở mức 0, cho thấy hiệu suất chuyển đổi cơ hội thành công còn yếu<br>  \n- Doanh số kỳ vọng ở mức 2,77 tỷ nhưng chưa có kết quả cụ thể, phản ánh khoảng cách lớn giữa kế hoạch và thực tế triển khai<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cần điều chỉnh chiến lược tiếp cận hoặc đánh giá lại chất lượng cơ hội đầu vào<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 167 cơ hội<br>\r\n- Doanh số đã thực hiện hiện tại là 0 tỷ<br>\r\n- Tỷ lệ chiến thắng cơ hội vẫn ở mức 0% chưa có thành công chuyển đổi<br>",
+      "ground_truth": "- **Tiến độ doanh số đáng lo ngại**: Nhóm KD giải pháp DN Vừa hiện có 167 cơ hội đang thực hiện với doanh số kỳ vọng 2,77 tỷ, nhưng doanh số đã thực hiện vẫn ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tạo ra khoảng cách lớn so với mục tiêu.<br>\n\n- **Tỷ lệ chuyển đổi thấp nghiêm trọng**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh hiệu quả chốt sales kém hoặc quy trình bán hàng đang gặp vấn đề nghiêm trọng, cần có sự can thiệp khẩn cấp để cải thiện khả "
+    },
+    {
+      "id": "192671",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 02 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 13,13 triệu, chiếm khoảng 22,77% so với mục tiêu kỳ vọng 57,64 triệu trong tháng. <br>  \n- Số lượng cơ hội đang thực hiện là 9, cho thấy khối lượng công việc đang được triển khai nhưng cần theo dõi sát để đảm bảo tiến độ. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 4,67%, phản ánh hiệu quả chuyển đổi còn thấp, cần phân tích nguyên nhân và điều chỉnh chiến lược. <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 9 cơ hội<br>\r\n- Doanh số đã thực hiện là 13,13 triệu đồng, thấp hơn kỳ vọng 57,64 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,67%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp:** Phòng KD Bán mới KTDN 02 hiện chỉ thực hiện được 13,13 triệu đồng trên tổng doanh số kỳ vọng 57,64 triệu đồng, đạt khoảng 22,8% mục tiêu tháng. Cần đẩy mạnh chốt đơn ngay trong những ngày còn lại để đảm bảo hoàn thành chỉ tiêu.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp:** Với 9 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 4,67%, cho thấy hiệu quả chốt sale kém hoặc chất lượng cơ hội chưa tốt. Cần rà soát lại quy trình chăm sóc khách hàng, kỹ năng tư vấn và tiêu chí"
+    },
+    {
+      "id": "192835",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 04 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 5,1 triệu đồng, bằng 100% so với mục tiêu kỳ vọng trong tháng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh<br>  \n- Số lượng cơ hội đang thực hiện ở mức 159, tuy nhiên tỷ lệ chiến thắng cơ hội chỉ 1,12% cho thấy hiệu quả chuyển đổi còn thấp, cần tối ưu quy trình chốt đơn<br>  \n- Cần tập trung cải thiện chất lượng cơ hội và kỹ năng bán hàng để nâng cao tỷ lệ chuyển đổi, đồng thời duy trì momentum đạt doanh số ổn định<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 159 cơ hội<br>\n- Doanh số đã thực hiện là 5,1 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội là 1,12%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số**: Phòng bán thêm GP HDDT 04 đã đạt 5,1 triệu đồng doanh số thực hiện, đúng bằng mức kỳ vọng đề ra, cho thấy đơn vị đang hoàn thành đúng kế hoạch đề ra trong tháng này, tuy nhiên cần đẩy mạnh hơn nữa để vượt chỉ tiêu.<br>\n\n- **Hiệu quả chuyển đổi thấp**: Với 159 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ đạt 1,12%, hiệu suất chuyển đổi từ cơ hội thành giao dịch thành công đang ở mức rất thấp, phản ánh quy trình chăm sóc và chốt sale còn nhiều điểm yếu cần cải thiện ng"
+    },
+    {
+      "id": "192341",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 55, chưa có dữ liệu so sánh kỳ trước, cần theo dõi sát sao để đảm bảo tiến độ chuyển đổi<br>  \n- Doanh số đã thực hiện 1,98 triệu, chỉ đạt 0,2% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tốc độ đạt doanh số chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,12%, thấp hơn đáng kể so với kỳ vọng, cần cải thiện quy trình chốt deal và đánh giá chất lượng cơ hội<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 55 cơ hội<br>\n- Doanh số đã thực hiện là 1,98 triệu đồng, chưa đạt mục tiêu kỳ vọng 914,85 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,12%, cho thấy hiệu quả chuyển đổi còn yếu cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số còn rất thấp**: Nhóm KD giải pháp DN Vừa mới chỉ thực hiện được 1,98 triệu đồng so với kỳ vọng 914,85 triệu đồng, đạt 0,22% mục tiêu tháng. Đây là mức chênh lệch nghiêm trọng cần có hành động khẩn cấp để đẩy nhanh việc chốt đơn hàng và chuyển đổi các cơ hội đang thực hiện thành doanh thu thực tế.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội cực kỳ thấp**: Với 55 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 0,12%, cho thấy hiệu quả chốt sale kém hoặc chất lượng cơ hội không tốt. Cần"
+    },
+    {
+      "id": "192149",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 1,98 triệu, chỉ chiếm 0,22% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tiến độ đạt mục tiêu còn rất thấp<br>\n- Nhóm đang quản lý 55 cơ hội kinh doanh nhưng tỷ lệ chiến thắng chỉ 0,12%, phản ánh hiệu quả chuyển đổi cơ hội thành công kém<br>\n- Khoảng cách lớn giữa doanh số thực tế và kỳ vọng (1,98 triệu vs 914,85 triệu) cho thấy cần cải thiện chiến lược tiếp cận khách hàng và năng lực chốt đơn<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 55 cơ hội<br>\n- Doanh số đã thực hiện là 1,98 triệu đồng, chưa đạt mục tiêu kỳ vọng 914,85 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,12%, cho thấy hiệu quả chuyển đổi còn yếu cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số còn rất thấp**: Nhóm KD giải pháp DN Vừa mới chỉ thực hiện được 1,98 triệu đồng so với kỳ vọng 914,85 triệu đồng, đạt 0,22% mục tiêu tháng. Đây là mức chênh lệch nghiêm trọng cần có hành động khẩn cấp để đẩy nhanh việc chốt đơn và chuyển đổi các cơ hội đang thực hiện thành doanh thu thực tế.<br>\n\n- **Tỷ lệ chuyển đổi cực kỳ thấp**: Với 55 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 0,12% cho thấy hiệu quả chốt sale kém hoặc chất lượng cơ hội đầu vào chưa tốt. Cần rà so"
+    },
+    {
+      "id": "192270",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 05 - HAN trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Đơn vị đang quản lý 15 cơ hội kinh doanh, cho thấy nguồn lực tập trung vào việc phát triển và theo dõi các cơ hội tiềm năng<br>  \n- Doanh số đạt 7,5 triệu đồng, tương ứng 84,7% so với mục tiêu kỳ vọng 8,85 triệu đồng, cần đẩy mạnh chuyển đổi cơ hội để hoàn thành chỉ tiêu<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 41,21%, thấp hơn mức trung bình ngành (thường 50-60%), cho thấy cần cải thiện quy trình chốt deal và chất lượng cơ hội đầu vào<br>",
+      "output_misa-text2sql": "- Tiến độ đạt mục tiêu doanh số còn thấp với doanh số thực hiện 7,5 triệu so với kỳ vọng 8,85 triệu<br>\r\n- Hiệu quả chuyển đổi cơ hội đạt 41,21% cho thấy khả năng chiến thắng cơ hội đang ở mức trung bình<br>\r\n- Số lượng cơ hội đang thực hiện là 15, phản ánh hoạt động kinh doanh đang được triển khai tích cực<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng KD CUKCUK 05 - HAN hiện thực hiện được 7,5 triệu trong khi doanh số kỳ vọng là 8,85 triệu, chỉ đạt 84,7% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để bù đắp khoảng cách 1,35 triệu còn thiếu.<br>\n\n- **Hiệu suất chuyển đổi ở mức trung bình**: Tỷ lệ chiến thắng cơ hội đạt 41,21% cho thấy hiệu quả chăm sóc và chốt sale còn khá, tuy nhiên vẫn có gần 60% cơ hội bị thất thoát. Đội ngũ cần cải thiện kỹ năng tư vấn và xử lý từ chối để nân"
+    },
+    {
+      "id": "192390",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD GPKT 02 trong Tháng này. \r\n           ",
+      "output_misa-ai-1.0-plus": "- Dữ liệu dashboard hiện tại không hiển thị số liệu cụ thể (ResultText) hoặc tỷ lệ thay đổi (ChangedRatioText) để đánh giá tiến độ đạt mục tiêu doanh số của Phòng KD GPKT 02 trong tháng này.  \n- Không thể xác định hiệu quả chuyển đổi cơ hội thành công do thiếu thông tin về số lượng cơ hội, tỷ lệ chuyển đổi hoặc so sánh với giai đoạn trước.  \n- Đề xuất kiểm tra lại nguồn dữ liệu hoặc liên hệ hỗ trợ tại website chính thức của MISA để đảm bảo cập nhật đầy đủ thông tin phục vụ phân tích chuyên sâu. ",
+      "output_misa-text2sql": "- Doanh số tháng này đạt 85% mục tiêu, tiến độ còn chậm so với kế hoạch<br>\r\n- Tỷ lệ chuyển đổi cơ hội thành đơn hàng đạt 32%, thấp hơn mức trung bình ngành 40%<br>\r\n- Chi phí vận hành trên đơn hàng tăng 15% so với tháng trước, ảnh hưởng đến lợi nhuận ròng<br>",
+      "ground_truth": "- **Hiện trạng dữ liệu:** Dashboard của Phòng KD GPKT 02 trong tháng này chưa có dữ liệu hiển thị, tất cả các chỉ số quan trọng về doanh số, cơ hội chuyển đổi và hiệu quả kinh doanh đều ở trạng thái null, cho thấy có thể hệ thống chưa được cập nhật hoặc đơn vị chưa bắt đầu ghi nhận số liệu trong kỳ báo cáo này.<br>\n\n- **Đánh giá tiến độ:** Không thể đánh giá được tiến độ đạt mục tiêu doanh số cũng như tỷ lệ chuyển đổi cơ hội thành công do thiếu hoàn toàn thông tin, điều này ảnh hưởng nghiêm trọn"
+    },
+    {
+      "id": "192432",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 307, tuy nhiên doanh số thực hiện vẫn ở mức 0 triệu đồng, cho thấy hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc chưa có giao dịch hoàn tất trong tháng<br>\n- Doanh số kỳ vọng ở mức 577,51 triệu đồng nhưng chưa ghi nhận kết quả thực tế, cần điều chỉnh chiến lược hoặc đánh giá lại tính khả thi của mục tiêu<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+      "ground_truth": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n- **Khoảng cách lớn giữa kỳ vọng và thực tế**: Với doanh số kỳ vọng lên tới 577,51 triệu từ 307 cơ hội nhưng chưa có đơn hàng nào thành công, cho thấy quy trình chăm sóc và chuyển đổi khách hàng đang g"
+    },
+    {
+      "id": "192332",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 307, cho thấy khối lượng công việc đang triển khai khá lớn nhưng chưa có kết quả chuyển đổi thành doanh số cụ thể<br>  \n- Doanh số đã thực hiện vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu còn chậm hoặc gặp khó khăn trong việc chốt giao dịch từ các cơ hội<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn yếu, cần cải thiện chiến lược tiếp cận hoặc chất lượng cơ hội đầu vào<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+      "ground_truth": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n- **Khoảng cách lớn giữa kỳ vọng và thực tế**: Với doanh số kỳ vọng lên tới 577,51 triệu từ 307 cơ hội nhưng chưa có đơn hàng nào thành công, đơn vị đang đối mặt với nguy cơ không hoàn thành chỉ tiêu t"
+    },
+    {
+      "id": "191960",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Phòng KD Bán mới KTDN 04 đang quản lý **307 cơ hội kinh doanh** trong tháng, cho thấy nguồn lực tập trung vào phát triển khách hàng mới khá dồi dào. <br>  \n- **Doanh số thực hiện** vẫn ở mức **0 triệu**, cho thấy hiệu quả chuyển đổi từ cơ hội sang giao dịch thành công chưa đạt được, cần cải thiện quy trình chốt đơn. <br>  \n- **Tỷ lệ chiến thắng cơ hội** duy trì **0%**, đồng nghĩa với việc toàn bộ cơ hội hiện tại chưa tạo ra doanh thu, tiềm ẩn rủi ro không đạt mục tiêu kỳ vọng **577,51 triệu**.",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+      "ground_truth": "- **Hiệu suất chuyển đổi đáng lo ngại**: Phòng KD Bán mới KTDN 04 đang quản lý 307 cơ hội nhưng doanh số thực hiện là 0 đồng và tỷ lệ chiến thắng 0%, cho thấy không có giao dịch nào được chốt thành công trong tháng này. Đây là tín hiệu cảnh báo nghiêm trọng về năng lực chốt sales của đội ngũ.<br>\n\n- **Khoảng cách lớn giữa kỳ vọng và thực tế**: Với doanh số kỳ vọng lên tới 577,51 triệu từ 307 cơ hội nhưng chưa có đơn hàng nào thành công, cho thấy quy trình bán hàng đang gặp nghẽn nghiêm trọng ở k"
+    },
+    {
+      "id": "192238",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - DNG trong Tháng n",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0 đồng, cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc xử lý các cơ hội kinh doanh hiện tại<br>  \n- Doanh số kỳ vọng 5,04 triệu đồng chưa có dấu hiệu đạt được, đe dọa tiến độ hoàn thành mục tiêu tháng nếu không cải thiện kịp thời<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 45 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, chưa có cơ hội chuyển đổi thành doanh số<br>",
+      "ground_truth": "- **Tình hình hoạt động còn yếu**: Phòng KD sản phẩm CUKCUK 02 - DNG đang có 45 cơ hội đang thực hiện với doanh số kỳ vọng 5,04 triệu, tuy nhiên doanh số đã thực hiện là 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tiến độ đạt mục tiêu đang ở mức báo động.<br>\n\n- **Hiệu quả chuyển đổi rất thấp**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào trong 45 cơ hội được chuyển đổi thành hợp đồng thành công, cho thấy quy trình bán hàng và kỹ năng "
+    },
+    {
+      "id": "192181",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD mạng lưới - DN nhỏ - Hồ Chí Minh trong",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 3 (tăng từ 0 kỳ trước), tuy nhiên mức này vẫn còn thấp, cần mở rộng thêm danh sách cơ hội tiềm năng.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, cho thấy hiệu quả chuyển đổi cơ hội thành công chưa cao, cần rà soát lại quy trình chốt deal.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chất lượng cơ hội và kỹ năng xử lý tình huống của đội ngũ kinh doanh.<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện là 3 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong khi kỳ vọng là 1,23 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa đạt được<br>",
+      "ground_truth": "- **Tình hình hoạt động còn hạn chế**: Phòng KD mạng lưới - DN nhỏ - Hồ Chí Minh hiện có 3 cơ hội đang thực hiện với doanh số kỳ vọng 1,23 triệu, nhưng doanh số đã thực hiện vẫn ở mức 0, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này.<br>\n\n- **Hiệu quả chuyển đổi đáng lo ngại**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào được chuyển đổi thành doanh thu thực tế, điều này cần được xem xét và cải thiện ngay lập tức để đảm bảo mục tiêu kinh doanh.<br"
+    },
+    {
+      "id": "191951",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 04 trong Tháng này. \r\n  ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 3,17 triệu, chỉ bằng 21,8% so với doanh số kỳ vọng 14,57 triệu, cho thấy tiến độ đạt mục tiêu còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,35% thấp hơn đáng kể so với kỳ vọng, phản ánh hiệu suất chuyển đổi cơ hội thành công kém<br>  \n- Số lượng cơ hội đang thực hiện (391) chưa tương xứng với kết quả đạt được, cần tối ưu quy trình chốt deal và đào tạo kỹ năng bán hàng<br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 391 cơ hội<br>\n- Doanh số đã thực hiện là 3,17 triệu đồng nhưng chưa đạt kỳ vọng 14,57 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,35% cho thấy hiệu quả chuyển đổi còn yếu<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp**: Phòng bán thêm GP HDDT 04 hiện chỉ đạt 3,17 triệu doanh số thực tế so với kỳ vọng 14,57 triệu, cho thấy tỷ lệ hoàn thành mới đạt khoảng 21,8%. Cần đẩy mạnh chuyển đổi các cơ hội đang có thành đơn hàng thành công để đạt mục tiêu tháng.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp**: Với 391 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 0,35%, hiệu quả chuyển đổi đang ở mức báo động. Điều này phản ánh chất lượng cơ hội hoặc kỹ năng chốt sales cần được cải thiện gấp.<br>\n"
+    },
+    {
+      "id": "191947",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới GPKT 01 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 20,53 triệu đồng, chỉ bằng khoảng 21% so với mục tiêu kỳ vọng 98,34 triệu đồng, cho thấy tiến độ đạt doanh số còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 3,12% phản ánh hiệu quả chuyển đổi cơ hội thành công rất thấp, cần cải thiện quy trình chốt deal hoặc đánh giá lại chất lượng cơ hội đầu vào<br>  \n- Số lượng cơ hội đang thực hiện là 92, tuy nhiên tỷ lệ chuyển đổi thấp cho thấy có thể tồn tại rào cản trong việc xử lý cơ hội hoặc năng lực đội ngũ cần được nâng cao",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 92 cơ hội<br>\r\n- Doanh số đã thực hiện là 20,53 triệu đồng, chưa đạt mục tiêu kỳ vọng 98,34 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 3,12%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp:** Phòng KD Bán mới GPKT 01 hiện chỉ thực hiện được 20,53 triệu trên tổng doanh số kỳ vọng 98,34 triệu, đạt khoảng 20,9% mục tiêu tháng. Cần đẩy mạnh chốt đơn trong thời gian còn lại để đảm bảo hoàn thành chỉ tiêu.<br>\n\n- **Tỷ lệ chuyển đổi rất thấp:** Với 92 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ 3,12%, cho thấy hiệu quả chốt sale kém. Cần rà soát lại chất lượng cơ hội đầu vào và cải thiện kỹ năng chăm sóc, thuyết phục khách hàng của đội ngũ.<br>\n\n- **Hà"
+    },
+    {
+      "id": "191808",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 01 - BMT trong Tháng nà",
+      "output_misa-ai-1.0-plus": "- Phòng KD sản phẩm ESHOP 01 - BMT hiện có 25 cơ hội đang thực hiện nhưng doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa khả quan, cần điều chỉnh chiến lược hoặc hỗ trợ kịp thời.<br>  \n- Doanh số kỳ vọng tháng là 9,2 triệu nhưng chưa có kết quả thực tế, cho thấy khoảng cách lớn giữa kế hoạch và thực tế, cần phân tích nguyên nhân cụ thể để cải thiện.<br",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 25 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+      "ground_truth": "- **Tiến độ doanh số đáng lo ngại**: Phòng KD sản phẩm ESHOP 01 - BMT hiện có 25 cơ hội đang thực hiện với kỳ vọng 9,2 triệu, nhưng doanh số thực hiện vẫn ở mức 0 đồng, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, tạo ra khoảng cách lớn giữa kỳ vọng và thực tế.<br>\n\n- **Tỷ lệ chuyển đổi kém hiệu quả**: Tỷ lệ chiến thắng cơ hội đang ở mức 0%, phản ánh việc chưa có cơ hội nào trong 25 cơ hội được chuyển đổi thành đơn hàng thành công, cho thấy quy trình bán hàng đang gặp vấn "
+    },
+    {
+      "id": "191546",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này",
+      "output_misa-ai-1.0-plus": "- Đã đạt 72.7% mục tiêu doanh số với 11,87 triệu đồng, cần tăng tốc để hoàn thành 16,32 triệu đồng đề ra <br>  \n- Quản lý 112 cơ hội đang thực hiện, cho thấy giai đoạn đầu triển khai chưa có sự thay đổi so với kỳ trước <br>  \n- Tỷ lệ chiến thắng 4,77% thấp, cần tối ưu quy trình chốt deal và hỗ trợ đội ngũ bán hàng để cải thiện hiệu quả <br>",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 112 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,77%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+      "ground_truth": "- **Tiến độ doanh số chưa đạt kỳ vọng**: Phòng Bán thêm GP Ký điện tử 02 hiện đạt 11,87 triệu trong tổng doanh số kỳ vọng 16,32 triệu, cho thấy còn thiếu hụt khoảng 4,45 triệu để hoàn thành mục tiêu tháng. Đây là tín hiệu cảnh báo cần đẩy mạnh chốt đơn trong thời gian còn lại.<br>\n\n- **Tỷ lệ chuyển đổi thấp đáng lo ngại**: Với 112 cơ hội đang thực hiện nhưng tỷ lệ chiến thắng chỉ đạt 4,77%, hiệu quả chuyển đổi từ cơ hội thành giao dịch thành công rất thấp. Điều này phản ánh chất lượng cơ hội hoặ"
+    },
+    {
+      "id": "191762",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD chuyển đổi GPKT trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Doanh số đã thực hiện đạt 11 triệu đồng, chỉ bằng 27,9% so với mục tiêu kỳ vọng 39,42 triệu đồng, cho thấy tiến độ chưa khả quan<br>  \n- Số lượng cơ hội đang thực hiện ở mức 448, phản ánh sự tập trung cao vào việc xử lý các cơ hội kinh doanh<br>  \n- Tỷ lệ chiến thắng cơ hội đạt 0,55%, thấp hơn đáng kể so với kỳ vọng, cần cải thiện để tối ưu hóa hiệu quả chuyển đổi<br>",
+      "output_misa-text2sql": "- Doanh số đã thực hiện đạt 11 triệu, thấp hơn mức kỳ vọng 39,42 triệu, cho thấy tiến độ chưa đáp ứng mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội đạt 55%, thể hiện hiệu quả chuyển đổi cơ hội thành doanh số khá tốt<br>\r\n- Số lượng cơ hội đang thực hiện ở mức 448, cho thấy nguồn lực và hoạt động tiếp thị vẫn đang được duy trì ổn định<br>",
+      "ground_truth": "- **Tiến độ doanh số còn thấp**: Phòng KD chuyển đổi GPKT hiện chỉ thực hiện được 11 triệu đồng trên tổng doanh số kỳ vọng 39,42 triệu đồng, đạt khoảng 27,9% mục tiêu tháng. Cần đẩy mạnh chốt đơn ngay trong những ngày còn lại để đảm bảo hoàn thành chỉ tiêu.<br>\n\n- **Hiệu quả chuyển đổi rất thấp**: Tỷ lệ chiến thắng cơ hội chỉ đạt 0,55% là con số đáng báo động, cho thấy chất lượng cơ hội hoặc kỹ năng chốt sale còn yếu. Với 448 cơ hội đang thực hiện nhưng tỷ lệ thành công quá thấp, cần rà soát lại"
+    },
+    {
+      "id": "191325",
+      "input_preview": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 05 trong Tháng này. \r\n   ",
+      "output_misa-ai-1.0-plus": "- Số lượng cơ hội đang thực hiện đạt 78, cho thấy đơn vị duy trì hoạt động tìm kiếm khách hàng tích cực, tuy nhiên chưa có dữ liệu so sánh tiến độ từ kỳ trước để đánh giá rõ hơn hiệu quả<br>\n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, chưa đạt mục tiêu kỳ vọng 154,36 triệu, phản ánh khó khăn trong việc chuyển đổi cơ hội thành đơn hàng thành công<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần điều chỉnh chiến lược tiếp cận khách hàng hoặc cải thiện quy trình chốt deal để nâng cao hi",
+      "output_misa-text2sql": "- Số lượng cơ hội đang thực hiện đạt 78 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+      "ground_truth": "- **Tiến độ doanh số đang ở mức báo động**: Phòng KD Bán mới KTDN 05 hiện có 78 cơ hội đang thực hiện với doanh số kỳ vọng 154,36 triệu, nhưng doanh số đã thực hiện vẫn đang ở mức 0 triệu, cho thấy chưa có đơn hàng nào được chốt thành công trong tháng này, cần đẩy nhanh tốc độ chuyển đổi ngay lập tức.<br>\n\n- **Tỷ lệ chuyển đổi cơ hội thấp nghiêm trọng**: Với tỷ lệ chiến thắng cơ hội đang ở mức 0%, điều này phản ánh hiệu quả bán hàng chưa đạt yêu cầu, cần rà soát lại chất lượng cơ hội đầu vào, kỹ"
+    }
+  ]
+}

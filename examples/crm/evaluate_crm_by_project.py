@@ -9,7 +9,7 @@ Flow:
      - crmkh  (gợi ý SP):     Product metrics + ROUGE + Token F1
      - crmmisa (phân tích KD): ROUGE + G-Eval + Answer Relevancy
 
-Chạy: cd /home/misa/CUA && python3 llm-evaluate/examples/evaluate_crm_by_project.py
+Chạy: cd /home/misa/CUA && python3 llm-evaluate/examples/crm/evaluate_crm_by_project.py
 """
 import os
 import sys

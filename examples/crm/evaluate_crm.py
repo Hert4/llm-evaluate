@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 # Add framework to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from llm_eval_framework import LLMEvaluator, EvalConfig
 from llm_eval_framework.config import OpenAIConfig, MetricType, MetricConfig
@@ -367,7 +367,7 @@ def main():
     parser.add_argument(
         "data_path",
         nargs="?",
-        default=str(Path(__file__).parent.parent / "data" / "examples" / "crm.json"),
+        default=str(Path(__file__).parent.parent.parent / "data" / "examples" / "crm.json"),
         help="Đường dẫn file CRM JSON",
     )
     parser.add_argument("--api-key", help="OpenAI API key")

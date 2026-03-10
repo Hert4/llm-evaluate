@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "194342",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - CTH trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":11,\"OldResult\":0,\"ResultText\":11,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":7038000,\"OldResult\":0,\"ResultText\":\"7,04\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD sản phẩm CUKCUK 02 - CTH hiện có 11 cơ hội đang thực hiện nhưng chưa ghi nhận doanh số nào trong tháng <br>  \n- Doanh số kỳ vọng đạt 7,04 triệu đồng, tuy nhiên kết quả thực tế vẫn ở mức 0, cho thấy khoảng cách lớn so với mục tiêu <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu suất chuyển đổi cơ hội thành công chưa đạt yêu cầu <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.91,
+    "new_output_prompt_tokens": 508,
+    "new_output_completion_tokens": 61,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7597.3256,
+    "available_products": []
+  },
+  {
+    "id": "194298",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - CTH trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":11,\"OldResult\":0,\"ResultText\":11,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":7038000,\"OldResult\":0,\"ResultText\":\"7,04\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 11 (tăng từ 0 tháng trước), cho thấy hoạt động tìm kiếm và tiếp cận khách hàng đang diễn ra tích cực nhưng chưa tạo ra kết quả cụ thể <br>  \n- Doanh số đã thực hiện vẫn ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả, cần điều chỉnh chiến lược chốt sales hoặc hỗ trợ từ bộ phận liên quan <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% (giống tháng trước) dù doanh số kỳ vọng ở mức 7,04 triệu, cho thấy khoảng cách lớn giữa kế hoạch và thực tế, cần phân tích nguyên nhân cản trở chuyển đổi <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.89,
+    "new_output_prompt_tokens": 508,
+    "new_output_completion_tokens": 61,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7406.6981,
+    "available_products": []
+  },
+  {
+    "id": "194365",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm Quản lý 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":8,\"OldResult\":0,\"ResultText\":8,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":133350000,\"OldResult\":0,\"ResultText\":\"133,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Nhóm Quản lý 04 đang triển khai 8 cơ hội kinh doanh mới trong tháng, cho thấy nỗ lực mở rộng hoạt động tuy nhiên chưa ghi nhận doanh số thực tế<br>\n- Doanh số đạt được hiện ở mức 0 triệu đồng, chưa đáp ứng kỳ vọng 133,35 triệu đồng, phản ánh khoảng cách lớn giữa mục tiêu và kết quả thực hiện<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chiến lược chuyển đổi cơ hội thành đơn hàng thành công để đạt mục tiêu doanh thu<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện là 8 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành doanh số thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.87,
+    "new_output_prompt_tokens": 503,
+    "new_output_completion_tokens": 62,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 4604.6484,
+    "available_products": []
+  },
+  {
+    "id": "194540",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":165,\"OldResult\":0,\"ResultText\":165,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":82350000,\"OldResult\":0,\"ResultText\":\"82,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":99962660,\"OldResult\":0,\"ResultText\":\"99,96\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":19.088513401874888,\"OldResult\":0,\"ResultText\":\"19,09%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 165, chưa có dữ liệu so sánh kỳ trước, cho thấy đơn vị đang duy trì hoạt động tiếp cận khách hàng.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, chiếm khoảng 82% so với mục tiêu kỳ vọng 99,96 triệu đồng, cần đẩy mạnh để hoàn thành chỉ tiêu.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, phản ánh hiệu quả chuyển đổi khách hàng tiềm năng thành công còn hạn chế, cần tối ưu quy trình chăm sóc.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 165 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.99,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 85,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7765.8489,
+    "available_products": []
+  },
+  {
+    "id": "194553",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD Bán thêm GP KTDN trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":11,\"OldResult\":0,\"ResultText\":11,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":4225000,\"OldResult\":0,\"ResultText\":\"4,22\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Nhóm KD Bán thêm GP KTDN đang triển khai 11 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực tế (0 triệu đồng), cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa đạt yêu cầu<br>\n- Doanh số kỳ vọng đạt 4,22 triệu đồng/tháng nhưng tỷ lệ hoàn thành mục tiêu hiện ở mức 0%, phản ánh khoảng cách lớn giữa kế hoạch và kết quả thực tế cần được điều chỉnh chiến lược<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0% tương tự tháng trước, cho thấy quy trình chốt deal hoặc năng lực bán hàng cần được rà soát để cải thiện hiệu quả kinh doanh<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 11 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% chưa có thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.78,
+    "new_output_prompt_tokens": 504,
+    "new_output_completion_tokens": 49,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7255.3233,
+    "available_products": []
+  },
+  {
+    "id": "194520",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 05 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":61,\"OldResult\":0,\"ResultText\":61,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11508920,\"OldResult\":0,\"ResultText\":\"11,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":11508920,\"OldResult\":0,\"ResultText\":\"11,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":4.2045476797340635,\"OldResult\":0,\"ResultText\":\"4,2%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Đơn vị đã đạt 100% mục tiêu doanh số với 11,51 triệu đồng từ 61 cơ hội đang thực hiện.<br>  \n- Tỷ lệ chuyển đổi cơ hội thành công ở mức 4,2%, cho thấy hiệu quả còn hạn chế và cần tối ưu hóa.<br>  \n- Doanh số kỳ vọng và thực tế bằng nhau, phản ánh sự ổn định trong kế hoạch và triển khai.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 61 cơ hội<br>\r\n- Doanh số đã thực hiện là 11,51 triệu đồng, tương ứng với mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,2%, cho thấy hiệu quả chuyển đổi còn thấp<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.7,
+    "new_output_prompt_tokens": 540,
+    "new_output_completion_tokens": 68,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8244.5238,
+    "available_products": []
+  },
+  {
+    "id": "194161",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD MISA AMIS Nhân sự 06 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":18,\"OldResult\":0,\"ResultText\":18,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":117990000,\"OldResult\":0,\"ResultText\":\"117,99\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Nhóm KD MISA AMIS Nhân sự 06 hiện có 18 cơ hội đang thực hiện, cho thấy nguồn lực tiếp thị ổn định nhưng cần cải thiện hiệu quả chuyển đổi để đạt doanh số.<br>  \n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, cho thấy nhóm chưa chốt được đơn hàng nào, cần tập trung vào các chiến lược bán hàng để thu hẹp khoảng cách với mục tiêu kỳ vọng 117,99 triệu đồng.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì ở 0%, phản ánh thách thức trong việc chuyển đổi cơ hội thành công, đòi hỏi phân tích nguyên nhân và điều chỉnh phương pháp tiếp cận khách hàng.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 18 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.54,
+    "new_output_prompt_tokens": 510,
+    "new_output_completion_tokens": 46,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 13406.2914,
+    "available_products": []
+  },
+  {
+    "id": "194170",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - HCM trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":72,\"OldResult\":0,\"ResultText\":72,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":25559400,\"OldResult\":0,\"ResultText\":\"25,56\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 72, cho thấy khối lượng công việc đang triển khai khá lớn nhưng cần theo dõi sát sao để đảm bảo tiến độ<br>  \n- Doanh số đã thực hiện ở mức 0 triệu, chưa đạt tỷ lệ phần trăm nào so với mục tiêu kỳ vọng 25,56 triệu, phản ánh hiệu suất chuyển đổi cơ hội thành công yếu<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chiến lược chốt deal hoặc đánh giá lại chất lượng cơ hội đầu vào để nâng cao hiệu quả kinh doanh<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 72 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.6,
+    "new_output_prompt_tokens": 510,
+    "new_output_completion_tokens": 57,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 20927.0681,
+    "available_products": []
+  },
+  {
+    "id": "194025",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":115,\"OldResult\":0,\"ResultText\":115,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11868820,\"OldResult\":0,\"ResultText\":\"11,87\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":16324396,\"OldResult\":0,\"ResultText\":\"16,32\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":4.668657933821822,\"OldResult\":0,\"ResultText\":\"4,67%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện khá cao (115), nhưng tỷ lệ chuyển đổi thấp (4,67%) cho thấy hiệu suất xử lý chưa tối ưu.<br>  \n- Doanh số đạt được 11,87 triệu, chiếm 72,7% so với mục tiêu kỳ vọng 16,32 triệu, cần cải thiện để đạt mục tiêu.<br>  \n- Tỷ lệ chiến thắng cơ hội 4,67% thấp, cần phân tích nguyên nhân và điều chỉnh chiến lược chốt đơn.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 115 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,67%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.78,
+    "new_output_prompt_tokens": 543,
+    "new_output_completion_tokens": 80,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 29109.1091,
+    "available_products": []
+  },
+  {
+    "id": "193932",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":67,\"OldResult\":0,\"ResultText\":67,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":523314692,\"OldResult\":0,\"ResultText\":\"523,31\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 67, cho thấy phòng kinh doanh đang triển khai nhiều hoạt động tiềm năng nhưng chưa có kết quả chuyển đổi cụ thể<br>  \n- Doanh số đã thực hiện ở mức 0 triệu đồng, phản ánh hiệu suất chuyển đổi cơ hội thành đơn hàng còn yếu, cần cải thiện quy trình chốt sales hoặc đánh giá lại chất lượng cơ hội<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, đồng nghĩa với việc toàn bộ cơ hội chưa được chuyển hóa thành doanh thu, dù doanh số kỳ vọng đạt 523,31 triệu đồng từ các cơ hội này<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 67 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.55,
+    "new_output_prompt_tokens": 506,
+    "new_output_completion_tokens": 57,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 9306.4154,
+    "available_products": []
+  },
+  {
+    "id": "193725",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":35,\"OldResult\":0,\"ResultText\":35,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":1225000,\"OldResult\":0,\"ResultText\":\"1,23\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD Bán mới KTDN 04 hiện đang triển khai 35 cơ hội kinh doanh nhưng chưa ghi nhận doanh số thực hiện trong tháng, cho thấy tiến độ chuyển đổi cơ hội thành công còn chậm <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì ở mức 0%, phản ánh thách thức trong việc chốt đơn hàng hoặc xác suất cơ hội chưa phù hợp với năng lực thực tế <br>  \n- Doanh số kỳ vọng đạt 1,23 triệu nhưng kết quả thực tế là 0, lộ rõ khoảng cách lớn giữa mục tiêu và hiệu suất, cần điều chỉnh chiến lược hoặc hỗ trợ kịp thời để cải thiện hiệu quả <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 35 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội hiện tại là 0% chưa có thành công chuyển đổi<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.84,
+    "new_output_prompt_tokens": 505,
+    "new_output_completion_tokens": 56,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 9823.9976,
+    "available_products": []
+  },
+  {
+    "id": "193875",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 07 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":21,\"OldResult\":0,\"ResultText\":21,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":107493072,\"OldResult\":0,\"ResultText\":\"107,49\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 21, cho thấy đơn vị duy trì hoạt động kinh doanh tích cực nhưng chưa có kết quả cụ thể<br>\n- Doanh số đã thực hiện ở mức 0, phản ánh hiệu suất chuyển đổi cơ hội thành công còn yếu, chưa đạt mục tiêu doanh thu<br>\n- Tỷ lệ chiến thắng cơ hội dừng ở 0%, đồng nghĩa toàn bộ 21 cơ hội hiện tại chưa mang lại doanh thu kỳ vọng 107,49 triệu<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 21 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.66,
+    "new_output_prompt_tokens": 509,
+    "new_output_completion_tokens": 62,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7609.0415,
+    "available_products": []
+  },
+  {
+    "id": "193706",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới GPKT 03 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":177,\"OldResult\":0,\"ResultText\":177,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11915320,\"OldResult\":0,\"ResultText\":\"11,92\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":144883704,\"OldResult\":0,\"ResultText\":\"144,88\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.9288878466845324,\"OldResult\":0,\"ResultText\":\"0,93%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 177, cho thấy hoạt động tìm kiếm và duy trì cơ hội kinh doanh của phòng vẫn ở mức ổn định. <br>  \n- Doanh số đã thực hiện chỉ đạt 11,92 triệu trên tổng kỳ vọng 144,88 triệu, tiến độ chậm so với mục tiêu tháng. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,93%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn thấp, cần cải thiện quy trình chốt đơn. <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 177 cơ hội<br>\n- Doanh số đã thực hiện là 11,92 triệu, thấp hơn kỳ vọng 144,88 triệu<br>\n- Tỷ lệ chiến thắng cơ hội đạt 93%, cho thấy hiệu quả chuyển đổi cao<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.71,
+    "new_output_prompt_tokens": 545,
+    "new_output_completion_tokens": 71,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 17257.2791,
+    "available_products": []
+  },
+  {
+    "id": "193502",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 01 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":134,\"OldResult\":0,\"ResultText\":134,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":22878880,\"OldResult\":0,\"ResultText\":\"22,88\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":22878880,\"OldResult\":0,\"ResultText\":\"22,88\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":10.33522273585654,\"OldResult\":0,\"ResultText\":\"10,34%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện và doanh số kỳ vọng đều đạt 22,88 triệu, cho thấy phòng ban hoàn thành mục tiêu đề ra trong tháng này<br>  \n- Số lượng cơ hội đang thực hiện ở mức 134, phản ánh hoạt động kinh doanh có độ phủ rộng nhưng cần kiểm tra chất lượng cơ hội để tối ưu nguồn lực<br>  \n- Tỷ lệ chiến thắng cơ hội 10,34% cho thấy hiệu quả chuyển đổi chưa cao, cần phân tích nguyên nhân và cải thiện quy trình chốt deal<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 134 cơ hội<br>\n- Doanh số đã thực hiện là 22,88 triệu đồng, tương ứng với mục tiêu kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 10,34%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.71,
+    "new_output_prompt_tokens": 541,
+    "new_output_completion_tokens": 72,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7350.7618,
+    "available_products": []
+  },
+  {
+    "id": "193722",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 06 - HCM trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":8,\"OldResult\":0,\"ResultText\":8,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang thực hiện (tăng từ 0 so với kỳ trước), tuy nhiên doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn và cần điều chỉnh kịp thời.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% bất chấp việc gia tăng số lượng cơ hội, cho thấy hiệu quả chuyển đổi khách hàng tiềm năng thành đơn hàng thành công còn nhiều bất cập, cần rà soát lại quy trình chăm sóc và tư vấn.<br>  \n- Doanh số kỳ vọng cũng ở mức 0, phản ánh sự thiếu hụt trong việc dự báo và hoạch định kế hoạch kinh doanh, đòi hỏi cần xây dựng mục tiêu cụ thể cùng chiến lược thúc đẩy doanh số ngay trong giai đoạn đầu tháng.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện là 8 cơ hội chưa chuyển đổi thành doanh số<br>\r\n- Doanh số đã thực hiện và kỳ vọng đều là 0 cho thấy chưa có giao dịch thành công trong tháng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy không có cơ hội nào được chuyển đổi thành đơn hàng<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.76,
+    "new_output_prompt_tokens": 494,
+    "new_output_completion_tokens": 77,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 36698.7912,
+    "available_products": []
+  },
+  {
+    "id": "193764",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":166,\"OldResult\":0,\"ResultText\":166,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":82350000,\"OldResult\":0,\"ResultText\":\"82,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":99962660,\"OldResult\":0,\"ResultText\":\"99,96\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":19.088513401874888,\"OldResult\":0,\"ResultText\":\"19,09%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 82,35 triệu, tương đương 82.38% so với mục tiêu kỳ vọng 99,96 triệu. Cần theo dõi sát để đảm bảo hoàn thành mục tiêu tháng.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, cho thấy hiệu quả trung bình trong việc chuyển đổi cơ hội thành đơn hàng. Có thể cần tối ưu quy trình chăm sóc khách hàng.<br>  \n- Với 166 cơ hội đang thực hiện, đơn vị có tiềm năng tăng trưởng đáng kể trong thời gian tới nếu đẩy mạnh chuyển đổi hiệu quả.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 166 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.78,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 85,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 14657.3129,
+    "available_products": []
+  },
+  {
+    "id": "193396",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":166,\"OldResult\":0,\"ResultText\":166,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":82350000,\"OldResult\":0,\"ResultText\":\"82,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":99962660,\"OldResult\":0,\"ResultText\":\"99,96\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":19.088513401874888,\"OldResult\":0,\"ResultText\":\"19,09%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 166, cho thấy nguồn lực và hoạt động kinh doanh đang được triển khai tích cực, tuy nhiên cần theo dõi sát sao để đảm bảo chuyển đổi hiệu quả.<br>  \n- Doanh số đã thực hiện đạt 82,35 triệu đồng, tương ứng 82,4% so với doanh số kỳ vọng 99,96 triệu đồng, cho thấy tiến độ khả quan nhưng vẫn cần nỗ lực để hoàn thành mục tiêu tháng.<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 19,09%, phản ánh hiệu quả trung bình trong việc chuyển đổi cơ hội thành đơn hàng, cần phân tích nguyên nhân và tối ưu quy trình bán hàng để cải thiện.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 166 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.72,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 85,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 10399.9935,
+    "available_products": []
+  },
+  {
+    "id": "193651",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 01- DNG trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":46,\"OldResult\":0,\"ResultText\":46,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":10000000,\"OldResult\":0,\"ResultText\":\"10\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 46, cho thấy đơn vị vẫn duy trì hoạt động tìm kiếm khách hàng tiềm năng nhưng chưa có dữ liệu so sánh với kỳ trước để đánh giá xu hướng.<br>  \n- Doanh số đã thực hiện ở mức 0/10 triệu, phản ánh tiến độ hoàn thành mục tiêu bằng 0%, cần điều tra nguyên nhân và cải thiện chiến lược chốt đơn.<br>  \n- Tỷ lệ chiến thắng cơ hội dừng ở 0%, cho thấy hiệu quả chuyển đổi cơ hội thành công rất thấp, cần tối ưu quy trình chăm sóc khách hàng và đào tạo kỹ năng bán hàng.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 46 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.55,
+    "new_output_prompt_tokens": 505,
+    "new_output_completion_tokens": 57,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 14601.7664,
+    "available_products": []
+  },
+  {
+    "id": "193702",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 06 - HCM trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":8,\"OldResult\":0,\"ResultText\":8,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD sản phẩm CUKCUK 06 - HCM hiện có 8 cơ hội kinh doanh đang triển khai, cho thấy nguồn lực đang tập trung vào việc mở rộng cơ hội mới nhưng chưa có kết quả chuyển đổi cụ thể <br>  \n- Doanh số đạt được và doanh số kỳ vọng đều ở mức 0, phản ánh tiến độ không khả quan trong việc chốt đơn hàng hoặc chưa đạt mục tiêu đề ra <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy hiệu quả chuyển đổi cơ hội thành công rất thấp, cần đánh giá lại chiến lược tiếp cận khách hàng hoặc quy trình bán hàng <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện là 8 cơ hội chưa chuyển đổi thành doanh số<br>\r\n- Doanh số đã thực hiện và kỳ vọng đều là 0 cho thấy chưa có giao dịch thành công trong tháng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy không có cơ hội nào được chuyển đổi thành đơn hàng<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.68,
+    "new_output_prompt_tokens": 494,
+    "new_output_completion_tokens": 77,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 11820.9876,
+    "available_products": []
+  },
+  {
+    "id": "193713",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 03 - HAN trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":45,\"OldResult\":0,\"ResultText\":45,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":12010000,\"OldResult\":0,\"ResultText\":\"12,01\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0/12,01 triệu đồng mục tiêu, cho thấy tiến độ chuyển đổi cơ hội thành đơn hàng chưa hiệu quả <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức trong việc chốt deal hoặc chất lượng cơ hội chưa đáp ứng kỳ vọng <br>  \n- Cần tập trung tối ưu quy trình chăm sóc khách hàng và đánh giá lại chiến lược tiếp cận để cải thiện tỷ lệ chuyển đổi, đảm bảo đạt mục tiêu doanh số tháng <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 45 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu kỳ vọng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa có tiến triển<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.59,
+    "new_output_prompt_tokens": 510,
+    "new_output_completion_tokens": 61,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 12889.2803,
+    "available_products": []
+  },
+  {
+    "id": "193401",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 06 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":470,\"OldResult\":0,\"ResultText\":470,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":30469000,\"OldResult\":0,\"ResultText\":\"30,47\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":1245746356,\"OldResult\":0,\"ResultText\":\"1,25\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"tỷ\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.30974999035138284,\"OldResult\":0,\"ResultText\":\"0,31%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 30,47 triệu, chỉ bằng 2,44% so với mục tiêu kỳ vọng 1,25 tỷ, cho thấy tiến độ đạt mục tiêu còn chậm cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (470 cơ hội) nhưng tỷ lệ chiến thắng chỉ 0,31%, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa tương xứng với nguồn lực đầu tư <br>  \n- Cần tối ưu quy trình chăm sóc khách hàng và chiến lược bán hàng để nâng tỷ lệ chuyển đổi, đồng thời tăng cường khai thác các cơ hội tiềm năng đang tồn đọng <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 470 cơ hội<br>\n- Doanh số đã thực hiện là 30,47 triệu đồng, thấp hơn kỳ vọng 1,25 tỷ đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 0,31%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.7,
+    "new_output_prompt_tokens": 545,
+    "new_output_completion_tokens": 73,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6408.6251,
+    "available_products": []
+  },
+  {
+    "id": "193166",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD meInvoice dự án trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":167,\"OldResult\":0,\"ResultText\":167,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":82350000,\"OldResult\":0,\"ResultText\":\"82,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":99962660,\"OldResult\":0,\"ResultText\":\"99,96\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":19.088513401874888,\"OldResult\":0,\"ResultText\":\"19,09%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 82,35 triệu VND, đang trên đà hoàn thành khoảng 82% mục tiêu kỳ vọng 99,96 triệu VND. <br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 19,09%, cho thấy hiệu quả chuyển đổi cơ hội thành công còn thấp, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất lượng cơ hội. <br>  \n- Số lượng cơ hội đang thực hiện (167) tương đối lớn, nếu tối ưu tỷ lệ chuyển đổi có thể bù đắp doanh số còn thiếu để đạt mục tiêu tháng. <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 167 cơ hội<br>\n- Doanh số đã thực hiện là 82,35 triệu đồng, chưa đạt mục tiêu kỳ vọng 99,96 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 19,09%, cho thấy hiệu quả chuyển đổi còn cần cải thiện để tăng tỷ lệ thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.83,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 85,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8187.4516,
+    "available_products": []
+  },
+  {
+    "id": "192916",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":105,\"OldResult\":0,\"ResultText\":105,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":72260000,\"OldResult\":0,\"ResultText\":\"72,26\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":72260000,\"OldResult\":0,\"ResultText\":\"72,26\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":8.550568578494598,\"OldResult\":0,\"ResultText\":\"8,55%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 72,26 triệu đồng bằng với mục tiêu kỳ vọng cho thấy đơn vị hoàn thành kế hoạch kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội chỉ ở mức 8,55% cho thấy hiệu suất chuyển đổi cơ hội thành công còn thấp cần cải thiện quy trình chăm sóc khách hàng<br>  \n- Số lượng cơ hội đang thực hiện (105) cao hơn đáng kể so với doanh số đạt được phản ánh sự mất cân đối giữa nguồn lực đầu vào và kết quả đầu ra<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 105 cơ hội<br>\n- Doanh số đã thực hiện là 72,26 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 8,55%, chưa cao so với mục tiêu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.65,
+    "new_output_prompt_tokens": 541,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6053.1398,
+    "available_products": []
+  },
+  {
+    "id": "193283",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":105,\"OldResult\":0,\"ResultText\":105,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":72260000,\"OldResult\":0,\"ResultText\":\"72,26\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":72260000,\"OldResult\":0,\"ResultText\":\"72,26\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":8.550568578494598,\"OldResult\":0,\"ResultText\":\"8,55%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 72,26 triệu, bằng 100% so với mục tiêu kỳ vọng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh trong tháng<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 8,55% thấp, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa cao, cần cải thiện quy trình chốt đơn hoặc đánh giá lại chất lượng cơ hội đầu vào<br>  \n- Số lượng cơ hội đang thực hiện là 105, tuy nhiên tỷ lệ chuyển đổi thấp cho thấy có thể tồn tại rào cản trong việc xử lý cơ hội hoặc cần đào tạo nâng cao năng lực đội ngũ bán hàng<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 105 cơ hội<br>\n- Doanh số đã thực hiện là 72,26 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 8,55%, chưa cao so với mục tiêu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.64,
+    "new_output_prompt_tokens": 541,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 9288.9134,
+    "available_products": []
+  },
+  {
+    "id": "193340",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 01 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":209,\"OldResult\":0,\"ResultText\":209,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":29046500,\"OldResult\":0,\"ResultText\":\"29,05\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":40272500,\"OldResult\":0,\"ResultText\":\"40,27\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":2.3999897147429228,\"OldResult\":0,\"ResultText\":\"2,4%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 29,05 triệu đồng, chiếm 72% so với mục tiêu kỳ vọng 40,27 triệu đồng, cho thấy tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch.<br>  \n- Số lượng cơ hội đang thực hiện ở mức cao (209) nhưng tỷ lệ chiến thắng chỉ 2,4%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn hạn chế.<br>  \n- Tỷ lệ chiến thắng thấp cho thấy cần tối ưu quy trình chăm sóc khách hàng hoặc điều chỉnh chiến lược tiếp cận để nâng cao năng lực cạnh tranh.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 209 cơ hội<br>\n- Doanh số đã thực hiện là 29,05 triệu đồng, thấp hơn kỳ vọng 40,27 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 2,4%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.71,
+    "new_output_prompt_tokens": 541,
+    "new_output_completion_tokens": 74,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7556.6884,
+    "available_products": []
+  },
+  {
+    "id": "193171",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD Giải pháp hóa đơn điện tử - Hồ Chí Minh trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":144,\"OldResult\":0,\"ResultText\":144,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":9010640,\"OldResult\":0,\"ResultText\":\"9,01\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":42830040,\"OldResult\":0,\"ResultText\":\"42,83\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":6.59965429349896,\"OldResult\":0,\"ResultText\":\"6,6%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Nhóm KD Giải pháp hóa đơn điện tử - Hồ Chí Minh đang triển khai 144 cơ hội kinh doanh, cho thấy hoạt động tìm kiếm và duy trì pipeline tích cực nhưng cần theo dõi sát sao để đảm bảo nguồn lực đủ đáp ứng<br>\n- Doanh số đạt 9,01 triệu đồng/tháng, chỉ bằng 21% mục tiêu kỳ vọng 42,83 triệu, cho thấy tiến độ thực hiện còn chậm và cần điều chỉnh chiến lược xúc tiến<br>\n- Tỷ lệ chiến thắng cơ hội ở mức 6,6% thấp hơn đáng kể so với mức trung bình ngành (thường 20-30%), phản ánh thách thức trong khâu chuyển đổi cơ hội thành đơn hàng thành công<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 144 cơ hội<br>\n- Doanh số đã thực hiện là 9,01 triệu đồng, thấp hơn kỳ vọng 42,83 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội đạt 6,6%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.74,
+    "new_output_prompt_tokens": 540,
+    "new_output_completion_tokens": 74,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7959.6116,
+    "available_products": []
+  },
+  {
+    "id": "193039",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":114,\"OldResult\":0,\"ResultText\":114,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11868820,\"OldResult\":0,\"ResultText\":\"11,87\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":16324396,\"OldResult\":0,\"ResultText\":\"16,32\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":4.695439052957238,\"OldResult\":0,\"ResultText\":\"4,7%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 114, cho thấy đơn vị đang tích cực triển khai nhiều cơ hội kinh doanh mới trong tháng<br>  \n- Doanh số đã thực hiện đạt 11,87 triệu (73% so với mục tiêu kỳ vọng 16,32 triệu), phản ánh tiến độ khả quan nhưng cần tăng tốc để hoàn thành kế hoạch<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 4,7% (tăng từ 0% kỳ trước), ghi nhận sự cải thiện ban đầu nhưng vẫn thấp, cần tối ưu quy trình chốt deal và chăm sóc khách hàng<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 114 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,7%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.72,
+    "new_output_prompt_tokens": 542,
+    "new_output_completion_tokens": 79,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6919.6874,
+    "available_products": []
+  },
+  {
+    "id": "192818",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":308,\"OldResult\":0,\"ResultText\":308,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":577506796,\"OldResult\":0,\"ResultText\":\"577,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 308, tuy nhiên doanh số thực tế vẫn ở mức 0 triệu đồng, cho thấy khoảng cách lớn giữa nguồn lực đầu vào và kết quả đầu ra<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng, cần rà soát lại chất lượng cơ hội hoặc phương pháp tiếp cận khách hàng<br>\n- Doanh số kỳ vọng ở mức 577,51 triệu đồng nhưng chưa ghi nhận kết quả thực hiện, tiến độ đạt mục tiêu doanh số hiện rất đáng lo ngại, đòi hỏi can thiệp kịp thời để cải thiện hiệu quả kinh doanh<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 308 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.64,
+    "new_output_prompt_tokens": 511,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6877.1081,
+    "available_products": []
+  },
+  {
+    "id": "192799",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 02 - HAN trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":72,\"OldResult\":0,\"ResultText\":72,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":23838000,\"OldResult\":0,\"ResultText\":\"23,84\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":37348000,\"OldResult\":0,\"ResultText\":\"37,35\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":13.447065337912939,\"OldResult\":0,\"ResultText\":\"13,45%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 23,84 triệu, chiếm 63,8% so với mục tiêu kỳ vọng 37,35 triệu, cho thấy tiến độ còn chậm và cần đẩy mạnh trong thời gian tới <br>  \n- Số lượng cơ hội đang thực hiện là 72, tuy nhiên tỷ lệ chiến thắng chỉ ở mức 13,45%, phản ánh hiệu suất chuyển đổi cơ hội thành công thấp <br>  \n- Cần tập trung cải thiện năng lực chốt đơn và tối ưu quy trình chăm sóc khách hàng để nâng tỷ lệ chuyển đổi, đồng thời khai thác thêm cơ hội tiềm năng <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 72 cơ hội<br>\n- Doanh số đã thực hiện là 23,84 triệu đồng, thấp hơn kỳ vọng 37,35 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 13,45%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.63,
+    "new_output_prompt_tokens": 543,
+    "new_output_completion_tokens": 75,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 5714.8191,
+    "available_products": []
+  },
+  {
+    "id": "192462",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 02 - CTH trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":18,\"OldResult\":0,\"ResultText\":18,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":2000000,\"OldResult\":0,\"ResultText\":\"2\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD sản phẩm ESHOP 02 - CTH hiện có 18 cơ hội kinh doanh đang triển khai nhưng doanh số thực tế đạt 0 đồng, cho thấy chưa có giao dịch thành công trong tháng <br>  \n- Mục tiêu doanh số kỳ vọng 2 triệu đồng chưa được đáp ứng, phản ánh rủi ro trong việc chuyển đổi cơ hội thành đơn hàng hoặc thiếu kế hoạch hành động cụ thể <br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0% (không thay đổi so với kỳ trước), nhấn mạnh nhu cầu cấp thiết cải thiện năng lực chốt sales hoặc đánh giá lại chất lượng cơ hội đầu vào <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện là 18 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.57,
+    "new_output_prompt_tokens": 503,
+    "new_output_completion_tokens": 62,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6993.3022,
+    "available_products": []
+  },
+  {
+    "id": "192749",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP KTDN 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Dữ liệu dashboard thiếu thông tin cụ thể (ResultText, Title, Unit) nên chưa thể đánh giá chi tiết tiến độ đạt mục tiêu doanh số của Phòng bán thêm GP KTDN 02 trong tháng này <br>  \n- Không có số liệu về hiệu quả chuyển đổi cơ hội thành công (tỷ lệ chuyển đổi, số lượng cơ hội, kết quả so với kỳ trước) nên không thể phân tích xu hướng hoặc điểm cần cải thiện <br>  \n- Đề nghị kiểm tra lại dữ liệu đầu vào để đảm bảo tính đầy đủ và chính xác của các chỉ số kinh doanh trước khi thực hiện phân tích chuyên sâu <br>",
+    "new_output": "- Tiến độ đạt mục tiêu doanh số chưa rõ ràng do dữ liệu chưa cung cấp cụ thể về chỉ số mục tiêu và kết quả thực tế<br>\r\n- Hiệu quả chuyển đổi cơ hội thành đơn hàng còn thấp, tỷ lệ chuyển đổi chưa đạt ngưỡng mong đợi<br>\r\n- Tình hình hoạt động của phòng bán thêm đang gặp khó khăn trong việc theo dõi và đánh giá các chỉ số kinh doanh chính<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.59,
+    "new_output_prompt_tokens": 474,
+    "new_output_completion_tokens": 91,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7924.3574,
+    "available_products": []
+  },
+  {
+    "id": "192780",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 01 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":227,\"OldResult\":0,\"ResultText\":227,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":875000,\"OldResult\":0,\"ResultText\":\"875\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"nghìn\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 227, tuy nhiên tỷ lệ chiến thắng 0% cho thấy hiệu quả chuyển đổi chưa tương xứng với nguồn lực đầu tư.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, thấp hơn đáng kể so với mục tiêu kỳ vọng 875 nghìn, phản ánh tiến độ chậm trong việc chốt đơn hàng.<br>  \n- Cần điều chỉnh chiến lược tiếp cận khách hàng và hỗ trợ đội ngũ bán hàng để tối ưu hóa tỷ lệ chuyển đổi cơ hội thành công trong thời gian tới.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 227 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội hiện tại là 0% chưa có thành công chuyển đổi<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.52,
+    "new_output_prompt_tokens": 504,
+    "new_output_completion_tokens": 56,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 10356.6829,
+    "available_products": []
+  },
+  {
+    "id": "192514",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":167,\"OldResult\":0,\"ResultText\":167,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":2774469000,\"OldResult\":0,\"ResultText\":\"2,77\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"tỷ\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 167 nhưng doanh số thực tế vẫn ở mức 0, cho thấy hiệu suất chuyển đổi cơ hội thành công còn yếu<br>  \n- Doanh số kỳ vọng ở mức 2,77 tỷ nhưng chưa có kết quả cụ thể, phản ánh khoảng cách lớn giữa kế hoạch và thực tế triển khai<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cần điều chỉnh chiến lược tiếp cận hoặc đánh giá lại chất lượng cơ hội đầu vào<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 167 cơ hội<br>\r\n- Doanh số đã thực hiện hiện tại là 0 tỷ<br>\r\n- Tỷ lệ chiến thắng cơ hội vẫn ở mức 0% chưa có thành công chuyển đổi<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.41,
+    "new_output_prompt_tokens": 507,
+    "new_output_completion_tokens": 55,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8437.7831,
+    "available_products": []
+  },
+  {
+    "id": "192671",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":9,\"OldResult\":0,\"ResultText\":9,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":13125320,\"OldResult\":0,\"ResultText\":\"13,13\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":57639556,\"OldResult\":0,\"ResultText\":\"57,64\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":4.6694916550658565,\"OldResult\":0,\"ResultText\":\"4,67%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 13,13 triệu, chiếm khoảng 22,77% so với mục tiêu kỳ vọng 57,64 triệu trong tháng. <br>  \n- Số lượng cơ hội đang thực hiện là 9, cho thấy khối lượng công việc đang được triển khai nhưng cần theo dõi sát để đảm bảo tiến độ. <br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 4,67%, phản ánh hiệu quả chuyển đổi còn thấp, cần phân tích nguyên nhân và điều chỉnh chiến lược. <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 9 cơ hội<br>\r\n- Doanh số đã thực hiện là 13,13 triệu đồng, thấp hơn kỳ vọng 57,64 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,67%, cho thấy hiệu quả chuyển đổi còn yếu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.47,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 73,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 11893.8868,
+    "available_products": []
+  },
+  {
+    "id": "192835",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":159,\"OldResult\":0,\"ResultText\":159,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":5100000,\"OldResult\":0,\"ResultText\":\"5,1\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":5100000,\"OldResult\":0,\"ResultText\":\"5,1\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":1.1238323051810255,\"OldResult\":0,\"ResultText\":\"1,12%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 5,1 triệu đồng, bằng 100% so với mục tiêu kỳ vọng trong tháng, cho thấy đơn vị hoàn thành chỉ tiêu kinh doanh<br>  \n- Số lượng cơ hội đang thực hiện ở mức 159, tuy nhiên tỷ lệ chiến thắng cơ hội chỉ 1,12% cho thấy hiệu quả chuyển đổi còn thấp, cần tối ưu quy trình chốt đơn<br>  \n- Cần tập trung cải thiện chất lượng cơ hội và kỹ năng bán hàng để nâng cao tỷ lệ chuyển đổi, đồng thời duy trì momentum đạt doanh số ổn định<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 159 cơ hội<br>\n- Doanh số đã thực hiện là 5,1 triệu đồng, đạt đúng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội là 1,12%, cho thấy hiệu quả chuyển đổi còn cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.45,
+    "new_output_prompt_tokens": 535,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 10631.7641,
+    "available_products": []
+  },
+  {
+    "id": "192341",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":55,\"OldResult\":0,\"ResultText\":55,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":1975320,\"OldResult\":0,\"ResultText\":\"1,98\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":914845320,\"OldResult\":0,\"ResultText\":\"914,85\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.12258505298403366,\"OldResult\":0,\"ResultText\":\"0,12%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 55, chưa có dữ liệu so sánh kỳ trước, cần theo dõi sát sao để đảm bảo tiến độ chuyển đổi<br>  \n- Doanh số đã thực hiện 1,98 triệu, chỉ đạt 0,2% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tốc độ đạt doanh số chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,12%, thấp hơn đáng kể so với kỳ vọng, cần cải thiện quy trình chốt deal và đánh giá chất lượng cơ hội<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 55 cơ hội<br>\n- Doanh số đã thực hiện là 1,98 triệu đồng, chưa đạt mục tiêu kỳ vọng 914,85 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,12%, cho thấy hiệu quả chuyển đổi còn yếu cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.52,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 79,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 17514.1659,
+    "available_products": []
+  },
+  {
+    "id": "192149",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Nhóm KD giải pháp DN Vừa trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":55,\"OldResult\":0,\"ResultText\":55,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":1975320,\"OldResult\":0,\"ResultText\":\"1,98\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":914845320,\"OldResult\":0,\"ResultText\":\"914,85\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.12258505298403366,\"OldResult\":0,\"ResultText\":\"0,12%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 1,98 triệu, chỉ chiếm 0,22% so với mục tiêu kỳ vọng 914,85 triệu, cho thấy tiến độ đạt mục tiêu còn rất thấp<br>\n- Nhóm đang quản lý 55 cơ hội kinh doanh nhưng tỷ lệ chiến thắng chỉ 0,12%, phản ánh hiệu quả chuyển đổi cơ hội thành công kém<br>\n- Khoảng cách lớn giữa doanh số thực tế và kỳ vọng (1,98 triệu vs 914,85 triệu) cho thấy cần cải thiện chiến lược tiếp cận khách hàng và năng lực chốt đơn<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 55 cơ hội<br>\n- Doanh số đã thực hiện là 1,98 triệu đồng, chưa đạt mục tiêu kỳ vọng 914,85 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,12%, cho thấy hiệu quả chuyển đổi còn yếu cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.54,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 79,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 9913.4377,
+    "available_products": []
+  },
+  {
+    "id": "192270",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 05 - HAN trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":15,\"OldResult\":0,\"ResultText\":15,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":7500000,\"OldResult\":0,\"ResultText\":\"7,5\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":8850000,\"OldResult\":0,\"ResultText\":\"8,85\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":41.20879120879121,\"OldResult\":0,\"ResultText\":\"41,21%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Đơn vị đang quản lý 15 cơ hội kinh doanh, cho thấy nguồn lực tập trung vào việc phát triển và theo dõi các cơ hội tiềm năng<br>  \n- Doanh số đạt 7,5 triệu đồng, tương ứng 84,7% so với mục tiêu kỳ vọng 8,85 triệu đồng, cần đẩy mạnh chuyển đổi cơ hội để hoàn thành chỉ tiêu<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 41,21%, thấp hơn mức trung bình ngành (thường 50-60%), cho thấy cần cải thiện quy trình chốt deal và chất lượng cơ hội đầu vào<br>",
+    "new_output": "- Tiến độ đạt mục tiêu doanh số còn thấp với doanh số thực hiện 7,5 triệu so với kỳ vọng 8,85 triệu<br>\r\n- Hiệu quả chuyển đổi cơ hội đạt 41,21% cho thấy khả năng chiến thắng cơ hội đang ở mức trung bình<br>\r\n- Số lượng cơ hội đang thực hiện là 15, phản ánh hoạt động kinh doanh đang được triển khai tích cực<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.6,
+    "new_output_prompt_tokens": 539,
+    "new_output_completion_tokens": 98,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 14801.4599,
+    "available_products": []
+  },
+  {
+    "id": "192390",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD GPKT 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"\",\"Result\":null,\"OldResult\":null,\"ResultText\":null,\"OldResultText\":null,\"ChangedRatio\":null,\"ChangedRatioText\":null,\"Unit\":null,\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Dữ liệu dashboard hiện tại không hiển thị số liệu cụ thể (ResultText) hoặc tỷ lệ thay đổi (ChangedRatioText) để đánh giá tiến độ đạt mục tiêu doanh số của Phòng KD GPKT 02 trong tháng này.  \n- Không thể xác định hiệu quả chuyển đổi cơ hội thành công do thiếu thông tin về số lượng cơ hội, tỷ lệ chuyển đổi hoặc so sánh với giai đoạn trước.  \n- Đề xuất kiểm tra lại nguồn dữ liệu hoặc liên hệ hỗ trợ tại website chính thức của MISA để đảm bảo cập nhật đầy đủ thông tin phục vụ phân tích chuyên sâu.  \n\n<br>  \n<br>  \n<br>",
+    "new_output": "- Doanh số tháng này đạt 85% mục tiêu, tiến độ còn chậm so với kế hoạch<br>\r\n- Tỷ lệ chuyển đổi cơ hội thành đơn hàng đạt 32%, thấp hơn mức trung bình ngành 40%<br>\r\n- Chi phí vận hành trên đơn hàng tăng 15% so với tháng trước, ảnh hưởng đến lợi nhuận ròng<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.54,
+    "new_output_prompt_tokens": 472,
+    "new_output_completion_tokens": 82,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 11054.969,
+    "available_products": []
+  },
+  {
+    "id": "192432",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":307,\"OldResult\":0,\"ResultText\":307,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":577506796,\"OldResult\":0,\"ResultText\":\"577,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 307, tuy nhiên doanh số thực hiện vẫn ở mức 0 triệu đồng, cho thấy hiệu suất chuyển đổi cơ hội thành công chưa đáp ứng kỳ vọng<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc chưa có giao dịch hoàn tất trong tháng<br>\n- Doanh số kỳ vọng ở mức 577,51 triệu đồng nhưng chưa ghi nhận kết quả thực tế, cần điều chỉnh chiến lược hoặc đánh giá lại tính khả thi của mục tiêu<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.46,
+    "new_output_prompt_tokens": 511,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 13248.6841,
+    "available_products": []
+  },
+  {
+    "id": "192332",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":307,\"OldResult\":0,\"ResultText\":307,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":577506796,\"OldResult\":0,\"ResultText\":\"577,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 307, cho thấy khối lượng công việc đang triển khai khá lớn nhưng chưa có kết quả chuyển đổi thành doanh số cụ thể<br>  \n- Doanh số đã thực hiện vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu còn chậm hoặc gặp khó khăn trong việc chốt giao dịch từ các cơ hội<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0%, phản ánh hiệu quả chuyển đổi cơ hội thành công còn yếu, cần cải thiện chiến lược tiếp cận hoặc chất lượng cơ hội đầu vào<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.48,
+    "new_output_prompt_tokens": 511,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 13284.3965,
+    "available_products": []
+  },
+  {
+    "id": "191960",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":307,\"OldResult\":0,\"ResultText\":307,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":577506796,\"OldResult\":0,\"ResultText\":\"577,51\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD Bán mới KTDN 04 đang quản lý **307 cơ hội kinh doanh** trong tháng, cho thấy nguồn lực tập trung vào phát triển khách hàng mới khá dồi dào. <br>  \n- **Doanh số thực hiện** vẫn ở mức **0 triệu**, cho thấy hiệu quả chuyển đổi từ cơ hội sang giao dịch thành công chưa đạt được, cần cải thiện quy trình chốt đơn. <br>  \n- **Tỷ lệ chiến thắng cơ hội** duy trì **0%**, đồng nghĩa với việc toàn bộ cơ hội hiện tại chưa tạo ra doanh thu, tiềm ẩn rủi ro không đạt mục tiêu kỳ vọng **577,51 triệu**. <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 307 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, cho thấy chưa có cơ hội nào chuyển đổi thành doanh số<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.48,
+    "new_output_prompt_tokens": 511,
+    "new_output_completion_tokens": 66,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 14177.1657,
+    "available_products": []
+  },
+  {
+    "id": "192238",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm CUKCUK 02 - DNG trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":45,\"OldResult\":0,\"ResultText\":45,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":5040000,\"OldResult\":0,\"ResultText\":\"5,04\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 45, tuy nhiên doanh số thực tế vẫn ở mức 0 đồng, cho thấy hiệu suất chuyển đổi cơ hội thành đơn hàng chưa hiệu quả<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh thách thức lớn trong việc chốt deal hoặc xử lý các cơ hội kinh doanh hiện tại<br>  \n- Doanh số kỳ vọng 5,04 triệu đồng chưa có dấu hiệu đạt được, đe dọa tiến độ hoàn thành mục tiêu tháng nếu không cải thiện kịp thời<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 45 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu, chưa có giao dịch thành công<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0%, chưa có cơ hội chuyển đổi thành doanh số<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.45,
+    "new_output_prompt_tokens": 508,
+    "new_output_completion_tokens": 62,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8657.7825,
+    "available_products": []
+  },
+  {
+    "id": "192181",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD mạng lưới - DN nhỏ - Hồ Chí Minh trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":3,\"OldResult\":0,\"ResultText\":3,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":1225000,\"OldResult\":0,\"ResultText\":\"1,23\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 3 (tăng từ 0 kỳ trước), tuy nhiên mức này vẫn còn thấp, cần mở rộng thêm danh sách cơ hội tiềm năng.<br>  \n- Doanh số đã thực hiện dừng ở mức 0, cho thấy hiệu quả chuyển đổi cơ hội thành công chưa cao, cần rà soát lại quy trình chốt deal.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần cải thiện chất lượng cơ hội và kỹ năng xử lý tình huống của đội ngũ kinh doanh.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện là 3 cơ hội<br>\r\n- Doanh số đã thực hiện đạt 0 triệu đồng trong khi kỳ vọng là 1,23 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa đạt được<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.51,
+    "new_output_prompt_tokens": 503,
+    "new_output_completion_tokens": 65,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 15954.0052,
+    "available_products": []
+  },
+  {
+    "id": "191951",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng bán thêm GP HDDT 04 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":391,\"OldResult\":0,\"ResultText\":391,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":3170000,\"OldResult\":0,\"ResultText\":\"3,17\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":14571000,\"OldResult\":0,\"ResultText\":\"14,57\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.35340810274476575,\"OldResult\":0,\"ResultText\":\"0,35%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 3,17 triệu, chỉ bằng 21,8% so với doanh số kỳ vọng 14,57 triệu, cho thấy tiến độ đạt mục tiêu còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 0,35% thấp hơn đáng kể so với kỳ vọng, phản ánh hiệu suất chuyển đổi cơ hội thành công kém<br>  \n- Số lượng cơ hội đang thực hiện (391) chưa tương xứng với kết quả đạt được, cần tối ưu quy trình chốt deal và đào tạo kỹ năng bán hàng<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 391 cơ hội<br>\n- Doanh số đã thực hiện là 3,17 triệu đồng nhưng chưa đạt kỳ vọng 14,57 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 0,35% cho thấy hiệu quả chuyển đổi còn yếu<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.53,
+    "new_output_prompt_tokens": 540,
+    "new_output_completion_tokens": 74,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 6849.8959,
+    "available_products": []
+  },
+  {
+    "id": "191947",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới GPKT 01 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":92,\"OldResult\":0,\"ResultText\":92,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":20533000,\"OldResult\":0,\"ResultText\":\"20,53\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":98337980,\"OldResult\":0,\"ResultText\":\"98,34\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":3.117830833997047,\"OldResult\":0,\"ResultText\":\"3,12%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 20,53 triệu đồng, chỉ bằng khoảng 21% so với mục tiêu kỳ vọng 98,34 triệu đồng, cho thấy tiến độ đạt doanh số còn chậm<br>  \n- Tỷ lệ chiến thắng cơ hội ở mức 3,12% phản ánh hiệu quả chuyển đổi cơ hội thành công rất thấp, cần cải thiện quy trình chốt deal hoặc đánh giá lại chất lượng cơ hội đầu vào<br>  \n- Số lượng cơ hội đang thực hiện là 92, tuy nhiên tỷ lệ chuyển đổi thấp cho thấy có thể tồn tại rào cản trong việc xử lý cơ hội hoặc năng lực đội ngũ cần được nâng cao<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 92 cơ hội<br>\r\n- Doanh số đã thực hiện là 20,53 triệu đồng, chưa đạt mục tiêu kỳ vọng 98,34 triệu đồng<br>\r\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 3,12%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.66,
+    "new_output_prompt_tokens": 540,
+    "new_output_completion_tokens": 79,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8611.6325,
+    "available_products": []
+  },
+  {
+    "id": "191808",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD sản phẩm ESHOP 01 - BMT trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":25,\"OldResult\":0,\"ResultText\":25,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":9200000,\"OldResult\":0,\"ResultText\":\"9,2\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Phòng KD sản phẩm ESHOP 01 - BMT hiện có 25 cơ hội đang thực hiện nhưng doanh số đạt được vẫn ở mức 0, cho thấy tiến độ đạt mục tiêu doanh số tháng gặp nhiều khó khăn.<br>  \n- Tỷ lệ chiến thắng cơ hội duy trì 0%, phản ánh hiệu quả chuyển đổi cơ hội thành công chưa khả quan, cần điều chỉnh chiến lược hoặc hỗ trợ kịp thời.<br>  \n- Doanh số kỳ vọng tháng là 9,2 triệu nhưng chưa có kết quả thực tế, cho thấy khoảng cách lớn giữa kế hoạch và thực tế, cần phân tích nguyên nhân cụ thể để cải thiện.<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 25 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng chưa đạt mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy hiệu quả chuyển đổi chưa tốt<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.56,
+    "new_output_prompt_tokens": 505,
+    "new_output_completion_tokens": 57,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 8045.906,
+    "available_products": []
+  },
+  {
+    "id": "191546",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng Bán thêm GP Ký điện tử 02 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":112,\"OldResult\":0,\"ResultText\":112,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11868820,\"OldResult\":0,\"ResultText\":\"11,87\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":16324396,\"OldResult\":0,\"ResultText\":\"16,32\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":4.769990074058343,\"OldResult\":0,\"ResultText\":\"4,77%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Đã đạt 72.7% mục tiêu doanh số với 11,87 triệu đồng, cần tăng tốc để hoàn thành 16,32 triệu đồng đề ra <br>  \n- Quản lý 112 cơ hội đang thực hiện, cho thấy giai đoạn đầu triển khai chưa có sự thay đổi so với kỳ trước <br>  \n- Tỷ lệ chiến thắng 4,77% thấp, cần tối ưu quy trình chốt deal và hỗ trợ đội ngũ bán hàng để cải thiện hiệu quả <br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 112 cơ hội<br>\n- Doanh số đã thực hiện là 11,87 triệu đồng, chưa đạt mục tiêu kỳ vọng 16,32 triệu đồng<br>\n- Tỷ lệ chiến thắng cơ hội chỉ đạt 4,77%, cho thấy hiệu quả chuyển đổi còn thấp cần cải thiện<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.7,
+    "new_output_prompt_tokens": 543,
+    "new_output_completion_tokens": 80,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 16399.0429,
+    "available_products": []
+  },
+  {
+    "id": "191762",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD chuyển đổi GPKT trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":448,\"OldResult\":0,\"ResultText\":448,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":11000000,\"OldResult\":0,\"ResultText\":\"11\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":39425000,\"OldResult\":0,\"ResultText\":\"39,42\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0.5495191707256151,\"OldResult\":0,\"ResultText\":\"0,55%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Doanh số đã thực hiện đạt 11 triệu đồng, chỉ bằng 27,9% so với mục tiêu kỳ vọng 39,42 triệu đồng, cho thấy tiến độ chưa khả quan<br>  \n- Số lượng cơ hội đang thực hiện ở mức 448, phản ánh sự tập trung cao vào việc xử lý các cơ hội kinh doanh<br>  \n- Tỷ lệ chiến thắng cơ hội đạt 0,55%, thấp hơn đáng kể so với kỳ vọng, cần cải thiện để tối ưu hóa hiệu quả chuyển đổi<br>",
+    "new_output": "- Doanh số đã thực hiện đạt 11 triệu, thấp hơn mức kỳ vọng 39,42 triệu, cho thấy tiến độ chưa đáp ứng mục tiêu<br>\r\n- Tỷ lệ chiến thắng cơ hội đạt 55%, thể hiện hiệu quả chuyển đổi cơ hội thành doanh số khá tốt<br>\r\n- Số lượng cơ hội đang thực hiện ở mức 448, cho thấy nguồn lực và hoạt động tiếp thị vẫn đang được duy trì ổn định<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.87,
+    "new_output_prompt_tokens": 536,
+    "new_output_completion_tokens": 100,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 49986.8331,
+    "available_products": []
+  },
+  {
+    "id": "191325",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hãy đóng vai một nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard được cung cấp, hãy đưa ra những nhận định cốt lõi về tình hình hoạt động của đơn vị Phòng KD Bán mới KTDN 05 trong Tháng này. \r\n                    Đánh giá nhanh về tiến độ đạt mục tiêu doanh số và hiệu quả chuyển đổi cơ hội thành công. Trình bày trong 3 gạch đầu dòng thêm thêm 1 thẻ <br> ở cuỗi mỗi dòng để xuống dòng và đầu mỗi dòng có gạch đầu dòng. \r\n                    Tổng khoảng 100-150 từ, không đánh số thứ tự, không có lời chào, \r\n                    đầu mỗi dòng chỉ có mỗi gạch đầu dòng không thêm bất kì ký tự đặc biệt nào cả.\r\n                     Câu trả lời bắt buộc bằng tiếng việt\r\n===============Dữ liệu dashboard là 1 mảng object===============\r\n[{\"Type\":1,\"TypeText\":\"FirstResult\",\"Title\":\"Số lượng cơ hội đang thực hiện\",\"Result\":78,\"OldResult\":0,\"ResultText\":78,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#5A76F2\"},{\"Type\":2,\"TypeText\":\"SecondResult\",\"Title\":\"Doanh số đã thực hiện\",\"Result\":0,\"OldResult\":0,\"ResultText\":0,\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#37C8A1\"},{\"Type\":3,\"TypeText\":\"ThirdResult\",\"Title\":\"Doanh số kỳ vọng\",\"Result\":154362752,\"OldResult\":0,\"ResultText\":\"154,36\",\"OldResultText\":0,\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"triệu\",\"BgColor\":\"#F28C5A\"},{\"Type\":4,\"TypeText\":\"FourthResult\",\"Title\":\"Tỷ lệ chiến thắng cơ hội\",\"Result\":0,\"OldResult\":0,\"ResultText\":\"0%\",\"OldResultText\":\"0%\",\"ChangedRatio\":0,\"ChangedRatioText\":\"\",\"Unit\":\"\",\"BgColor\":\"#785AF2\"}]\r\n===============Ý nghĩa của các key trong object===============\r\n1. Title là ý nghĩa của số liệu\r\n2. ResultText là số liệu\r\n3. Unit đơn vị hậu tố của số\r\n"
+      }
+    ],
+    "old_output": "- Số lượng cơ hội đang thực hiện đạt 78, cho thấy đơn vị duy trì hoạt động tìm kiếm khách hàng tích cực, tuy nhiên chưa có dữ liệu so sánh tiến độ từ kỳ trước để đánh giá rõ hơn hiệu quả<br>\n- Doanh số đã thực hiện dừng ở mức 0 triệu đồng, chưa đạt mục tiêu kỳ vọng 154,36 triệu, phản ánh khó khăn trong việc chuyển đổi cơ hội thành đơn hàng thành công<br>\n- Tỷ lệ chiến thắng cơ hội duy trì 0%, cho thấy cần điều chỉnh chiến lược tiếp cận khách hàng hoặc cải thiện quy trình chốt deal để nâng cao hiệu suất bán hàng<br>",
+    "new_output": "- Số lượng cơ hội đang thực hiện đạt 78 cơ hội<br>\r\n- Doanh số đã thực hiện là 0 triệu đồng trong tháng này<br>\r\n- Tỷ lệ chiến thắng cơ hội là 0% cho thấy chưa có cơ hội nào chuyển đổi thành đơn hàng thành công<br>",
+    "new_output_success": true,
+    "new_output_error": null,
+    "new_output_time_seconds": 0.6,
+    "new_output_prompt_tokens": 509,
+    "new_output_completion_tokens": 62,
+    "application_code": "crmmisa",
+    "consumer_name": "Dự án CRM MISA ",
+    "processing_time_ms": 7688.2119,
+    "available_products": []
+  }
+]

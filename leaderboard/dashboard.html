@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Benchmark Dashboard</title>
+<style>
+/* ── Dark theme tokens ──────────────────────────────────────────────── */
+:root {
+  --bg-900: #0f172a;
+  --bg-800: #1e293b;
+  --bg-700: #334155;
+  --bg-600: #475569;
+  --text-1: #f1f5f9;
+  --text-2: #94a3b8;
+  --text-3: #64748b;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg-900);
+  color: var(--text-1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 32px 28px;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+.subtitle { color: var(--text-2); font-size: 0.9rem; margin: 4px 0 20px; }
+.subtitle code {
+  background: var(--bg-700); padding: 2px 6px; border-radius: 4px; font-size: 0.82rem;
+}
+
+/* ── Warning banner ─────────────────────────────────────────────────── */
+.warning {
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  color: #fbbf24;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ── Legend ──────────────────────────────────────────────────────────── */
+.legend {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-bottom: 28px;
+  padding: 10px 14px;
+  background: var(--bg-800);
+  border-radius: 8px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── Section titles ─────────────────────────────────────────────────── */
+.section-title {
+  font-size: 1.2rem; font-weight: 600;
+  margin: 8px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--bg-700);
+}
+
+/* ── Chart grid ─────────────────────────────────────────────────────── */
+.chart-grid { display: grid; gap: 18px; margin-bottom: 36px; }
+.chart-grid-1 { grid-template-columns: 1fr; }
+.chart-grid-2 { grid-template-columns: 1.6fr 1fr; }
+.chart-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.chart-card {
+  background: var(--bg-800);
+  border: 1px solid var(--bg-700);
+  border-radius: 10px;
+  padding: 18px 16px 14px;
+}
+.chart-card h3 {
+  font-size: 0.88rem; font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 14px;
+}
+.lower-tag {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+/* ── Metric sub-group ───────────────────────────────────────────────── */
+.metric-group { margin-bottom: 18px; }
+.metric-group:last-child { margin-bottom: 0; }
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* ── Bar row (the Meta-style graph) ─────────────────────────────────── */
+.bars-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 180px;
+  padding-bottom: 0;
+}
+
+.bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-width: 0;
+}
+
+/* Score on top */
+.bar-value {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  min-height: 16px;
+}
+
+/* Track (the grey background column) */
+.bar-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  background: var(--bg-700);
+  overflow: hidden;
+}
+
+/* Fill (the coloured bar) */
+.bar-fill {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  border-top: 3px solid;
+  transition: height 1s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+.bar-fill.best {
+  box-shadow: 0 0 10px rgba(255,255,255,0.12);
+}
+.bar-fill.best::after {
+  content: "★";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #fbbf24;
+}
+
+/* Model name below */
+.bar-label {
+  font-size: 0.68rem;
+  color: var(--text-2);
+  margin-top: 6px;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Run tag */
+.bar-run {
+  font-size: 0.62rem;
+  color: var(--text-3);
+  margin-top: 1px;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────── */
+footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-700);
+  color: var(--text-3);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .chart-grid-3, .chart-grid-2 { grid-template-columns: 1fr; }
+  .bars-row { height: 150px; }
+}
+</style>
+</head>
+<body>
+
+<h1>LLM Benchmark Dashboard</h1>
+<p class="subtitle">Ground Truth: <code>claude-sonnet-4-5</code> &middot; 50 samples / project &middot; Generated 2026-03-10</p>
+
+<div class="warning">
+  <span>⚠️</span>
+  <span><b>Lưu ý:</b> Mỗi Evaluation Run có Ground Truth riêng — chỉ nên so sánh cùng Run (xem nhãn R1–R5).</span>
+</div>
+
+<div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>baseline (R5)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#14b8a6"></span>mercury-2 (R1)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>misa-ai-1.1 (R4)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>text2sql (R3)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>gpt-oss-120b (R5)</span>
+</div>
+
+<h2 class="section-title">📦 CRM KH — Product Recommendation</h2>
+<div class="chart-grid chart-grid-3">
+  <div class="chart-card"><h3>Quality Metrics</h3><div class="metric-group"><div class="metric-label">ROUGE</div><div class="bars-row"><div class="bar-item"><div class="bar-value">48.83%</div><div class="bar-track"><div class="bar-fill" style="height:48.8%;background:#3b82f6;border-color:#2563eb;" data-value="48.83%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">49.06%</div><div class="bar-track"><div class="bar-fill best" style="height:49.1%;background:#14b8a6;border-color:#0d9488;" data-value="49.06%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">37.66%</div><div class="bar-track"><div class="bar-fill" style="height:37.7%;background:#22c55e;border-color:#16a34a;" data-value="37.66%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">41.87%</div><div class="bar-track"><div class="bar-fill" style="height:41.9%;background:#f59e0b;border-color:#d97706;" data-value="41.87%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">48.25%</div><div class="bar-track"><div class="bar-fill" style="height:48.2%;background:#ef4444;border-color:#dc2626;" data-value="48.25%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div><div class="metric-group"><div class="metric-label">Token F1</div><div class="bars-row"><div class="bar-item"><div class="bar-value">80.74%</div><div class="bar-track"><div class="bar-fill best" style="height:80.7%;background:#3b82f6;border-color:#2563eb;" data-value="80.74%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">78.66%</div><div class="bar-track"><div class="bar-fill" style="height:78.7%;background:#14b8a6;border-color:#0d9488;" data-value="78.66%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">63.88%</div><div class="bar-track"><div class="bar-fill" style="height:63.9%;background:#22c55e;border-color:#16a34a;" data-value="63.88%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">57.71%</div><div class="bar-track"><div class="bar-fill" style="height:57.7%;background:#f59e0b;border-color:#d97706;" data-value="57.71%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">78.09%</div><div class="bar-track"><div class="bar-fill" style="height:78.1%;background:#ef4444;border-color:#dc2626;" data-value="78.09%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div></div>
+  <div class="chart-card"><h3>Product Metrics</h3><div class="metric-group"><div class="metric-label">JSON Valid</div><div class="bars-row"><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#3b82f6;border-color:#2563eb;" data-value="100.0%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">98.0%</div><div class="bar-track"><div class="bar-fill" style="height:98.0%;background:#14b8a6;border-color:#0d9488;" data-value="98.0%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#22c55e;border-color:#16a34a;" data-value="100.0%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#f59e0b;border-color:#d97706;" data-value="100.0%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#ef4444;border-color:#dc2626;" data-value="100.0%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div><div class="metric-group"><div class="metric-label">Count Valid</div><div class="bars-row"><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#3b82f6;border-color:#2563eb;" data-value="100.0%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">98.0%</div><div class="bar-track"><div class="bar-fill" style="height:98.0%;background:#14b8a6;border-color:#0d9488;" data-value="98.0%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#22c55e;border-color:#16a34a;" data-value="100.0%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#f59e0b;border-color:#d97706;" data-value="100.0%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#ef4444;border-color:#dc2626;" data-value="100.0%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div><div class="metric-group"><div class="metric-label">Suggestion Precision</div><div class="bars-row"><div class="bar-item"><div class="bar-value">99.2%</div><div class="bar-track"><div class="bar-fill" style="height:99.2%;background:#3b82f6;border-color:#2563eb;" data-value="99.2%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">98.78%</div><div class="bar-track"><div class="bar-fill" style="height:98.8%;background:#14b8a6;border-color:#0d9488;" data-value="98.78%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">98.4%</div><div class="bar-track"><div class="bar-fill" style="height:98.4%;background:#22c55e;border-color:#16a34a;" data-value="98.4%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">100.0%</div><div class="bar-track"><div class="bar-fill best" style="height:100.0%;background:#f59e0b;border-color:#d97706;" data-value="100.0%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">99.2%</div><div class="bar-track"><div class="bar-fill" style="height:99.2%;background:#ef4444;border-color:#dc2626;" data-value="99.2%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div></div>
+  <div class="chart-card"><h3>Avg Latency <span class="lower-tag">▼ lower is better</span></h3><div class="metric-group"><div class="bars-row"><div class="bar-item"><div class="bar-value">2.03s</div><div class="bar-track"><div class="bar-fill" style="height:54.8%;background:#3b82f6;border-color:#2563eb;" data-value="2.03s"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">2.1s</div><div class="bar-track"><div class="bar-fill" style="height:56.7%;background:#14b8a6;border-color:#0d9488;" data-value="2.1s"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">2.16s</div><div class="bar-track"><div class="bar-fill" style="height:58.3%;background:#22c55e;border-color:#16a34a;" data-value="2.16s"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">1.43s</div><div class="bar-track"><div class="bar-fill best" style="height:38.6%;background:#f59e0b;border-color:#d97706;" data-value="1.43s"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">3.22s</div><div class="bar-track"><div class="bar-fill" style="height:87.0%;background:#ef4444;border-color:#dc2626;" data-value="3.22s"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div></div>
+</div>
+
+<h2 class="section-title">📊 CRM MISA — Business Analysis</h2>
+<div class="chart-grid chart-grid-2">
+  <div class="chart-card"><h3>Quality Metrics</h3><div class="metric-group"><div class="metric-label">ROUGE</div><div class="bars-row"><div class="bar-item"><div class="bar-value">30.83%</div><div class="bar-track"><div class="bar-fill" style="height:30.8%;background:#3b82f6;border-color:#2563eb;" data-value="30.83%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">31.72%</div><div class="bar-track"><div class="bar-fill" style="height:31.7%;background:#14b8a6;border-color:#0d9488;" data-value="31.72%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">31.8%</div><div class="bar-track"><div class="bar-fill best" style="height:31.8%;background:#22c55e;border-color:#16a34a;" data-value="31.8%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">24.78%</div><div class="bar-track"><div class="bar-fill" style="height:24.8%;background:#f59e0b;border-color:#d97706;" data-value="24.78%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">31.26%</div><div class="bar-track"><div class="bar-fill" style="height:31.3%;background:#ef4444;border-color:#dc2626;" data-value="31.26%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div><div class="metric-group"><div class="metric-label">G-Eval</div><div class="bars-row"><div class="bar-item"><div class="bar-value">50.0%</div><div class="bar-track"><div class="bar-fill best" style="height:50.0%;background:#3b82f6;border-color:#2563eb;" data-value="50.0%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">50.0%</div><div class="bar-track"><div class="bar-fill best" style="height:50.0%;background:#14b8a6;border-color:#0d9488;" data-value="50.0%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">50.0%</div><div class="bar-track"><div class="bar-fill best" style="height:50.0%;background:#22c55e;border-color:#16a34a;" data-value="50.0%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">50.0%</div><div class="bar-track"><div class="bar-fill best" style="height:50.0%;background:#f59e0b;border-color:#d97706;" data-value="50.0%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">50.0%</div><div class="bar-track"><div class="bar-fill best" style="height:50.0%;background:#ef4444;border-color:#dc2626;" data-value="50.0%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div><div class="metric-group"><div class="metric-label">Ans. Relevancy</div><div class="bars-row"><div class="bar-item"><div class="bar-value">94.4%</div><div class="bar-track"><div class="bar-fill" style="height:94.4%;background:#3b82f6;border-color:#2563eb;" data-value="94.4%"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">92.45%</div><div class="bar-track"><div class="bar-fill" style="height:92.5%;background:#14b8a6;border-color:#0d9488;" data-value="92.45%"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">94.4%</div><div class="bar-track"><div class="bar-fill" style="height:94.4%;background:#22c55e;border-color:#16a34a;" data-value="94.4%"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">79.25%</div><div class="bar-track"><div class="bar-fill" style="height:79.2%;background:#f59e0b;border-color:#d97706;" data-value="79.25%"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">94.55%</div><div class="bar-track"><div class="bar-fill best" style="height:94.5%;background:#ef4444;border-color:#dc2626;" data-value="94.55%"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div></div>
+  <div class="chart-card"><h3>Avg Latency <span class="lower-tag">▼ lower is better</span></h3><div class="metric-group"><div class="bars-row"><div class="bar-item"><div class="bar-value">11.92s</div><div class="bar-track"><div class="bar-fill" style="height:87.0%;background:#3b82f6;border-color:#2563eb;" data-value="11.92s"></div></div><div class="bar-label">baseline</div><div class="bar-run">R5</div></div><div class="bar-item"><div class="bar-value">2.95s</div><div class="bar-track"><div class="bar-fill" style="height:21.5%;background:#14b8a6;border-color:#0d9488;" data-value="2.95s"></div></div><div class="bar-label">mercury-2</div><div class="bar-run">R1</div></div><div class="bar-item"><div class="bar-value">1.53s</div><div class="bar-track"><div class="bar-fill" style="height:11.2%;background:#22c55e;border-color:#16a34a;" data-value="1.53s"></div></div><div class="bar-label">misa-ai-1.1</div><div class="bar-run">R4</div></div><div class="bar-item"><div class="bar-value">0.65s</div><div class="bar-track"><div class="bar-fill best" style="height:4.7%;background:#f59e0b;border-color:#d97706;" data-value="0.65s"></div></div><div class="bar-label">text2sql</div><div class="bar-run">R3</div></div><div class="bar-item"><div class="bar-value">1.54s</div><div class="bar-track"><div class="bar-fill" style="height:11.2%;background:#ef4444;border-color:#dc2626;" data-value="1.54s"></div></div><div class="bar-label">gpt-oss-120b</div><div class="bar-run">R5</div></div></div></div></div>
+</div>
+
+
+
+<footer>Auto-generated by <code>generate_dashboard.py</code> &middot; Pure CSS — no JavaScript dependencies</footer>
+
+</body>
+</html>
