@@ -5,6 +5,8 @@ from typing import List, Dict, Any, Optional
 from collections import Counter
 import re
 
+from tqdm import tqdm
+
 from .base import BaseMetric, LLMBasedMetric, MetricResult
 from ..data_parsers.base import EvalSample
 from ..config import OpenAIConfig
@@ -198,7 +200,7 @@ Respond in JSON format:
         all_scores = {c: [] for c in self.criteria}
         per_sample = []
 
-        for sample in samples:
+        for sample in tqdm(samples, desc="G-Eval", unit="sample"):
             scores = self._evaluate_single(sample)
             avg = sum(scores.values()) / len(scores) if scores else 0.0
             per_sample.append(avg)

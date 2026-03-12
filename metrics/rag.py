@@ -4,6 +4,8 @@ RAG Metrics: Faithfulness, Context Precision, Context Recall, Answer Relevancy
 from typing import List, Dict, Any, Optional
 import re
 
+from tqdm import tqdm
+
 from .base import BaseMetric, LLMBasedMetric, MetricResult
 from ..data_parsers.base import EvalSample
 from ..config import OpenAIConfig
@@ -62,7 +64,7 @@ Answer only "SUPPORTED" or "NOT SUPPORTED"."""
             return 1.0  # No claims = faithful by default
 
         supported_count = 0
-        for claim in claims:
+        for claim in tqdm(claims, desc="    ↳ Verifying claims", leave=False, unit="claim"):
             if self._verify_claim(claim, sample.context):
                 supported_count += 1
 
@@ -80,7 +82,7 @@ Answer only "SUPPORTED" or "NOT SUPPORTED"."""
             )
 
         scores = []
-        for sample in valid_samples:
+        for sample in tqdm(valid_samples, desc="Faithfulness", unit="sample"):
             score = self._compute_single(sample)
             scores.append(score)
 
@@ -161,7 +163,7 @@ Answer only "RELEVANT" or "NOT RELEVANT"."""
             )
 
         scores = []
-        for sample in valid_samples:
+        for sample in tqdm(valid_samples, desc="Context Precision", unit="sample"):
             score = self._compute_single(sample)
             scores.append(score)
 
@@ -229,7 +231,7 @@ Answer with just the number (e.g., 0.8)."""
             )
 
         scores = []
-        for sample in valid_samples:
+        for sample in tqdm(valid_samples, desc="Context Recall", unit="sample"):
             score = self._compute_single(sample)
             scores.append(score)
 
@@ -294,7 +296,7 @@ Answer with just the relevancy score (e.g., 0.85)."""
             )
 
         scores = []
-        for sample in samples:
+        for sample in tqdm(samples, desc="Answer Relevancy", unit="sample"):
             score = self._compute_single(sample)
             scores.append(score)
 

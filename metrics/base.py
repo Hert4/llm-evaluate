@@ -156,7 +156,7 @@ class LLMBasedMetric(BaseMetric):
             model=self.openai_config.model,
             messages=[{"role": "user", "content": prompt}],
             temperature=kwargs.get("temperature", self.openai_config.temperature),
-            max_tokens=kwargs.get("max_tokens", self.openai_config.max_tokens),
+            max_completion_tokens=kwargs.get("max_tokens", self.openai_config.max_tokens),
         )
         return response.choices[0].message.content.strip()
 

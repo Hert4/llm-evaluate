@@ -1,0 +1,33 @@
+# CRM Order Intent Analysis Benchmark
+# Source: crmkh app — intent/action parsing system prompts
+# Input:  user text describing order actions
+# Output: parsed intent classification
+
+task_name: crm_intent_analysis
+task_type: qa
+source_file: crmkh_crmmisa.json
+max_samples: 0  # take all (~57 after dedup)
+description: "CRM intent analysis — phân tích hành động người dùng với đơn hàng"
+
+filters:
+  application_code: crmkh
+  system_prompt_contains:
+    - "phân tích hành động người dùng"
+    - "phân tích yêu cầu thêm hàng hóa"
+    - "phân tích yêu cầu cập nhật khách hàng"
+    - "phân tích yêu cầu sắp xếp hàng hóa"
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là AI chuyên phân tích hành động người dùng với đơn hàng.
+  Phân tích text sau và trả về kết quả phân loại:
+
+  {input}
+
+  Context hệ thống: {context}
+
+  Trả lời theo đúng format mà system prompt yêu cầu.
+gt_task_type: qa
+gt_metrics:
+  - exact_match
+  - token_f1

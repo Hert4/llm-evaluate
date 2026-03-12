@@ -1,0 +1,150 @@
+# Vietnamese language name → BCP-47 locale code mapping
+# Compatible with TranslateGemma-4b-it and IETF BCP 47 standard
+#
+# Format: "tiếng Xxx": "locale_code"
+# Used by convert_raw_to_benchmark.py to normalize language metadata
+
+tiếng Albania: sq
+tiếng Amharic: am
+tiếng Armenia: hy
+tiếng Assam: as
+tiếng Awadhi: awa        # No standard BCP-47, ISO 639-3
+tiếng Azerbaijan: az
+tiếng Ba Lan: pl
+tiếng Ba Tư: fa
+tiếng Bambara: bm
+tiếng Bantu: bnt          # Generic Bantu family, no single code
+tiếng Bashkir: ba
+tiếng Basque: eu
+tiếng Belarus: be
+tiếng Bengal: bn
+tiếng Betawi: bew         # ISO 639-3
+tiếng Bhojpuri: bho       # ISO 639-3
+tiếng Bikol: bik          # ISO 639-3
+tiếng Bosnia: bs
+tiếng Breton: br
+tiếng Bulgaria: bg
+tiếng Buryat: bua         # ISO 639-3
+tiếng Bồ Đào Nha (Brazil): pt-BR
+tiếng Catalan: ca
+tiếng Cebuano: ceb        # ISO 639-3
+tiếng Chichewa: ny
+tiếng Chuvash: cv
+tiếng Corsi: co
+tiếng Creole (Haiti): ht
+tiếng Creole Seychelles: crs  # ISO 639-3
+tiếng Croatia: hr
+tiếng Do Thái: he
+tiếng Dogri: doi
+tiếng Estonia: et
+tiếng Fiji: fj
+tiếng Filipino: fil
+tiếng Frisia: fy
+tiếng Gael Scotland: gd
+tiếng Galicia: gl
+tiếng Guarani: gn
+tiếng Gujarat: gu
+tiếng Hausa: ha
+tiếng Hawaii: haw          # ISO 639-3
+tiếng Hiligaynon: hil      # ISO 639-3
+tiếng Hindi: hi
+tiếng Hmong: hmn           # ISO 639-3
+tiếng Hungary: hu
+tiếng Hunsrik: hrx          # ISO 639-3
+tiếng Hy Lạp: el
+tiếng Hà Lan: nl
+tiếng Hà Lan (Nam Phi): af  # Afrikaans
+tiếng Hàn Quốc(Korea): ko
+tiếng Iceland: is
+tiếng Igbo: ig
+tiếng Ilocano: ilo          # ISO 639-3
+tiếng Indonesia: id
+tiếng Ireland: ga
+tiếng Java: jv
+tiếng Kannada: kn
+tiếng Kapampangan: pam      # ISO 639-3
+tiếng Kazakh: kk
+tiếng Khmer: km
+tiếng Kinyarwanda: rw
+tiếng Konkani: kok          # ISO 639-3
+tiếng Krio: kri             # ISO 639-3
+tiếng Kurd (Kurmanji): ku
+tiếng Kurd (Sorani): ckb    # ISO 639-3
+tiếng Kyrgyz: ky
+tiếng Latinh: la
+tiếng Latvia: lv
+tiếng Limburg: li
+tiếng Litva: lt
+tiếng Lombard: lmo          # ISO 639-3
+tiếng Luxembourg: lb
+tiếng Lào (Laos): lo
+tiếng Macedonia: mk
+tiếng Maithili: mai         # ISO 639-3
+tiếng Malagasy: mg
+tiếng Malayalam: ml
+tiếng Malta: mt
+tiếng Maori: mi
+tiếng Marathi: mr
+tiếng Minang: min           # ISO 639-3
+tiếng Myanmar: my
+tiếng Mã Lai: ms
+tiếng Mông Cổ: mn
+tiếng Na Uy: "no"
+tiếng Nam Ndebele: nr
+tiếng Nepal: ne
+tiếng Nga: ru
+tiếng Nhật Bản(Japan): ja
+tiếng Occitan: oc
+tiếng Odia (Oriya): or
+tiếng Oromo: om
+tiếng Papiamento: pap       # ISO 639-3
+tiếng Pashto: ps
+tiếng Pháp: fr
+tiếng Phạn: sa
+tiếng Phần Lan: fi
+tiếng Punjab (Gurmukhi): pa
+tiếng Quảng Đông: zh-Hant-HK  # Cantonese (yue would be more precise)
+tiếng Quốc tế ngữ: eo          # Esperanto
+tiếng Romani: rom              # ISO 639-3
+tiếng Rumani: ro
+tiếng Samoa: sm
+tiếng Sepedi: nso              # ISO 639-3
+tiếng Serbia: sr
+tiếng Sesotho: st
+tiếng Shona: sn
+tiếng Sicily: scn              # ISO 639-3
+tiếng Silesia: szl             # ISO 639-3
+tiếng Sindhi: sd
+tiếng Sinhala: si
+tiếng Slovak: sk
+tiếng Slovenia: sl
+tiếng Somali: so
+tiếng Sunda: su
+tiếng Swahili: sw
+tiếng Séc: cs
+tiếng Tajik: tg
+tiếng Tamil: ta
+tiếng Tatar: tt
+tiếng Tatar Krym: crh          # ISO 639-3
+tiếng Telugu: te
+tiếng Thái Lan(Thailand): th
+tiếng Thổ Nhĩ Kỳ: tr
+tiếng Thụy Điển: sv
+tiếng Tigrinya: ti
+tiếng Tiếng Anh: en
+tiếng Tiếng Georgia: ka
+tiếng Trung (Giản thể): zh-Hans
+tiếng Turkmen: tk
+tiếng Tây Ban Nha: es
+tiếng Ukraina: uk
+tiếng Urdu: ur
+tiếng Uyghur: ug
+tiếng Uzbek: uz
+tiếng Xứ Wales: cy
+tiếng Yiddish: yi
+tiếng Yoruba: yo
+tiếng Zulu: zu
+tiếng Ý: it
+tiếng Đan Mạch: da
+tiếng Đức: de
+tiếng Ả Rập: ar

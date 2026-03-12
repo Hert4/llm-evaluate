@@ -15,6 +15,7 @@ from .reasoning import AccuracyMetric
 from .rag import FaithfulnessMetric, ContextPrecisionMetric, ContextRecallMetric, AnswerRelevancyMetric
 from .safety import FactScoreMetric, IFEvalMetric
 from .chat import WinRateMetric, PairwiseComparisonMetric
+from .list_match import ListMatchMetric
 
 __all__ = [
     "BaseMetric",
@@ -51,4 +52,6 @@ __all__ = [
     # Chat
     "WinRateMetric",
     "PairwiseComparisonMetric",
+    # List Match
+    "ListMatchMetric",
 ]

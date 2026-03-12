@@ -1,0 +1,41 @@
+{
+  "task_name": "crm_recommendation",
+  "task_type": "qa",
+  "description": "CRM product recommendation — gợi ý top 5 sản phẩm cho khách hàng",
+  "model_evaluated": "misa-ai-1.1",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "crm_recommendation_150.json",
+  "num_samples": 150,
+  "evaluation_date": "2026-03-12 17:33:54",
+  "elapsed_seconds": 0.0,
+  "metrics": {
+    "list_match": {
+      "score": 0.516,
+      "score_pct": 51.6,
+      "details": {
+        "precision@1": 0.6,
+        "recall@1": 0.11999999999999979,
+        "ndcg@1": 0.6,
+        "precision@3": 0.5533333333333335,
+        "recall@3": 0.33200000000000024,
+        "ndcg@3": 0.565512021232954,
+        "precision@5": 0.5159999999999999,
+        "recall@5": 0.5159999999999999,
+        "ndcg@5": 0.5368508723717489,
+        "precision@10": 0.5159999999999999,
+        "recall@10": 0.5159999999999999,
+        "ndcg@10": 0.5368508723717489,
+        "hit": 0.7666666666666667,
+        "k_values": [
+          1,
+          3,
+          5,
+          10
+        ],
+        "num_samples": 150,
+        "avg_pred_items": 8.766666666666667,
+        "avg_ref_items": 4.98
+      }
+    }
+  }
+}

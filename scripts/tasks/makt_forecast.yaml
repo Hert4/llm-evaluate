@@ -1,0 +1,28 @@
+# AMIS Accounting Sales Forecast Benchmark
+# Source: amisketoan app — misa-qwen3-30b model
+# Input:  historical sales data + forecast request
+# Output: JSON {"A": [{"B": "product_code"}, ...]}
+
+task_name: makt_forecast
+task_type: qa
+source_file: makt.json
+max_samples: 150
+description: "AMIS Kế toán — dự báo top 5 VTHH bán chạy từ lịch sử bán hàng"
+
+filters:
+  application_code: amisketoan
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là chuyên gia AI phân tích dữ liệu bán hàng.
+
+  {context}
+
+  {input}
+
+  Trả lời CHÍNH XÁC theo format JSON:
+  {{"A": [{{"B": "product_code"}}, ...]}}
+  Chỉ trả JSON, không giải thích.
+gt_task_type: qa
+gt_metrics:
+  - list_match

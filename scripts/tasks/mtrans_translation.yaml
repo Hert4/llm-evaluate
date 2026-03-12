@@ -1,0 +1,30 @@
+# mTranslate JSON Translation Benchmark
+# Source: mtranslate app — Vietnamese → 144 languages
+# Input:  translation instruction + source JSON
+# Output: translated JSON
+# Uses stratified sampling by target language for diversity
+# Language names are mapped to BCP-47 locale codes (via language_mapping.yaml)
+
+task_name: mtrans_translation
+task_type: translation
+source_file: mtrans.json
+max_samples: 150
+description: "mTranslate — dịch JSON từ tiếng Việt sang 144 ngôn ngữ"
+
+sampling_strategy: stratified
+stratified_key: target_language
+
+filters:
+  application_code: mtranslate
+
+metadata_regex:
+  target_language: "sang ngôn ngữ (.+?)(?:\\s+một cách|\\s*[.\\n])"
+
+language_mapping_field: target_language
+
+# Ground truth generation config
+gt_prompt: |
+  {input}
+gt_task_type: translation
+gt_metrics:
+  - bleu

@@ -9,6 +9,8 @@ from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
 from datetime import datetime
 
+from tqdm import tqdm
+
 from .config import EvalConfig, MetricType, TaskType, TASK_METRICS_MAP, OpenAIConfig
 from .data_parsers import AutoParser, EvalSample
 from .ground_truth import GroundTruthGenerator
@@ -24,6 +26,7 @@ from .metrics import (
     FaithfulnessMetric, ContextPrecisionMetric, ContextRecallMetric, AnswerRelevancyMetric,
     FactScoreMetric, IFEvalMetric,
     WinRateMetric, PairwiseComparisonMetric,
+    ListMatchMetric,
 )
 
 logger = logging.getLogger(__name__)
@@ -59,6 +62,7 @@ class LLMEvaluator:
         MetricType.IFEVAL: IFEvalMetric,
         MetricType.WIN_RATE: WinRateMetric,
         MetricType.PAIRWISE_COMPARISON: PairwiseComparisonMetric,
+        MetricType.LIST_MATCH: ListMatchMetric,
     }
 
     # LLM-based metrics that need OpenAI config
@@ -255,7 +259,7 @@ class LLMEvaluator:
 
         # Run each metric
         results = {}
-        for metric_type in metrics:
+        for metric_type in tqdm(metrics, desc="Metrics", unit="metric"):
             try:
                 metric = self._get_metric(metric_type)
                 logger.info(f"Computing {metric_type.value}...")

@@ -111,7 +111,7 @@ class GroundTruthGenerator:
                 model=self.config.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=self.config.temperature,
-                max_tokens=self.config.max_tokens,
+                max_completion_tokens=self.config.max_tokens,
             )
 
             ground_truth = response.choices[0].message.content.strip()
@@ -162,7 +162,7 @@ class GroundTruthGenerator:
                     model=self.config.model,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=self.config.temperature,
-                    max_tokens=self.config.max_tokens,
+                    max_completion_tokens=self.config.max_tokens,
                 )
 
                 ground_truth = response.choices[0].message.content.strip()

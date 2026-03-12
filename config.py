@@ -49,6 +49,9 @@ class MetricType(Enum):
     WIN_RATE = "win_rate"
     PAIRWISE_COMPARISON = "pairwise_comparison"
 
+    # List Match (for recommendation / forecast)
+    LIST_MATCH = "list_match"
+
 
 class TaskType(Enum):
     TRANSLATION = "translation"

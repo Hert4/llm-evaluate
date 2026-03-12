@@ -6,6 +6,8 @@ from collections import Counter
 import re
 import string
 
+from tqdm import tqdm
+
 from .base import BaseMetric, MetricResult
 from ..data_parsers.base import EvalSample
 
@@ -67,7 +69,7 @@ class ExactMatchMetric(BaseMetric):
             )
 
         scores = []
-        for sample in valid_samples:
+        for sample in tqdm(valid_samples, desc="Exact Match", unit="sample"):
             score = self._compute_single(sample.output, sample.reference)
             scores.append(score)
 
@@ -148,7 +150,7 @@ class TokenF1Metric(BaseMetric):
         precision_scores = []
         recall_scores = []
 
-        for sample in valid_samples:
+        for sample in tqdm(valid_samples, desc="Token F1", unit="sample"):
             scores = self._compute_single(sample.output, sample.reference)
             f1_scores.append(scores["f1"])
             precision_scores.append(scores["precision"])

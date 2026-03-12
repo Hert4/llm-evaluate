@@ -39,6 +39,63 @@ from llm_eval_framework.ground_truth import GroundTruthGenerator
 
 
 # ============================================================================
+# CRMMISA TASK TYPE DETECTION
+# ============================================================================
+
+def detect_crmmisa_task(messages: list) -> str:
+    """Phat hien task type cua CRMMISA tu noi dung messages.
+
+    Returns:
+        "dashboard"    - phan tich KPI cho nhan vien KD
+        "text2sql"     - sinh SQL query tu cau hoi tieng Viet
+        "doc_extract"  - trich xuat thong tin tu hinh anh bien ban/ho so
+    """
+    if not messages:
+        return "dashboard"
+
+    first_content = messages[0].get("content", "")
+
+    # Multimodal content (list with image_url) → document extraction
+    if isinstance(first_content, list):
+        return "doc_extract"
+
+    content = str(first_content)
+
+    if "DATABASE SCHEMA" in content or ("SQL" in content and "MySQL" in content):
+        return "text2sql"
+
+    if "nhà phân tích kinh doanh" in content or "dashboard" in content.lower():
+        return "dashboard"
+
+    # Fallback: check for document extraction keywords
+    if "trích xuất" in content or "biên bản" in content or "hồ sơ nghiệp vụ" in content:
+        return "doc_extract"
+
+    return "dashboard"  # default
+
+
+def detect_crmmisa_task_from_raw(raw_payload: str) -> str:
+    """Phat hien task type tu raw payload string (ke ca khi bi truncate, khong parse duoc JSON).
+
+    Dung cho truong hop requestPayload bi cat (>20KB) nhu text2sql (chua DATABASE SCHEMA dai)
+    hoac doc_extract (chua image base64).
+    """
+    if "DATABASE SCHEMA" in raw_payload or ("SQL" in raw_payload and "MySQL" in raw_payload):
+        return "text2sql"
+
+    if "image_url" in raw_payload:
+        return "doc_extract"
+
+    if "nhà phân tích kinh doanh" in raw_payload or "dashboard" in raw_payload.lower():
+        return "dashboard"
+
+    if "trích xuất" in raw_payload or "biên bản" in raw_payload or "hồ sơ nghiệp vụ" in raw_payload:
+        return "doc_extract"
+
+    return "dashboard"
+
+
+# ============================================================================
 # CONFIG LOADER
 # ============================================================================
 
@@ -115,14 +172,25 @@ class CRMLogParser(LogParser):
         response = self._parse_payload(response_payload)
 
         messages = request.get("messages", [])
-        if not messages:
+
+        # Xu ly truong hop requestPayload bi truncate (>20KB)
+        # Text2SQL va Doc extraction co payload qua dai bi cat
+        raw_request_payload = item.get("requestPayload", "")
+        is_truncated = not messages and isinstance(raw_request_payload, str) and len(raw_request_payload) > 1000
+
+        if not messages and not is_truncated:
             return None
 
-        user_messages = [m for m in messages if m.get("role") == "user"]
-        input_text = user_messages[-1].get("content", "") if user_messages else ""
+        if messages:
+            user_messages = [m for m in messages if m.get("role") == "user"]
+            input_text = user_messages[-1].get("content", "") if user_messages else ""
 
-        system_messages = [m for m in messages if m.get("role") == "system"]
-        context = system_messages[0].get("content", "") if system_messages else ""
+            system_messages = [m for m in messages if m.get("role") == "system"]
+            context = system_messages[0].get("content", "") if system_messages else ""
+        else:
+            # Truncated payload: dung raw string lam context, khong co input rieng
+            input_text = "(truncated request)"
+            context = raw_request_payload[:4000]  # giu 4KB dau lam context
 
         choices = response.get("choices", [])
         output_text = ""
@@ -133,15 +201,31 @@ class CRMLogParser(LogParser):
             return None
 
         # Product codes
-        all_content = " ".join(m.get("content", "") for m in messages)
+        if messages:
+            all_content = " ".join(
+                m.get("content", "") for m in messages
+                if isinstance(m.get("content", ""), str)
+            )
+        else:
+            all_content = raw_request_payload[:4000] if is_truncated else ""
         available_products = self._extract_product_codes_from_content(all_content)
         recommended_products = self._extract_product_codes_from_response(output_text)
 
         usage = response.get("usage", {})
 
+        app_code = item.get("applicationCode")
+
+        # Split crmmisa thanh 3 sub-tasks dua tren noi dung messages hoac raw payload
+        if app_code == "crmmisa":
+            if messages:
+                task_type = detect_crmmisa_task(messages)
+            else:
+                task_type = detect_crmmisa_task_from_raw(raw_request_payload)
+            app_code = f"crmmisa_{task_type}"
+
         metadata = {
             "model": item.get("model"),
-            "application_code": item.get("applicationCode"),
+            "application_code": app_code,
             "consumer_name": item.get("consumerName"),
             "trace_id": item.get("traceId"),
             "processing_time_ms": item.get("processingTimeMs"),
@@ -151,6 +235,7 @@ class CRMLogParser(LogParser):
             "completion_tokens": usage.get("completion_tokens"),
             # GIỮ NGUYÊN messages gốc để replay cho model mới
             "original_messages": messages,
+            "is_truncated": is_truncated,
         }
 
         return EvalSample(
@@ -285,13 +370,12 @@ def load_and_group_by_project(data_path: str, max_per_project: int) -> Dict[str,
 
     projects = defaultdict(list)
     for sample in all_samples:
-        project_name = sample.metadata.get("consumer_name", "Unknown")
+        project_name = sample.metadata.get("application_code", "unknown")
         projects[project_name].append(sample)
 
     print(f"\n   Du an:")
     for project, samples in projects.items():
-        app_code = samples[0].metadata.get("application_code", "N/A") if samples else "N/A"
-        print(f"   - {project} ({app_code}): {len(samples)} samples")
+        print(f"   - {project}: {len(samples)} samples")
 
     limited = {}
     for project, samples in projects.items():
@@ -375,9 +459,10 @@ def evaluate_project(
 
     app_code = samples[0].metadata.get("application_code", "N/A").strip() if samples else "N/A"
     project_config = get_project_config(samples, project_configs)
+    display_name = project_config.get("task_description", project_name)
 
     print(f"\n\n{'=' * 70}")
-    print(f" DU AN: {project_name} ({app_code})")
+    print(f" DU AN: {display_name} ({app_code})")
     print(f" Task: {project_config['task_description']}")
     print(f" Samples: {len(samples)}")
     print(f"{'=' * 70}")

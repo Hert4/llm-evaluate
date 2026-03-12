@@ -1,0 +1,403 @@
+{
+  "project_name": "crmmisa_text2sql",
+  "application_code": "crmmisa_text2sql",
+  "task": "Sinh SQL từ câu hỏi (Text-to-SQL)",
+  "num_samples": 50,
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "misa-ai-1.1"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "new_model_source": {
+    "model": "misa-ai-1.1",
+    "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs/crmmisa_text2sql_outputs.json",
+    "success_count": 0,
+    "total": 50
+  },
+  "gt_generation": {
+    "model": "claude-sonnet-4-5",
+    "success_count": 50,
+    "total": 50,
+    "time_seconds": 36.3
+  },
+  "framework_metrics_misa-ai-1.0-plus": {
+    "rouge": {
+      "score": 0.4236,
+      "score_pct": "42.36%",
+      "num_samples": 50
+    },
+    "token_f1": {
+      "score": 0.5359,
+      "score_pct": "53.59%",
+      "num_samples": 50
+    }
+  },
+  "framework_metrics_misa-ai-1.1": {
+    "rouge": {
+      "score": 0.0,
+      "score_pct": "0.00%",
+      "num_samples": 50
+    },
+    "token_f1": {
+      "score": 0.0,
+      "score_pct": "0.00%",
+      "num_samples": 50
+    }
+  },
+  "performance": {
+    "misa-ai-1.0-plus_avg_ms": 17580.549382000005,
+    "misa-ai-1.1_avg_s": null
+  },
+  "sample_details": [
+    {
+      "id": "193962",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE BusinessTypeIDText LIKE '%XUẤT NHẬP KHẨU%' AND AccountName LIKE '%KEN GROUP%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "193658",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'KEN GROUP' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "193755",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ KỸ THUẬT ĐIỂM VÀNG%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcustomer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "193468",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'KEN GROUP' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "193327",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH HTWS VN' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "192640",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM opportunity WHERE AccountTypeIDText LIKE '%doanh nghiệp%' AND OfficeTel != '0907133422' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "192132",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountTypeIDText LIKE '%nha%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191995",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%CÔNG TY TNHH TRAVEL TRACKS%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191667",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM opportunity WHERE AccountIDText = 'CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI HUY VIỆT - TÂY ĐÔ' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191922",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM opportunity WHERE AccountIDText = 'CÔNG TY TNHH CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ G24H' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191659",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%cao su trường sơn%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191912",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%cao su trường sơm%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191476",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE ProductBuyedIDText LIKE '%g24h%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191365",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH SẢN XUẤT MAY THỜI TRANG HỒNG Â' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%Nguyễn%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191042",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'Little seed' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191021",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'Little seed men' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE BillingProvince = 'Hà Nội' LIMIT 1;\n```"
+    },
+    {
+      "id": "191303",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'HẠT MẦM NHỎ' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191118",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcustomer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191177",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%giàn giáo quang minh%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "191060",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountTypeIDText = 'HẠT MẦM NHỎ' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190977",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%CÔNG TY TNHH DỆT IN TÂN THÀNH ĐẠT%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190652",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH DỆT IN TÂN THÀNH ĐẠT' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE BillingProvince = 'Hà Nội' LIMIT 1;\n```"
+    },
+    {
+      "id": "191153",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH DỆT IN TÂN THÀNH ĐẠT' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcontact WHERE CustomerID = 1 LIMIT 1;\n```"
+    },
+    {
+      "id": "190508",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%CÔNG TY TNHH TRAVEL TRACKS%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190394",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%KHẢI TÍN HUY%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcustomer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190645",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH SUPOTECH' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%Nguyễn%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190595",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM sale_order WHERE AccountIDText LIKE '%hoàng anh%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcustomer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190790",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM sale_order WHERE AccountName = 'CÔNG TY TNHH CƠ ĐIỆN LẠNH THUẬN TIẾN' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190222",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY CỔ PHẦN QUỐC TẾ XUDOS' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "190152",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189865",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%LÊ VĂN ĐỒNG%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189877",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%ngọc diệp hội an%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189740",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%TRAN DANH PET FAMILY%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189273",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%TRAN DANH PET FAMILY%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189596",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH NISHIO RENT ALL VIỆT NAM' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189676",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM sale_order WHERE AccountIDText = 'CÔNG TY CỔ PHẦN DỊCH VỤ THƯƠNG MẠI KHÁNH HƯNG' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189400",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI HUY VIỆT - TÂY ĐÔ' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_tdcustomer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189374",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE ParentAccountIDText = 'CÔNG TY TNHH BMS VINA' AND BillingProvinceIDText LIKE '%Hồ Chí Minh%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "189213",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'HUy việt' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE BillingProvince LIKE '%Hà Nội%' LIMIT 1;\n```"
+    },
+    {
+      "id": "188743",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY CỔ PHẦN THƯƠNG MẠI THÀNH THÀNH CÔNG – CHI NHÁNH MIỀN TRUNG' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "188445",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%Huỳnh gia%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "188618",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName = 'CÔNG TY TNHH SINDORA' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "188260",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM sale_order WHERE BillingProvinceIDText LIKE '%an phú phù ninh%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "188071",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountTypeIDText LIKE '%USER LITE%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "187777",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE BillingProvinceIDText LIKE '%Thụy Sỹ%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "187416",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountName LIKE '%vũ thái ninh%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "187337",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM opportunity WHERE AccountIDText = 'CONMIK VIỆT NAM' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "187065",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM sale_order WHERE AccountIDText LIKE '%TMDV ARENA%' ORDER BY ID LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "187173",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountTypeIDText LIKE '%TNHH%' AND BillingProvinceIDText LIKE '%Miền Trung%' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    },
+    {
+      "id": "186856",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "SELECT COUNT(ID) FROM account WHERE AccountTypeIDText LIKE '%Hộ kinh doanh%' AND AccountName = 'Phan Lý Tiến' LIMIT 1;",
+      "output_misa-ai-1.1": "",
+      "ground_truth": "```sql\nSELECT COUNT(ID) FROM d_customer WHERE CustomerName LIKE '%nguyen%' LIMIT 1;\n```"
+    }
+  ]
+}

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISA AI — LLM Evaluation Leaderboard</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a2e;
+    --text-secondary: #6c757d;
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+    --gold: #f59e0b;
+    --silver: #9ca3af;
+    --bronze: #b45309;
+    --header-bg: #1e293b;
+    --header-text: #f1f5f9;
+    --row-hover: #f1f5f9;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+
+  [data-theme="dark"] {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --primary: #3b82f6;
+    --primary-light: #1e3a5f;
+    --row-hover: #263548;
+    --header-bg: #0f172a;
+    --header-text: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    max-width: 1400px;
+    margin: 20px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--card-bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box input:focus { border-color: var(--primary); }
+  .search-box svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    width: 16px;
+    height: 16px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { border-color: var(--primary); color: var(--primary); }
+  .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+  .theme-toggle {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Filter chips */
+  .filters {
+    max-width: 1400px;
+    margin: 12px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .chip:hover { border-color: var(--primary); }
+  .chip.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+
+  /* Stats bar */
+  .stats-bar {
+    max-width: 1400px;
+    margin: 16px auto 0;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 20px;
+    flex: 1;
+    min-width: 140px;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-card .value { font-size: 22px; font-weight: 700; margin-top: 2px; }
+
+  /* Update info */
+  .update-info {
+    max-width: 1400px;
+    margin: 12px auto 0;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .update-info span {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .auto-refresh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--success);
+    background: var(--success-light);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .pulse {
+    width: 8px; height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Table container */
+  .table-container {
+    max-width: 1400px;
+    margin: 16px auto 24px;
+    padding: 0 24px;
+  }
+  .table-wrapper {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead th {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  thead th:hover { background: #2d3a4d; }
+  thead th .sort-icon { margin-left: 4px; opacity: 0.4; font-size: 10px; }
+  thead th.sorted .sort-icon { opacity: 1; }
+  thead th:first-child { border-radius: 12px 0 0 0; }
+  thead th:last-child { border-radius: 0 12px 0 0; }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  tbody tr:hover { background: var(--row-hover); }
+  tbody tr:last-child { border-bottom: none; }
+
+  td {
+    padding: 14px 16px;
+    white-space: nowrap;
+  }
+
+  /* Rank */
+  .rank { font-weight: 700; text-align: center; width: 50px; }
+  .rank .medal { font-size: 18px; }
+
+  /* Model name */
+  .model-name {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 14px;
+  }
+
+  /* Score cells */
+  .score {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .score-best {
+    color: var(--success);
+    background: var(--success-light);
+    border-radius: 6px;
+    padding: 4px 10px;
+    display: inline-block;
+  }
+  .score-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  .score-bar {
+    width: 60px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  /* Global avg highlight */
+  .global-avg {
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  /* No results */
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+  }
+  .no-results svg { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.4; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header h1 { font-size: 22px; }
+    .toolbar { flex-direction: column; }
+    .stat-card { min-width: 100px; padding: 10px 14px; }
+    .stat-card .value { font-size: 18px; }
+    td, th { padding: 10px 8px; font-size: 12px; }
+  }
+
+  /* Tooltip */
+  .tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  .tooltip-wrapper .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+    z-index: 100;
+    pointer-events: none;
+  }
+  .tooltip-wrapper:hover .tooltip { visibility: visible; opacity: 1; }
+
+  /* Task description row */
+  .task-header-group th {
+    font-size: 10px !important;
+    padding: 4px 16px !important;
+    color: var(--text-secondary) !important;
+    background: var(--card-bg) !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Loading spinner */
+  .loading {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+  }
+  .loading.show { display: block; }
+  .spinner {
+    width: 32px; height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MISA AI — LLM Evaluation Leaderboard</h1>
+  <p>Benchmark evaluation results across MISA AI tasks</p>
+</div>
+
+<div class="toolbar">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" id="searchInput" placeholder="Search models...">
+  </div>
+  <button class="btn" id="toggleBars" onclick="toggleScoreBars()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+    Score Bars
+  </button>
+  <button class="btn" id="togglePercent" onclick="togglePercentMode()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><line x1="4" y1="20" x2="20" y2="4"/></svg>
+    Raw Scores
+  </button>
+  <button class="btn theme-toggle" onclick="toggleTheme()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</div>
+
+<div class="filters" id="taskFilters"></div>
+
+<div class="stats-bar" id="statsBar"></div>
+
+<div class="update-info">
+  <span id="updateTime">Last updated: —</span>
+  <div>
+    <span class="auto-refresh-badge"><span class="pulse"></span> Auto-refresh 30s</span>
+  </div>
+</div>
+
+<div class="table-container">
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    Loading evaluation results...
+  </div>
+  <div class="table-wrapper">
+    <table id="leaderboard">
+      <thead id="tableHead"></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <div class="no-results" id="noResults" style="display:none">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M8 11h6"/></svg>
+    <p>No models match your search.</p>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// State
+// ============================================================
+let allData = [];          // [{model, date, tasks: {task: {metric: val}}}]
+let taskMeta = {};         // {task_name: {description, metrics: [...]}}
+let activeTasks = new Set();
+let sortCol = 'global_avg';
+let sortAsc = false;
+let showBars = false;
+let percentMode = true;    // true = show as 0-100, false = 0-1
+let currentTheme = 'light';
+
+// ============================================================
+// Data loading — reads from eval_results via fetch
+// ============================================================
+const DATA_BASE = './data/eval_results';
+
+async function loadData() {
+  try {
+    // Discover models by fetching the directory index
+    // We'll try fetching a known manifest or scan common patterns
+    const models = await discoverModels();
+    const results = [];
+
+    for (const model of models) {
+      try {
+        const resp = await fetch(`${DATA_BASE}/${model}/_summary.json?t=${Date.now()}`);
+        if (!resp.ok) continue;
+        const summary = await resp.json();
+        results.push(summary);
+
+        // Also load individual task files for metadata
+        if (summary.tasks) {
+          for (const taskName of Object.keys(summary.tasks)) {
+            if (!taskMeta[taskName]) {
+              try {
+                const tResp = await fetch(`${DATA_BASE}/${model}/${taskName}.json?t=${Date.now()}`);
+                if (tResp.ok) {
+                  const tData = await tResp.json();
+                  taskMeta[taskName] = {
+                    description: tData.description || taskName,
+                    metrics: Object.keys(tData.metrics || {}),
+                    num_samples: tData.num_samples || 0,
+                  };
+                }
+              } catch(e) {}
+            }
+          }
+        }
+      } catch(e) {
+        console.warn(`Failed to load ${model}:`, e);
+      }
+    }
+
+    allData = results;
+
+    // Init active tasks
+    if (activeTasks.size === 0) {
+      const allTaskNames = new Set();
+      results.forEach(r => Object.keys(r.tasks || {}).forEach(t => allTaskNames.add(t)));
+      activeTasks = allTaskNames;
+    }
+
+    render();
+  } catch(e) {
+    console.error('Load error:', e);
+  }
+}
+
+async function discoverModels() {
+  // Strategy: try to fetch directory listing, fallback to trying known patterns
+  try {
+    const resp = await fetch(`${DATA_BASE}/?t=${Date.now()}`);
+    if (resp.ok) {
+      const html = await resp.text();
+      // Parse directory listing (works with Python http.server, nginx autoindex, etc.)
+      const matches = html.matchAll(/href="([^"]+)\/"/g);
+      const dirs = [];
+      for (const m of matches) {
+        const name = decodeURIComponent(m[1]).replace(/\/$/, '');
+        if (name && !name.startsWith('.') && !name.startsWith('..')) {
+          dirs.push(name);
+        }
+      }
+      if (dirs.length > 0) return dirs;
+    }
+  } catch(e) {}
+
+  // Fallback: try known model names from embedded data
+  return await discoverModelsFallback();
+}
+
+async function discoverModelsFallback() {
+  // Try common model names
+  const candidates = [
+    'misa-ai-1.0', 'misa-ai-1.1', 'misa-ai-1.2', 'misa-ai-2.0',
+    'gpt-4.1', 'gpt-4o', 'gpt-4o-mini', 'gpt-5', 'gpt-5.2',
+    'claude-3.5-sonnet', 'claude-3-opus', 'claude-4-sonnet',
+    'gemini-2.0-flash', 'gemini-2.5-pro',
+    'qwen-2.5', 'deepseek-v3', 'llama-3',
+  ];
+  const found = [];
+  const checks = candidates.map(async (model) => {
+    try {
+      const resp = await fetch(`${DATA_BASE}/${model}/_summary.json?t=${Date.now()}`, { method: 'HEAD' });
+      if (resp.ok) found.push(model);
+    } catch(e) {}
+  });
+  await Promise.all(checks);
+  return found;
+}
+
+// ============================================================
+// Compute
+// ============================================================
+function computeGlobalAvg(entry) {
+  const tasks = entry.tasks || {};
+  let total = 0, count = 0;
+  for (const [taskName, metrics] of Object.entries(tasks)) {
+    if (!activeTasks.has(taskName)) continue;
+    // Average all metrics for this task into one task score
+    const vals = Object.values(metrics).filter(v => typeof v === 'number');
+    if (vals.length > 0) {
+      const taskAvg = vals.reduce((a, b) => a + b, 0) / vals.length;
+      total += taskAvg;
+      count++;
+    }
+  }
+  return count > 0 ? total / count : 0;
+}
+
+function getTaskAvg(entry, taskName) {
+  const metrics = (entry.tasks || {})[taskName];
+  if (!metrics) return null;
+  const vals = Object.values(metrics).filter(v => typeof v === 'number');
+  if (vals.length === 0) return null;
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
+
+function getMetricScore(entry, taskName, metric) {
+  return ((entry.tasks || {})[taskName] || {})[metric] ?? null;
+}
+
+function getAllTasks() {
+  const set = new Set();
+  allData.forEach(r => Object.keys(r.tasks || {}).forEach(t => set.add(t)));
+  return [...set].sort();
+}
+
+function getBestScores() {
+  // Find best (highest) score for each task-metric combo
+  const best = {};
+  const allTasks = getAllTasks();
+  for (const task of allTasks) {
+    best[task] = { _avg: -Infinity };
+    const metricNames = taskMeta[task]?.metrics || [];
+    for (const m of metricNames) {
+      best[task][m] = -Infinity;
+    }
+  }
+  best['_global'] = -Infinity;
+
+  for (const entry of allData) {
+    const ga = computeGlobalAvg(entry);
+    if (ga > best['_global']) best['_global'] = ga;
+
+    for (const task of allTasks) {
+      const avg = getTaskAvg(entry, task);
+      if (avg !== null && avg > best[task]._avg) best[task]._avg = avg;
+
+      const metricNames = taskMeta[task]?.metrics || [];
+      for (const m of metricNames) {
+        const v = getMetricScore(entry, task, m);
+        if (v !== null && v > (best[task][m] ?? -Infinity)) best[task][m] = v;
+      }
+    }
+  }
+  return best;
+}
+
+// ============================================================
+// Render
+// ============================================================
+function render() {
+  renderFilters();
+  renderStats();
+  renderTable();
+  updateTime();
+}
+
+function renderFilters() {
+  const container = document.getElementById('taskFilters');
+  const allTasks = getAllTasks();
+  container.innerHTML = allTasks.map(t => {
+    const desc = taskMeta[t]?.description || t;
+    const active = activeTasks.has(t);
+    return `<span class="chip ${active ? 'active' : ''}" onclick="toggleTask('${t}')" title="${desc}">${formatTaskName(t)}</span>`;
+  }).join('') +
+  `<span class="chip" onclick="selectAllTasks()" style="font-weight:600">All</span>` +
+  `<span class="chip" onclick="selectNoTasks()" style="font-weight:600">None</span>`;
+}
+
+function renderStats() {
+  const container = document.getElementById('statsBar');
+  const allTasks = getAllTasks();
+  const activeCount = [...activeTasks].filter(t => allTasks.includes(t)).length;
+
+  const totalSamples = [...activeTasks].reduce((sum, t) => sum + (taskMeta[t]?.num_samples || 0), 0);
+
+  // Find top model
+  let topModel = '—', topScore = 0;
+  for (const entry of allData) {
+    const ga = computeGlobalAvg(entry);
+    if (ga > topScore) { topScore = ga; topModel = entry.model; }
+  }
+
+  container.innerHTML = `
+    <div class="stat-card"><div class="label">Models</div><div class="value">${allData.length}</div></div>
+    <div class="stat-card"><div class="label">Active Tasks</div><div class="value">${activeCount} / ${allTasks.length}</div></div>
+    <div class="stat-card"><div class="label">Total Samples</div><div class="value">${totalSamples.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">Top Model</div><div class="value" style="font-size:16px;color:var(--primary)">${topModel}</div></div>
+  `;
+}
+
+function renderTable() {
+  const thead = document.getElementById('tableHead');
+  const tbody = document.getElementById('tableBody');
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const allTasks = getAllTasks().filter(t => activeTasks.has(t));
+
+  // -- Filter data --
+  let data = allData.filter(e => e.model.toLowerCase().includes(search));
+
+  // -- Sort --
+  data.sort((a, b) => {
+    let va, vb;
+    if (sortCol === 'global_avg') {
+      va = computeGlobalAvg(a);
+      vb = computeGlobalAvg(b);
+    } else if (sortCol === 'model') {
+      va = a.model; vb = b.model;
+      return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+    } else if (sortCol.includes('|')) {
+      const [task, metric] = sortCol.split('|');
+      va = getMetricScore(a, task, metric) ?? -1;
+      vb = getMetricScore(b, task, metric) ?? -1;
+    } else {
+      va = getTaskAvg(a, sortCol) ?? -1;
+      vb = getTaskAvg(b, sortCol) ?? -1;
+    }
+    return sortAsc ? va - vb : vb - va;
+  });
+
+  // No results
+  document.getElementById('noResults').style.display = data.length === 0 ? 'block' : 'none';
+
+  const best = getBestScores();
+
+  // -- Build header --
+  let headHtml = '<tr>';
+  headHtml += thCell('#', 'rank', 50);
+  headHtml += thCell('Model', 'model', 160);
+  headHtml += thCell('Global Avg', 'global_avg', 110);
+  for (const task of allTasks) {
+    const metrics = taskMeta[task]?.metrics || [];
+    if (metrics.length <= 1) {
+      headHtml += thCell(formatTaskName(task), task, 120);
+    } else {
+      headHtml += `<th colspan="${metrics.length}" style="text-align:center;cursor:pointer" onclick="doSort('${task}')">${formatTaskName(task)} <span class="sort-icon">${sortCol === task ? (sortAsc ? '&#9650;' : '&#9660;') : '&#8693;'}</span></th>`;
+    }
+  }
+  headHtml += '</tr>';
+
+  // Sub-header for multi-metric tasks
+  let hasSubHeader = allTasks.some(t => (taskMeta[t]?.metrics || []).length > 1);
+  if (hasSubHeader) {
+    headHtml += '<tr class="task-header-group">';
+    headHtml += '<th></th><th></th><th></th>';
+    for (const task of allTasks) {
+      const metrics = taskMeta[task]?.metrics || [];
+      if (metrics.length <= 1) {
+        headHtml += `<th style="text-align:right;cursor:pointer" onclick="doSort('${task}|${metrics[0] || task}')">${metrics[0] || ''}</th>`;
+      } else {
+        for (const m of metrics) {
+          headHtml += `<th style="text-align:right;cursor:pointer" onclick="doSort('${task}|${m}')">${formatMetricName(m)} <span class="sort-icon" style="font-size:9px">${sortCol === task+'|'+m ? (sortAsc ? '&#9650;' : '&#9660;') : '&#8693;'}</span></th>`;
+        }
+      }
+    }
+    headHtml += '</tr>';
+  }
+
+  thead.innerHTML = headHtml;
+
+  // -- Build rows --
+  let rowsHtml = '';
+  data.forEach((entry, idx) => {
+    const rank = idx + 1;
+    const globalAvg = computeGlobalAvg(entry);
+    const isBestGlobal = Math.abs(globalAvg - best['_global']) < 0.01;
+
+    rowsHtml += '<tr>';
+    rowsHtml += `<td class="rank">${rankBadge(rank)}</td>`;
+    rowsHtml += `<td><span class="model-name">${entry.model}</span><br><span style="font-size:11px;color:var(--text-secondary)">${entry.date || ''}</span></td>`;
+    rowsHtml += `<td class="score" style="text-align:right"><span class="global-avg ${isBestGlobal ? 'score-best' : ''}">${fmtScore(globalAvg)}</span></td>`;
+
+    for (const task of allTasks) {
+      const metrics = taskMeta[task]?.metrics || [];
+      if (metrics.length <= 1) {
+        const m = metrics[0] || task;
+        const v = getMetricScore(entry, task, m);
+        const isBest = v !== null && Math.abs(v - (best[task]?.[m] ?? -999)) < 0.01;
+        rowsHtml += scoreCell(v, isBest, best[task]?.[m] ?? 100);
+      } else {
+        for (const m of metrics) {
+          const v = getMetricScore(entry, task, m);
+          const isBest = v !== null && Math.abs(v - (best[task]?.[m] ?? -999)) < 0.01;
+          rowsHtml += scoreCell(v, isBest, best[task]?.[m] ?? 100);
+        }
+      }
+    }
+    rowsHtml += '</tr>';
+  });
+
+  tbody.innerHTML = rowsHtml;
+}
+
+function scoreCell(value, isBest, maxVal) {
+  if (value === null || value === undefined) {
+    return `<td class="score" style="text-align:right;color:var(--text-secondary)">—</td>`;
+  }
+  const display = fmtScore(value);
+  const bestClass = isBest ? 'score-best' : '';
+
+  if (showBars) {
+    const pct = maxVal > 0 ? Math.min(100, (value / maxVal) * 100) : 0;
+    const color = scoreColor(value);
+    return `<td class="score" style="text-align:right">
+      <div class="score-bar-container">
+        <span class="${bestClass}">${display}</span>
+        <div class="score-bar"><div class="score-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+      </div>
+    </td>`;
+  }
+  return `<td class="score" style="text-align:right"><span class="${bestClass}">${display}</span></td>`;
+}
+
+function scoreColor(v) {
+  if (v >= 80) return '#16a34a';
+  if (v >= 60) return '#2563eb';
+  if (v >= 40) return '#d97706';
+  return '#dc2626';
+}
+
+function thCell(label, col, width) {
+  const isSorted = sortCol === col;
+  const arrow = isSorted ? (sortAsc ? '&#9650;' : '&#9660;') : '&#8693;';
+  return `<th style="width:${width}px;${col !== 'rank' ? 'cursor:pointer' : ''}" ${col !== 'rank' ? `onclick="doSort('${col}')"` : ''} class="${isSorted ? 'sorted' : ''}">${label} <span class="sort-icon">${col !== 'rank' ? arrow : ''}</span></th>`;
+}
+
+function rankBadge(rank) {
+  if (rank === 1) return '<span class="medal" style="color:var(--gold)">&#x1F947;</span>';
+  if (rank === 2) return '<span class="medal" style="color:var(--silver)">&#x1F948;</span>';
+  if (rank === 3) return '<span class="medal" style="color:var(--bronze)">&#x1F949;</span>';
+  return `<span style="color:var(--text-secondary)">${rank}</span>`;
+}
+
+function fmtScore(v) {
+  if (v === null || v === undefined) return '—';
+  return v.toFixed(2);
+}
+
+function formatTaskName(t) {
+  return t.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function formatMetricName(m) {
+  const map = {
+    'exact_match': 'EM',
+    'token_f1': 'F1',
+    'list_match': 'List',
+    'bleu': 'BLEU',
+    'g_eval': 'G-Eval',
+    'answer_relevancy': 'Relevancy',
+  };
+  return map[m] || m;
+}
+
+function updateTime() {
+  const dates = allData.map(d => d.date).filter(Boolean).sort();
+  const latest = dates[dates.length - 1] || '—';
+  document.getElementById('updateTime').textContent = `Last updated: ${latest} | Loaded: ${new Date().toLocaleTimeString()}`;
+}
+
+// ============================================================
+// Interactions
+// ============================================================
+function doSort(col) {
+  if (sortCol === col) { sortAsc = !sortAsc; }
+  else { sortCol = col; sortAsc = false; }
+  renderTable();
+}
+
+function toggleTask(t) {
+  if (activeTasks.has(t)) activeTasks.delete(t);
+  else activeTasks.add(t);
+  render();
+}
+
+function selectAllTasks() {
+  getAllTasks().forEach(t => activeTasks.add(t));
+  render();
+}
+
+function selectNoTasks() {
+  activeTasks.clear();
+  render();
+}
+
+function toggleScoreBars() {
+  showBars = !showBars;
+  document.getElementById('toggleBars').classList.toggle('active', showBars);
+  renderTable();
+}
+
+function togglePercentMode() {
+  percentMode = !percentMode;
+  document.getElementById('togglePercent').textContent = percentMode ? 'Raw Scores' : 'Percent';
+  renderTable();
+}
+
+function toggleTheme() {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+}
+
+// Search
+document.getElementById('searchInput').addEventListener('input', () => renderTable());
+
+// ============================================================
+// Auto-refresh
+// ============================================================
+const REFRESH_INTERVAL = 30000; // 30s
+
+async function refresh() {
+  await loadData();
+}
+
+setInterval(refresh, REFRESH_INTERVAL);
+
+// Initial load
+loadData();
+</script>
+
+</body>
+</html>

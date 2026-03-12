@@ -1,0 +1,30 @@
+# CRMMISA Dashboard Analysis Benchmark
+# Source: crmmisa app — no system prompt
+# Input:  dashboard data + analysis request
+# Output: business analysis insights
+
+task_name: crmmisa_dashboard
+task_type: qa
+source_file: crmkh_crmmisa.json
+max_samples: 150
+description: "CRM MISA dashboard analysis — phân tích dữ liệu dashboard kinh doanh"
+
+filters:
+  application_code: crmmisa
+
+extra_metadata_fields:
+  - consumerName
+
+# Ground truth generation config
+gt_prompt: |
+  Hãy đóng vai nhà phân tích kinh doanh. Dựa vào dữ liệu dashboard sau,
+  đưa ra nhận định cốt lõi ngắn gọn:
+
+  {input}
+
+  Trả lời trực tiếp, không lặp lại dữ liệu.
+gt_task_type: rag
+gt_metrics:
+  - token_f1
+  - g_eval
+  - answer_relevancy

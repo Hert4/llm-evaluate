@@ -1,0 +1,333 @@
+{
+  "project_name": "crmmisa_doc_extract",
+  "application_code": "crmmisa_doc_extract",
+  "task": "Trích xuất tài liệu (Document Extraction)",
+  "num_samples": 40,
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "misa-gpt-oss-120b-27112025"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "new_model_source": {
+    "model": "misa-gpt-oss-120b-27112025",
+    "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/gptoss120b_outputs/crmmisa_doc_extract_outputs.json",
+    "success_count": 0,
+    "total": 40
+  },
+  "gt_generation": {
+    "model": "claude-sonnet-4-5",
+    "success_count": 40,
+    "total": 40,
+    "time_seconds": 43.3
+  },
+  "framework_metrics_misa-ai-1.0-plus": {
+    "rouge": {
+      "score": 0.286,
+      "score_pct": "28.60%",
+      "num_samples": 40
+    },
+    "token_f1": {
+      "score": 0.3298,
+      "score_pct": "32.98%",
+      "num_samples": 40
+    }
+  },
+  "framework_metrics_misa-gpt-oss-120b-27112025": {
+    "rouge": {
+      "score": 0.0,
+      "score_pct": "0.00%",
+      "num_samples": 40
+    },
+    "token_f1": {
+      "score": 0.0,
+      "score_pct": "0.00%",
+      "num_samples": 40
+    }
+  },
+  "performance": {
+    "misa-ai-1.0-plus_avg_ms": 4877.0921575,
+    "misa-gpt-oss-120b-27112025_avg_s": null
+  },
+  "sample_details": [
+    {
+      "id": "191899",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191842",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH ENGAGE PLUS\",\n  \"DocumentTitle\": \"Re: Em Thùy MISA gửi Anh Minh xác nhận thông tin dịch vụ Tư vấn triển khai AMIS Kế toán Áp dụng CÔNG TY TNHH ENGAGE PLUS\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 70\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "191898",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không thể đọc được nội dung văn bản. Dữ liệu base64 có thể bị cắt cụt hoặc không hiển thị đầy đủ thông tin tài liệu. Để trích xuất chính xác, cần hình ảnh có chất lượng tốt hơn và đầy đủ nội dung."
+    },
+    {
+      "id": "191879",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ ràng hoặc không thể đọc được nội dung văn bản. Dữ liệu base64 có thể bị cắt cụt hoặc không hiển thị đầy đủ thông tin cần thiết để trích xuất các trường thông tin yêu cầu."
+    },
+    {
+      "id": "191826",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị đầy đủ hoặc không thể đọc được nội dung tài liệu. Dữ liệu base64 có thể bị cắt ngắn hoặc không đầy đủ để phân tích. Không thể xác định được các thông tin yêu cầu từ hình ảnh này."
+    },
+    {
+      "id": "191703",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không thể đọc được do dữ liệu base64 bị cắt cụt (truncated). Không thể trích xuất thông tin từ tài liệu khi hình ảnh không hiển thị đầy đủ."
+    },
+    {
+      "id": "191446",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH QUẢNG CÁO THIÊN AN\",\n  \"DocumentTitle\": \"Hồ sơ xác nhận đào tạo\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị đầy đủ hoặc không thể đọc được nội dung tài liệu. Dữ liệu base64 có vẻ bị cắt ngắn hoặc không đầy đủ để có thể trích xuất thông tin chính xác từ tài liệu hồ sơ xác nhận đào tạo."
+    },
+    {
+      "id": "191865",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không đầy đủ để có thể trích xuất thông tin. Dữ liệu base64 có vẻ bị cắt cụt hoặc không hiển thị đúng nội dung tài liệu. Để có thể trích xuất thông tin chính xác, vui lòng cung cấp hình ảnh đầy đủ và rõ ràng hơn của tài liệu."
+    },
+    {
+      "id": "191790",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH ENGAGE PLUS\",\n  \"DocumentTitle\": \"Hồ sơ xác nhận đào tạo AMIS Kế toán\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 30\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "191789",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không hiển thị đầy đủ nội dung để có thể trích xuất thông tin chính xác. Dữ liệu base64 có thể bị cắt cụt hoặc không đầy đủ, dẫn đến việc không thể đọc được nội dung tài liệu."
+    },
+    {
+      "id": "191767",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không thể đọc được do dữ liệu base64 bị cắt cụt (truncated). Không thể trích xuất thông tin từ tài liệu khi hình ảnh không hiển thị đầy đủ."
+    },
+    {
+      "id": "191745",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH QUẢNG CÁO THIÊN AN\",\n  \"DocumentTitle\": \"Hồ sơ xác nhận đào tạo\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị đầy đủ hoặc không thể đọc được nội dung tài liệu. Dữ liệu base64 có thể bị cắt ngắn hoặc không đầy đủ để phân tích. Không thể xác định được các thông tin yêu cầu từ hình ảnh này."
+    },
+    {
+      "id": "191725",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Công ty TNHH Thương mại và Dịch vụ Hoàng Gia\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191685",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191506",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ ràng hoặc không thể đọc được nội dung văn bản. Dữ liệu base64 có thể bị cắt cụt hoặc không hiển thị đầy đủ thông tin cần thiết để trích xuất các trường thông tin yêu cầu. Cần hình ảnh có chất lượng tốt hơn để thực hiện trích xuất chính xác."
+    },
+    {
+      "id": "191409",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không thể đọc được nội dung văn bản. Dữ liệu base64 có thể bị cắt cụt hoặc không hiển thị đầy đủ thông tin tài liệu. Để trích xuất chính xác, cần hình ảnh có chất lượng tốt hơn và đầy đủ nội dung."
+    },
+    {
+      "id": "191648",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không đầy đủ để có thể trích xuất thông tin. Dữ liệu base64 có vẻ bị cắt ngắn hoặc không hiển thị đúng nội dung tài liệu. Để có thể trích xuất thông tin chính xác, vui lòng cung cấp hình ảnh đầy đủ và rõ ràng hơn của tài liệu."
+    },
+    {
+      "id": "191466",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN MISA\",\n  \"DocumentTitle\": \"Hợp đồng\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 70\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "191593",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI HUY VIỆT - TÂY ĐỒ\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191522",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH THE SHARD\",\n  \"DocumentTitle\": \"[MISA] Xác nhận nội dung đào tạo phần mềm Amis Mua Hàng\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "191615",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH THE SHARD\",\n  \"DocumentTitle\": \"[MISA] Xác nhận nội dung đào tạo phần mềm Amis Mua Hàng\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "191614",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN MISA\",\n  \"DocumentTitle\": \"HỒ SƠ XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 70\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Công ty TNHH Thương mại và Dịch vụ Hoàng Gia\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191459",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI HUY VIỆT - TÂY ĐỒ\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS: CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI HUY VIỆT - TÂY ĐỒ\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "191077",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH THE SHARD\",\n  \"DocumentTitle\": \"[MISA] Xác nhận nội dung đào tạo phần mềm Amis Mua Hàng\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "188760",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH TM SX MÁY MÓC CÔNG TRÌNH LIWANG\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 80\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```"
+    },
+    {
+      "id": "188893",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH TM SX MÁY MÓC CÔNG TRÌNH LIWANG\",\n  \"DocumentTitle\": \"Hợp đồng\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": null,\n  \"ConfidenceScore\": 70\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ ĐIỆN TỬ VIỄN THÔNG\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN KẾT QUẢ ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "188539",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH TM SX MÁY MÓC CÔNG TRÌNH LIWANG\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 80\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```"
+    },
+    {
+      "id": "188228",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CAFE CANG MỸ THO\",\n  \"DocumentTitle\": \"Kiểm kê kho\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không hiển thị đầy đủ nội dung để có thể trích xuất thông tin chính xác. Không thể xác định được các thông tin về tên khách hàng, tiêu đề tài liệu, con dấu, chữ ký hay kết quả đào tạo từ dữ liệu hình ảnh hiện có."
+    },
+    {
+      "id": "188593",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN NHÂN BẢO BỊ VI NA ÚC\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS: CÔNG TY CỔ PHẦN NHÂN BẢO BỊ VI NA ÚC\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị đầy đủ hoặc không thể đọc được nội dung tài liệu. Dữ liệu base64 có thể bị cắt cụt hoặc không đầy đủ để phân tích. Cần hình ảnh rõ ràng và đầy đủ hơn để trích xuất thông tin chính xác."
+    },
+    {
+      "id": "188368",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CAFE CANG MỸ THO\",\n  \"DocumentTitle\": \"Kiểm kê kho\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không đủ rõ nét hoặc không hiển thị đầy đủ nội dung để có thể trích xuất thông tin chính xác. Không thể xác định được các thông tin về tên khách hàng, tiêu đề tài liệu, con dấu, chữ ký hay kết quả đào tạo từ dữ liệu hình ảnh này."
+    },
+    {
+      "id": "188315",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH TM SX MÁY MÓC CÔNG TRÌNH LIWANG\",\n  \"DocumentTitle\": \"MISA KÍNH GỬI PHIẾU XÁC NHẬN ĐÀO TẠO AMIS\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```"
+    },
+    {
+      "id": "185570",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN BAO BÌ APC\",\n  \"DocumentTitle\": \"[MISA] Xác nhận nội dung đào tạo phần mềm Amis Sản xuất - CÔNG TY CỔ PHẦN BAO BÌ APC - ngày 26,27/02/2026\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 92\n}\n```"
+    },
+    {
+      "id": "185916",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN BAO BÌ APC\",\n  \"DocumentTitle\": \"Xác nhận nội dung đào tạo phần mềm Amis Sản xuất - CÔNG TY CỔ PHẦN BAO BÌ APC\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 90\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp có độ phân giải quá thấp và không thể đọc được nội dung văn bản rõ ràng. Dữ liệu base64 bị cắt ngắn (truncated) nên không thể trích xuất thông tin chính xác từ tài liệu."
+    },
+    {
+      "id": "184600",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"Công ty Cổ phần MISA\",\n  \"DocumentTitle\": \"Hồ sơ xác nhận hoàn tất đào tạo AMIS Đánh giá\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 80\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị được nội dung rõ ràng. Dữ liệu base64 có vẻ bị cắt ngắn hoặc không đầy đủ, khiến không thể đọc và trích xuất thông tin từ tài liệu. Cần hình ảnh đầy đủ và rõ nét hơn để thực hiện trích xuất thông tin chính xác."
+    },
+    {
+      "id": "184599",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Công ty TNHH Thương mại và Dịch vụ Hưng Thịnh Phát\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "184345",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY THIÊN Y THÁNH TOÁN\",\n  \"DocumentTitle\": \"Hồ sơ xác nhận hoàn tất đào tạo AMIS Đánh giá\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"Không xác định\",\n  \"DocumentTitle\": \"Không xác định\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}\n```\n\n**Lý do:** Hình ảnh được cung cấp không hiển thị được nội dung rõ ràng. Dữ liệu base64 có vẻ bị cắt ngắn hoặc không đầy đủ, khiến việc trích xuất thông tin từ tài liệu không thể thực hiện được. Cần cung cấp lại hình ảnh đầy đủ và rõ nét hơn để có thể phân tích chính xác."
+    },
+    {
+      "id": "184163",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "181949",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"CÔNG TY TNHH MTA & CZECH VIỆT NAM\",\n  \"DocumentTitle\": \"Hợp đồng dịch vụ\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": null,\n  \"ConfidenceScore\": 85\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ FPT\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "182072",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\"CustomerName\": \"CÔNG TY TNHH MTA & CZECH VIỆT NAM\", \"DocumentTitle\": \"Re: EM HƯỚNG MISA | GỬI THÔNG TIN HOÀN TẤT ĐÀO TẠO - CÔNG TY TNHH MTA & CZECH VIỆT NAM\", \"HasCustomerSeal\": false, \"HasProviderSignature\": false, \"TrainingResultPassed\": false, \"ConfidenceScore\": 30}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ MISA\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    },
+    {
+      "id": "182156",
+      "input_preview": "(truncated request)",
+      "output_misa-ai-1.0-plus": "{\n  \"CustomerName\": \"\",\n  \"DocumentTitle\": \"\",\n  \"HasCustomerSeal\": false,\n  \"HasProviderSignature\": false,\n  \"TrainingResultPassed\": false,\n  \"ConfidenceScore\": 0\n}",
+      "output_misa-gpt-oss-120b-27112025": "",
+      "ground_truth": "```json\n{\n  \"CustomerName\": \"CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ PHÁT TRIỂN CÔNG NGHỆ MISA\",\n  \"DocumentTitle\": \"BIÊN BẢN XÁC NHẬN ĐÀO TẠO\",\n  \"HasCustomerSeal\": true,\n  \"HasProviderSignature\": true,\n  \"TrainingResultPassed\": true,\n  \"ConfidenceScore\": 95\n}\n```"
+    }
+  ]
+}

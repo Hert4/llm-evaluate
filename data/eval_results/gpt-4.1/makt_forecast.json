@@ -1,0 +1,41 @@
+{
+  "task_name": "makt_forecast",
+  "task_type": "qa",
+  "description": "AMIS Kế toán — dự báo top 5 VTHH bán chạy từ lịch sử bán hàng",
+  "model_evaluated": "gpt-4.1",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "makt_forecast_150.json",
+  "num_samples": 150,
+  "evaluation_date": "2026-03-12 17:17:33",
+  "elapsed_seconds": 0.0,
+  "metrics": {
+    "list_match": {
+      "score": 0.910667,
+      "score_pct": 91.07,
+      "details": {
+        "precision@1": 0.9933333333333333,
+        "recall@1": 0.2770000000000002,
+        "ndcg@1": 0.9933333333333333,
+        "precision@3": 0.9755555555555558,
+        "recall@3": 0.656999999999999,
+        "ndcg@3": 0.9799999999999998,
+        "precision@5": 0.9106666666666663,
+        "recall@5": 0.9106666666666663,
+        "ndcg@5": 0.9346795584473132,
+        "precision@10": 0.9106666666666663,
+        "recall@10": 0.9106666666666663,
+        "ndcg@10": 0.9346795584473132,
+        "hit": 0.9933333333333333,
+        "k_values": [
+          1,
+          3,
+          5,
+          10
+        ],
+        "num_samples": 150,
+        "avg_pred_items": 4.44,
+        "avg_ref_items": 4.44
+      }
+    }
+  }
+}

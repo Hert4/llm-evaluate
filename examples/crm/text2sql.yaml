@@ -1,0 +1,125 @@
+# ============================================================================
+# CRM Evaluation Config — MISA-Text2SQL
+# ============================================================================
+
+model:
+  name: "misa-text2sql"
+  display_name: "MISA-Text2SQL"
+  api_base_url: "https://worldwide-per-residential-half.trycloudflare.com/v1"
+  api_key: "misa_avaamis_00t3spja_10G8ejFtZGKz33l6K7zT9q2D_oBVENGtl"
+
+generation:
+  max_concurrent: 5
+  max_tokens: 2048
+  temperature: 0.0
+  timeout: 120
+  max_retries: 3
+  input_dir: "mercury_requests"
+  output_dir: "text2sql_outputs"
+
+evaluation:
+  data_path: "/home/dev/Develop_2026/reports/09032026/data/all_logs.json"
+  max_samples_per_project: 50
+  output_dir: "crm_evaluation_results_text2sql"
+
+  baseline_model: "misa-ai-1.0-plus"
+
+  gt:
+    model: "claude-sonnet-4-5"
+    api_base_url: "https://worldwide-per-residential-half.trycloudflare.com/v1"
+    api_key: "misa_avaamis_00t3spja_10G8ejFtZGKz33l6K7zT9q2D_oBVENGtl"
+    temperature: 0.0
+    max_tokens: 2048
+    timeout: 120
+    max_retries: 3
+    max_concurrent: 5
+
+  llm_evaluator:
+    model: "claude-sonnet-4-5"
+    api_base_url: "https://worldwide-per-residential-half.trycloudflare.com/v1"
+    api_key: "misa_avaamis_00t3spja_10G8ejFtZGKz33l6K7zT9q2D_oBVENGtl"
+    g_eval_criteria: ["coherence", "relevance", "consistency", "fluency"]
+
+  projects:
+    crmkh:
+      task_description: "Gợi ý sản phẩm (Product Recommendation)"
+      task_type: "qa"
+      gt_prompt: |
+        Bạn là hệ thống AI gợi ý sản phẩm cho CRM. Dựa vào lịch sử mua hàng và yêu cầu của nhân viên kinh doanh,
+        hãy gợi ý sản phẩm phù hợp nhất.
+
+        Yêu cầu:
+        - Gợi ý tối đa 5 sản phẩm dựa trên lịch sử mua hàng được cung cấp
+        - Ưu tiên sản phẩm khách hàng mua thường xuyên, gần đây
+        - CHỈ gợi ý sản phẩm có trong danh sách lịch sử
+        - Trả về JSON array với ProductCode
+
+        {context}
+
+        Yêu cầu cụ thể:
+        {input}
+
+        Trả lời ĐÚNG format JSON array:
+        [{{"ProductCode": "..."}}]
+      framework_metrics: ["rouge", "token_f1"]
+      has_product_metrics: true
+
+    crmmisa_dashboard:
+      task_description: "Phân tích kinh doanh (Dashboard Analysis)"
+      task_type: "summarization"
+      gt_prompt: |
+        Bạn là nhà phân tích kinh doanh chuyên nghiệp. Dựa vào dữ liệu dashboard được cung cấp,
+        hãy đưa ra những nhận định cốt lõi và đề xuất hành động cụ thể.
+
+        Yêu cầu:
+        - Phân tích dữ liệu dashboard một cách chính xác
+        - Đưa ra nhận định sắc bén, tập trung vào các chỉ số quan trọng
+        - Đề xuất hành động cụ thể cho nhân viên kinh doanh
+        - Trả lời bằng tiếng Việt, ngắn gọn, có cấu trúc
+
+        {context}
+
+        Yêu cầu cụ thể:
+        {input}
+      framework_metrics: ["rouge", "g_eval", "answer_relevancy"]
+      has_product_metrics: false
+
+    crmmisa_text2sql:
+      task_description: "Sinh SQL từ câu hỏi (Text-to-SQL)"
+      task_type: "qa"
+      gt_prompt: |
+        Bạn là chuyên gia SQL. Dựa vào DATABASE SCHEMA được cung cấp và câu hỏi của người dùng,
+        hãy sinh ra câu truy vấn SQL chính xác.
+
+        Yêu cầu:
+        - Sinh câu SQL đúng cú pháp MySQL
+        - Sử dụng đúng tên bảng và cột từ schema
+        - Tối ưu hiệu năng truy vấn
+        - CHỈ trả về câu SQL, không giải thích thêm
+
+        {context}
+
+        Câu hỏi:
+        {input}
+      framework_metrics: ["rouge", "token_f1"]
+      has_product_metrics: false
+
+    crmmisa_doc_extract:
+      task_description: "Trích xuất tài liệu (Document Extraction)"
+      task_type: "qa"
+      gt_prompt: |
+        Bạn là hệ thống trích xuất thông tin từ tài liệu. Dựa vào hình ảnh/nội dung biên bản hoặc hồ sơ nghiệp vụ,
+        hãy trích xuất các thông tin quan trọng.
+
+        Yêu cầu:
+        - Trích xuất chính xác các trường thông tin từ tài liệu
+        - Giữ nguyên định dạng dữ liệu gốc (ngày tháng, số liệu, tên)
+        - Trả lời bằng tiếng Việt, có cấu trúc rõ ràng
+        - Nếu không đọc được thông tin, ghi rõ "Không xác định"
+
+        {context}
+
+        Yêu cầu cụ thể:
+        {input}
+      framework_metrics: ["rouge", "token_f1"]
+      has_product_metrics: false

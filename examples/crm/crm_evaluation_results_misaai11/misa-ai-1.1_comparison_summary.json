@@ -1,0 +1,244 @@
+{
+  "config_file": "misaai11.yaml",
+  "models_compared": [
+    "misa-ai-1.0-plus",
+    "misa-ai-1.1"
+  ],
+  "gt_model": "claude-sonnet-4-5",
+  "data_source": "/home/dev/Develop_2026/reports/09032026/data/all_logs.json",
+  "max_samples_per_project": 50,
+  "new_model_outputs_dir": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs",
+  "total_time_seconds": 744.1,
+  "projects": {
+    "crmkh": {
+      "project_name": "crmkh",
+      "application_code": "crmkh",
+      "task": "Gợi ý sản phẩm (Product Recommendation)",
+      "num_samples": 50,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "misa-ai-1.1"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "misa-ai-1.1",
+        "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs/crmkh_outputs.json",
+        "success_count": 35,
+        "total": 50
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 50,
+        "total": 50,
+        "time_seconds": 34.4
+      },
+      "product_metrics_misa-ai-1.0-plus": {
+        "num_samples": 50,
+        "has_output_rate": 1.0,
+        "json_valid_rate": 1.0,
+        "count_valid_rate": 1.0,
+        "avg_valid_ratio": 0.6920000000000001,
+        "avg_recommendations": 4.92
+      },
+      "product_metrics_misa-ai-1.1": {
+        "num_samples": 50,
+        "has_output_rate": 0.7,
+        "json_valid_rate": 0.7,
+        "count_valid_rate": 0.7,
+        "avg_valid_ratio": 0.9885714285714287,
+        "avg_recommendations": 3.5
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.4438,
+          "score_pct": "44.38%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.6534,
+          "score_pct": "65.34%",
+          "num_samples": 50
+        }
+      },
+      "framework_metrics_misa-ai-1.1": {
+        "rouge": {
+          "score": 0.2496,
+          "score_pct": "24.96%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.4756,
+          "score_pct": "47.56%",
+          "num_samples": 50
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 3122.232192,
+        "misa-ai-1.1_avg_s": 2.1606
+      }
+    },
+    "crmmisa_dashboard": {
+      "project_name": "crmmisa_dashboard",
+      "application_code": "crmmisa_dashboard",
+      "task": "Phân tích kinh doanh (Dashboard Analysis)",
+      "num_samples": 50,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "misa-ai-1.1"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "misa-ai-1.1",
+        "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs/crmmisa_dashboard_outputs.json",
+        "success_count": 50,
+        "total": 50
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 50,
+        "total": 50,
+        "time_seconds": 121.5
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.3109,
+          "score_pct": "31.09%",
+          "num_samples": 50
+        },
+        "g_eval": {
+          "score": 0.5,
+          "score_pct": "50.00%",
+          "num_samples": 20
+        },
+        "answer_relevancy": {
+          "score": 0.944,
+          "score_pct": "94.40%",
+          "num_samples": 20
+        }
+      },
+      "framework_metrics_misa-ai-1.1": {
+        "rouge": {
+          "score": 0.3127,
+          "score_pct": "31.27%",
+          "num_samples": 50
+        },
+        "g_eval": {
+          "score": 0.5,
+          "score_pct": "50.00%",
+          "num_samples": 20
+        },
+        "answer_relevancy": {
+          "score": 0.9455,
+          "score_pct": "94.55%",
+          "num_samples": 20
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 11922.477476000002,
+        "misa-ai-1.1_avg_s": 1.5275999999999998
+      }
+    },
+    "crmmisa_text2sql": {
+      "project_name": "crmmisa_text2sql",
+      "application_code": "crmmisa_text2sql",
+      "task": "Sinh SQL từ câu hỏi (Text-to-SQL)",
+      "num_samples": 50,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "misa-ai-1.1"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "misa-ai-1.1",
+        "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs/crmmisa_text2sql_outputs.json",
+        "success_count": 0,
+        "total": 50
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 50,
+        "total": 50,
+        "time_seconds": 36.3
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.4236,
+          "score_pct": "42.36%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.5359,
+          "score_pct": "53.59%",
+          "num_samples": 50
+        }
+      },
+      "framework_metrics_misa-ai-1.1": {
+        "rouge": {
+          "score": 0.0,
+          "score_pct": "0.00%",
+          "num_samples": 50
+        },
+        "token_f1": {
+          "score": 0.0,
+          "score_pct": "0.00%",
+          "num_samples": 50
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 17580.549382000005,
+        "misa-ai-1.1_avg_s": null
+      }
+    },
+    "crmmisa_doc_extract": {
+      "project_name": "crmmisa_doc_extract",
+      "application_code": "crmmisa_doc_extract",
+      "task": "Trích xuất tài liệu (Document Extraction)",
+      "num_samples": 40,
+      "models_compared": [
+        "misa-ai-1.0-plus",
+        "misa-ai-1.1"
+      ],
+      "gt_model": "claude-sonnet-4-5",
+      "new_model_source": {
+        "model": "misa-ai-1.1",
+        "source": "/home/dev/Develop_2026/llm-evaluate/examples/crm/misaai11_outputs/crmmisa_doc_extract_outputs.json",
+        "success_count": 0,
+        "total": 40
+      },
+      "gt_generation": {
+        "model": "claude-sonnet-4-5",
+        "success_count": 40,
+        "total": 40,
+        "time_seconds": 42.4
+      },
+      "framework_metrics_misa-ai-1.0-plus": {
+        "rouge": {
+          "score": 0.287,
+          "score_pct": "28.70%",
+          "num_samples": 40
+        },
+        "token_f1": {
+          "score": 0.3347,
+          "score_pct": "33.47%",
+          "num_samples": 40
+        }
+      },
+      "framework_metrics_misa-ai-1.1": {
+        "rouge": {
+          "score": 0.0,
+          "score_pct": "0.00%",
+          "num_samples": 40
+        },
+        "token_f1": {
+          "score": 0.0,
+          "score_pct": "0.00%",
+          "num_samples": 40
+        }
+      },
+      "performance": {
+        "misa-ai-1.0-plus_avg_ms": 4877.0921575,
+        "misa-ai-1.1_avg_s": null
+      }
+    }
+  }
+}

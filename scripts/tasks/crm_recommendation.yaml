@@ -1,0 +1,28 @@
+# CRM Product Recommendation Benchmark
+# Source: crmkh app — "chuyên gia tư vấn bán hàng" system prompt
+# Input:  customer order history + recommendation request
+# Output: JSON array [{"ProductCode": "..."}]
+
+task_name: crm_recommendation
+task_type: qa
+source_file: crmkh_crmmisa.json
+max_samples: 150
+description: "CRM product recommendation — gợi ý top 5 sản phẩm cho khách hàng"
+
+filters:
+  application_code: crmkh
+  system_prompt_contains: "chuyên gia tư vấn bán hàng"
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là chuyên gia tư vấn bán hàng. Dựa vào lịch sử đơn hàng sau đây,
+  hãy gợi ý chính xác 5 ProductCode mà khách hàng có khả năng mua tiếp.
+
+  {input}
+
+  Trả lời CHÍNH XÁC theo format JSON:
+  [{{"ProductCode": "..."}}, {{"ProductCode": "..."}}, ...]
+  Chỉ trả JSON, không giải thích.
+gt_task_type: qa
+gt_metrics:
+  - list_match
