@@ -31,7 +31,7 @@ class MetricResult:
     @property
     def score_pct(self) -> float:
         """Score as percentage (0-100)"""
-        return self.score * 100 if self.score <= 1 else self.score
+        return round(self.score * 100, 2) if self.score <= 1.0 else round(self.score, 2)
 
     def __repr__(self) -> str:
         return f"{self.name}: {self.score:.4f}"

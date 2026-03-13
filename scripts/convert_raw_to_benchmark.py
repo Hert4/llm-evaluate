@@ -576,6 +576,269 @@ class GenericConverter:
 
 
 # ---------------------------------------------------------------------------
+# HTKH Pre-processed Dataset Converter
+# ---------------------------------------------------------------------------
+# HTKH datasets ở /home/dev/Develop_2026/data/htkh_eval_datasets/ đã được
+# tách sẵn theo nghiệp vụ với format EvalSample gần đầy đủ.
+# Converter này đọc trực tiếp các file đó và chuẩn hoá sang benchmark format.
+
+HTKH_TASK_NAMES = {
+    "htkh_intent_classification",
+    "htkh_intent_routing",
+    "htkh_rag_qa",
+    "htkh_response_evaluation",
+}
+
+# Vị trí mặc định của HTKH pre-processed files
+HTKH_DATA_DIR = PROJECT_ROOT.parent / "data" / "htkh_eval_datasets"
+
+
+class HTKHConverter:
+    """
+    Convert pre-processed HTKH eval datasets thành benchmark format chuẩn.
+
+    Khác GenericConverter, các file này ĐÃ ở dạng EvalSample nên chỉ cần:
+    - Đọc file JSON từ htkh_eval_datasets/
+    - Chuẩn hoá các field đặc thù theo từng task
+    - Áp dụng sampling nếu cần
+    - Save với đầy đủ benchmark metadata
+    """
+
+    def __init__(
+        self,
+        task_def: TaskDefinition,
+        global_config: GlobalConfig,
+        htkh_data_dir: Optional[Path] = None,
+    ):
+        self.task_def = task_def
+        self.global_config = global_config
+        self.htkh_data_dir = htkh_data_dir or HTKH_DATA_DIR
+        self.stats = ConversionStats()
+
+    def _load_htkh_file(self) -> List[Dict]:
+        """Load pre-processed HTKH JSON file."""
+        # Source file có thể là tên file hoặc path đầy đủ
+        source = self.task_def.source_file
+        filepath = self.htkh_data_dir / source
+        if not filepath.exists():
+            raise FileNotFoundError(f"HTKH source file not found: {filepath}")
+
+        logger.info(f"[{self.task_def.task_name}] Loading HTKH file: {filepath.name}")
+        with open(filepath, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+
+        records = raw.get("data", raw if isinstance(raw, list) else [])
+        logger.info(f"[{self.task_def.task_name}] Loaded {len(records)} records")
+        return records
+
+    def _normalize_sample(self, record: Dict, index: int) -> Optional[Dict]:
+        """
+        Chuẩn hoá 1 record HTKH sang benchmark EvalSample format.
+
+        Xử lý đặc thù theo từng task_name.
+        """
+        task = self.task_def.task_name
+        meta = record.get("metadata", {}) or {}
+
+        # --- htkh_intent_classification ---
+        # input: tin nhắn user, output: trống, không cần context
+        if task == "htkh_intent_classification":
+            input_text = (record.get("input") or "").strip()
+            if not input_text:
+                return None
+            return {
+                "id": "",
+                "input": input_text,
+                "output": record.get("output") or "",
+                "reference": None,
+                "context": None,
+                "metadata": {
+                    "task": meta.get("task", "intent_classification"),
+                    "label_schema": meta.get("label_schema", []),
+                    "is_error": meta.get("is_error", False),
+                    "processing_ms": meta.get("processing_ms"),
+                    "source": "htkh",
+                },
+            }
+
+        # --- htkh_intent_routing ---
+        # input: tin nhắn mới nhất, conversation_history: lịch sử hội thoại
+        elif task == "htkh_intent_routing":
+            input_text = (record.get("input") or "").strip()
+            if not input_text:
+                return None
+            conv_history = record.get("conversation_history") or []
+            return {
+                "id": "",
+                "input": input_text,
+                "output": record.get("output") or "",
+                "reference": None,
+                "context": None,
+                "conversation_history": conv_history,
+                "metadata": {
+                    "task": meta.get("task", "intent_routing"),
+                    "is_error": meta.get("is_error", False),
+                    "processing_ms": meta.get("processing_ms"),
+                    "source": "htkh",
+                },
+            }
+
+        # --- htkh_rag_qa ---
+        # input: câu hỏi user (có thể trống, sẽ generate sau từ metadata.intent)
+        # context: nội dung bài viết KB
+        elif task == "htkh_rag_qa":
+            context = (record.get("context") or "").strip()
+            if not context:
+                return None  # Bắt buộc phải có context
+            input_text = (record.get("input") or "").strip()
+            # input trống vẫn giữ, sẽ generate_ground_truth --step generate_input sau
+            return {
+                "id": "",
+                "input": input_text,
+                "output": record.get("output") or "",
+                "reference": None,
+                "context": context,
+                "metadata": {
+                    "task": meta.get("task", "rag_qa"),
+                    "intent": meta.get("intent", ""),
+                    "article_title": meta.get("article_title", ""),
+                    "article_url": meta.get("article_url", ""),
+                    "product": meta.get("product", ""),
+                    "is_error": meta.get("is_error", False),
+                    "processing_ms": meta.get("processing_ms"),
+                    "source": "htkh",
+                },
+            }
+
+        # --- htkh_response_evaluation ---
+        # input: câu hỏi user, context: câu trả lời chatbot cần đánh giá
+        elif task == "htkh_response_evaluation":
+            input_text = (record.get("input") or "").strip()
+            context = (record.get("context") or "").strip()
+            if not input_text or not context:
+                return None
+            return {
+                "id": "",
+                "input": input_text,
+                "output": record.get("output") or "",
+                "reference": None,
+                "context": context,
+                "metadata": {
+                    "task": meta.get("task", "response_evaluation"),
+                    "eval_tasks": meta.get("eval_tasks", []),
+                    "is_error": meta.get("is_error", False),
+                    "processing_ms": meta.get("processing_ms"),
+                    "source": "htkh",
+                },
+            }
+
+        return None
+
+    def convert(self) -> List[Dict]:
+        """Run HTKH conversion pipeline."""
+        records = self._load_htkh_file()
+
+        self.stats.task_name = self.task_def.task_name
+        self.stats.source_file = self.task_def.source_file
+        self.stats.total_raw = len(records)
+        self.stats.after_task_filter = len(records)  # No extra filtering needed
+
+        # Filter errors if configured
+        valid_records = []
+        for r in records:
+            if self.global_config.skip_errors and r.get("metadata", {}).get("is_error"):
+                continue
+            valid_records.append(r)
+        self.stats.after_error_filter = len(valid_records)
+        logger.info(
+            f"[{self.task_def.task_name}] Error filter: "
+            f"{len(records)} → {len(valid_records)}"
+        )
+
+        # Extract samples
+        samples = []
+        for i, record in enumerate(valid_records):
+            try:
+                sample = self._normalize_sample(record, i)
+                if sample:
+                    samples.append(sample)
+            except Exception as e:
+                self.stats.parse_errors += 1
+                logger.debug(f"[{self.task_def.task_name}] Parse error at {i}: {e}")
+
+        if self.stats.parse_errors:
+            logger.warning(
+                f"[{self.task_def.task_name}] {self.stats.parse_errors} parse errors"
+            )
+
+        # Deduplicate on input (skip if input trống, e.g. rag_qa)
+        if self.global_config.deduplicate:
+            seen_hashes: set = set()
+            deduped = []
+            for s in samples:
+                inp = s.get("input") or ""
+                ctx = s.get("context") or ""
+                h = content_hash(inp + ctx)
+                if h not in seen_hashes:
+                    seen_hashes.add(h)
+                    deduped.append(s)
+            logger.info(
+                f"[{self.task_def.task_name}] Dedup: {len(samples)} → {len(deduped)}"
+            )
+            samples = deduped
+        self.stats.after_dedup = len(samples)
+
+        # Sampling
+        max_n = self.global_config.sample_size_override or self.task_def.max_samples
+        if max_n and max_n > 0 and len(samples) > max_n:
+            rng = random.Random(self.global_config.random_seed)
+            samples = rng.sample(samples, max_n)
+        self.stats.final_samples = len(samples)
+
+        # Re-index IDs
+        for i, s in enumerate(samples):
+            s["id"] = f"{self.task_def.task_name}_{i + 1:04d}"
+
+        logger.info(f"[{self.task_def.task_name}] Final: {len(samples)} samples")
+        return samples
+
+    def save(self, samples: List[Dict]) -> Path:
+        """Save benchmark dataset to JSON file."""
+        output_dir = Path(self.global_config.output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        filename = f"{self.task_def.task_name}_{len(samples)}.json"
+        output_path = output_dir / filename
+
+        output = {
+            "metadata": {
+                "task_name": self.task_def.task_name,
+                "task_type": self.task_def.task_type,
+                "description": self.task_def.description,
+                "source_file": self.task_def.source_file,
+                "total_raw_records": self.stats.total_raw,
+                "filtered_records": self.stats.after_task_filter,
+                "valid_records": self.stats.after_error_filter,
+                "deduped_records": self.stats.after_dedup,
+                "sampled_records": len(samples),
+                "sampling_strategy": self.global_config.sampling_strategy,
+                "random_seed": self.global_config.random_seed,
+                "created_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "script": "convert_raw_to_benchmark.py (HTKH)",
+            },
+            "data": samples,
+        }
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+
+        logger.info(
+            f"[{self.task_def.task_name}] Saved → {output_path} ({len(samples)} samples)"
+        )
+        return output_path
+
+
+# ---------------------------------------------------------------------------
 # Task Discovery
 # ---------------------------------------------------------------------------
 def discover_tasks(tasks_dir: Path) -> List[TaskDefinition]:
@@ -625,8 +888,13 @@ class ConversionPipeline:
                 )
             task_definitions = filtered
 
+        # Chọn converter phù hợp: HTKHConverter cho HTKH tasks, GenericConverter cho còn lại
+        htkh_data_dir = Path(global_config.raw_data_dir) / "htkh_eval_datasets"
         self.converters = [
-            GenericConverter(td, global_config) for td in task_definitions
+            HTKHConverter(td, global_config, htkh_data_dir=htkh_data_dir)
+            if td.task_name in HTKH_TASK_NAMES
+            else GenericConverter(td, global_config)
+            for td in task_definitions
         ]
 
     def run(self) -> List[Tuple[str, Path, int]]:

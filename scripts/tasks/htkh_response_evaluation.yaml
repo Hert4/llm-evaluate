@@ -1,0 +1,53 @@
+# HTKH Response Evaluation Benchmark
+# Source: htkh_eval_datasets/htkh_response_evaluation.json
+# Input:  câu hỏi của user
+# Context: câu trả lời của chatbot AVA cần đánh giá
+# Output: JSON phán quyết {"only_contact_misa": bool, "only_apologize": bool}
+# GT:     gpt-5.2 phán quyết dựa trên tiêu chí QA cụ thể
+
+task_name: htkh_response_evaluation
+task_type: qa
+source_file: htkh_response_evaluation.json
+max_samples: 100
+description: "HTKH — Đánh giá response chatbot AVA theo 2 tiêu chí QA"
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là chuyên gia QA đánh giá chatbot hỗ trợ phần mềm MISA.
+
+  Tin nhắn user: {input}
+  Response của chatbot: {context}
+
+  Đánh giá theo 2 tiêu chí (true = VI PHẠM, false = KHÔNG vi phạm):
+
+  Tiêu chí 1 — Chỉ bảo liên hệ MISA (only_contact_misa):
+  Bot chỉ đưa ra giải pháp duy nhất là "Liên hệ MISA" mà không có hướng dẫn/giải pháp cụ thể nào khác.
+  Ví dụ vi phạm: "Chị vui lòng liên hệ MISA để được hỗ trợ ạ." (không có thêm gì)
+  Ví dụ không vi phạm: "Chị có thể làm theo bước X... Nếu vẫn chưa được, liên hệ MISA nhé."
+
+  Tiêu chí 2 — Chỉ xin lỗi không có giải pháp (only_apologize):
+  Bot chỉ xin lỗi mà không đưa ra bất kỳ hướng dẫn/giải pháp nào.
+  Ví dụ vi phạm: "Em xin lỗi vì chưa thể hỗ trợ được ạ."
+  Ví dụ không vi phạm: "Em xin lỗi về sự bất tiện. Chị thử làm bước X nhé."
+
+  Trả lời theo format JSON:
+  {{"only_contact_misa": true/false, "only_apologize": true/false}}
+  Chỉ trả JSON thuần, không giải thích, không markdown code block.
+
+gt_task_type: qa
+gt_metrics:
+  - accuracy
+  - token_f1
+
+# Prompt gửi đến model cần đánh giá (inference)
+inference_prompt: |
+  Đánh giá response chatbot bên dưới theo 2 tiêu chí (true = VI PHẠM):
+
+  Tin nhắn user: {input}
+  Response của chatbot: {context}
+
+  Tiêu chí 1 — only_contact_misa: Bot chỉ bảo "Liên hệ MISA" không có hướng dẫn gì khác.
+  Tiêu chí 2 — only_apologize: Bot chỉ xin lỗi không có giải pháp.
+
+  Trả về JSON: {{"only_contact_misa": true/false, "only_apologize": true/false}}
+  Chỉ JSON thuần, không giải thích.

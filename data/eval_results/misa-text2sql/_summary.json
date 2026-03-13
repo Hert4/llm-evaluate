@@ -1,0 +1,24 @@
+{
+  "model": "misa-text2sql",
+  "date": "2026-03-13 09:19:33",
+  "tasks": {
+    "crm_intent_analysis": {
+      "exact_match": 84.21,
+      "token_f1": 88.39
+    },
+    "crm_recommendation": {
+      "list_match": 24.4
+    },
+    "crmmisa_dashboard": {
+      "token_f1": 36.03,
+      "g_eval": 86.67,
+      "answer_relevancy": 81.23
+    },
+    "makt_forecast": {
+      "list_match": 82.93
+    },
+    "mtrans_translation": {
+      "bleu": 34.04
+    }
+  }
+}

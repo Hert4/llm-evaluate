@@ -57,7 +57,7 @@ BENCHMARKS_DIR = PROJECT_ROOT / "data" / "benchmarks"
 # ---------------------------------------------------------------------------
 # API Configuration
 # ---------------------------------------------------------------------------
-API_URL = "https://numerous-catch-uploaded-compile.trycloudflare.com/v1/chat/completions"
+API_URL = "https://single-opportunity-objectives-quilt.trycloudflare.com/v1/chat/completions"
 API_KEY = "misa_misa_00t07fh7_ZFRMf6rOUaVHTv6CZH0uOzAx_LDP1IeWM"
 MODEL = "gpt-5.2"
 
@@ -100,6 +100,14 @@ class GTTaskConfig:
     # Benchmark file info
     benchmark_file: str = ""     # e.g. crm_recommendation_150.json
 
+    # HTKH special fields
+    # pre_generate_input: True → generate input từ metadata.intent trước khi generate reference
+    pre_generate_input: bool = False
+    pre_generate_input_prompt: str = ""
+
+    # context_from: "conversation_history" → serialize conversation_history thành context string
+    context_from: str = ""       # e.g. "conversation_history"
+
     @classmethod
     def from_yaml(cls, filepath: Path) -> "GTTaskConfig":
         """Load GT config from a task YAML file."""
@@ -115,6 +123,9 @@ class GTTaskConfig:
         cfg.gt_prompt = raw.get("gt_prompt", "")
         cfg.gt_task_type = raw.get("gt_task_type", raw.get("task_type", "qa"))
         cfg.gt_metrics = raw.get("gt_metrics", [])
+        cfg.pre_generate_input = raw.get("pre_generate_input", False)
+        cfg.pre_generate_input_prompt = raw.get("pre_generate_input_prompt", "")
+        cfg.context_from = raw.get("context_from", "")
         return cfg
 
     @property
@@ -196,14 +207,38 @@ def find_benchmark_file(task_name: str, benchmarks_dir: Path) -> Optional[Path]:
 # ---------------------------------------------------------------------------
 # Prompt building
 # ---------------------------------------------------------------------------
-def build_prompt(sample: Dict, gt_prompt: str) -> str:
+def serialize_conversation_history(history: Any) -> str:
+    """Serialize conversation_history list thành string 'User: ...\nBot: ...'."""
+    if not history:
+        return ""
+    if isinstance(history, str):
+        return history
+    lines = []
+    for turn in history:
+        if isinstance(turn, dict):
+            user_msg = (turn.get("user") or turn.get("input") or "").strip()
+            bot_msg = (turn.get("bot") or turn.get("output") or turn.get("assistant") or "").strip()
+            if user_msg:
+                lines.append(f"User: {user_msg}")
+            if bot_msg:
+                lines.append(f"Bot: {bot_msg}")
+    return "\n".join(lines)
+
+
+def build_prompt(sample: Dict, gt_prompt: str, task_config: Optional["GTTaskConfig"] = None) -> str:
     """
     Build the API prompt for a single sample.
 
     Supports {input} and {context} placeholders in gt_prompt.
+    Nếu task_config.context_from == "conversation_history", serialize history thành context.
     """
     input_text = sample.get("input", "")
     context_text = sample.get("context", "") or ""
+
+    # HTKH special: context_from conversation_history
+    if task_config and task_config.context_from == "conversation_history":
+        conv_history = sample.get("conversation_history") or []
+        context_text = serialize_conversation_history(conv_history)
 
     try:
         prompt = gt_prompt.format(input=input_text, context=context_text)
@@ -437,6 +472,7 @@ async def generate_with_checkpoints(
     concurrency: int = DEFAULT_CONCURRENCY,
     dry_run: bool = False,
     limit: Optional[int] = None,
+    task_config: Optional["GTTaskConfig"] = None,
 ) -> Dict:
     """
     Generate references with checkpoint saving.
@@ -446,7 +482,11 @@ async def generate_with_checkpoints(
     samples = benchmark_data["data"]
 
     # Filter: only generate for samples without reference
-    to_process = [s for s in samples if not s.get("reference")]
+    # Với htkh_rag_qa, cũng bỏ qua samples chưa có input (chưa chạy generate_input)
+    to_process = [
+        s for s in samples
+        if not s.get("reference") and s.get("input")
+    ]
     if limit:
         to_process = to_process[:limit]
 
@@ -457,7 +497,7 @@ async def generate_with_checkpoints(
     if dry_run:
         logger.info("=== DRY RUN MODE — showing prompts without calling API ===")
         for s in to_process:
-            prompt = build_prompt(s, gt_prompt)
+            prompt = build_prompt(s, gt_prompt, task_config)
             print(f"\n{'='*60}")
             print(f"Sample: {s['id']}")
             print(f"{'='*60}")
@@ -493,7 +533,7 @@ async def generate_with_checkpoints(
             # Create tasks for this batch
             batch_coros = []
             for s in batch:
-                prompt = build_prompt(s, gt_prompt)
+                prompt = build_prompt(s, gt_prompt, task_config)
                 coro = call_api(session, prompt, semaphore, s["id"])
                 batch_coros.append((s["id"], coro))
 
@@ -560,18 +600,101 @@ def save_benchmark(data: Dict, filepath: Path):
     data.setdefault("metadata", {})
     data["metadata"]["gt_generated_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     data["metadata"]["gt_model"] = MODEL
-    data["metadata"]["gt_script"] = "generate_ground_truth.py"
-
-    # Count references
-    total = len(data.get("data", []))
-    with_ref = sum(1 for s in data.get("data", []) if s.get("reference"))
-    data["metadata"]["samples_with_reference"] = with_ref
-    data["metadata"]["samples_total"] = total
 
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    logger.info(f"Saved: {filepath.name}")
 
-    logger.info(f"Saved: {filepath.name} ({with_ref}/{total} samples have reference)")
+
+# ---------------------------------------------------------------------------
+# HTKH Special: Generate input từ metadata.intent (pre-step cho htkh_rag_qa)
+# ---------------------------------------------------------------------------
+async def generate_input_from_intent(
+    benchmark_data: Dict,
+    benchmark_path: Path,
+    pre_prompt: str,
+    concurrency: int = DEFAULT_CONCURRENCY,
+    dry_run: bool = False,
+    limit: Optional[int] = None,
+) -> Dict:
+    """
+    Pre-step cho htkh_rag_qa: sinh câu hỏi tự nhiên từ metadata.intent.
+
+    Chạy trước khi generate reference answer.
+    Chỉ xử lý samples có input trống và metadata.intent không trống.
+    """
+    samples = benchmark_data["data"]
+
+    # Filter: chỉ xử lý samples có input trống và có intent
+    to_process = []
+    for s in samples:
+        if not s.get("input") and s.get("metadata", {}).get("intent"):
+            to_process.append(s)
+
+    if limit:
+        to_process = to_process[:limit]
+
+    if not to_process:
+        logger.info("No samples need input generation (all have input or no intent).")
+        return benchmark_data
+
+    logger.info(f"Generating input for {len(to_process)} samples from metadata.intent...")
+
+    if dry_run:
+        logger.info("=== DRY RUN — showing pre-generate prompts ===")
+        for s in to_process:
+            intent = s["metadata"]["intent"]
+            prompt = pre_prompt.format(intent=intent)
+            print(f"\n{'─'*60}")
+            print(f"Sample: {s['id']} | intent: {intent[:100]}")
+            print(f"Prompt: {prompt[:500]}")
+        return benchmark_data
+
+    semaphore = asyncio.Semaphore(concurrency)
+    id_to_idx = {s["id"]: i for i, s in enumerate(samples)}
+    success_count = 0
+    fail_count = 0
+
+    async with aiohttp.ClientSession() as session:
+        pbar = tqdm(total=len(to_process), desc="Generating input", unit="sample")
+
+        batch_size = CHECKPOINT_INTERVAL
+        batches = [to_process[i:i + batch_size] for i in range(0, len(to_process), batch_size)]
+
+        for batch_idx, batch in enumerate(batches):
+            coros = []
+            for s in batch:
+                intent = s["metadata"]["intent"]
+                prompt = pre_prompt.format(intent=intent)
+                coros.append((s["id"], call_api(session, prompt, semaphore, s["id"])))
+
+            for future in asyncio.as_completed([_wrap_with_id(sid, c) for sid, c in coros]):
+                sid, res = await future
+                if res["success"]:
+                    idx = id_to_idx[sid]
+                    samples[idx]["input"] = res["content"].strip()
+                    success_count += 1
+                else:
+                    logger.error(f"[{sid}] Input gen failed: {res['error']}")
+                    fail_count += 1
+                pbar.update(1)
+                pbar.set_postfix(ok=success_count, fail=fail_count)
+
+            # Checkpoint after each batch
+            if batch_idx < len(batches) - 1:
+                _save_checkpoint(benchmark_data, benchmark_path)
+                logger.info(f"  Checkpoint saved ({(batch_idx+1)*batch_size}/{len(to_process)})")
+
+        pbar.close()
+
+    logger.info(f"Input generation done: {success_count} success, {fail_count} failed")
+
+    # Update metadata
+    benchmark_data.setdefault("metadata", {})
+    benchmark_data["metadata"]["input_generated_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    benchmark_data["metadata"]["input_generated_model"] = MODEL
+
+    return benchmark_data
 
 
 # ---------------------------------------------------------------------------
@@ -584,8 +707,15 @@ async def process_task(
     dry_run: bool = False,
     limit: Optional[int] = None,
     skip_backup: bool = False,
+    step: Optional[str] = None,
 ) -> Optional[GenerationStats]:
-    """Process a single task: load benchmark → generate GT → save."""
+    """
+    Process a single task: load benchmark → generate GT → save.
+
+    Args:
+        step: None = full pipeline, "generate_input" = chỉ chạy pre-step sinh input
+              (dành riêng cho htkh_rag_qa khi input trống)
+    """
     stats = GenerationStats(task_name=task_config.task_name)
 
     # Find benchmark file
@@ -597,14 +727,62 @@ async def process_task(
     logger.info(f"\n{'='*60}")
     logger.info(f"Task: {task_config.task_name}")
     logger.info(f"File: {benchmark_path.name}")
-    logger.info(f"GT type: {task_config.gt_task_type}")
-    logger.info(f"Metrics: {', '.join(task_config.gt_metrics)}")
+    if step:
+        logger.info(f"Step: {step}")
+    else:
+        logger.info(f"GT type: {task_config.gt_task_type}")
+        logger.info(f"Metrics: {', '.join(task_config.gt_metrics)}")
     logger.info(f"{'='*60}")
 
     # Load benchmark
     benchmark_data = load_benchmark(benchmark_path)
     samples = benchmark_data.get("data", [])
     stats.total_samples = len(samples)
+
+    # -----------------------------------------------------------------------
+    # STEP: generate_input — pre-step cho htkh_rag_qa
+    # -----------------------------------------------------------------------
+    if step == "generate_input":
+        if not task_config.pre_generate_input or not task_config.pre_generate_input_prompt:
+            logger.warning(
+                f"[{task_config.task_name}] pre_generate_input not configured in YAML. Skipping."
+            )
+            return stats
+
+        needs_input = sum(1 for s in samples if not s.get("input") and s.get("metadata", {}).get("intent"))
+        logger.info(f"Samples needing input generation: {needs_input}/{len(samples)}")
+
+        if needs_input == 0:
+            logger.info("All samples already have input. Nothing to do.")
+            return stats
+
+        if not dry_run and not skip_backup:
+            backup_benchmark(benchmark_path)
+
+        start_time = time.time()
+        benchmark_data = await generate_input_from_intent(
+            benchmark_data=benchmark_data,
+            benchmark_path=benchmark_path,
+            pre_prompt=task_config.pre_generate_input_prompt,
+            concurrency=concurrency,
+            dry_run=dry_run,
+            limit=limit,
+        )
+
+        if not dry_run:
+            with open(benchmark_path, "w", encoding="utf-8") as f:
+                json.dump(benchmark_data, f, ensure_ascii=False, indent=2)
+            after = sum(1 for s in benchmark_data["data"] if s.get("input"))
+            logger.info(f"Saved. Samples with input: {after}/{len(samples)}")
+            stats.success = after - (len(samples) - needs_input)
+
+        elapsed = time.time() - start_time
+        logger.info(f"[{task_config.task_name}] Step generate_input done in {elapsed:.1f}s")
+        return stats
+
+    # -----------------------------------------------------------------------
+    # NORMAL: generate reference (GT)
+    # -----------------------------------------------------------------------
     stats.already_have_reference = sum(1 for s in samples if s.get("reference"))
     stats.to_generate = stats.total_samples - stats.already_have_reference
 
@@ -630,14 +808,13 @@ async def process_task(
 
     if dry_run:
         stats.skipped = stats.to_generate
-        # Just show dry-run info
-        to_show = [s for s in samples if not s.get("reference")]
+        to_show = [s for s in samples if not s.get("reference") and s.get("input")]
         if limit:
             to_show = to_show[:limit]
 
         logger.info("=== DRY RUN MODE ===")
         for s in to_show:
-            prompt = build_prompt(s, task_config.gt_prompt)
+            prompt = build_prompt(s, task_config.gt_prompt, task_config)
             print(f"\n{'─'*60}")
             print(f"Sample: {s['id']}")
             print(f"{'─'*60}")
@@ -658,6 +835,7 @@ async def process_task(
             concurrency=concurrency,
             dry_run=False,
             limit=limit,
+            task_config=task_config,
         )
 
         # Count results
@@ -695,6 +873,7 @@ Examples:
   %(prog)s --concurrency 3                          # Lower concurrency
   %(prog)s --list-tasks                             # Show tasks with GT config
   %(prog)s --skip-backup                            # Don't backup before overwriting
+  %(prog)s --task htkh_rag_qa --step generate_input # Pre-step: sinh input từ metadata.intent
         """,
     )
     parser.add_argument(
@@ -728,6 +907,14 @@ Examples:
     parser.add_argument(
         "--skip-backup", action="store_true",
         help="Skip backup before overwriting benchmark files.",
+    )
+    parser.add_argument(
+        "--step", default=None,
+        choices=["generate_input"],
+        help=(
+            "Chạy chỉ 1 bước đặc biệt thay vì full pipeline. "
+            "'generate_input': sinh input từ metadata.intent (dành cho htkh_rag_qa)."
+        ),
     )
     return parser.parse_args()
 
@@ -776,6 +963,8 @@ async def async_main():
     logger.info(f"  Dry run:        {args.dry_run}")
     if args.limit:
         logger.info(f"  Limit:          {args.limit} samples/task")
+    if args.step:
+        logger.info(f"  Step:           {args.step}")
 
     all_stats = []
     for task_config in gt_tasks:
@@ -786,6 +975,7 @@ async def async_main():
             dry_run=args.dry_run,
             limit=args.limit,
             skip_backup=args.skip_backup,
+            step=args.step,
         )
         if stats:
             all_stats.append(stats)

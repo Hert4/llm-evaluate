@@ -1,0 +1,49 @@
+{
+  "task_name": "crmmisa_dashboard",
+  "task_type": "rag",
+  "description": "CRM MISA dashboard analysis — phân tích dữ liệu dashboard kinh doanh",
+  "model_evaluated": "misa-text2sql",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "crmmisa_dashboard_150.json",
+  "num_samples": 150,
+  "evaluation_date": "2026-03-13 09:19:33",
+  "elapsed_seconds": 373.2,
+  "metrics": {
+    "token_f1": {
+      "score": 0.36026,
+      "score_pct": 36.03,
+      "details": {
+        "f1": 0.3602597726964693,
+        "precision": 0.7416502418315619,
+        "recall": 0.24032801032886217,
+        "num_samples": 150
+      }
+    },
+    "g_eval": {
+      "score": 0.866667,
+      "score_pct": 86.67,
+      "details": {
+        "criteria_scores": {
+          "coherence": 0.9039999999999994,
+          "fluency": 0.9520000000000001,
+          "relevance": 0.7253333333333317,
+          "consistency": 0.8853333333333334
+        },
+        "criteria": [
+          "coherence",
+          "fluency",
+          "relevance",
+          "consistency"
+        ],
+        "num_samples": 150
+      }
+    },
+    "answer_relevancy": {
+      "score": 0.812333,
+      "score_pct": 81.23,
+      "details": {
+        "num_samples": 150
+      }
+    }
+  }
+}

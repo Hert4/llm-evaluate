@@ -1,0 +1,61 @@
+# HTKH RAG QA Benchmark
+# Source: htkh_eval_datasets/htkh_rag_qa.json
+# Input:  câu hỏi user (cần pre-generate từ metadata.intent nếu trống)
+# Context: nội dung bài viết hướng dẫn từ knowledge base MISA
+# Output: câu trả lời của model (cần generate sau)
+# GT:     gpt-5.2 sinh câu trả lời chuẩn từ câu hỏi + bài viết
+#
+# PIPELINE ĐẶC BIỆT (2 bước):
+#   Bước 1: generate_ground_truth.py --task htkh_rag_qa --step generate_input
+#            → sinh input từ metadata.intent cho samples có input trống
+#   Bước 2: generate_ground_truth.py --task htkh_rag_qa
+#            → sinh reference answer từ input + context
+
+task_name: htkh_rag_qa
+task_type: rag
+source_file: htkh_rag_qa.json
+max_samples: 150
+description: "HTKH — RAG QA: sinh câu trả lời từ article knowledge base MISA"
+
+# pre_generate_input: true — khi input trống, generate từ metadata.intent trước
+pre_generate_input: true
+pre_generate_input_prompt: |
+  Viết lại intent sau thành câu hỏi tự nhiên của user nhắn cho chatbot hỗ trợ phần mềm MISA.
+  Viết theo kiểu chat tiếng Việt thông thường, ngắn gọn, như người dùng thực sự gõ.
+
+  Intent: {intent}
+
+  Trả lời chỉ câu hỏi, không thêm gì khác.
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là chuyên gia hỗ trợ phần mềm MISA, đang trả lời câu hỏi của khách hàng.
+
+  Câu hỏi: {input}
+
+  Bài viết hướng dẫn:
+  {context}
+
+  Yêu cầu:
+  - Trả lời đúng và đủ dựa hoàn toàn vào nội dung bài viết
+  - Liệt kê các bước nếu có (Bước 1, Bước 2...)
+  - Ngôn ngữ thân thiện, dễ hiểu, tiếng Việt
+  - Nếu bài viết có URL, thêm cuối: "Xem chi tiết: <url>"
+
+gt_task_type: rag
+gt_metrics:
+  - faithfulness
+  - answer_relevancy
+  - rouge
+  - token_f1
+
+# Prompt gửi đến model cần đánh giá (inference)
+inference_prompt: |
+  Bạn là chatbot hỗ trợ phần mềm MISA. Trả lời câu hỏi dựa vào bài viết hướng dẫn sau.
+
+  Câu hỏi: {input}
+
+  Bài viết hướng dẫn:
+  {context}
+
+  Yêu cầu: Trả lời đúng, đủ, ngắn gọn, liệt kê bước nếu có. Tiếng Việt thân thiện.

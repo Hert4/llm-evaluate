@@ -1,0 +1,15 @@
+# Model config for misa-ai-translate-1.0-plus
+# Translation model using non-standard OpenAI-compatible message format
+# Content is an array with source_lang_code, target_lang_code, and text fields
+
+model_name: "misa-ai-translate-1.0-plus"
+api_url: "https://numerous-catch-uploaded-compile.trycloudflare.com/v1/chat/completions"
+api_key: "misa_misa_00t07fh7_ZFRMf6rOUaVHTv6CZH0uOzAx_LDP1IeWM"
+
+# Translation-specific message format
+message_format: "translation"
+source_lang_code: "vi"
+# target_lang_code: derived from sample metadata.target_language
+
+# Extract only JSON data from input (after "# Dữ liệu JSON là: ")
+input_extract_pattern: "# Dữ liệu JSON là: (.+)$"

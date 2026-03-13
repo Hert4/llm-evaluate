@@ -1,0 +1,24 @@
+{
+  "model": "misa-ai-1.0-mini",
+  "date": "2026-03-13 09:36:49",
+  "tasks": {
+    "crm_intent_analysis": {
+      "exact_match": 87.72,
+      "token_f1": 90.06
+    },
+    "crm_recommendation": {
+      "list_match": 57.2
+    },
+    "crmmisa_dashboard": {
+      "token_f1": 49.05,
+      "g_eval": 89.3,
+      "answer_relevancy": 87.69
+    },
+    "makt_forecast": {
+      "list_match": 85.84
+    },
+    "mtrans_translation": {
+      "bleu": 27.97
+    }
+  }
+}

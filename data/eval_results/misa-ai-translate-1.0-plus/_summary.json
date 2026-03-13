@@ -1,0 +1,9 @@
+{
+  "model": "misa-ai-translate-1.0-plus",
+  "date": "2026-03-13 09:56:06",
+  "tasks": {
+    "mtrans_translation": {
+      "bleu": 37.13
+    }
+  }
+}

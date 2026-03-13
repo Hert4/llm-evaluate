@@ -1,0 +1,1922 @@
+{
+  "metadata": {
+    "task_name": "htkh_response_evaluation",
+    "task_type": "qa",
+    "description": "HTKH — Đánh giá response chatbot AVA theo 2 tiêu chí QA",
+    "source_file": "htkh_response_evaluation.json",
+    "total_raw_records": 1068,
+    "filtered_records": 1068,
+    "valid_records": 1058,
+    "deduped_records": 902,
+    "sampled_records": 100,
+    "sampling_strategy": "random",
+    "random_seed": 42,
+    "created_date": "2026-03-13 16:38:28",
+    "script": "generate_model_output.py",
+    "model": "misa-ai-1.1",
+    "generated_date": "2026-03-13 17:02:44",
+    "generated_from": "htkh_response_evaluation_100.json"
+  },
+  "data": [
+    {
+      "id": "htkh_response_evaluation_0001",
+      "input": "mình muốn cop từ máy chủ sang máy trạm để máy trạm làm giống\nnhưng bạn lại cop từ máy trạm sang máy chut\nthành ra mất hết dữ liệu rồi\nvừa mình ra ngoài nhờ bạn nhân viên nghe máy lại bảo xong rồi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Hiện tại dữ liệu trên máy chủ đã bị ghi đè do sao chép ngược chiều. Để khôi phục lại, em cần hỏi chị là trước khi xảy ra sự cố, chị đã thực hiện sao lưu dữ liệu chưa ạ? Nếu có, chị có file sao lưu (.mbk hoặc .mbz) không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 3017.0956,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0002",
+      "input": "hao mon bên qlts chuyển qua msa ko khớp số làm sao ại",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Chị đang sử dụng phần mềm kế toán nào ạ? AMIS Kế toán (MSA) hay MIMOSA?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1237.6213,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0003",
+      "input": "e ơi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em đây ạ, em có thể hỗ trợ gì cho anh Đặng Hoàng Anh ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1826.8792,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0004",
+      "input": "8964.19MB",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, dung lượng dữ liệu hiện tại của anh là ~8.96GB, thuộc trường hợp **dữ liệu từ 5GB đến dưới 10GB** và anh đang thực hiện tạo mới dữ liệu từ năm trước nên em hướng dẫn theo **Giải pháp 1: Đối với dữ liệu liên năm** ạ.\n\nAnh vui lòng thực hiện tách dữ liệu theo từng năm tài chính riêng biệt để giảm dung lượng dữ liệu trên mỗi file bằng cách: \n\n- Vào chức năng **Tạo mới dữ liệu kế toán từ năm trước**. \n\n- Tại bước **2. Thiết lập dữ liệu kế toán mới**, nhập **Ngày bắt đầu hạch toán** là ngày bắt đầu năm tài chính cần tách, phần mềm sẽ tự động chuyển số dư đầu năm và chứng từ phát sinh trong năm",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 797.1251,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0005",
+      "input": "cập nhật lên TT99,số dư ban đầu của phân hệ công cụ  bị thiếu thì làm sao",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh cho em hỏi số dư ban đầu bị thiếu là của Công cụ dụng cụ hay Chi phí trả trước ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 529.3123,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0006",
+      "input": "đã hạch toán điều chỉnh tự động số thuế gtgt điều chỉnh giảm, nhưng làm sao để giảm giá trị dịch vụ mua vào ở BK mua vào tháng 1",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Để hướng dẫn chị chính xác, em xin hỏi: dịch vụ mua vào này hiện tại **còn tồn** hay **đã hết** ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 720.9956,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0007",
+      "input": "đúng",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, rất vui vì thông tin em cung cấp đã giúp chị giải quyết được vấn đề. Nếu sau này chị còn bất kỳ thắc mắc nào về phần mềm MISA SME, chị cứ nhắn tin cho em nhé. Chúc chị một ngày làm việc hiệu quả và thật nhiều năng lượng ạ!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 459.7302,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0008",
+      "input": "vào chổ nhập số dư rồi mà k nhập dc",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, dựa trên biểu hiện lỗi của anh, em đã tìm thấy các nguyên nhân kèm cách khắc phục nhanh như sau ạ:   \n\n1. **Do chưa nhập số dư tổng hợp tài khoản 156 trên tab Số dư tài khoản**   \n\n➔ Cách xử lý: Anh cần vào **Nghiệp vụ\\Nhập số dư ban đầu**, chọn tab **Số dư tài khoản**, tìm đến **TK 156** (hoặc 1561 nếu có), nhấn **Nhập số dư** và nhập tổng giá trị tồn kho tương ứng, sau đó **Cất**.   \n\n2. **Do xem báo cáo chọn tham số sai ngày bắt đầu dữ liệu**   \n\n➔ Cách xử lý: Anh vào **Tệp\\Thông tin dữ liệu** để xem **ngày bắt đầu dữ liệu**, sau đó khi xem báo cáo **Bảng cân đối tài khoản** hoặc **Sổ c",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 650.2574,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0009",
+      "input": "sao chuyển đổi dự liệu xong bị lệch số thì sao em",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị cho em hỏi chị đang chuyển đổi dữ liệu từ phần mềm nào sang AMIS Kế toán ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1356.8318,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0010",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Thủy, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 934.6618,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0011",
+      "input": "báo cáo tài chính\nhttp://misajscamisapp.misa.vn.local/support/api/file/api/files/image/5001?fileID=2aaf1eb4-6765-4e45-af84-81642b0b0876.png&tenantCode=misa&ispreview=true",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh đang lập báo cáo tài chính theo Thông tư 133 hay Thông tư 200 ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1664.4204,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0012",
+      "input": "mình cần sửa báo cáo năm 2025 theo thông tư 200",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, theo Thông tư 99/2025/TT-BTC, Thông tư này có hiệu lực thi hành kể từ ngày 01/01/2026 và áp dụng cho năm tài chính bắt đầu từ hoặc sau ngày 01/01/2026. Vì vậy, Báo cáo tài chính năm 2025 của chị vẫn sẽ được lập và in theo Thông tư 200/2014/TT-BTC ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 4088.6789,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0013",
+      "input": "dạ vâng e làm đuọcự rồi e cám ơn ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng ạ, em rất vui vì đã hỗ trợ được chị. Nếu có bất kỳ vướng mắc nào khác trong quá trình sử dụng phần mềm AMIS Kế toán, chị cứ nhắn em nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 555.4395,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0014",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Ngát, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 707.9358,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0015",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Lâm Lệ Quyên, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 781.6595,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0016",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Nguyễn Hồng Hạnh, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 644.2062,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0017",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Loan, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1559.3928,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0018",
+      "input": "VÌ TẤT CẢ MỌI NGƯỜI ĐỀU ĐĂNG NHẬP BĂNG ADMIN",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Để đảm bảo an toàn và kiểm soát quyền truy cập tốt hơn, em có thể hướng dẫn chị cách phân quyền người dùng trong MISA SME. Chị muốn em hướng dẫn theo cách nào ạ?\n\n- Cách 1: Phân quyền theo vai trò (ví dụ: Kế toán, Thủ quỹ, Quản lý...)\n- Cách 2: Phân quyền trực tiếp cho từng người dùng",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 474.9618,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0019",
+      "input": "có sản phẩm không lên giá xuất là do những nguyên nhân nào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị đang sử dụng phương pháp tính giá xuất kho nào ạ? Ví dụ: Bình quân cuối kỳ, Nhập trước – Xuất trước, Giá đích danh, Bình quân tức thời.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 2229.19,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0020",
+      "input": "CÓ RỒI",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, em cảm ơn chị đã xác nhận ạ. Nếu chị còn bất kỳ thắc mắc nào khác trong quá trình làm quyết toán, chị cứ nhắn thêm cho em nhé, em luôn sẵn sàng hỗ trợ ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 625.7762,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0021",
+      "input": "crm",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, anh Quang ơi, có thể dữ liệu Cơ hội chưa hiển thị do bộ lọc đang được thiết lập hoặc giao diện danh sách chưa được tùy chỉnh phù hợp.  \n\nAnh vui lòng kiểm tra lại **bộ lọc Cơ hội** và **thiết lập giao diện danh sách** để đảm bảo điều kiện hiển thị phù hợp với dữ liệu cần xem.  \n\nThông tin chi tiết anh tham khảo tại bài viết: [Quản lý Danh sách Cơ hội](https://helpcrm.misa.vn/kb/quan-ly-danh-sach-co-hoi-trong-amis-crm/).  \n\nEm hỗ trợ anh ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 485.4937,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0022",
+      "input": "Bọn chị là trường học",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, em hiểu rồi ạ. Vì bên chị là trường học - đơn vị hành chính sự nghiệp, nên việc lập báo cáo tài chính B02/BCTC và các chỉ tiêu 520, 525 âm do thâm hụt trong năm là hoàn toàn hợp lệ theo quy định. Nếu chị cần hỗ trợ thêm về nghiệp vụ nào khác, cứ nhắn em ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1716.9742,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0023",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Huy, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho anh nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 701.8132,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0024",
+      "input": "AMIS BHXH",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, hiện tại em chỉ hỗ trợ phần mềm AMIS Kế toán. Đối với phần mềm AMIS BHXH, chị vui lòng vào trang https://helpamis.misa.vn/amis-bhxh/ và chọn vào chatbot để được hỗ trợ ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 695.6331,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0025",
+      "input": "Mình muốn mua chứng từ khấu trừ thuế tncn điện tử gói 240.000 đồng á",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em xin phép hỏi thêm ạ, gói 240.000 đồng chị muốn mua là để làm gì ạ? Vì phần mềm AMIS Thuế TNCN hiện tại không bán chứng từ theo gói, mà tính phí theo số lượng người dùng (mỗi gói 10 người dùng). Số lượng chứng từ khấu trừ thuế là không giới hạn ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1388.905,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0026",
+      "input": "em ơi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 569.7265,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0027",
+      "input": "vâng cảm ơn ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Nhân, em cảm ơn anh đã phản hồi ạ. Nếu anh cần hỗ trợ thêm bất kỳ vấn đề gì liên quan đến phần mềm MISA meInvoice, anh cứ nhắn cho em nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 2067.3401,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0028",
+      "input": "Mình ko nộp BCTC được từ Misa TAx",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, hiện tại em chỉ hỗ trợ phần mềm AMIS Kế toán. Chị có đang thao tác trên phần mềm AMIS Kế toán không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 3711.6931,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0029",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Hồ Thị Kim Thoa, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1314.6674,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0030",
+      "input": "misa nhé",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chào anh Đặng Trung Hiếu,\n\nĐể import hóa đơn đã xuất từ MISA MeInvoice lên phần mềm AMIS Kế toán mục bán hàng và muốn phần mềm tự động hiện hóa đơn đã xuất và thêm mục đối tượng, anh có thể tham khảo các cách sau đây ạ:\n\n*   **Cách 1: Lấy hóa đơn đã phát hành từ MeInvoice về AMIS Kế toán để hạch toán** \n\n*   **Cách 2: Lấy dữ liệu hóa đơn điện tử từ MISA MeInvoice về AMIS Kế toán để hạch toán (Hóa đơn có mã của CQT)** \n\n*   **Cách 3: Lấy dữ liệu hóa đơn điện tử từ MISA MeInvoice về AMIS Kế toán để hạch toán (Hóa đơn không có mã của CQT)**\n\nAnh vui lòng xem chi tiết các cách thực hiện tại đây",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 828.5257,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0031",
+      "input": "Chứng từ bán hàng kiêm phiếu xuất kho",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh Hồng đã tải tệp mẫu chứng từ bán hàng từ phần mềm AMIS Kế toán về chưa ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1554.2685,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0032",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Ngà, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1092.7212,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0033",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Nam, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 639.2372,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0034",
+      "input": "tại sao đơn hàng đã giao nhưng phần mềm k tự động xuất\nhóa đơn",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Chị vui lòng cho em biết trong phần mềm, đơn hàng đó hiện đang hiển thị trạng thái gì ạ? Ví dụ: Chưa phát hành, Phát hành lỗi, Đã phát hành, hoặc có cảnh báo gì không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1749.3318,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0035",
+      "input": "LÀ SAO",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, em chào chị Thùy Dung Gia Lâm, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 832.9697,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0036",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Thu, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1066.0982,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0037",
+      "input": "có thể ví dụ cụ thể được không",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, em xin đưa ra ví dụ cụ thể cho nghiệp vụ xuất hóa đơn bằng USD nhưng khách hàng thanh toán bằng AUD như sau:\n\n- **Cách 1:** Trả tiền bằng USD trên chứng từ chi tiền.   \n\n- **Cách 2:** Trả tiền bằng VND trên chứng từ chi tiền.   \n\n- **Cách 3:** Đơn vị mở tài khoản tiền ngoại tệ tại ngân hàng, thực hiện chuyển tiền từ tài khoản VND để mua ngoại tệ.  \n\nChị có thể tham khảo chi tiết các cách thực hiện tại bài viết: [Tôi mua hàng bằng USD nhưng thanh toán bằng loại tiền khác thì làm thế nào?](https://helpsme.misa.vn/2026/kb/toi-mua-hang-bang-usd-nhung-thanh-toan-bang-loai-tien-khac-thi-lam",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 551.8007,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0038",
+      "input": "tt 200",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chị vui lòng thực hiện theo các bước sau để tạo dữ liệu sang năm mới 2026 trên phần mềm SME:\n\n**Bước 1:** Vào menu **Tệp** ở ngoài giao diện khi đăng nhập phần mềm **\\ Tạo mới dữ liệu kế toán từ năm trước**.\n\n**Bước 2:** Nhấn **Tiếp theo** để bắt đầu quá trình tạo dữ liệu từ năm trước.\n\n**Bước 3:** Tại **1. Thông tin dữ liệu**, khai báo: \n\n- **Chọn dữ liệu kế toán năm trước** làm căn cứ chuyển số dư, danh mục. \n\n- **Đặt Tên dữ liệu** cho dữ liệu mới (khuyến nghị viết liền, không dấu, không chứa ký tự đặc biệt, độ dài ≤ 256 ký tự). \n\n- Khai báo **Ngày bắt đầu hạch toán**. \n\n- Nhấn **Th",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 915.5431,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0039",
+      "input": "http://misajscamisapp.misa.vn.local/support/api/file/api/files/image/5001?fileID=ae98d3a6-83e1-4503-a95f-c5879a2392a4.png&tenantCode=misa&ispreview=true",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Nhân, hiện tại em đang hỗ trợ về phần mềm MISA meInvoice ạ. Đối với phần mềm MISA eSHOP, anh vui lòng vào trang https://helpeshop.misa.vn/ và chọn vào chatbot để được hỗ trợ ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1026.1867,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0040",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Kế toán bán buôn, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1630.6575,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0041",
+      "input": "xuất chung cho cty thì tên đối tượng ghi như nào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "dạ, khi xuất kho chung cho công ty trong phần mềm MISA SME, tên đối tượng được ghi theo **tên đơn vị** đã khai báo trong chức năng **Khai báo cơ cấu tổ chức**. Thông tin tên đơn vị này được lấy từ tab **Thông tin chung** khi khai báo hoặc sửa đơn vị cấp **Tổng công ty/Công ty**.\n\nđể đảm bảo chính xác, chị vui lòng kiểm tra lại tên đơn vị tại mục [Hệ thống > Cơ cấu tổ chức] và cập nhật đúng theo thông tin thực tế của công ty ạ.\n\n[tham khảo hướng dẫn khai báo cơ cấu tổ chức](https://helpsme.misa.vn/2026/kb/html_11050100/)",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 813.8665,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0042",
+      "input": "Trên bảng câng đối số phát sinh của tôi đang bị lệch số dư đầu kỳ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chị Dịu ơi, trường hợp bảng cân đối số phát sinh bị lệch số dư đầu kỳ, em hướng dẫn chị kiểm tra và xử lý như sau:\n\n**Bước 1:** Vào menu **Nghiệp vụ\\Nhập số dư ban đầu**, chọn tab **Số dư tài khoản**.\n\n**Bước 2:** Nhập lại số dư tài khoản theo đúng số dư trên **Bảng Cân đối tài khoản** đã chốt tính đến trước ngày bắt đầu hạch toán trên phần mềm.\n\nNguyên nhân thường do số dư đầu kỳ bị nhập sai hoặc số liệu chưa hoàn thiện khi chuyển số dư từ năm trước sang.\n\nChi tiết hơn, chị tham khảo tại: [Số dư ban đầu của tài khoản nhập chưa cân](https://helpsme.misa.vn/2026/kb/hdqt_so_du_ban_dau_c",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 774.3711,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0043",
+      "input": "Cho mình hỏi. trong cùng 1 hóa đơn có cả hàng hóa và dịch vụ thì hạch toán như thế nào ?",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Chị giúp em xác nhận hóa đơn này là hóa đơn đầu vào hay đầu ra ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 927.7078,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0044",
+      "input": "cái này có phải âm do phần khấu hao tài sản cố định của chị không em?",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Để em hỗ trợ chị chính xác hơn, chị cho em biết cụ thể là chỉ tiêu nào trên báo cáo B02/BCTC có kết quả thặng dư âm ạ? Ví dụ như chỉ tiêu 520 (Thặng dư/thâm hụt trong năm) hay chỉ tiêu 525 (Thặng dư không được phân phối/thâm hụt chuyển năm sau) ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 574.9596,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0045",
+      "input": "NHƯNG CHỊ K HIỂU SAO ĐỂ ÁP DC 2 MỨC THUẾ KHÁC NHAU MÀ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chị Thu Vân ơi, em xin hướng dẫn cách áp dụng hai mức thuế suất 20% và 17% trong tờ khai quyết toán thuế TNDN.\n\nViệc áp dụng mức thuế suất **17%** hay **20%** phụ thuộc vào **tổng doanh thu năm** của doanh nghiệp, theo quy định tại **Nghị định 320/2025/NĐ-CP** có hiệu lực từ kỳ tính thuế năm 2025:\n\n- **Mức thuế suất 17%**: Áp dụng nếu doanh nghiệp có **tổng doanh thu năm trên 03 tỷ đồng nhưng không quá 50 tỷ đồng**.   \n\n- **Mức thuế suất 20%**: Áp dụng nếu doanh nghiệp có **tổng doanh thu năm trên 50 tỷ đồng**.\n\nKhi lập tờ khai quyết toán thuế TNDN trên phần mềm SME (từ phiên bản 2026",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 714.8303,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0046",
+      "input": "Đúng rồi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh đã ghép mã thành công rồi nhưng đơn hàng từ Shopee không đồng bộ về AMIS Kế toán đúng không ạ? Anh vui lòng cho em biết tình trạng của đơn hàng trên Shopee hiện tại là gì ạ (ví dụ: đã xác nhận, chưa xác nhận, đã giao,...)",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 596.605,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0047",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Vi LINH, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 780.7245,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0048",
+      "input": "c xuat hoa don bi sai dia chi thi phai lam sao",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, trường hợp hóa đơn bị sai địa chỉ, em xin hỏi thêm chị: hóa đơn này đã gửi cho người mua chưa ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 575.6495,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0049",
+      "input": "tớ gọi trực tiếp được kp",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chị vui lòng cho em biết cụ thể chị cần hỗ trợ vấn đề gì ạ? Để em có thể hỗ trợ chị ngay.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1140.1425,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0050",
+      "input": "chênh lệch giữa sổ theo dõi CCDC, chi phí trả trước và sổ cái",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chào anh HOÀNG THI NINH,\n\nĐể tìm hiểu về sự chênh lệch giữa sổ theo dõi CCDC, chi phí trả trước và sổ cái, anh có thể tham khảo báo cáo đối chiếu trên phần mềm AMIS Kế toán ạ. Báo cáo này giúp anh kiểm tra, đối chiếu số liệu kế toán chính xác, minh bạch.\n\nAnh có thể thực hiện theo các bước sau: \n\n*   **Bước 1:** Vào phân hệ **Công cụ dụng cụ**, chọn tab **Báo cáo\\Báo cáo đối chiếu**. \n\n*   **Bước 2:** Chọn **Báo cáo đối chiếu sổ theo dõi CCDC, chi phí trả trước và sổ cái**. \n\n*   **Bước 3:** Nhấn **Chọn tham số**, thiết lập các tham số báo cáo liên quan. \n\n*   **Bước 4:** Nhấn **Xem báo cá",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1538.1469,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0051",
+      "input": "IN CHỨNG TỪ Ở CHỖ NÀO",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Chị muốn in loại chứng từ nào ạ? Ví dụ: phiếu nhập kho, phiếu xuất kho, hóa đơn bán hàng, phiếu tạm tính,...",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1035.4143,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0052",
+      "input": "Chỗ quản lí người dùng không hiện\nMà tk ghi là đã hoạt động rồi\nMà vẫn ko thấy có",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, dựa trên biểu hiện lỗi của chị, em đã tìm thấy các nguyên nhân kèm cách khắc phục nhanh như sau ạ:   \n\n1. Trình duyệt chưa tải lại đầy đủ dữ liệu hoặc bị lỗi cache   \n\n➔ Cách xử lý: **Nhấn tổ hợp phím Ctrl + F5** để tải lại trang.  \n\n2. Dữ liệu cache hoặc cookie trình duyệt bị lỗi   \n\n➔ Cách xử lý: **Xóa cache và cookie trình duyệt**, sau đó tắt và mở lại trình duyệt để đăng nhập lại.  \n\nChị có thể xem hướng dẫn chi tiết có hình ảnh tại đây: [Khi đăng nhập phần mềm bị trắng thì phải làm thế nào?](https://helphkd.misa.vn/kb/khi-dang-nhap-phan-mem-bi-trang-thi-phai-lam-the-nao/).   \n\nChị làm",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 436.7737,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0053",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Hà Thị Anh, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 980.2628,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0054",
+      "input": "mình thực hiện lấy chứng từ từ dữ liệu khác nhưng báo lỗi ko thực hiện được. nhờ bạn vào hỗ trợ giúp mình ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, em hiểu là chị đang gặp lỗi khi lấy chứng từ từ dữ liệu khác. Chị vui lòng cho em biết cụ thể lỗi mà chị đang gặp phải là gì được không ạ? Ví dụ như thông báo lỗi hiển thị trên màn hình là gì, hoặc chị đang gặp khó khăn ở bước nào ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 587.3014,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0055",
+      "input": "chưa\nnguồn 12 năm 25 mang sang\nhủy dự toán\nchớ k mang sang",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chị Quỳnh ơi, em xin hướng dẫn cách xử lý yêu cầu của chị.\n\nĐể **xóa nguồn 12 chuyên** trên **bảng đối chiếu năm 2026** khi nguồn này **chưa có phát sinh**, chị thực hiện theo các bước sau:\n\n**Bước 1**: Chọn menu **Danh mục\\Nguồn kinh phí**   \n\n**Bước 2**: Nhấn vào **dấu mũi tên** tại nguồn 12 chuyên, chọn chức năng **Xóa**  \n\nLưu ý: Chỉ thực hiện xóa được nếu nguồn **chưa có phát sinh**. Nếu đã có phát sinh, phần mềm sẽ không cho phép xóa và yêu cầu kiểm tra phát sinh.\n\nVề việc **hủy dự toán, không mang sang năm 2026**, phần mềm không hỗ trợ thao tác \"hủy dự toán\" trực tiếp tại danh",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 543.984,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0056",
+      "input": "không đc e à",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, dựa trên biểu hiện lỗi của chị, em đã tìm thấy các nguyên nhân kèm cách khắc phục nhanh như sau ạ:   \n\n1. **Công cụ dụng cụ đã có phát sinh chứng từ liên quan**   \n\n➔ Cách xử lý: **Xóa lần lượt các chứng từ phát sinh** từ ngày hạch toán muộn nhất trở về trước, sau đó mới xóa được chứng từ ghi tăng.  \n\n2. **Chứng từ ghi tăng có ngày nhỏ hơn hoặc bằng ngày khóa sổ kỳ kế toán**   \n\n➔ Cách xử lý: **Bỏ khóa sổ kỳ kế toán** về ngày trước ngày ghi tăng của công cụ dụng cụ, sau đó thực hiện xóa.  \n\nChị có thể xem hướng dẫn chi tiết có hình ảnh tại đây: [Khi xóa TSCĐ nhưng phần mềm báo xóa không th",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 681.5628,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0057",
+      "input": "chị mới thành lập năm 2025\nkế toán cũ ko biết làm kiểu j\nchị muốn sửa lại thì ntn",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, em hiểu rồi ạ. Vì chị mới thành lập năm 2025 nên việc lập và sửa báo cáo tài chính cần tuân theo quy định. Chị vui lòng cho em biết cụ thể chị muốn sửa báo cáo tài chính vì lý do gì ạ? Ví dụ: số liệu trên báo cáo bị sai, hay muốn lập lại từ đầu vì kế toán cũ làm không đúng?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 556.9958,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0058",
+      "input": "ko dc e ơi\nc gửi ultra\ne xử lý giúp c nha",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, em hiểu là chị đang gặp khó khăn khi vào dữ liệu kế toán. Hiện tại, em chỉ có thể hỗ trợ chị qua kênh chat này thôi ạ. Chị vui lòng mô tả chi tiết hơn về vấn đề chị đang gặp phải để em có thể hỗ trợ chị nhanh chóng và chính xác nhất nhé. Em luôn sẵn sàng ở đây để giúp đỡ chị ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1288.5271,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0059",
+      "input": "phần mềm này",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, hiện tại em chỉ hỗ trợ phần mềm AMIS Kế toán. Đối với phần mềm AMIS Kế toán Hộ kinh doanh, chị vui lòng vào trang https://helphkd.misa.vn/ và chọn vào chatbot để được hỗ trợ ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 4848.9248,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0060",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Bình, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 509.07,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0061",
+      "input": "chỉnh số hoá đơn bằng tay",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh muốn chỉnh số hóa đơn trên chứng từ bán hàng/hóa đơn bán hàng hay chỉnh số chứng từ cho trùng với số hóa đơn ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 752.9451,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0062",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Thái, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho anh nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1346.0914,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0063",
+      "input": "mình chọn ngày 01.01.2026 mục này tức lấy dữ liệu đơn hàng từ ngày này đúng không, không chạy ngược về 2025",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, anh Tuấn Tuấn. Việc chọn ngày **01.01.2026** tại mục **Cho phép xuất kho bán hàng với đơn hàng có ngày giao hàng trước ngày thực hiện kết nối gian hàng** có nghĩa là hệ thống sẽ **xuất kho bán hàng cho các đơn có ngày giao hàng từ ngày đã chọn trở đi**, chứ **không tự động lấy dữ liệu đơn hàng ngược về năm 2025**.\n\nHệ thống mặc định chỉ đồng bộ đơn hàng trong **30 ngày gần nhất**, và việc chọn ngày ở đây nhằm thiết lập thời điểm bắt đầu áp dụng xuất kho, không ảnh hưởng đến phạm vi thời gian đồng bộ đơn hàng. Nếu anh muốn lấy đơn cũ hơn, cần thiết lập tại ô **Thời gian tùy chỉnh**.\n\nA",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 944.1448,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0064",
+      "input": "rồi em vô báo cáo rồi vô đâu nữa ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, để xem tổng số lượng chứng từ mua hàng dịch vụ trên báo cáo, anh vui lòng cho em biết anh muốn xem theo tiêu chí nào ạ? Ví dụ: theo mặt hàng, theo nhà cung cấp, hay theo nhân viên mua hàng?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 689.65,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0065",
+      "input": "Hach toán lãi tiền gửi ngân hàng",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, để hạch toán lãi tiền gửi ngân hàng, chị thực hiện như sau:\n\n**Bước 1:** Vào phân hệ **Tiền gửi\\Thu tiền\\Thu tiền gửi.**\n\n**Bước 2:** Khai báo thông tin: \n\n- Chọn **Nộp vào TK Ngân hàng, Kho bạc** tương ứng phát sinh lãi. \n\n- Hạch toán **Nợ TK 1121**, **Có TK 515**, số tiền lãi.\n\n**Bước 3:** Nhấn **Cất**.\n\nLưu ý: Nếu **TK 1121** theo dõi theo nguồn, chị cần chọn đúng nguồn của hoạt động phát sinh lãi tiền gửi.\n\nChi tiết hướng dẫn, chị tham khảo tại: [Tôi muốn hạch toán lãi tiền gửi ngân hàng thì làm thế nào?](https://helpmimosaonline.misa.vn/kb/toi-muon-hach-toan-lai-tien-gui-ngan-han",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 668.654,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0066",
+      "input": "nhắn ko hiểu nên nhờ hỗ trợ ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị không hiểu ở bước nào hay nội dung cụ thể nào trong hướng dẫn em vừa gửi ạ? Chị cứ nói rõ để em giải thích chi tiết hơn cho mình nhé.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1411.3521,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0067",
+      "input": "Như vậy amid phải phân quyền, hay là ai phân quyền cũng được",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chào chị Xuyến,\n\nTrên phần mềm AMIS Kế toán, **quản trị viên** có quyền thêm tài khoản người dùng, gán vai trò và quyền hạn phù hợp để mỗi người chỉ thực hiện đúng nhiệm vụ ạ.\n\nChị có thể tham khảo thêm thông tin chi tiết tại: [Thêm người dùng trên AMIS Kế toán](https://helpact.misa.vn/kb/phan-quyen-su-dung-tren-amis-ke-toan/)\n\nEm cảm ơn chị.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 3205.9879,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0068",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh PHAM XUAN, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho anh nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 852.5907,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0069",
+      "input": "<strong>Chứng từ không hạch toán vào tài khoản kho nhưng được ghi vào sổ kho</strong>\n➔ Cách xử lý: Mở chứng từ, kiểm tra và hạch toán lại tài khoản Nợ hoặc Có vào đúng tài khoản kho tương ứng với nghiệp vụ nhập/xuất kho.\nChị có thể xem hướng dẫn chi tiết 3 nguyên nhân phổ biến trên và các nguyên nh",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, dựa trên biểu hiện lỗi của chị, em đã tìm thấy các nguyên nhân kèm cách khắc phục nhanh như sau ạ:   \n\n1. Chứng từ nhập/xuất kho **không hạch toán vào tài khoản kho** (152, 155, 156, 157) nhưng lại được ghi nhận vào sổ kho   \n\n➔ Cách xử lý: **Mở lại chứng từ**, sửa tài khoản hạch toán Nợ (với nhập kho) hoặc Có (với xuất kho) về đúng tài khoản kho tương ứng.  \n\nChị có thể xem hướng dẫn chi tiết có hình ảnh tại đây: [3.3. Chứng từ nhập, xuất kho nhưng hạch toán vào tài khoản khác tài khoản kho (152, 155…) dẫn đến chênh lệch giữa sổ cái và sổ kho](https://helpsme.misa.vn/2026/kb/3-3-chung-tu-",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1407.6658,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0070",
+      "input": "không có trong danh sách để chọn",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, em hiểu là các trường \"Số lượng\", \"Đơn giá\", \"Đơn vị tính\" không có trong danh sách để chị Hoài An chọn. \n\nTrong trường hợp này, chị có muốn thiết kế file mẫu phiếu xuất kho bên ngoài (Word/Excel) rồi cập nhật vào phần mềm AMIS Kế toán để có thể thêm các trường này không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1377.1414,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0071",
+      "input": "em vào máy chị xem dùm dc k ? c cũng k hiếu nó báo gì nữa",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Tôi sẽ cố gắng đưa ra câu trả lời cuối cùng cho vấn đề của người dùng dựa trên các bài viết đã tìm kiếm được, hoặc trả về lời xin lỗi nếu không thể đưa ra câu trả lời cuối cùng. **KHÔNG ĐẶT THÊM BẤT KỲ CÂU HỎI NÀO NỮA**\nCHATBOT: Dạ em rất xin lỗi vì chưa thể hỗ trợ chị qua Ultraviewer được ạ. Hiện tại, số lượng yêu cầu hỗ trợ trực tiếp đang rất lớn nên chị sẽ phải chờ khá lâu đó ạ. Chị vui lòng mô tả giúp em lỗi cụ thể mà phần mềm đang báo là gì để em có thể hỗ trợ chị ngay lập tức nhé.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 538.3392,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0072",
+      "input": "giờ phải chọn tên người đó trong hs 600 đểu điều chỉnh giảm chư\nsao lại ko được\nko được thì em làm cho được chư\ngiờ nói ko được\nnó ko có trong danh sách luôn\nchứ ko phải là ko có trong đề xuất",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chị ơi, em hiểu rồi. Để em hỗ trợ chị chính xác hơn, chị vui lòng cho em biết hiện tại anh Huỳnh Văn Tới có đang hiển thị trong danh sách lao động đang tham gia BHXH trên phần mềm không ạ? Chị kiểm tra giúp em tại mục Danh sách lao động ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1787.7668,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0073",
+      "input": "Khi tôi muốn cập nhật dữ liệu đầu kỳ từ 2025 sang 2026. Tuy nhiên tôi đã nhập đc 1 ít chứng từ đầu tháng 01/2026 ở phần cũ thì khi cập nhật dữ liệu có đẩy sang ko",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chào chị THỜI TRANG TRACY,\n\nKhi chị thực hiện cập nhật số dư từ dữ liệu năm 2025 sang dữ liệu năm 2026, phần mềm sẽ chỉ cập nhật số dư tính đến hết ngày 31/12/2025 trên dữ liệu năm 2025 sang dữ liệu năm 2026. Các chứng từ đã nhập đầu tháng 01/2026 ở phần dữ liệu cũ sẽ không được đẩy sang dữ liệu năm 2026 ạ.\n\nChị có thể tham khảo thêm chi tiết tại đây: [Làm thế nào để lấy số dư từ dữ liệu năm trước sang năm hiện tại?](https://helpact.misa.vn/kb/lam-the-nao-de-lay-so-du-tu-du-lieu-nam-truoc-sang-nam-hien-tai/)\n\nEm cảm ơn chị ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 568.0696,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0074",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Hoa, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 853.6898,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0075",
+      "input": "dù đã có phiếu thu từ HIS, chị vẫn cần lập hóa đơn bán hàng trên AMIS Kế toán để đảm bảo đầy đủ các chứng từ theo quy định và phản ánh đúng nghiệp vụ kinh tế phát sinh ạ. th2i c chỉ cần lập háo đơn là được đúng ko ,có cần lập phiếu thu trên amis k",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ chào chị Trâm,\n\nVới câu hỏi của chị, em xin phép trả lời như sau:\n\nChứng từ nghiệp vụ khác trên AMIS Kế toán **không hỗ trợ in phiếu thu, phiếu chi** và cũng **không tự động chuyển dữ liệu sang phân hệ Tiền mặt** ạ.\n\nĐể in được phiếu thu/phiếu chi và đảm bảo số liệu lên đúng, đặc biệt khi chị có theo dõi Thủ quỹ, chị vui lòng **hạch toán các nghiệp vụ thu tiền mặt, chi tiền mặt trực tiếp tại phân hệ Tiền mặt** ạ.\n\nCách này giúp: \n\n* **In phiếu thu, phiếu chi đầy đủ, đúng mẫu.** \n\n* **Đảm bảo sổ quỹ lên số liệu chính xác.**\n\nChị có thể tham khảo thêm hướng dẫn chi tiết về: \n\n* [Thu khác bằng",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 2151.0422,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0076",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Lê Nguyên, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho anh nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 607.4438,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0077",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Lâm Văn Đức, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 772.2485,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0078",
+      "input": "tôi nhận debit từ hãng tàu nhưng tôi chưa thanh toán thì line chưa xuất hóa đơn. Tôi muốn ghi nhận doanh thu đó nhưng chưa kèm hóa đơn vậy hạch toán ntn",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị muốn ghi nhận doanh thu từ debit note của hãng tàu là doanh thu bán hàng hóa hay doanh thu bán dịch vụ ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 2738.3405,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0079",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Thắm, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 956.2845,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0080",
+      "input": "à, rồi , mình đã thấy, để mình làm thử",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng ạ, chị cứ thực hiện theo hướng dẫn nhé. Nếu có vướng mắc gì trong quá trình thao tác, chị cứ nhắn lại để em hỗ trợ ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1787.4176,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0081",
+      "input": "hóa đơn xuất không tự lưu kho",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, anh Lương Anh cho em hỏi, có phải báo cáo tồn kho của mình chưa trừ số tồn không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 466.8569,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0082",
+      "input": "http://misajscamisapp.misa.vn.local/support/api/file/api/files/image/5001?fileID=91d3aea0-c435-4689-9350-b4b408298677.png&tenantCode=misa&ispreview=true",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": true}",
+      "reference": null,
+      "context": "Dạ, em xin lỗi vì hiện tại em chưa tìm thấy bài viết hướng dẫn cụ thể về cách hạch toán bút toán Nợ 113 Có 131 và Nợ 112 Có 113 trên phần mềm AMIS Kế toán ạ. Em rất tiếc vì chưa thể hỗ trợ chị vấn đề này.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 508.4189,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0083",
+      "input": "e muốn thêm người dùng cho TK nayfthif làm thế nào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị muốn mua thêm người dùng hay đã mua rồi và muốn thêm vào hệ thống AMIS Kế toán ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 753.8965,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0084",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Trịnh Thanh Huyền, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 461.0723,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0085",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị LONG THỊ MỸ PHỤNG, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 761.027,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0086",
+      "input": "dạ k cho nhập dòng 2 ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chị ơi, tài khoản 421 chỉ cho phép nhập **chung vào 1 dòng tương ứng với 1 nguồn** đối với phần giá trị còn lại của tài sản. Các thặng dư hoặc thâm hụt của các nguồn khác cần được nhập số dư chi tiết theo từng nguồn, nhưng không được nhập 2 dòng số dư đầu kỳ cho cùng tài khoản 421 với các nguồn khác nhau.  \n\nChị vui lòng tham khảo thêm tại bài viết: [Nhập số dư tài khoản (các tài khoản không theo dõi chi tiết)](https://helpmimosaonline.misa.vn/kb/nhap-so-du-tai-khoan/).  \n\nEm xin chúc chị một ngày làm việc hiệu quả ạ!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1332.4651,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0087",
+      "input": "Hi Em",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào anh Tường, em có thể hỗ trợ anh vấn đề gì ạ? Anh giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho anh nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 393.2981,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0088",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Thu Vân, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 654.3362,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0089",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Thúy Nga, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 727.8951,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0090",
+      "input": "Mình muốn tăt cái bảng tìm nhanh Tài khoản ngân hàng và tìm nhanh đối tượng như nào ban",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Chị muốn tắt bảng tìm nhanh ở vị trí nào ạ? Ví dụ: bảng tìm nhanh khi chọn Tài khoản ngân hàng trong phiếu thu, phiếu chi, hay bảng tìm nhanh đối tượng trên các chứng từ như hóa đơn bán hàng, phiếu nhập kho...?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1048.5027,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0091",
+      "input": "k phải gộp mà tách ấy ạ\ntức là đối tượng a và b đều đang theo dõi qua 6321, giờ e muốn b theo dõi qua 6322\nthì vào đâu để chuyển từ 6321 qua 6322 cho đối tượng b từ đầu năm đến giờ ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, để tách việc theo dõi đối tượng B từ tài khoản 6321 sang tài khoản 6322 áp dụng từ đầu năm, chị cần thực hiện **chuyển dữ liệu hạch toán** từ tài khoản 6321 sang 6322 theo các bước sau:\n\n**Bước 1:** Tiến hành **sao lưu dữ liệu** trước khi thực hiện.\n\n**Bước 2:** Vào menu **Danh mục\\Tài khoản\\Hệ thống tài khoản**.\n\n**Bước 3:** Chọn chức năng **Chuyển tài khoản hạch toán** trên thanh công cụ.\n\n- Tại mục *Chuyển từ tài khoản*, tích chọn **6321**. \n\n- Tại mục *Chuyển tới tài khoản*, chọn **6322**. \n\n- Tích chọn các nội dung cần chuyển: **Chuyển số dư**, **Chuyển phát sinh trên chứng từ**,",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 692.8049,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0092",
+      "input": "mình bên tab bán hàng ạ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, chức năng **lập lệnh sản xuất (LSX) hàng loạt** không nằm ở tab **Bán hàng** mà nằm ở tab **Hóa đơn** trong phân hệ Bán hàng.\n\nĐể thực hiện lập LSX hàng loạt, anh cần: \n\n- Vào phân hệ **Bán hàng** \\tab **Hóa đơn**. \n\n- Chọn các hóa đơn thỏa mãn điều kiện (có ít nhất một dòng hàng là thành phẩm và chưa lập LSX). \n\n- Tại nút **Thực hiện hàng loạt**, chọn **Lập lệnh sản xuất**.\n\nChức năng này không hiển thị ở tab Bán hàng do phạm vi chức năng được thiết kế riêng cho từng tab.\n\n[**Lập hàng loạt Lệnh sản xuất từ Hóa đơn trên tab Hóa đơn của phân hệ Bán hàng**](https://helpasp.misa.vn/accou",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 934.5581,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0093",
+      "input": "Nhờ Misa thay đổi thông tin đơn vị trên giấy phép sử dụng phần mềm theo giấy phép đăng ký kinh doanh và cập nhật lại mã số thuế mới giúp",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Anh Dương muốn thay đổi thông tin đơn vị trên giấy phép sử dụng phần mềm và cập nhật mã số thuế mới. Hiện tại, việc thay đổi thông tin như tên công ty, địa chỉ là được hỗ trợ. Tuy nhiên, em cần xác nhận thêm với anh là việc thay đổi **mã số thuế** có phải là thay đổi sang mã số thuế mới hoàn toàn không ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1158.91,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0094",
+      "input": "bên mình ko nhập chứng từ số thập phân mà chỉ nhập số tròn thôi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, anh Mân,\n\nTrường hợp dữ liệu kết chuyển bị lệch 1 đồng bên nợ tại tài khoản 911 dù đã xóa và làm lại nhiều lần, và đơn vị không nhập chứng từ có số thập phân, thì nguyên nhân có thể do định dạng số tiền trước đó từng được thiết lập có số lẻ, sau đó được chỉnh về làm tròn, dẫn đến sai lệch khi kết chuyển.\n\nĐể xử lý, anh vui lòng thực hiện theo các bước sau:\n\n**Bước 1:** Xóa chứng từ kết chuyển lãi lỗ đã thực hiện.   \n\n**Bước 2:** Vào **Hệ thống/Tùy chọn/Định dạng số/Thay đổi định dạng số**, chỉnh định dạng **Tiền quy đổi** thành 3 hoặc 4 số thập phân, nhấn **Đồng ý**.   \n\n**Bước 3:** T",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1056.7844,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0095",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Phương Dung, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 1692.4343,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0096",
+      "input": "Giờ chị đã phân quyền cho bạn đó rồi",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ, chị đã phân quyền cho bạn đó rồi, vậy chị đang gặp khó khăn hay vướng mắc gì trong quá trình thao tác trên phần mềm AMIS Kế toán ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 713.1107,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0097",
+      "input": "mới nhờ misa ht",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ vâng, em chào chị Quỳnh. Hiện tại em đang hỗ trợ chị về việc xóa nguồn 12 chuyên trên bảng đối chiếu năm 2026. Chị vui lòng mô tả rõ hơn vấn đề mình đang gặp phải để em hỗ trợ chính xác ạ.",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 681.4998,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0098",
+      "input": "Xin chào",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em chào chị Phạm Lâm Đỗ Quyên, em có thể hỗ trợ chị vấn đề gì ạ? Chị giúp em mô tả ngắn gọn vấn đề trong 1 tin nhắn để em hỗ trợ nhanh cho mình nhé!",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 439.1229,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0099",
+      "input": "Khách hàng ngưng sử dụng ở Amis\nCó tự đồng bộ qua CRM không",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Anh Huy cho em hỏi, thao tác \"ngưng sử dụng\" ở đây là anh đang thực hiện xóa khách hàng, ngừng theo dõi, hay một thao tác khác ạ?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 813.1571,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    },
+    {
+      "id": "htkh_response_evaluation_0100",
+      "input": "tớ muốn thêm tk 1121...lai tiền gửi 3716\nthì làm như thế nào nhỉ\nlâu lâu lại quên mất rồi\nvào danh mục/TK/Hệ thống TK\nTích bào 1121.02 tiền gửi 3716 xong làm thế nào nữa nhỉ",
+      "output": "{\"only_contact_misa\": false, \"only_apologize\": false}",
+      "reference": null,
+      "context": "Dạ em hiểu rồi ạ. Chị muốn thêm tài khoản con 1121.02 cho tài khoản 1121 thì làm theo hướng dẫn ở trên. Tuy nhiên, em chưa rõ phần liên kết với tài khoản 3716. Dạ chị cho em hỏi, việc liên kết này để phục vụ mục đích gì ạ? Ví dụ như theo dõi tiền gửi ngân sách, hay một mục đích khác?",
+      "metadata": {
+        "task": "response_evaluation",
+        "eval_tasks": [
+          "Đánh giá xem chatbot có đưa ra giải pháp duy nhất cho vấn đề của người dùng là \"Liên hệ MISA\" không? \n\n**Positive samples:** \n```\nUSER: hỗ trợ tôi kíc",
+          "Đánh giá xem chatbot có chỉ xin lỗi mà không đưa ra được hướng dẫn/giải pháp nào cho người dùng không? \n\n**Positive samples:** \n- \"Dạ, em rất xin lỗi "
+        ],
+        "is_error": false,
+        "processing_ms": 2737.1577,
+        "source": "htkh",
+        "model": "misa-ai-1.1",
+        "generated_date": "2026-03-13 17:02:44"
+      }
+    }
+  ]
+}

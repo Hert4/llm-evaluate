@@ -1,6 +1,6 @@
 {
   "model": "misa-ai-1.1",
-  "date": "2026-03-12 17:33:54",
+  "date": "2026-03-13 17:16:33",
   "tasks": {
     "crm_intent_analysis": {
       "exact_match": 87.72,
@@ -15,10 +15,24 @@
       "answer_relevancy": 92.47
     },
     "makt_forecast": {
-      "list_match": 1.16
+      "list_match": 85.44
     },
     "mtrans_translation": {
       "bleu": 15.47
+    },
+    "htkh_intent_classification": {
+      "accuracy": 96.0,
+      "token_f1": 96.0
+    },
+    "htkh_intent_routing": {
+      "accuracy": 68.18,
+      "token_f1": 68.18
+    },
+    "htkh_rag_qa": {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "rouge": 37.82,
+      "token_f1": 62.69
     }
   }
 }

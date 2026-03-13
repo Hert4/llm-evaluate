@@ -41,23 +41,12 @@ TASKS_DIR = SCRIPT_DIR / "tasks"
 BENCHMARKS_DIR = PROJECT_ROOT / "data" / "benchmarks"
 RESULTS_DIR = PROJECT_ROOT / "data" / "eval_results"
 
-# Import the llm-evaluate package (hyphenated dir name needs importlib)
-import importlib
+# Import the llm_eval_framework package from project root
 sys.path.insert(0, str(PROJECT_ROOT.parent))
-_pkg = importlib.import_module("llm-evaluate")
 
-from importlib import import_module
-_config = import_module("llm-evaluate.config")
-_evaluator = import_module("llm-evaluate.evaluator")
-_data_parsers_base = import_module("llm-evaluate.data_parsers.base")
-
-EvalConfig = _config.EvalConfig
-OpenAIConfig = _config.OpenAIConfig
-MetricType = _config.MetricType
-MetricConfig = _config.MetricConfig
-TaskType = _config.TaskType
-LLMEvaluator = _evaluator.LLMEvaluator
-EvalSample = _data_parsers_base.EvalSample
+from llm_eval_framework.config import EvalConfig, OpenAIConfig, MetricType, MetricConfig, TaskType
+from llm_eval_framework.evaluator import LLMEvaluator
+from llm_eval_framework.data_parsers.base import EvalSample
 
 # ---------------------------------------------------------------------------
 # API Configuration (same endpoint as generate_ground_truth.py)

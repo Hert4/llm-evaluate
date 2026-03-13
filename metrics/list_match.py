@@ -149,8 +149,8 @@ class ListMatchMetric(BaseMetric):
         if not ref_set:
             return 0.0
         top_k = pred[:k]
-        hits = sum(1 for item in top_k if item in ref_set)
-        return hits / len(ref_set)
+        found = set(top_k) & ref_set
+        return len(found) / len(ref_set)
 
     def _ndcg_at_k(self, pred: List[str], ref_set: set, k: int) -> float:
         """NDCG@K: rank-aware metric — correct items ranked higher = better score."""

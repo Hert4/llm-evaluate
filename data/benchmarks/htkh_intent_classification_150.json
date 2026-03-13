@@ -1,0 +1,2576 @@
+{
+  "metadata": {
+    "task_name": "htkh_intent_classification",
+    "task_type": "qa",
+    "description": "HTKH — Phân loại intent: request_human_handoff vs others",
+    "source_file": "htkh_intent_classification.json",
+    "total_raw_records": 2285,
+    "filtered_records": 2285,
+    "valid_records": 2258,
+    "deduped_records": 1776,
+    "sampled_records": 150,
+    "sampling_strategy": "random",
+    "random_seed": 42,
+    "created_date": "2026-03-13 16:38:28",
+    "script": "convert_raw_to_benchmark.py (HTKH)",
+    "gt_task_type": "qa",
+    "gt_metrics": [
+      "accuracy",
+      "token_f1"
+    ],
+    "gt_generated_date": "2026-03-13 16:48:00",
+    "gt_model": "gpt-5.2"
+  },
+  "data": [
+    {
+      "id": "htkh_intent_classification_0001",
+      "input": "tại sao đơn hàng đã giao nhưng phần mềm k tự động xuất\nhóa đơn",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 266.8805,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0002",
+      "input": "Chị sử dụng PM kết toán misa, pm quản lý hđ đầu vào, chị thấy hđ đầu vào khách hàng đã gửi vào mail cty, nhưng pm kế toán chưa nhận được, đồng bộ trên pm hóa đơn cũng không thấy hđ. hôm qua có bạn vào xem giúp hôm nay pm cũng chưa tải được hđ về, trong khi đó mail cty sáng giờ nhận được 3 tờ hđ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 347.8948,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0003",
+      "input": "bỏ bớt dữ liệu đã sao lưu như nào",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 406.3083,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0004",
+      "input": "bạn ơi trước mình mua phần mềm các bạn làm nhầm cho mình là cty mà mình là HKD",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2092.2753,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0005",
+      "input": "Mình muốn tăt cái bảng tìm nhanh Tài khoản ngân hàng và tìm nhanh đối tượng như nào ban",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 353.059,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0006",
+      "input": "Chị muốn xử lý khi thanh toán công nợ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 371.3938,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0007",
+      "input": "chi tiền ăn\ncơ quan đảng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 535.4212,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0008",
+      "input": "Chỗ quản lí người dùng không hiện\nMà tk ghi là đã hoạt động rồi\nMà vẫn ko thấy có",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 540.5621,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0009",
+      "input": "đang bị lệch bảng kê với mình",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 473.918,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0010",
+      "input": "Giờ chị đã phân quyền cho bạn đó rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2059.0024,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0011",
+      "input": "làm thế nào mình xem được lợi nhuận",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 494.7954,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0012",
+      "input": "Cách xuất bảng kê chứng từ theo nhiều tiêu chí",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 413.2344,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0013",
+      "input": "khi mua thì bên e3m nói là số lượng này là số lượng ng sử dụng pm\ncòn ko giới h ạn slg chứng từ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2073.043,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0014",
+      "input": "tai sao khi đã xoa gb cũ đổi giá bán mới mà khi nhập phiếu bán hàng vẫn còn thể hiện giá cũ ????",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 736.9349,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0015",
+      "input": "hướng dẫn tách số liệu",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 428.2125,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0016",
+      "input": "báo cáo lên số tài sản và nguồn vốn k bằng nau\n0799958990",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1165.7441,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0017",
+      "input": "mình xem được rồi nhé, vào báo cáo đối chiếu",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 445.1772,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0018",
+      "input": "vao meinvoice  khong duoc do ke toan cũ nghỉ khong bàn giao",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2094.8174,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0019",
+      "input": "không tìm thấy thông tin máy chủ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 421.2634,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0020",
+      "input": "thu tiền khách hàng thế nào",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 660.7706,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0021",
+      "input": "e thêm vô chứ  c ko biết làm\nđầu h hỗ trọe c nhé",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 507.0019,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0022",
+      "input": "Hiện mình đâng có một hóa đơn, lúc xem hóa đơn để tải về thì đã có mã của CQT cấp, nhung khi xem bình thường thì thấy vẫn đang trang thái là chờ cấp mã, cái này là do sao ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 326.3536,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0023",
+      "input": "Anh muốn chạy SME trên máy chủ, em hỗ trợ anh nhé",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 353.489,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0024",
+      "input": "máy của bạn đó là máy khác tận dưới nhà máy bình dương",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1600.1642,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0025",
+      "input": "Tôi muốn thiết lập báo cáo tài chính nhưng không làm được\nhãy gọi cho tôi",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 3079.3695,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0026",
+      "input": "Em cần liên hệ qua số điện thoại ạ",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 377.864,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0027",
+      "input": "gặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên\ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên \ngặp tư vấn viên",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1376.1883,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0028",
+      "input": "cài máy chủ sql giúp mình với\nmình cài bị lõi\nsdt 0382 561 726 \n ID 201033871\npass 63110\ncài máy chủ sql sme 2023\nsdt 0382 561 726 \n ID 201033871\npass 63110\nsdt 0382 561 726 \n ID 201033871\npass 63110",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1254.0187,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0029",
+      "input": "từ tổng cục thuế. đầu vào đã ok rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 519.052,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0030",
+      "input": "muốn trên hóa đơn hiển thị số căn cước công dân của cá nhân mua hàng thì làm thế nào a?",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 272.4733,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0031",
+      "input": "mà e tra hóa đơn điện tử trên tổng cục thuế",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 324.1918,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0032",
+      "input": "vẫn ko được ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 331.8415,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0033",
+      "input": "dạ k cho nhập dòng 2 ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 514.7385,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0034",
+      "input": "Em cho chị hỏi, chị cập nhật số dư năm trước sang, mà chị quên xua612t khẩu ra excel file chi tie612t thay đổi số dư, rồi chị thực hiện cập nhật xong rồi, giờ chị muốn xem bảng chi tiết thay đổi số dư, chị làm sao để tìm ra để xuất khẩu lại, em hướng dẫn giúp chị nha",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 612.765,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0035",
+      "input": "chị ko lưu được quyết toán thuế thu nhập cá nhân e ơi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1429.5922,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0036",
+      "input": "trên phiếu thu có thiết lập đơn giá sau thuế được ko ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 3402.4005,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0037",
+      "input": "dạ em đã nhập 421 nguồn khác lên\nnhưng còn 421 của kinh phí thường xuyên ạ\nphần mềm k cho nah65p 2 dòng ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 635.547,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0038",
+      "input": "nộp tờ khai rùi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 347.7538,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0039",
+      "input": "Đã đầy đủ\nrồi mới có làm đc 1 HĐ chứ\nNhưng tới HĐ thứ 2 ko cho chuyển đổi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 4320.2015,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0040",
+      "input": "Cách gộp kho",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 410.3391,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0041",
+      "input": "cty mình đổi tên công ty",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 852.1614,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0042",
+      "input": "bán ngoại tệ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 448.9666,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0043",
+      "input": "các mục doanh thu tài chính, thu nhập khác ko hiện số liệu",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1362.2127,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0044",
+      "input": "Cả 2",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 394.8326,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0045",
+      "input": "mình muốn bù trừ công nợ VND và USD quy đổi\nlàm sao để lập chứng từ bù trừ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1045.8191,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0046",
+      "input": "em ơi chị hỏi, chị chạy giá xuất kho bình quân cuối kỳ sao số lượng tồn còn mà giá trị lại âm nhỉ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 649.5991,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0047",
+      "input": "Thông báo lỗi này cho biết tệp bảng định kiểu XSLT có cấu trúc không chính xác và không thể xử lý. Bảng định kiểu phải định nghĩa chính xác ngôn ngữ chuyển đổi để hoạt động đúng cách.\n\nTệp phải bắt đầu bằng phần tử &lt;xsl:stylesheet&gt; hoặc &lt;xsl:transform&gt;.\n\nNgoài ra, nó có thể bắt đầu bằng một phần tử kết quả chứa thuộc tính xsl:version.\n\nTiền tố xsl phải được ánh xạ chính xác đến không gian tên http://www.w3.org/1999/XSL/Transform.\nc tra nó báo như này ấy e",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1421.24,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0048",
+      "input": "đã lập nhé",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 663.24,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0049",
+      "input": "mình để định mức trc là 120 cái trên 1kg nhưng đợt này là 200 cái /1kg vậy nó có chayjtheo ko",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 398.1013,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0050",
+      "input": "USB",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 384.8039,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0051",
+      "input": "Lý do Mã CQ BHXH hệ thống\nKhác Mã CQ BHXH quản lý\ncần gặp tư vấn viên",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 414.1619,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0052",
+      "input": "XUẤT TRÙNG 2 HÓA ĐƠN GIỜ XỬ LÝ NHƯ THẾ NÀ?",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 394.9797,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0053",
+      "input": "muốn đặt lịch hẹn chuyển tiền",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 566.4958,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0054",
+      "input": "NGĂT ĐỒNG BÔ CƠ QUAN THUẾ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 733.2601,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0055",
+      "input": "có thể sửa ngày trên hóa đơn về trước 1 ngày phát hành k",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 560.7071,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0056",
+      "input": "c MUỐN PHÂN QUYỀN KẾ TOÁN VÀ ADMIN",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1562.5648,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0057",
+      "input": "sao chuyển đổi dự liệu xong bị lệch số thì sao em",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 3642.8544,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0058",
+      "input": "báo \" mã đối tượng tạp hợp chi phí\" không phải của mã hàng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 336.3614,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0059",
+      "input": "Chị đang đầu ra",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 531.0623,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0060",
+      "input": "0983696076",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1151.4642,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0061",
+      "input": "chỗ này em thanh toán rồi\nsao vẫn hiện trả tiền ak\nhỗ trợ gặp nhân viên\n0387675067",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 493.559,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0062",
+      "input": "Nhưng bạn đó muốn vào PMKT thì sao ạ, bạn đó đã mở vào đc PMKT rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 385.0892,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0063",
+      "input": "để các bạn í sửa ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2513.5845,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0064",
+      "input": "không kết nối tự động với sàn được",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 948.8696,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0065",
+      "input": "mã số thuế trên giấy phép sử dụng bên bạn đang để theo MST cũ, hiện cơ quan thuế đã thay đổi MST sang số CCCD của chủ hộ từ T7/25 rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 662.6242,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0066",
+      "input": "TRONG PHẦN QUẢN LÝ LAO ĐỘNG",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 400.4682,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0067",
+      "input": "e ơi có cách nào chuyển phân bổ chi phí trả trước từ theo tháng thành theo quý ko",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 418.2855,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0068",
+      "input": "Em nhờ chị giúp em",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 991.4933,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0069",
+      "input": "xuất hóa đơn quà cty kèm bảng kê nhé e",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 399.9127,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0070",
+      "input": "em oi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1339.3285,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0071",
+      "input": "chuyển số dư đầu kỳ tác tk thì đúng mà bảng tổng hợp tồn kho bị sai",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 359.6906,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0072",
+      "input": "ý là e k tìm thấy CCDC để ghi tăng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2885.7515,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0073",
+      "input": "chị nhìn qua có thể do giá nhập có biến động lớn e ạ. cách xử lý cái này thế nào",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 441.1183,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0074",
+      "input": "mình vẫn ko thao tác, xử lý được có thể hỗ trợ mình qua Utra với đuco75 ko ạ",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2273.9521,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0075",
+      "input": "hôm qua vẫn in đúng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 474.0376,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0076",
+      "input": "dạ hiện tại mình có 1 vấn đề là bên mình có theo dõi công nợ usd nhưng khi xuất hóa đơn ở vn thì phải xuất hóa đơn bằng tiền vnd, vậy nhưng khi theo dõi công nợ lại bằng usd thì có cách nào thể hiện con số tiền usd k ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 893.4145,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0077",
+      "input": "bạn ơi mình nhập khẩu file xuất hóa đơn baops thành công\nmà vào hệ thống ko thấy hiện tờ hóa đơn nháp đó",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 399.2246,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0078",
+      "input": "tôi k cất dc tờ khai bổ sung",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 412.8634,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0079",
+      "input": "VÌ TẤT CẢ MỌI NGƯỜI ĐỀU ĐĂNG NHẬP BĂNG ADMIN",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 359.3528,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0080",
+      "input": "<strong>Chi tiết công nợ phải thu theo nhóm khách hàng</strong>",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 386.6579,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0081",
+      "input": "CHỊ KO KÝ SỐ ĐƯỢC EM HỖ TRỢ CÀI PHẦN MỀM GIÚP CHỊ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 648.5164,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0082",
+      "input": "Mình vào sửa tài sản để sửa nguyên giá nhưng không đươch sửa, Misa hướng dẫn giúp mình với\n11:17\n/-strong\n/-heart\n:&gt;\n😉\n😞(\n:-h\n<strong>Bảo&nbsp;Châu</strong>\n@Thu Huyền hỗ trợ c với. phần công cụ dụng cụ số liệu 2024 có mà mở 2025 lại ko có số liệu Utra 39 965 169 mk 1037\nở phần mềm quản lý tài sản",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 341.562,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0083",
+      "input": "máy bị lỗi không phục hồi được dữ liệu",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1579.5376,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0084",
+      "input": "tôi không thìm thấy",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 804.8986,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0085",
+      "input": "<strong>Báo cáo 2: Sổ chi tiết bán hàng</strong>",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 335.3409,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0086",
+      "input": "tại sao giá nhập kho thành phẩm lại = 0 nhỉ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 817.4446,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0087",
+      "input": "Khi thu vào thì có hạch toán đồng thời không ko em",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 677.1729,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0088",
+      "input": "Chuyển đổi 1 mã vật tư chỉ ghi sổ 1 hóa đơn, hóa đơn thứ 2 cũng ãm nhưng không chuyển đổi được",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 946.4417,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0089",
+      "input": "Tài liệu xác thực đối với hình thức chấm công linh động",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 502.3054,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0090",
+      "input": "mình vẫn k làm được",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 431.4877,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0091",
+      "input": "là sdtmình vừa nhắn đó bạn\nNgày trước là mua với sdt khác nhưng khi các kt cũ nghỉ ồi\n2022 mình đã đổi lại theo sdt này của mình\nmình vẫn sd sdt này và phân quyền các user cho các nhân viên",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1424.6898,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0092",
+      "input": "em đã làm nhưng vẫn không được ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1977.3483,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0093",
+      "input": "hóa đơn điện tử đã phát hành",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1117.5423,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0094",
+      "input": "dù đã có phiếu thu từ HIS, chị vẫn cần lập hóa đơn bán hàng trên AMIS Kế toán để đảm bảo đầy đủ các chứng từ theo quy định và phản ánh đúng nghiệp vụ kinh tế phát sinh ạ. th2i c chỉ cần lập háo đơn là được đúng ko ,có cần lập phiếu thu trên amis k",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 792.4395,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0095",
+      "input": "vì các bạn làm nhầm cho mình thành công ty nên giờ phải đổi lại thành HKD",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 927.78,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0096",
+      "input": "Dạ em cảm ơn",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 321.3333,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0097",
+      "input": "hạch toán chuyển nguồn",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 367.8426,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0098",
+      "input": "tren phiếu",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 411.3637,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0099",
+      "input": "Giờ chị muốn sửa thành tính theo PP bình quân cuối kỳ đc k",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 808.6765,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0100",
+      "input": "Mất dữ liệu doanh thu đơn hàng và thuế ước tính",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1409.0829,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0101",
+      "input": "Tôi không tim thấy chỗ đồng bộ hoá đơn đầu ra",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 548.8353,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0102",
+      "input": "cách chỉnh độ dãn cột trước khi in sao cho vừa trang giấy",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 430.1599,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0103",
+      "input": "EM BẤM CẬP NHẬT NGAY\nKHÔNG ĐUOẸC Ạ\nHỖ TRỢ DÙM E",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 503.61,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0104",
+      "input": "sme 2023",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 491.7587,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0105",
+      "input": "nhập kho trả lại",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 347.8979,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0106",
+      "input": "chỗ đối chiếu chứng từ sổ sách báo lệch số dư đầu kỳ 242",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 300.2902,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0107",
+      "input": "vậy thì có ai tv gia hạn k",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1284.7594,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0108",
+      "input": "đồng hộ hóa đơn ý ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1241.0924,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0109",
+      "input": "bạn nhận dc k",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 325.3797,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0110",
+      "input": "phần mềm bên chị hàng tặng vẫn đang tính thuế gtgt",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1644.3058,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0111",
+      "input": "Tối muốn kiểm tra tổng tiền đa chuyển cho nhà cung cấp nhưng hàng chưa về",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 342.7256,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0112",
+      "input": "HÓA ĐƠN MÌNH RẤT NHÙI\nNHỜ KỸ THUẬN HỖ TRỢ DÙM\nKỸ THUẬT CÓ BẢO CÓ VẤN ĐỀ GÌ LIÊN HỆ RỒI MÀ\nSAO CỨ HỎI DÒNG DÒNG HOÀI",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 503.9122,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0113",
+      "input": "lập BB thay thế vào đâu để vẫn còn tên hàng hoá số lượng như hoá đơn đã lập trước đó e",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 872.6207,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0114",
+      "input": "vậy vào nghiệp vụ khác của hóa đơn bị điều chỉnh hay sao e\ndoanh thu kê khai ở kỳ nào",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 484.2317,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0115",
+      "input": "DN chị mới mở\nNăm nay mới bắt đầu làm báo cáo",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1133.2728,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0116",
+      "input": "e thêm vô chứ  c ko biết làm\nđầu h hỗ trọe c nhé\n0935699156",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 539.9473,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0117",
+      "input": "CN khách hàng năm 2025 : TK 331 là 21 tr",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 411.1165,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0118",
+      "input": "làm sao để kiểm tra được số lần phân bô đang bị sai",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 373.9214,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0119",
+      "input": "ở tap ghi tăng thì c xoá đc rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1016.9404,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0120",
+      "input": "Xóa bỏ Truong Thoi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 313.2811,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0121",
+      "input": "nhưng chuyển đổi được 1 HĐ hóa đơn thứ 2 cũng mã đó nhưng chuyển đổi không được\ncùng 1 mã không thay đổi\nChỉ chuyển đổi 1 bộ sang cái",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 407.1065,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0122",
+      "input": "ko có chứng từ nào chưa thanh toán",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 380.9202,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0123",
+      "input": "Cốc Cốc",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 896.8986,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0124",
+      "input": "Cho mình gặp nhận viên missa trực tiếp",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 655.8019,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0125",
+      "input": "là sdtmình vừa nhắn đó bạn",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1024.9961,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0126",
+      "input": "báo cáo tài chính đã lập ý ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 304.4833,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0127",
+      "input": "mà e tra hóa đơn điện tử trên tổng cục thuế\nchỗ tính chất hàng hóa dịch vụ ấy ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 1479.6092,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0128",
+      "input": "c nhấn chuột phải trên hoá đơn cần thay thế vô lập hoá đơn mà nó ko ra tên của hàng hoias đó",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 403.8783,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0129",
+      "input": "mỗi mã của mình ko có cả tăng và giảm đâu b",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 523.1298,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0130",
+      "input": "nếu mình bỏ sticker cái này và chọn mục trên lấy tất cả đơn hàng từ lazada về eshop được tạo từ ngày 01.01.2026 thì vẫn chạy đúng dữ liệu phải không",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 622.8705,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0131",
+      "input": "báo cáo hđ kinh doanh",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 403.3354,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0132",
+      "input": "tôi đã tìm thấy hóa đơn trong phần bảng lê hóa đơn sử dụng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 451.3631,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0133",
+      "input": "Chỗ quản lí người dùng không hiện\nMà tk ghi là đã hoạt động rồi",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 342.3614,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0134",
+      "input": "tại tab xử lý hóa đơn đầu vào, không mở hóa đơn lên xem được",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 370.3902,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0135",
+      "input": "biên bản giao hàng",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 260.2869,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0136",
+      "input": "1C26TYY",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 417.891,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0137",
+      "input": "Biết ơn em nhiều nhé",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 730.3714,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0138",
+      "input": "do chỉ tiêu Tồn tại dòng có Chỉ tiêu (4) không bằng Chỉ tiêu (3)*8%.",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 803.1747,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0139",
+      "input": "e không xem đc",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 961.088,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0140",
+      "input": "cho c giá gia hạn MISA SME 1 năm, và 2 năm",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 455.799,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0141",
+      "input": "vẫn không được",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 455.6392,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0142",
+      "input": "Trong danh sách, có 10 người đóng ở tháng 1 và 1 người bắt đầu ở tháng 2\nthì điền như thế nào",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 4527.3328,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0143",
+      "input": "dạ là cá nhân không kinh doanh ạ",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 705.7317,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0144",
+      "input": "Bên bạn gọi điện hỗ trợ luôn giúp mình với nhé",
+      "output": "",
+      "reference": "request_human_handoff",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 703.0674,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0145",
+      "input": "hao mon bên qlts chuyển qua msa ko khớp số làm sao ại",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 370.6149,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0146",
+      "input": "Chữ ký số bên khác",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 2451.4294,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0147",
+      "input": "cột thành tiền sau khi cộng thuế",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 463.3799,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0148",
+      "input": "xóa bớt tài khoản thì làm sao",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 395.4583,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0149",
+      "input": "các đối tượng này là đối tượng a bây giờ mk muốn đổi thành đối tượng B hàng loạt thì làm ntn",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 462.43,
+        "source": "htkh"
+      }
+    },
+    {
+      "id": "htkh_intent_classification_0150",
+      "input": "ko dc e ơi\nc gửi ultra",
+      "output": "",
+      "reference": "others",
+      "context": null,
+      "metadata": {
+        "task": "intent_classification",
+        "label_schema": [
+          "request_human_handoff",
+          "others"
+        ],
+        "is_error": false,
+        "processing_ms": 770.4384,
+        "source": "htkh"
+      }
+    }
+  ]
+}

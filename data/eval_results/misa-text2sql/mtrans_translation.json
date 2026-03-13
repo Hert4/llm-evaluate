@@ -1,0 +1,22 @@
+{
+  "task_name": "mtrans_translation",
+  "task_type": "translation",
+  "description": "mTranslate — dịch JSON từ tiếng Việt sang 144 ngôn ngữ",
+  "model_evaluated": "misa-text2sql",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "mtrans_translation_150.json",
+  "num_samples": 150,
+  "evaluation_date": "2026-03-13 09:19:33",
+  "elapsed_seconds": 0.0,
+  "metrics": {
+    "bleu": {
+      "score": 0.340353,
+      "score_pct": 34.04,
+      "details": {
+        "max_ngram": 4,
+        "smoothing": true,
+        "num_samples": 150
+      }
+    }
+  }
+}

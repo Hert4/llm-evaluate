@@ -19,6 +19,7 @@ import argparse
 import asyncio
 import json
 import logging
+import re
 import shutil
 import sys
 import time
@@ -50,21 +51,22 @@ except ImportError:
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 TASKS_DIR = SCRIPT_DIR / "tasks"
+MODELS_DIR = SCRIPT_DIR / "models"
 BENCHMARKS_DIR = PROJECT_ROOT / "data" / "benchmarks"
 RESULTS_DIR = PROJECT_ROOT / "data" / "eval_results"
 
 # ---------------------------------------------------------------------------
 # API Configuration (same endpoint as other scripts)
 # ---------------------------------------------------------------------------
-API_URL = "https://numerous-catch-uploaded-compile.trycloudflare.com/v1/chat/completions"
+API_URL = "https://single-opportunity-objectives-quilt.trycloudflare.com/v1/chat/completions"
 API_KEY = "misa_misa_00t07fh7_ZFRMf6rOUaVHTv6CZH0uOzAx_LDP1IeWM"
 
 # Defaults
-DEFAULT_CONCURRENCY = 5
+DEFAULT_CONCURRENCY = 2
 DEFAULT_MAX_COMPLETION_TOKENS = 4096
 DEFAULT_TEMPERATURE = 0.0
-DEFAULT_TIMEOUT = 120
-MAX_RETRIES = 5
+DEFAULT_TIMEOUT  = 120
+MAX_RETRIES = 10
 RETRY_DELAY_BASE = 2
 CHECKPOINT_INTERVAL = 20
 
@@ -103,6 +105,8 @@ def discover_tasks(tasks_dir: Path) -> List[Dict]:
                     "task_name": raw.get("task_name", yaml_file.stem),
                     "description": raw.get("description", ""),
                     "gt_metrics": raw.get("gt_metrics", []),
+                    "inference_prompt": raw.get("inference_prompt", ""),
+                    "context_from": raw.get("context_from", ""),
                 })
         except Exception as e:
             logger.warning(f"Failed to load {yaml_file.name}: {e}")
@@ -119,6 +123,70 @@ def find_benchmark_file(task_name: str, benchmarks_dir: Path) -> Optional[Path]:
 
 
 # ---------------------------------------------------------------------------
+# Model config loading
+# ---------------------------------------------------------------------------
+def load_model_config(model_name: str, config_path: Optional[str] = None) -> Optional[Dict]:
+    """Load model-specific config from YAML file.
+
+    Searches scripts/models/{model_name}.yaml or .yml, or uses explicit path.
+    Returns parsed config dict or None if not found.
+    """
+    if config_path:
+        p = Path(config_path)
+        if p.is_file():
+            with open(p, "r", encoding="utf-8") as f:
+                cfg = yaml.safe_load(f)
+            logger.info(f"Loaded model config: {p}")
+            return cfg
+        else:
+            logger.warning(f"Model config not found: {p}")
+            return None
+
+    # Auto-detect from models/ directory
+    for ext in (".yaml", ".yml"):
+        p = MODELS_DIR / f"{model_name}{ext}"
+        if p.is_file():
+            with open(p, "r", encoding="utf-8") as f:
+                cfg = yaml.safe_load(f)
+            logger.info(f"Loaded model config: {p}")
+            return cfg
+
+    return None
+
+
+def build_translation_messages(
+    user_message: str, model_config: Dict, sample_metadata: Dict
+) -> List[Dict]:
+    """Build translation-format messages array.
+
+    Optionally extracts text via input_extract_pattern regex,
+    then builds the non-standard content array format.
+    """
+    text = user_message
+
+    # Optionally extract a subset of the input
+    pattern = model_config.get("input_extract_pattern")
+    if pattern:
+        m = re.search(pattern, user_message, re.DOTALL)
+        if m:
+            text = m.group(1)
+
+    source_lang_code = model_config.get("source_lang_code", "vi")
+    target_lang_code = sample_metadata.get("target_language", "en")
+
+    messages = [{
+        "role": "user",
+        "content": [{
+            "type": "text",
+            "source_lang_code": source_lang_code,
+            "target_lang_code": target_lang_code,
+            "text": text,
+        }],
+    }]
+    return messages
+
+
+# ---------------------------------------------------------------------------
 # API calling with retry (adapted from generate_ground_truth.py)
 # ---------------------------------------------------------------------------
 async def call_model_api(
@@ -130,21 +198,33 @@ async def call_model_api(
     sample_id: str,
     temperature: float = DEFAULT_TEMPERATURE,
     max_completion_tokens: int = DEFAULT_MAX_COMPLETION_TOKENS,
+    model_config: Optional[Dict] = None,
+    sample_metadata: Optional[Dict] = None,
 ) -> Dict[str, Any]:
     """
     Call target model API with the original system prompt + user message.
 
     Returns: {"success": bool, "content": str, "error": str|None}
     """
+    # Use config's API settings if available, else fall back to global defaults
+    api_url = (model_config or {}).get("api_url", API_URL)
+    api_key = (model_config or {}).get("api_key", API_KEY)
+
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}",
+        "Authorization": f"Bearer {api_key}",
     }
 
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": user_message})
+    # Build messages based on format
+    if model_config and model_config.get("message_format") == "translation":
+        messages = build_translation_messages(
+            user_message, model_config, sample_metadata or {}
+        )
+    else:
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": user_message})
 
     payload = {
         "model": model,
@@ -157,7 +237,7 @@ async def call_model_api(
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 async with session.post(
-                    API_URL,
+                    api_url,
                     headers=headers,
                     json=payload,
                     timeout=aiohttp.ClientTimeout(total=DEFAULT_TIMEOUT),
@@ -209,6 +289,54 @@ async def _wrap_with_id(sample_id: str, coro):
 
 
 # ---------------------------------------------------------------------------
+# Inference message builder
+# ---------------------------------------------------------------------------
+def build_inference_user_message(
+    sample: Dict,
+    task_config: Optional[Dict] = None,
+) -> tuple[Optional[str], str]:
+    """
+    Build (system_prompt, user_message) cho inference call.
+
+    Nếu task có inference_prompt → dùng nó để ghép input+context vào 1 user message.
+    Nếu task có context_from=conversation_history → serialize history trước.
+    Nếu không có inference_prompt → fallback: system=context, user=input (behavior cũ).
+
+    Returns:
+        (system_prompt_or_None, user_message_str)
+    """
+    input_text = sample.get("input", "") or ""
+    context_text = sample.get("context", "") or ""
+
+    # Serialize conversation_history nếu cần
+    if task_config and task_config.get("context_from") == "conversation_history":
+        history = sample.get("conversation_history") or []
+        lines = []
+        for turn in history:
+            if isinstance(turn, dict):
+                u = (turn.get("user") or turn.get("input") or "").strip()
+                b = (turn.get("bot") or turn.get("output") or turn.get("assistant") or "").strip()
+                if u:
+                    lines.append(f"User: {u}")
+                if b:
+                    lines.append(f"Bot: {b}")
+        context_text = "\n".join(lines)
+
+    inference_prompt = (task_config or {}).get("inference_prompt", "")
+
+    if inference_prompt:
+        # Ghép input + context vào 1 user message theo template
+        try:
+            user_message = inference_prompt.format(input=input_text, context=context_text)
+        except KeyError:
+            user_message = inference_prompt.replace("{input}", input_text).replace("{context}", context_text)
+        return None, user_message
+    else:
+        # Fallback behavior cũ: context = system prompt, input = user message
+        return context_text or None, input_text
+
+
+# ---------------------------------------------------------------------------
 # Main generation pipeline
 # ---------------------------------------------------------------------------
 async def generate_outputs_for_task(
@@ -219,6 +347,8 @@ async def generate_outputs_for_task(
     dry_run: bool = False,
     limit: Optional[int] = None,
     force: bool = False,
+    model_config: Optional[Dict] = None,
+    task_config: Optional[Dict] = None,
 ) -> Optional[Dict]:
     """
     Generate model outputs for a task.
@@ -270,8 +400,17 @@ async def generate_outputs_for_task(
         for s in to_process[:3]:
             print(f"\n{'─'*60}")
             print(f"Sample: {s['id']}")
-            print(f"System: {str(s.get('context', ''))[:200]}...")
-            print(f"User:   {str(s.get('input', ''))[:200]}...")
+            if model_config and model_config.get("message_format") == "translation":
+                msgs = build_translation_messages(
+                    s.get("input", ""), model_config, s.get("metadata", {})
+                )
+                print(f"Messages (translation format):")
+                print(f"  {json.dumps(msgs, ensure_ascii=False)[:400]}...")
+            else:
+                sys_p, usr_m = build_inference_user_message(s, task_config)
+                if sys_p:
+                    print(f"System: {sys_p[:200]}...")
+                print(f"User:   {usr_m[:400]}...")
         if len(to_process) > 3:
             print(f"\n... and {len(to_process) - 3} more samples")
         return {"task_name": task_name, "total": total, "generated": 0, "dry_run": True}
@@ -293,13 +432,16 @@ async def generate_outputs_for_task(
 
             coros = []
             for s in batch:
+                sys_p, usr_m = build_inference_user_message(s, task_config)
                 coro = call_model_api(
                     session=session,
                     model=model,
-                    system_prompt=s.get("context"),
-                    user_message=s.get("input", ""),
+                    system_prompt=sys_p,
+                    user_message=usr_m,
                     semaphore=semaphore,
                     sample_id=s["id"],
+                    model_config=model_config,
+                    sample_metadata=s.get("metadata", {}),
                 )
                 coros.append((s["id"], coro))
 
@@ -451,6 +593,10 @@ Examples:
         "--list-tasks", action="store_true",
         help="List available tasks and exit.",
     )
+    parser.add_argument(
+        "--model-config", default=None,
+        help="Path to model config YAML (auto-detected from scripts/models/ if omitted).",
+    )
     return parser.parse_args()
 
 
@@ -493,8 +639,16 @@ async def async_main():
     logger.info(f"Model:  {model}")
     logger.info(f"Tasks:  {task_names}")
 
+    # Load model config (auto-detect or explicit path)
+    model_config = load_model_config(model, args.model_config)
+    if model_config:
+        logger.info(f"Model config: message_format={model_config.get('message_format', 'standard')}")
+
     # Step 1: Generate outputs
     if not args.eval_only:
+        # Build task_name → task_config map cho inference_prompt lookup
+        task_config_map = {t["task_name"]: t for t in all_tasks}
+
         all_stats = []
         for task_name in task_names:
             stats = await generate_outputs_for_task(
@@ -505,6 +659,8 @@ async def async_main():
                 dry_run=args.dry_run,
                 limit=args.limit,
                 force=args.force,
+                model_config=model_config,
+                task_config=task_config_map.get(task_name),
             )
             if stats:
                 all_stats.append(stats)

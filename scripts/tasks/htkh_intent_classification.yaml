@@ -1,0 +1,44 @@
+# HTKH Intent Classification Benchmark
+# Source: htkh_eval_datasets/htkh_intent_classification.json
+# Input:  tin nhắn cuối của user trong hội thoại chatbot HTKH
+# Output: nhãn phân loại intent (request_human_handoff | others)
+# GT:     gpt-5.2 phân loại dựa trên nội dung tin nhắn
+
+task_name: htkh_intent_classification
+task_type: qa
+source_file: htkh_intent_classification.json
+max_samples: 150
+description: "HTKH — Phân loại intent: request_human_handoff vs others"
+
+# Ground truth generation config
+gt_prompt: |
+  Bạn là chuyên gia phân loại intent cho chatbot hỗ trợ phần mềm MISA.
+
+  Phân loại tin nhắn sau vào 1 trong 2 class:
+  - "request_human_handoff": User muốn chuyển sang nhân viên thật, không muốn chatbot tiếp tục
+  - "others": Các trường hợp còn lại (hỏi kỹ thuật, chào hỏi, báo lỗi, yêu cầu hướng dẫn...)
+
+  Dấu hiệu "request_human_handoff":
+  - Yêu cầu gặp người thật, nhân viên, kỹ thuật viên
+  - Yêu cầu gọi điện / đến tận nơi hỗ trợ
+  - Thất vọng rõ ràng, đã hỏi nhiều lần không được
+
+  Tin nhắn: {input}
+
+  Trả lời CHỈ một trong hai: request_human_handoff hoặc others
+  Không giải thích, không thêm gì khác.
+
+gt_task_type: qa
+gt_metrics:
+  - accuracy
+  - token_f1
+
+# Prompt gửi đến model cần đánh giá (inference)
+inference_prompt: |
+  Bạn là chatbot hỗ trợ phần mềm MISA. Phân loại tin nhắn sau:
+  - "request_human_handoff": User muốn gặp nhân viên thật
+  - "others": Các trường hợp còn lại
+
+  Tin nhắn: {input}
+
+  Trả lời CHỈ một trong hai: request_human_handoff hoặc others

@@ -1,0 +1,32 @@
+{
+  "task_name": "crm_intent_analysis",
+  "task_type": "qa",
+  "description": "CRM intent analysis — phân tích hành động người dùng với đơn hàng",
+  "model_evaluated": "misa-text2sql",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "crm_intent_analysis_57.json",
+  "num_samples": 57,
+  "evaluation_date": "2026-03-13 09:13:20",
+  "elapsed_seconds": 0.0,
+  "metrics": {
+    "exact_match": {
+      "score": 0.842105,
+      "score_pct": 84.21,
+      "details": {
+        "num_correct": 48,
+        "num_samples": 57,
+        "accuracy_pct": 84.21052631578947
+      }
+    },
+    "token_f1": {
+      "score": 0.883881,
+      "score_pct": 88.39,
+      "details": {
+        "f1": 0.8838806063800417,
+        "precision": 0.9108771929824562,
+        "recall": 0.8770156574231277,
+        "num_samples": 57
+      }
+    }
+  }
+}

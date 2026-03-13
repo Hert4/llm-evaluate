@@ -1,0 +1,54 @@
+{
+  "task_name": "htkh_rag_qa",
+  "task_type": "rag",
+  "description": "HTKH — RAG QA: sinh câu trả lời từ article knowledge base MISA",
+  "model_evaluated": "misa-ai-1.1",
+  "judge_model": "gpt-5.2",
+  "benchmark_file": "htkh_rag_qa_150.json",
+  "num_samples": 150,
+  "evaluation_date": "2026-03-13 17:16:33",
+  "elapsed_seconds": 35.0,
+  "metrics": {
+    "faithfulness": {
+      "score": 0.0,
+      "score_pct": 0.0,
+      "details": {
+        "error": "Connection error."
+      }
+    },
+    "answer_relevancy": {
+      "score": 0.0,
+      "score_pct": 0.0,
+      "details": {
+        "error": "Connection error."
+      }
+    },
+    "rouge": {
+      "score": 0.37819,
+      "score_pct": 37.82,
+      "details": {
+        "rouge_scores": {
+          "rouge1": 0.498605569612184,
+          "rouge2": 0.2807466492756277,
+          "rougeL": 0.3552190153362105
+        },
+        "rouge_types": [
+          "rouge1",
+          "rouge2",
+          "rougeL"
+        ],
+        "num_samples": 150
+      }
+    },
+    "token_f1": {
+      "score": 0.626854,
+      "score_pct": 62.69,
+      "details": {
+        "f1": 0.6268535074704381,
+        "precision": 0.6395902981856105,
+        "recall": 0.6346300035000009,
+        "num_samples": 150
+      }
+    }
+  }
+}
